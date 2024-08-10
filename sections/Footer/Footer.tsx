@@ -45,7 +45,7 @@ interface PaymentIcon {
   image: ImageWidget;
 }
 
-export interface MobileApps {
+interface MobileApps {
   /** @description Link para o Aplicativo da Apple */
   apple?: string;
   /** @description Link para o Aplicativo Android */
@@ -62,6 +62,7 @@ interface BadgeIcon {
    * @description Tamanho (largura máxima: 140px, altura máxima: 75px)
    */
   image: ImageWidget;
+  href?: string;
 }
 
 interface Props {
@@ -83,7 +84,7 @@ interface Props {
   /** @title Aplicativos mobile */
   mobileApp?: boolean;
   mobileAppLink: MobileApps;
-  /** @title Políticas */
+  /** @title Selos de confiança */
   badges: BadgeIcon[];
   delivery: ImageWidget[];
 }
@@ -94,7 +95,6 @@ function Footer({
   links = [],
   socialTitle = "",
   social = [],
-
   paymentMethods = [],
   copyright,
   mobileApp = true,
@@ -167,12 +167,24 @@ function Footer({
             </li>
           ))}
         </ul>
+        <ul class="flex flex-wrap gap-2">
+          {delivery.map((item) => (
+            <li class="h-[25px] w-[50px] border border-base-100 rounded flex justify-center items-center">
+              <Image
+                src={item}
+                alt="metodo de entrega"
+                width={50}
+                height={25}
+                loading="lazy"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
 
       <hr class="w-full text-base-400" />
 
       <div class="grid grid-flow-row sm:grid-flow-col gap-8">
-
         <div class="flex flex-nowrap items-center justify-between sm:justify-center gap-4">
           <div>
             <img
@@ -203,6 +215,21 @@ function Footer({
                 src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ca8bbc9d-72b0-44ae-8d63-d6ee5a9c2b70"
               />
             </a>
+          </div>
+        )}
+        {badges && (
+          <div class="flex  items-center justify-center gap-4">
+            {badges.map((badge) => (
+              <a key={badge.title} href={badge.href}>
+                <Image
+                  alt={badge.title}
+                  width={72}
+                  height={22}
+                  loading="lazy"
+                  src={badge.image}
+                />
+              </a>
+            ))}
           </div>
         )}
       </div>
