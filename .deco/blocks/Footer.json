@@ -114,7 +114,40 @@
           "href": "/rastreio"
         }
       ],
-      "links": []
+      "links": [
+        {
+          "title": "Transformação",
+          "href": "/transformacao"
+        },
+        {
+          "title": "Tratamento Capilar",
+          "href": "/tratamento-capilar"
+        },
+        {
+          "title": "Acessórios",
+          "href": "/acessorios"
+        },
+        {
+          "title": "Para Salões",
+          "href": "/para-saloes"
+        },
+        {
+          "title": "Por Tipo de Cabelo",
+          "href": "/por-tipo-de-cabelo"
+        },
+        {
+          "title": "Promoção do Mês",
+          "href": "/promocao-do-mes"
+        },
+        {
+          "title": "Kits Promocionais",
+          "href": "/kits-promocionais"
+        },
+        {
+          "title": "Rastreio",
+          "href": "/rastreio"
+        }
+      ]
     },
     {
       "title": "Entre em contato",
@@ -133,7 +166,16 @@
           "href": "#"
         }
       ],
-      "links": []
+      "links": [
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/2e1a0cdc-aa28-46f9-b3a9-ebccb1a93d09",
+          "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
+          "title": "5511942967682"
+        },
+        {
+          "title": "(11) 94296-7682"
+        }
+      ]
     }
   ],
   "social": [

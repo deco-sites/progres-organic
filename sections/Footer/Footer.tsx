@@ -11,7 +11,7 @@ interface Item {
   /** @title Texto do Link */
   title: string;
   /** @tile Url do Link */
-  href: string;
+  href?: string;
 }
 
 /** @titleBy title */
