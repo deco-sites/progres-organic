@@ -173,7 +173,19 @@
           "title": "5511942967682"
         },
         {
-          "title": "(11) 94296-7682"
+          "title": "(11) 94296-7682",
+          "href": "tel:+5511942967682",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/de278aca-2f47-4bd4-9556-785cc3af1558"
+        },
+        {
+          "title": "contato@progressivaorganica.com.br",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/82c4b7da-01aa-42f1-aa87-c227b59372d2",
+          "href": "mailto:contato@progressivaorganica.com.br"
+        },
+        {
+          "title": "AV. Gaudino, Paraguaçu Paulista-SP",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/bb03b559-85ad-40ed-8d80-9076eeb2adab",
+          "href": "https://maps.app.goo.gl/U7DyJ5KzXcGNR5Nm8"
         }
       ]
     }
