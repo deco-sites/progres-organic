@@ -18,6 +18,38 @@
   "mainColors": {
     "primary": "#06503C",
     "secondary": "#5A421B",
-    "base-100": "#fff"
+    "base-100": "#fff",
+    "tertiary": "#000000"
+  },
+  "font": {
+    "__resolveType": "website/loaders/fonts/googleFonts.ts",
+    "fonts": [
+      {
+        "variations": [
+          {
+            "weight": "700"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "300"
+          },
+          {
+            "weight": "100"
+          }
+        ],
+        "family": "Montserrat"
+      }
+    ]
+  },
+  "complementaryColors": {
+    "base-200": "#ffffff"
   }
 }
