@@ -27,7 +27,7 @@ interface Social {
   /** @title Link para Rede Social */
   href?: string;
   /** @title Icone (logo)
-   * @description Tamanho (largura: 26px, altura: 26px)
+   * @description Tamanho (largura: 18px, altura: 18px)
    */
   image: ImageWidget;
 }
@@ -38,7 +38,7 @@ interface PaymentIcon {
    * @title Título
    * @description ex: Visa */
   title: string;
-  /** 
+  /**
    * @title Icone (logo)
    * @description Tamanho (largura: 31px, altura: 19px)
    */
@@ -77,7 +77,7 @@ interface Props {
   /** @title Título para redes sociais */
   socialTitle: string;
   /** @title Nome das redes sociais */
-  social?: Social[];
+  social: Social[];
   /** @title Formas de Pagamento */
   paymentMethods?: PaymentIcon[];
   copyright: string;
@@ -85,8 +85,10 @@ interface Props {
   mobileApp?: boolean;
   mobileAppLink: MobileApps;
   /** @title Selos de confiança */
-  badges: BadgeIcon[];
-  delivery: ImageWidget[];
+  badges?: BadgeIcon[];
+  /** @title Meios de Envio */
+
+  delivery?: ImageWidget[];
 }
 
 function Footer({
@@ -104,16 +106,16 @@ function Footer({
 }: Props) {
   return (
     <footer class="w-screen  sm:mt-10 bg-primary text-base-200">
-      <div class="container flex justify-between pt-[38px] gap-6">
+      <div class="container flex justify-between pt-[38px] gap-6 lg:max-w-[1400px] px-5">
         <div class="w-[255px]">
           <h2 class="text-[15px] font-bold w-[168px] pb-5">{siteName}</h2>
           <p class="text-[11px] ">{description} </p>
         </div>
-        <ul class="flex justify-between md:w-full">
+        <ul class="flex justify-between grow ">
           {links.map(({ title, links }) => (
-            <li class="flex flex-col gap-4">
-              <p class="text-base font-semibold">{title}</p>
-              <ul class="flex flex-col gap-2">
+            <li class="flex flex-col ">
+              <p class="text-[15px] font-semibold pb-5">{title}</p>
+              <ul class="flex flex-col gap-5">
                 {links.map(({ title, href, image }) => (
                   <li>
                     <a class="text-[11px] flex gap-1" href={href}>
@@ -134,89 +136,90 @@ function Footer({
             </li>
           ))}
         </ul>
-        <div>
-          <p class="text-base font-semibold">{socialTitle}</p>
+        <div class="w-[185px]">
+          <p class="text-[15px] font-semibold pb-5">{socialTitle}</p>
           <ul class="flex gap-4 text-base-200">
             {social.map(({ image, href, alt }) => (
-              <li class="text-base-200">
-                <a href={href}>
+              <li class="text-base-200 w-6 h-6 border border-base-200 rounded flex items-center justify-center">
+                <a href={href} target="blank" class="">
                   <Image
+                    class="w-[18px] h-[18px]"
                     src={image}
                     alt={alt}
                     loading="lazy"
-                    width={24}
-                    height={24}
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
             ))}
           </ul>
+
+          {mobileApp && (
+            <div class="flex flex-nowrap  gap-6 pt-7">
+              <a href={mobileAppLink.apple}>
+                <Image
+                  alt="apple"
+                  width={72}
+                  height={22}
+                  loading="lazy"
+                  src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5c0dade1-22e2-468c-bbc9-6c1545e3ed8a"
+                />
+              </a>
+              <a href={mobileAppLink.android}>
+                <Image
+                  alt="android"
+                  width={72}
+                  height={22}
+                  loading="lazy"
+                  src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ca8bbc9d-72b0-44ae-8d63-d6ee5a9c2b70"
+                />
+              </a>
+            </div>
+          )}
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
-        <ul class="flex flex-wrap gap-2">
-          {paymentMethods.map(({ image, title }) => (
-            <li class="h-8 w-10 border border-base-100 rounded flex justify-center items-center">
-              <Image
-                src={image}
-                alt={title}
-                width={31}
-                height={19}
-                loading="lazy"
-              />
-            </li>
-          ))}
-        </ul>
-        <ul class="flex flex-wrap gap-2">
-          {delivery.map((item) => (
-            <li class="h-[25px] w-[50px] border border-base-100 rounded flex justify-center items-center">
-              <Image
-                src={item}
-                alt="metodo de entrega"
-                width={50}
-                height={25}
-                loading="lazy"
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <hr class="w-full text-base-400" />
-
-      <div class="grid grid-flow-row sm:grid-flow-col gap-8">
-        <div class="flex flex-nowrap items-center justify-between sm:justify-center gap-4">
-          <div>
-            <img
-              loading="lazy"
-              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
-            />
-          </div>
-          <span class="text-xs font-normal text-base-400">{copyright}</span>
+      <div class="flex  container lg:max-w-[1400px] px-5 mt-10 justify-between">
+        <div class="flex flex-col  gap-6 items-center sm:items-start">
+          {paymentMethods && (
+            <div class="flex flex-wrap">
+              <p class="text-[15px] font-semibold w-[279px]">
+                Meios de pagamento
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                {paymentMethods.map(({ image, title }) => (
+                  <li class="w-[31px] h-[19px] bg-base-200">
+                    <Image
+                      src={image}
+                      alt={title}
+                      width={31}
+                      height={19}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {delivery && (
+            <div class="flex flex-wrap">
+              <p class="text-[15px] font-semibold w-[279px]">Meios de envio</p>
+              <ul class="flex flex-wrap gap-2">
+                {delivery.map((item) => (
+                  <li class="h-[25px] w-[50px] border border-base-100 rounded flex justify-center items-center">
+                    <Image
+                      src={item}
+                      alt="metodo de entrega"
+                      width={50}
+                      height={25}
+                      loading="lazy"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-
-        {mobileApp && (
-          <div class="flex flex-nowrap items-center justify-center gap-4">
-            <a href={mobileAppLink.apple}>
-              <Image
-                alt="apple"
-                width={72}
-                height={22}
-                loading="lazy"
-                src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5c0dade1-22e2-468c-bbc9-6c1545e3ed8a"
-              />
-            </a>
-            <a href={mobileAppLink.android}>
-              <Image
-                alt="android"
-                width={72}
-                height={22}
-                loading="lazy"
-                src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ca8bbc9d-72b0-44ae-8d63-d6ee5a9c2b70"
-              />
-            </a>
-          </div>
-        )}
         {badges && (
           <div class="flex  items-center justify-center gap-4">
             {badges.map((badge) => (
@@ -232,6 +235,20 @@ function Footer({
             ))}
           </div>
         )}
+      </div>
+
+      <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between">
+        <span class="text-[9px] font-normal text-base-400">{copyright}</span>
+        <a href="https://tec3commerce.com.br/" target="blank">
+          <p class="text-[10px]">desenvolvido por: </p>
+          <Image
+            loading="lazy"
+            alt="desenvolvido por tec3"
+            width={60}
+            height={20}
+            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
+          />
+        </a>
       </div>
     </footer>
   );
