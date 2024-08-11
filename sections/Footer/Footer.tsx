@@ -237,7 +237,7 @@ function Footer({
         )}
       </div>
 
-      <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between">
+      <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between px-5">
         <span class="text-[9px] font-normal text-base-400">{copyright}</span>
         <a href="https://tec3commerce.com.br/" target="blank">
           <p class="text-[10px]">desenvolvido por: </p>
