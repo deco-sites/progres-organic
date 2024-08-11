@@ -56,6 +56,10 @@
           "href": "/trocas-e-devolucoes"
         },
         {
+          "title": "Pagamento",
+          "href": "/pagamento"
+        },
+        {
           "title": " Política de Reembolso",
           "href": "/politica-de-reembolso"
         },
