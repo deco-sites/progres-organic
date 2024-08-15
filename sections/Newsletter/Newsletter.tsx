@@ -79,7 +79,7 @@ function Newsletter({
     description:
       "Something went wrong. Please try again. If the problem persists, please contact us.",
   },
-  label = "Sign up",
+  label = "Enviar",
   placeholder = "Enter your email address",
   status,
 }: SectionProps<typeof loader, typeof action>) {
@@ -112,17 +112,20 @@ function Newsletter({
           class="flex flex-col sm:flex-row gap-4 w-full"
         >
           <input
+            name="name"
+            class="input input-bordered flex-grow"
+            type="text"
+            placeholder={placeholder}
+          />
+          <input
             name="email"
             class="input input-bordered flex-grow"
             type="text"
             placeholder={placeholder}
           />
 
-          <button
-            class="btn btn-primary"
-            type="submit"
-          >
-            <span class="[.htmx-request_&]:hidden inline">
+          <button class="btn btn-primary" type="submit">
+            <span class="[.htmx-request_&]:hidden inline uppercase">
               {label}
             </span>
             <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />

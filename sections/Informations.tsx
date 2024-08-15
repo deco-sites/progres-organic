@@ -5,6 +5,9 @@ interface Props {
   * @title Título
   */
   title: string;
+  /** 
+   * @title Texto
+   * @description Escrever e estilizar o texto na caixa abaixo. Apenas a cor do texto que é a do padrão do site */
   text: HTMLWidget;
 }
 
