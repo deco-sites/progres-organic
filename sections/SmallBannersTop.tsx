@@ -5,6 +5,7 @@ import { clx } from "../sdk/clx.ts";
 import { useId } from "../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useSendEvent } from "../sdk/useSendEvent.ts";
+import { itemToAnalyticsItem } from "apps/linx/hooks/useCart.ts";
 
 /**
  * @titleBy alt
@@ -58,7 +59,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         src={desktop}
         width={364}
         height={417}
-        class="object-cover w-11/12 h-11/12 md:w-full md:h-full mx-auto"
+        class="object-cover w-11/12 h-11/12 md:w-[364px] md:h-[417px] mx-auto"
         alt={alt}
       />
     </a>
@@ -69,7 +70,9 @@ function Carousel({ images = [], interval }: Props) {
   const id = useId();
 
   return (
-      <div id={id} class="w-screen mx-auto ">
+    <>
+      {/* dispositivos mobile */}
+      <div id={id} class="w-screen mx-auto md:hidden ">
         <div class="">
           <Slider class="carousel carousel-center w-full ">
             {images.map((image, index) => (
@@ -96,6 +99,14 @@ function Carousel({ images = [], interval }: Props) {
 
         <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
       </div>
+
+      {/* desktop */}
+      <div class="hidden md:flex md:max-w-[1140px] md:mx-auto md:justify-between md:visible ">
+        {images.map((item) => (
+          <BannerItem image={item} />
+        ))}
+      </div>
+    </>
   );
 }
 

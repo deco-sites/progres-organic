@@ -28,7 +28,7 @@ interface Props {
 
 export default function TopBar({ content }: Props) {
   return (
-    <div class="w-screen h-auto bg-secondary bg-opacity-20 md:bg-base-200 flex md:max-w-[1075px] mx-auto md:justify-between md:mt-9 mt-5 mb-[55px] items-center py-auto overflow-x-auto ">
+    <div class="w-screen h-auto bg-secondary bg-opacity-20 md:bg-base-200 flex md:max-w-[1075px] mx-auto md:justify-between md:mt-9 mt-5 mb-[55px] items-center py-auto overflow-x-auto md:overflow-x-hidden">
       {content.map((item) => (
         <a
           href={item.href}
