@@ -28,13 +28,16 @@ interface Props {
 
 export default function TopBar({ content }: Props) {
   return (
-    <div class="hidden md:flex md:max-w-[1075px] md:mx-auto md:justify-between md:visible md:pt-9 md:mb-[55px]">
+    <div class="w-screen h-auto bg-secondary bg-opacity-20 md:bg-base-200 flex md:max-w-[1075px] mx-auto md:justify-between md:mt-9 mt-5 mb-[55px] items-center py-auto overflow-x-auto ">
       {content.map((item) => (
-        <a href={item.href} class="flex items-center">
-          <div class="flex items-center justify-center  w-[50px] h-[50px] ">
+        <a
+          href={item.href}
+          class="flex items-center mr-7 md:mr-0 ml-6 h-[70px]"
+        >
+          <div class="flex items-center justify-center w-[50px] h-[50px] ">
             {item.image && (
               <Image
-                class="object-cover"
+                class="object-fit w-[50px] h-[50px]"
                 src={item.image}
                 alt={item.title}
                 width={50}
@@ -42,7 +45,7 @@ export default function TopBar({ content }: Props) {
               />
             )}
           </div>
-          <div class="ml-6 text-base text-secondary">
+          <div class="ml-6 text-base text-secondary w-[200px]">
             <p>{item.title}</p>
             <p>{item.subtitle}</p>
           </div>

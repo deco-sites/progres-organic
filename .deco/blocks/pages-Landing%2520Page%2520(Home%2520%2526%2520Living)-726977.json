@@ -20,6 +20,34 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "site/sections/SmallBannersTop.tsx",
+        "images": [
+          {
+            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
+            "alt": "teste",
+            "href": "/"
+          },
+          {
+            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
+            "alt": "teste",
+            "href": "/"
+          },
+          {
+            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
+            "alt": "teste",
+            "href": "/"
+          },
+          {
+            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
+            "alt": "teste",
+            "href": "/"
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
           "__resolveType": "shopify/loaders/ProductListingPage.ts",

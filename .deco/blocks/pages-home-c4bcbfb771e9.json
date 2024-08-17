@@ -1,244 +1,468 @@
 {
   "name": "Home Page",
-  "sections": [
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Images/Carousel.tsx",
-      "images": [
-        {
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b5082e6f-9284-4204-8fb9-8471c298f40d",
-          "alt": "Progressiva organica",
-          "action": {
-            "href": "/",
-            "title": "Hair",
-            "subTitle": "Progressiva",
-            "label": "Organica"
-          },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae",
-          "href": "/"
-        },
-        {
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/48049567-a2df-4227-ba0d-cfafef523bce",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/32a9276c-4f49-4f10-a3e5-737554904ef2",
-          "alt": "Liso dos sonhos",
-          "action": {
-            "href": "/",
-            "title": "Liso dos sonhos",
-            "subTitle": "Promocao",
-            "label": "Clique aqui"
-          },
-          "href": "/"
-        }
-      ],
-      "preload": true
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/HeroBar.tsx",
-        "content": [
+  "sections": {
+    "__resolveType": "website/flags/multivariate.ts",
+    "variants": [
+      {
+        "value": [
           {
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
-            "title": "Frete Grátis",
-            "subtitle": "Á partir de R$149,00"
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Header"
+            }
           },
           {
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
-            "title": "6x Sem Juros",
-            "subtitle": "Parcelamento"
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/SmallBannersTop.tsx",
+              "preload": true,
+              "images": [
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081",
+                  "alt": "Tratamentos",
+                  "href": "/tratamentos"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5d409902-8c88-4a85-a474-c394a02dce6e",
+                  "alt": "Para Salões",
+                  "href": "/para-saloes"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
+                  "alt": "Home Care",
+                  "href": "/home-care"
+                }
+              ]
+            }
           },
           {
-            "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
-            "title": "Atendimento",
-            "subtitle": "via Whatsapp",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/HeroBar.tsx",
+              "content": [
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
+                  "title": "Frete Grátis",
+                  "subtitle": "Á partir de R$149,00"
+                },
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
+                  "title": "6x Sem Juros",
+                  "subtitle": "Parcelamento"
+                },
+                {
+                  "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
+                  "title": "Atendimento",
+                  "subtitle": "via Whatsapp",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
+                },
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
+                  "title": "Site 100%",
+                  "subtitle": "Seguro"
+                }
+              ]
+            }
           },
           {
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
-            "title": "Site 100%",
-            "subtitle": "Seguro"
-          }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/SmallBannersTop.tsx",
-        "preload": true,
-        "images": [
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081",
-            "alt": "Tratamentos",
-            "href": "/tratamentos"
-          },
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5d409902-8c88-4a85-a474-c394a02dce6e",
-            "alt": "Para Salões",
-            "href": "/para-saloes"
-          },
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
-            "alt": "Home Care",
-            "href": "/home-care"
-          }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "Featured Products",
-        "cta": "/mono",
-        "products": {
-          "__resolveType": "Product List Loader"
-        }
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Category/CategoryGrid.tsx",
-        "title": "Departments",
-        "cta": "/all",
-        "items": [
-          {
-            "label": "Men",
-            "href": "/men",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/38c33c9f-14a1-4048-973b-dc2a75caf1fa"
-          },
-          {
-            "href": "/women",
-            "label": "Women",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/f6bea2b8-b248-4b42-9246-6e924a0acc8b"
-          },
-          {
-            "href": "/kids",
-            "label": "Kids",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/1b0ecaa2-9a13-4de2-bf17-5196948ed128"
-          },
-          {
-            "href": "/accessories",
-            "label": "Accessories",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/92129655-fe40-4b29-8fdb-e7f71e67a5d1"
-          },
-          {
-            "href": "/home-and-living",
-            "label": "Home & Living",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
-          }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Images/Banner.tsx",
-        "title": "Register and Save Big!",
-        "cta": {
-          "label": "Sign Up",
-          "href": "#"
-        },
-        "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Sign up now to get up to 50% off on your first order. Limited time offer!</span></p>",
-        "images": {
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/cf96d47f-564f-40da-ad94-7acac5f39327",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/4d5c3212-3f75-4d50-89f3-970815748b43"
-        }
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
-        "title": "Hottest Deals",
-        "tabs": [
-          {
-            "products": {
-              "__resolveType": "shopify/loaders/ProductList.ts",
-              "props": {
-                "sort": "",
-                "query": "hat and bag",
-                "count": 10
-              },
-              "filters": {
-                "tags": [],
-                "productTypes": [],
-                "productVendors": [],
-                "variantOptions": []
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Featured Products",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "Product List Loader"
               }
-            },
-            "title": "Accessories"
+            }
           },
           {
-            "products": {
-              "__resolveType": "shopify/loaders/ProductList.ts",
-              "props": {
-                "sort": "",
-                "query": "Shirts",
-                "count": 10
-              },
-              "filters": {
-                "tags": [],
-                "productTypes": [],
-                "productVendors": [],
-                "variantOptions": []
-              }
-            },
-            "title": "Fashion"
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+              "title": "Departments",
+              "cta": "/all",
+              "items": [
+                {
+                  "label": "Men",
+                  "href": "/men",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/38c33c9f-14a1-4048-973b-dc2a75caf1fa"
+                },
+                {
+                  "href": "/women",
+                  "label": "Women",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/f6bea2b8-b248-4b42-9246-6e924a0acc8b"
+                },
+                {
+                  "href": "/kids",
+                  "label": "Kids",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/1b0ecaa2-9a13-4de2-bf17-5196948ed128"
+                },
+                {
+                  "href": "/accessories",
+                  "label": "Accessories",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/92129655-fe40-4b29-8fdb-e7f71e67a5d1"
+                },
+                {
+                  "href": "/home-and-living",
+                  "label": "Home & Living",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
+                }
+              ]
+            }
           },
           {
-            "products": {
-              "__resolveType": "shopify/loaders/ProductList.ts",
-              "props": {
-                "sort": "",
-                "query": "stickers",
-                "count": 10
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Images/Banner.tsx",
+              "title": "Register and Save Big!",
+              "cta": {
+                "label": "Sign Up",
+                "href": "#"
               },
-              "filters": {
-                "tags": [],
-                "productTypes": [],
-                "productVendors": [],
-                "variantOptions": []
+              "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Sign up now to get up to 50% off on your first order. Limited time offer!</span></p>",
+              "images": {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/cf96d47f-564f-40da-ad94-7acac5f39327",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/4d5c3212-3f75-4d50-89f3-970815748b43"
               }
-            },
-            "title": "Stickers"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
+              "title": "Hottest Deals",
+              "tabs": [
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "hat and bag",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Accessories"
+                },
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "Shirts",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Fashion"
+                },
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "stickers",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Stickers"
+                }
+              ]
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+              "label": "Sign up",
+              "placeholder": "E-mail",
+              "empty": {
+                "title": "Get top deals, latest trends, and more.",
+                "description": "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here."
+              },
+              "success": {
+                "title": "Thank you for subscribing!",
+                "description": "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!"
+              },
+              "failed": {
+                "title": "Oops!. Something went wrong!",
+                "description": "Something went wrong. Please try again. If the problem persists, please contact us."
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Footer"
+            }
           }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
-        "label": "Sign up",
-        "placeholder": "E-mail",
-        "empty": {
-          "title": "Get top deals, latest trends, and more.",
-          "description": "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here."
-        },
-        "success": {
-          "title": "Thank you for subscribing!",
-          "description": "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!"
-        },
-        "failed": {
-          "title": "Oops!. Something went wrong!",
-          "description": "Something went wrong. Please try again. If the problem persists, please contact us."
+        ],
+        "rule": {
+          "__resolveType": "Mobile"
+        }
+      },
+      {
+        "value": [
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Header"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Images/Carousel.tsx",
+            "images": [
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b5082e6f-9284-4204-8fb9-8471c298f40d",
+                "alt": "Progressiva organica",
+                "action": {
+                  "href": "/",
+                  "title": "Hair",
+                  "subTitle": "Progressiva",
+                  "label": "Organica"
+                },
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae",
+                "href": "/"
+              },
+              {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/48049567-a2df-4227-ba0d-cfafef523bce",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/32a9276c-4f49-4f10-a3e5-737554904ef2",
+                "alt": "Liso dos sonhos",
+                "action": {
+                  "href": "/",
+                  "title": "Liso dos sonhos",
+                  "subTitle": "Promocao",
+                  "label": "Clique aqui"
+                },
+                "href": "/"
+              }
+            ],
+            "preload": true
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/HeroBar.tsx",
+              "content": [
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
+                  "title": "Frete Grátis",
+                  "subtitle": "Á partir de R$149,00"
+                },
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
+                  "title": "6x Sem Juros",
+                  "subtitle": "Parcelamento"
+                },
+                {
+                  "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
+                  "title": "Atendimento",
+                  "subtitle": "via Whatsapp",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
+                },
+                {
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
+                  "title": "Site 100%",
+                  "subtitle": "Seguro"
+                }
+              ]
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/SmallBannersTop.tsx",
+              "preload": true,
+              "images": [
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081",
+                  "alt": "Tratamentos",
+                  "href": "/tratamentos"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5d409902-8c88-4a85-a474-c394a02dce6e",
+                  "alt": "Para Salões",
+                  "href": "/para-saloes"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
+                  "alt": "Home Care",
+                  "href": "/home-care"
+                }
+              ]
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Featured Products",
+              "cta": "/mono",
+              "products": {
+                "__resolveType": "Product List Loader"
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+              "title": "Departments",
+              "cta": "/all",
+              "items": [
+                {
+                  "label": "Men",
+                  "href": "/men",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/38c33c9f-14a1-4048-973b-dc2a75caf1fa"
+                },
+                {
+                  "href": "/women",
+                  "label": "Women",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/f6bea2b8-b248-4b42-9246-6e924a0acc8b"
+                },
+                {
+                  "href": "/kids",
+                  "label": "Kids",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/1b0ecaa2-9a13-4de2-bf17-5196948ed128"
+                },
+                {
+                  "href": "/accessories",
+                  "label": "Accessories",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/92129655-fe40-4b29-8fdb-e7f71e67a5d1"
+                },
+                {
+                  "href": "/home-and-living",
+                  "label": "Home & Living",
+                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
+                }
+              ]
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Images/Banner.tsx",
+              "title": "Register and Save Big!",
+              "cta": {
+                "label": "Sign Up",
+                "href": "#"
+              },
+              "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Sign up now to get up to 50% off on your first order. Limited time offer!</span></p>",
+              "images": {
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/cf96d47f-564f-40da-ad94-7acac5f39327",
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/4d5c3212-3f75-4d50-89f3-970815748b43"
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
+              "title": "Hottest Deals",
+              "tabs": [
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "hat and bag",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Accessories"
+                },
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "Shirts",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Fashion"
+                },
+                {
+                  "products": {
+                    "__resolveType": "shopify/loaders/ProductList.ts",
+                    "props": {
+                      "sort": "",
+                      "query": "stickers",
+                      "count": 10
+                    },
+                    "filters": {
+                      "tags": [],
+                      "productTypes": [],
+                      "productVendors": [],
+                      "variantOptions": []
+                    }
+                  },
+                  "title": "Stickers"
+                }
+              ]
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+              "label": "Sign up",
+              "placeholder": "E-mail",
+              "empty": {
+                "title": "Get top deals, latest trends, and more.",
+                "description": "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here."
+              },
+              "success": {
+                "title": "Thank you for subscribing!",
+                "description": "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!"
+              },
+              "failed": {
+                "title": "Oops!. Something went wrong!",
+                "description": "Something went wrong. Please try again. If the problem persists, please contact us."
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Footer"
+            }
+          }
+        ],
+        "rule": {
+          "__resolveType": "website/matchers/always.ts"
         }
       }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Footer"
-      }
-    }
-  ],
+    ]
+  },
   "__resolveType": "website/pages/Page.tsx",
   "path": "/",
   "seo": {
