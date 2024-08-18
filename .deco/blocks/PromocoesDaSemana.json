@@ -1,0 +1,20 @@
+{
+  "__resolveType": "site/sections/Product/ProductShelf.tsx",
+  "products": {
+    "__resolveType": "shopify/loaders/ProductList.ts",
+    "props": {
+      "sort": "",
+      "count": 6,
+      "query": "Hat"
+    },
+    "filters": {
+      "tags": [],
+      "productTypes": [],
+      "productVendors": [],
+      "variantOptions": []
+    }
+  },
+  "title": "Promoções da semana",
+  "subtitle": "Os mais procurados pelos nossos clientes",
+  "cta": "/"
+}

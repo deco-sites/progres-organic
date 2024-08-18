@@ -25,7 +25,7 @@ export interface Props {
 function Banner({ images, href, alt }: Props) {
   return (
     <Section.Container>
-      <a class="relative bg-base-200 mx-5 sm:mx-0" href={href}>
+      <a class="relative bg-base-200 mx-auto" href={href}>
         <Picture>
           <Source media="(max-width: 640px)" src={images.mobile} width={342} />
           <Source
@@ -36,7 +36,7 @@ function Banner({ images, href, alt }: Props) {
           <img
             src={images.desktop}
             alt={alt}
-            class="w-full h-auto object-cover"
+            class="w-full h-auto object-cover max-w-[1143px]"
           />
         </Picture>
       </a>

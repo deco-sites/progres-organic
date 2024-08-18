@@ -67,12 +67,13 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Featured Products",
-              "cta": "/mono",
-              "products": {
-                "__resolveType": "Product List Loader"
-              }
+              "__resolveType": "ProductList"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "LongBanner"
             }
           },
           {
@@ -108,22 +109,6 @@
                   "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
                 }
               ]
-            }
-          },
-          {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Images/Banner.tsx",
-              "title": "Register and Save Big!",
-              "cta": {
-                "label": "Sign Up",
-                "href": "#"
-              },
-              "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Sign up now to get up to 50% off on your first order. Limited time offer!</span></p>",
-              "images": {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/cf96d47f-564f-40da-ad94-7acac5f39327",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/4d5c3212-3f75-4d50-89f3-970815748b43"
-              }
             }
           },
           {
@@ -183,7 +168,8 @@
                   },
                   "title": "Stickers"
                 }
-              ]
+              ],
+              "cta": "/links"
             }
           },
           {
@@ -311,65 +297,19 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Featured Products",
-              "cta": "/mono",
-              "products": {
-                "__resolveType": "Product List Loader"
-              }
+              "__resolveType": "ProductList"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Category/CategoryGrid.tsx",
-              "title": "Departments",
-              "cta": "/all",
-              "items": [
-                {
-                  "label": "Men",
-                  "href": "/men",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/38c33c9f-14a1-4048-973b-dc2a75caf1fa"
-                },
-                {
-                  "href": "/women",
-                  "label": "Women",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/f6bea2b8-b248-4b42-9246-6e924a0acc8b"
-                },
-                {
-                  "href": "/kids",
-                  "label": "Kids",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/1b0ecaa2-9a13-4de2-bf17-5196948ed128"
-                },
-                {
-                  "href": "/accessories",
-                  "label": "Accessories",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/92129655-fe40-4b29-8fdb-e7f71e67a5d1"
-                },
-                {
-                  "href": "/home-and-living",
-                  "label": "Home & Living",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
-                }
-              ]
+              "__resolveType": "PromocoesDaSemana"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Images/Banner.tsx",
-              "title": "Progressiva Organica",
-              "cta": {
-                "href": "#",
-                "label": "Lorem Ipsum"
-              },
-              "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Lorem Ipsum</span></p>",
-              "images": {
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/26baf1ed-8e8c-4abe-a6ae-a1d3a4aebbc1",
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4994cf90-905a-4497-a89a-a1e4981a1471"
-              },
-              "alt": "Banner tratamento",
-              "href": "/"
+              "__resolveType": "LongBanner"
             }
           },
           {
@@ -469,5 +409,19 @@
   "path": "/",
   "seo": {
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "products": {
+    "__resolveType": "shopify/loaders/ProductList.ts",
+    "props": {
+      "sort": "",
+      "count": 6,
+      "query": "Hat"
+    },
+    "filters": {
+      "tags": [],
+      "productTypes": [],
+      "productVendors": [],
+      "variantOptions": []
+    }
   }
 }

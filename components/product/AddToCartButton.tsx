@@ -133,17 +133,21 @@ function AddToCartButton(props: Props) {
       class="flex"
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
-        JSON.stringify({ item, platformProps }),
+        JSON.stringify({ item, platformProps })
       )}
     >
       <input type="checkbox" class="hidden peer" />
 
       <button
-        disabled
-        class={clx("flex-grow peer-checked:hidden", _class?.toString())}
+        class={clx(
+          "flex peer-checked:hidden w-[271px] h-[26px] bg-primary text-base-200 min-h-0 ",
+          _class?.toString()
+        )}
         hx-on:click={useScript(onClick)}
       >
-        Add to Cart
+        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:!text-primary">
+          Comprar
+        </span>
       </button>
 
       {/* Quantity Input */}

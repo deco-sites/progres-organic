@@ -4,26 +4,24 @@ import { clx } from "../../sdk/clx.ts";
 export interface Props {
   /** @description Section title */
   title?: string;
-
+  subtitle?: string;
   /** @description See all link */
   cta?: string;
 }
 
-function Header({ title, cta }: Props) {
+function Header({ title, subtitle, cta }: Props) {
   if (!title) {
     return null;
   }
 
   return (
-    <div
-      class={clx(
-        "flex justify-between items-center gap-2",
-        "px-5 sm:px-0",
-      )}
-    >
-      <span class="text-2xl sm:text-3xl font-semibold">{title}</span>
+    <div class={clx("flex justify-between items-center gap-2", "px-5 sm:px-0")}>
+      <div>
+        <span class="text-2xl font-semibold text-secondary uppercase pb-4">{title}</span>
+        <p class="text-secondary text-base">{ subtitle}</p>
+      </div>
       {cta && (
-        <a class="text-sm font-medium text-primary" href={cta}>
+        <a class="text-sm font-medium text-secondary" href={cta}>
           See all
         </a>
       )}
@@ -52,8 +50,8 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "container flex flex-col gap-4 sm:gap-6 w-full py-5 sm:py-10",
-        _class?.toString(),
+        "container flex flex-col gap-4 sm:gap-6 md:max-w-[1280px] py-5 sm:py-10 mx-auto px-8",
+        _class?.toString()
       )}
     />
   );

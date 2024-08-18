@@ -1,0 +1,9 @@
+{
+  "__resolveType": "site/sections/Product/ProductShelf.tsx",
+  "title": "Os Mais vendidos",
+  "cta": "/",
+  "products": {
+    "__resolveType": "Product List Loader"
+  },
+  "subtitle": "Os mais procurados pelos nossos clientes"
+}
