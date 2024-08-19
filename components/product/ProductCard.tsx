@@ -76,7 +76,7 @@ function ProductCard({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-xl p-3 h-auto w-[296px]",
+        "card card-compact group text-sm hover:shadow-lg p-3 h-auto w-[296px]",
         _class
       )}
     >
@@ -84,7 +84,7 @@ function ProductCard({
         class={clx(
           "relative bg-base-200",
           "rounded border border-transparent",
-          "group-hover:border-primary "
+          
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -148,7 +148,7 @@ function ProductCard({
           {/* Discounts */}
           <span
             class={clx(
-              "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
+              "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge px-2 py-1",
               (percent < 1 || !inStock) && "opacity-0"
             )}
           >

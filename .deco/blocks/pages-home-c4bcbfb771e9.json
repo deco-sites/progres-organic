@@ -73,42 +73,13 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "LongBanner"
+              "__resolveType": "PromocoesDaSemana"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Category/CategoryGrid.tsx",
-              "title": "Departments",
-              "cta": "/all",
-              "items": [
-                {
-                  "label": "Men",
-                  "href": "/men",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/38c33c9f-14a1-4048-973b-dc2a75caf1fa"
-                },
-                {
-                  "href": "/women",
-                  "label": "Women",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/f6bea2b8-b248-4b42-9246-6e924a0acc8b"
-                },
-                {
-                  "href": "/kids",
-                  "label": "Kids",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/1b0ecaa2-9a13-4de2-bf17-5196948ed128"
-                },
-                {
-                  "href": "/accessories",
-                  "label": "Accessories",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/92129655-fe40-4b29-8fdb-e7f71e67a5d1"
-                },
-                {
-                  "href": "/home-and-living",
-                  "label": "Home & Living",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d0433c00-cd26-4638-b519-0cb64b9f82e8"
-                }
-              ]
+              "__resolveType": "LongBanner"
             }
           },
           {
@@ -170,6 +141,30 @@
                 }
               ],
               "cta": "/links"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/SmallBannersTop.tsx",
+              "preload": true,
+              "images": [
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081",
+                  "alt": "Tratamentos",
+                  "href": "/tratamentos"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5d409902-8c88-4a85-a474-c394a02dce6e",
+                  "alt": "Para Salões",
+                  "href": "/para-saloes"
+                },
+                {
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
+                  "alt": "Home Care",
+                  "href": "/home-care"
+                }
+              ]
             }
           },
           {
