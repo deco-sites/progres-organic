@@ -315,18 +315,12 @@
               "tabs": [
                 {
                   "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "hat and bag",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
+                    "__resolveType": "vnda/loaders/productList.ts",
+                    "sort": "newest",
+                    "tags": [],
+                    "typeTags": [],
+                    "ids": [],
+                    "count": 10
                   },
                   "title": "Accessories"
                 },
@@ -391,6 +385,12 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "Footer"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "Category Banner - 01"
             }
           }
         ],

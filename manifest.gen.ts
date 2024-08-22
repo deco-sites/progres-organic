@@ -7,7 +7,8 @@ import * as $$$$$$$$$1 from "./actions/wishlist/submit.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/analytics.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/shopify.ts";
-import * as $$$$$$$$$$$3 from "./apps/site.ts";
+import * as $$$$$$$$$$$3 from "./apps/deco/vnda.ts";
+import * as $$$$$$$$$$$4 from "./apps/site.ts";
 import * as $$$0 from "./loaders/availableIcons.ts";
 import * as $$$1 from "./loaders/icons.ts";
 import * as $$$2 from "./loaders/minicart.ts";
@@ -43,6 +44,7 @@ import * as $$$$$$26 from "./sections/Session.tsx";
 import * as $$$$$$27 from "./sections/SmallBannersTop.tsx";
 import * as $$$$$$28 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$29 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$31 from "./sections/teste001.tsx";
 import * as $$$$$$30 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -84,6 +86,7 @@ const manifest = {
     "site/sections/SmallBannersTop.tsx": $$$$$$27,
     "site/sections/Social/InstagramPosts.tsx": $$$$$$28,
     "site/sections/Social/WhatsApp.tsx": $$$$$$29,
+    "site/sections/teste001.tsx": $$$$$$31,
     "site/sections/Theme/Theme.tsx": $$$$$$30,
   },
   "actions": {
@@ -94,7 +97,8 @@ const manifest = {
     "site/apps/deco/analytics.ts": $$$$$$$$$$$0,
     "site/apps/deco/htmx.ts": $$$$$$$$$$$1,
     "site/apps/deco/shopify.ts": $$$$$$$$$$$2,
-    "site/apps/site.ts": $$$$$$$$$$$3,
+    "site/apps/deco/vnda.ts": $$$$$$$$$$$3,
+    "site/apps/site.ts": $$$$$$$$$$$4,
   },
   "name": "site",
   "baseUrl": import.meta.url,

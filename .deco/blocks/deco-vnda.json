@@ -1,0 +1,13 @@
+{
+  "__resolveType": "site/apps/deco/vnda.ts",
+  "account": "progressivaorganica",
+  "publicUrl": "www.progressivaorganica.com.br",
+  "authToken": {
+    "__resolveType": "website/loaders/secret.ts",
+    "encrypted": "e654bbc1d3a4ea0fd96d8bf23d3b6d557bb054648298f2defb84c75f614f0074",
+    "name": "ProgressivaDeco"
+  },
+  "platform": "vnda",
+  "sandbox": false,
+  "searchPagePath": "/s"
+}

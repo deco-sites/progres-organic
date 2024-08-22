@@ -20,27 +20,16 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/SmallBannersTop.tsx",
-        "images": [
+        "__resolveType": "site/sections/Category/CategoryBanner.tsx",
+        "banners": [
           {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
-            "alt": "teste",
-            "href": "/"
-          },
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
-            "alt": "teste",
-            "href": "/"
-          },
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
-            "alt": "teste",
-            "href": "/"
-          },
-          {
-            "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/423a42a7-576e-4408-ae0e-05039711be55",
-            "alt": "teste",
-            "href": "/"
+            "image": {
+              "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+              "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af"
+            },
+            "matcher": "/feminino/*",
+            "title": "Woman",
+            "subtitle": "As"
           }
         ]
       }
@@ -76,6 +65,12 @@
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "Footer"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Preview /sections/teste001.tsx"
       }
     }
   ],

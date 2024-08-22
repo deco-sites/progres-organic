@@ -3,6 +3,7 @@ import { MINICART_DRAWER_ID } from "../../constants.ts";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 
+
 const onLoad = (id: string) =>
   window.STOREFRONT.CART.subscribe((sdk) => {
     const counter = document.getElementById(id);
@@ -28,7 +29,7 @@ function Bag() {
   return (
     <>
       <label
-        class="indicator"
+        class="indicator text-secondary"
         for={MINICART_DRAWER_ID}
         aria-label="open cart"
       >
@@ -37,7 +38,7 @@ function Bag() {
           class="hidden indicator-item badge badge-primary badge-sm font-thin"
         />
 
-        <span class="btn btn-square btn-sm btn-ghost no-animation">
+        <span class="btn btn-square btn-sm btn-outline no-animation hover:bg-accent text-secondary border border-secondary hover:border-secondary hover:text-secondary">
           <Icon id="shopping_bag" />
         </span>
       </label>

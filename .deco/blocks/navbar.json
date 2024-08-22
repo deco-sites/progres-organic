@@ -21,7 +21,17 @@
       "@type": "SiteNavigationElement",
       "url": "/valentines-day",
       "name": "Valentine's Day",
-      "children": []
+      "children": [
+        {
+          "image": [
+            {
+              "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/26baf1ed-8e8c-4abe-a6ae-a1d3a4aebbc1",
+              "embedUrl": "/"
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "@type": "SiteNavigationElement",
