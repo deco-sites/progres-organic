@@ -57,7 +57,7 @@ export interface SectionProps {
 
 type Props = Omit<SectionProps, "alert">;
 
-const Desktop = ({ navItems, logo, searchbar, loading }: Props) => (
+const Desktop = ({ navItems, logo, searchbar, loading = "eager" }: Props) => (
   <>
     <Modal id={SEARCHBAR_POPUP_ID}>
       <div
@@ -199,8 +199,7 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
 function Header({
   alerts = [],
   logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+    src: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
     width: 100,
     height: 16,
     alt: "Logo",
@@ -212,16 +211,17 @@ function Header({
   return (
     <header
       style={{
-        height: device === "desktop"
-          ? HEADER_HEIGHT_DESKTOP
-          : HEADER_HEIGHT_MOBILE,
+        height:
+          device === "desktop" ? HEADER_HEIGHT_DESKTOP : HEADER_HEIGHT_MOBILE,
       }}
     >
       <div class="bg-base-100 fixed w-full z-40">
         {alerts.length > 0 && <Alert alerts={alerts} />}
-        {device === "desktop"
-          ? <Desktop logo={logo} {...props} />
-          : <Mobile logo={logo} {...props} />}
+        {device === "desktop" ? (
+          <Desktop logo={logo} {...props} />
+        ) : (
+          <Mobile logo={logo} {...props} />
+        )}
       </div>
     </header>
   );
@@ -229,7 +229,7 @@ function Header({
 
 export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
   // deno-lint-ignore no-explicit-any
-  <Header {...props as any} loading="lazy" />
+  <Header {...(props as any)} loading="eager" />
 );
 
 export default Header;

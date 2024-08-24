@@ -72,6 +72,9 @@ function ProductCard({
   const firstVariantName = firstSkuVariations?.[0]?.toLowerCase();
   const shoeSizeVariant = "shoe size";
 
+  console.log("productCard", product);
+  
+
   return (
     <div
       {...event}
@@ -81,11 +84,7 @@ function ProductCard({
       )}
     >
       <figure
-        class={clx(
-          "relative bg-base-200",
-          "rounded border border-transparent",
-          
-        )}
+        class={clx("relative bg-base-200", "rounded border border-transparent")}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
         {/* Product Images */}
@@ -207,7 +206,7 @@ function ProductCard({
               "btn-outline justify-start border-none px-0 no-animation w-full",
               "hover:!bg-accent",
               "disabled:!bg-transparent disabled:!opacity-50",
-              "btn-primary hover:!text-primary"
+              "btn-primary hover:!text-primary "
             )}
           />
         ) : (
@@ -215,10 +214,8 @@ function ProductCard({
             href={relativeUrl}
             class={clx(
               "btn",
-              "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-              "hover:!bg-transparent",
-              "disabled:!bg-transparent disabled:!opacity-75",
-              "btn-error hover:!text-error disabled:!text-error"
+              "btn-outline justify-center  !text-sm !font-medium px-0 no-animation w-full",
+              "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
             )}
           >
             Fora de estoque
