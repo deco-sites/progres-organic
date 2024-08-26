@@ -167,6 +167,12 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
+              "__resolveType": "VideoHome"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
               "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
               "label": "Sign up",
               "placeholder": "E-mail",
@@ -373,6 +379,12 @@
                 "title": "Oops!. Something went wrong!",
                 "description": "Something went wrong. Please try again. If the problem persists, please contact us."
               }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "VideoHome"
             }
           },
           {

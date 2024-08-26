@@ -137,7 +137,7 @@ function ProductCard({
           {/* Notify Me */}
           <span
             class={clx(
-              "text-sm/4 font-normal text-black bg-error bg-opacity-15 text-center rounded-badge px-2 py-1",
+              "text-[10px] font-normal text-secondary text-center rounded-badge px-2 py-1",
               inStock && "opacity-0"
             )}
           >
@@ -174,7 +174,7 @@ function ProductCard({
       </a>
 
       {/* SKU Selector */}
-      {/* {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
+      {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto border border-primary">
           {variants.map(([value, link]) => [value, relative(link)] as const)
             .map(([value, link]) => (
@@ -191,7 +191,7 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )} */}
+      )}
 
       <div class="flex-grow pt-5" />
 
@@ -214,7 +214,7 @@ function ProductCard({
             href={relativeUrl}
             class={clx(
               "btn",
-              "btn-outline justify-center  !text-sm !font-medium px-0 no-animation w-full",
+              "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
               "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
             )}
           >

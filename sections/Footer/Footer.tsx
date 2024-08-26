@@ -86,8 +86,7 @@ interface Props {
   mobileAppLink: MobileApps;
   /** @title Selos de confiança */
   badges?: BadgeIcon[];
-  /** @title Meios de Envio */
-
+  /** @title Formas de Envio */
   delivery?: ImageWidget[];
 }
 
@@ -106,14 +105,14 @@ function Footer({
 }: Props) {
   return (
     <footer class="w-screen  sm:mt-10 bg-primary text-base-200">
-      <div class="container flex justify-between pt-[38px] gap-6 lg:max-w-[1400px] px-5">
-        <div class="w-[255px]">
+      <div class="container flex md:justify-between flex-col md:flex-row pt-[38px] gap-6 lg:max-w-[1400px] md:px-5 px-8">
+        <div class="md:w-[255px] w-full">
           <h2 class="text-[15px] font-bold w-[168px] pb-5">{siteName}</h2>
           <p class="text-[11px] ">{description} </p>
         </div>
-        <ul class="flex justify-between grow ">
+        <ul class="flex justify-between grow  flex-wrap">
           {links.map(({ title, links }) => (
-            <li class="flex flex-col ">
+            <li class="flex flex-col  mt-10 md:mt-0">
               <p class="text-[15px] font-semibold pb-5">{title}</p>
               <ul class="flex flex-col gap-5">
                 {links.map(({ title, href, image }) => (
