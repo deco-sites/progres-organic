@@ -11,13 +11,35 @@
     "<p>Get 10% off today: <strong>NEW10</strong></p>"
   ],
   "logo": {
-    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/6d49c7fe-697b-4036-a842-639aaa8769ad",
     "alt": "Deco Storefront",
     "width": 111,
-    "height": 46
+    "height": 46,
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7"
   },
   "navItems": {
     "__resolveType": "navbar"
   },
-  "loading": "eager"
+  "loading": "eager",
+  "topLinks": [
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/9a2de97f-4fc6-4ece-9628-d2364080e6cc",
+      "href": "/",
+      "text": "Acompanhe seu pedido"
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/d4045bdf-e26b-4d86-88aa-f086f411eb3b",
+      "href": "/",
+      "text": "Clube de benefícios da Orgânica"
+    },
+    {
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/3f3a2003-5a48-43d1-b246-6547eba59c9e",
+      "href": "/",
+      "text": "Central de Atendimento"
+    }
+  ],
+  "sales": {
+    "title": "Promoções Imperdíveis",
+    "href": "/",
+    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ec085ee4-214e-49d7-818d-e06758ed8215"
+  }
 }

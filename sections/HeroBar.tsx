@@ -37,7 +37,7 @@ export default function TopBar({ content }: Props) {
           <div class="flex items-center justify-center w-[50px] h-[50px] ">
             {item.image && (
               <Image
-                class="object-fit w-[50px] h-[50px]"
+                class="object-contain w-[50px] h-[50px]"
                 src={item.image}
                 alt={item.title}
                 width={50}

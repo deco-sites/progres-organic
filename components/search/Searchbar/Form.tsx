@@ -29,8 +29,8 @@ export const NAME = "q";
 export interface SearchbarProps {
   /**
    * @title Placeholder
-   * @description Search bar default placeholder message
-   * @default What are you looking for?
+   * @description Mensagem inicial da barra de pesquisa
+   * @default O que está buscando?
    */
   placeholder?: string;
 
@@ -79,43 +79,46 @@ export default function Searchbar(
 
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6"
+      class="flex flex-between"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">
+      <form
+        id={SEARCHBAR_INPUT_FORM_ID}
+        action={ACTION}
+        class="join max-w-[447px] min-w-[350px] h-[46px] relative"
+      >
+        <input
+          autoFocus
+          tabIndex={0}
+          class="input input-secondary border-opacity-2 w-full"
+          name={NAME}
+          placeholder={placeholder}
+          autocomplete="off"
+          hx-target={`#${slot}`}
+          hx-post={
+            loader &&
+            useComponent<SuggestionProps>(Suggestions, {
+              loader: asResolved(loader),
+            })
+          }
+          hx-trigger={`input changed delay:300ms, ${NAME}`}
+          hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
+          hx-swap="innerHTML"
+        />
         <button
           type="submit"
-          class="btn join-item btn-square no-animation"
+          class="absolute right-4 top-3
+          "
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}
         >
           <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon id="search" class="inline [.htmx-request_&]:hidden" />
+          <Icon
+            id="search"
+            class="inline text-secondary [.htmx-request_&]:hidden"
+          />
         </button>
-        <input
-          autoFocus
-          tabIndex={0}
-          class="input input-bordered join-item flex-grow"
-          name={NAME}
-          placeholder={placeholder}
-          autocomplete="off"
-          hx-target={`#${slot}`}
-          hx-post={loader && useComponent<SuggestionProps>(Suggestions, {
-            loader: asResolved(loader),
-          })}
-          hx-trigger={`input changed delay:300ms, ${NAME}`}
-          hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
-          hx-swap="innerHTML"
-        />
-        <label
-          type="button"
-          class="join-item btn btn-ghost btn-square hidden sm:inline-flex no-animation"
-          for={SEARCHBAR_POPUP_ID}
-          aria-label="Toggle searchbar"
-        >
-          <Icon id="close" />
-        </label>
       </form>
 
       {/* Suggestions slot */}
@@ -129,7 +132,7 @@ export default function Searchbar(
             script,
             SEARCHBAR_INPUT_FORM_ID,
             NAME,
-            SEARCHBAR_POPUP_ID,
+            SEARCHBAR_POPUP_ID
           ),
         }}
       />

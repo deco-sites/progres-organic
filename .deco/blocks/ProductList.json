@@ -1,6 +1,6 @@
 {
   "__resolveType": "site/sections/Product/ProductShelf.tsx",
-  "title": "Os Mais vendidos",
+  "title": "Promoções da semana",
   "cta": "/",
   "products": {
     "__resolveType": "vnda/loaders/productList.ts",

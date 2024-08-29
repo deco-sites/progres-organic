@@ -72,6 +72,12 @@
       "section": {
         "__resolveType": "Preview /sections/teste001.tsx"
       }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Campaign Timer - 01"
+      }
     }
   ],
   "seo": {

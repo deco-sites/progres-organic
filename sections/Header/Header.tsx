@@ -23,6 +23,8 @@ import {
   SIDEMENU_CONTAINER_ID,
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
+import ImageLinks from "../../components/header/ImageLinks.tsx";
+import type {ImageLink, Sale} from "../../components/header/ImageLinks.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -50,6 +52,17 @@ export interface SectionProps {
   logo: Logo;
 
   /**
+   * @title Links com Icones
+   * @maximum 3
+   * @description Links que vão ao lado da barra de pesquisa */
+  topLinks: ImageLink[];
+
+ /** 
+  * @title Banner de Promoção 
+  */
+  sales?: Sale;
+
+  /**
    * @description Usefull for lazy loading hidden elements, like hamburguer menus etc
    * @hide true */
   loading?: "eager" | "lazy";
@@ -57,9 +70,16 @@ export interface SectionProps {
 
 type Props = Omit<SectionProps, "alert">;
 
-const Desktop = ({ navItems, logo, searchbar, loading = "eager" }: Props) => (
+const Desktop = ({
+  navItems,
+  logo,
+  searchbar,
+  loading,
+  topLinks,
+  sales,
+}: Props) => (
   <>
-    <Modal id={SEARCHBAR_POPUP_ID}>
+    {/* <Modal id={SEARCHBAR_POPUP_ID}>
       <div
         class="absolute top-0 bg-base-100 container"
         style={{ marginTop: HEADER_HEIGHT_MOBILE }}
@@ -72,43 +92,39 @@ const Desktop = ({ navItems, logo, searchbar, loading = "eager" }: Props) => (
           <Searchbar {...searchbar} />
         )}
       </div>
-    </Modal>
+    </Modal> */}
 
-    <div class="flex flex-col pt-5 container max-w-[1440px] ">
-      <div class="grid grid-cols-3 place-items-center border-b border-primary pb-5">
-        <div class="place-self-start pl-6">
+    <div class="flex flex-col container max-w-[1440px] ">
+      <div class="flex justify-between items-center border-b border-primary h-20">
+        <div class=" pl-6 w-[148px] h-[50px] flex flex-shrink-0">
           <a href="/" aria-label="Store logo">
             <Image
+              class="w-[148px] h-[50px] "
               src={logo.src}
               alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 23}
+              width={logo.width || 141}
+              height={logo.height || 48}
             />
           </a>
         </div>
 
-        <label
-          for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full"
-          aria-label="search icon button"
-        >
-          <Icon id="search" />
-          <span class="text-base-400 truncate">Search products, brands...</span>
-        </label>
+        <div class=" flex items-center justify-center gap-2 w-full mx-8">
+          <Searchbar {...searchbar} />
+          <ImageLinks links={topLinks} sales={sales} />
+        </div>
 
-        <div class="flex gap-4 place-self-end pr-6">
+        <div class="flex gap-4  pr-6">
           <Bag />
           <User />
         </div>
       </div>
 
-      <div class="flex justify-between items-center w-full">
-        <ul class="flex mx-center px-6">
+      <div class="flex justify-center items-center w-full">
+        <ul class="flex mx-center px-6  gap-16">
           {navItems?.slice(0, 10).map((item) => (
             <NavItem item={item} />
           ))}
         </ul>
-        <div>{/* ship to */}</div>
       </div>
     </div>
   </>
