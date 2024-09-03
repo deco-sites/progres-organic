@@ -72,7 +72,7 @@ function Carousel({ images = [], interval }: Props) {
   return (
     <>
       {/* dispositivos mobile */}
-      <div id={id} class="w-screen mx-auto md:hidden ">
+      <div id={id} class="w-screen mx-auto lg:hidden ">
         <div class="">
           <Slider class="carousel carousel-center w-full ">
             {images.map((image, index) => (
@@ -101,7 +101,7 @@ function Carousel({ images = [], interval }: Props) {
       </div>
 
       {/* desktop */}
-      <div class="hidden md:flex md:max-w-[1140px] md:mx-auto md:justify-between md:visible ">
+      <div class="hidden lg:flex lg:max-w-[1140px] lg:mx-auto lg:justify-between  lg:gap-2 ">
         {images.map((item) => (
           <BannerItem image={item} />
         ))}
