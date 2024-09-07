@@ -72,7 +72,6 @@ function ProductCard({
   const firstVariantName = firstSkuVariations?.[0]?.toLowerCase();
   const shoeSizeVariant = "shoe size";
 
-  console.log("productCard", product);
   
 
   return (

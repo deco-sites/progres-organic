@@ -6,11 +6,11 @@ import ProductCard from "./ProductCard.tsx";
 import { useId } from "../../sdk/useId.ts";
 
 interface Props {
-  products?: Product[];
+  products: Product[];
   itemListName?: string;
 }
 
-function ProductSlider({ products, itemListName }: Props) {
+function RelatedProducts({ products, itemListName }: Props) {
   const id = useId();
 
   return (
@@ -61,4 +61,4 @@ function ProductSlider({ products, itemListName }: Props) {
   );
 }
 
-export default ProductSlider;
+export default RelatedProducts;

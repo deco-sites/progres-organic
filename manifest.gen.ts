@@ -42,15 +42,17 @@ import * as $$$$$$24 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$25 from "./sections/Product/SearchResult.tsx";
 import * as $$$$$$26 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$27 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$28 from "./sections/Session.tsx";
-import * as $$$$$$29 from "./sections/SmallBannersTop.tsx";
-import * as $$$$$$30 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$31 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$36 from "./sections/teste001.tsx";
-import * as $$$$$$32 from "./sections/TextWithImage.tsx";
-import * as $$$$$$33 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$34 from "./sections/VideoAndImagePost.tsx";
-import * as $$$$$$35 from "./sections/VideoBeforeAfter.tsx";
+import * as $$$$$$28 from "./sections/ProductShelfHorizontal.tsx";
+import * as $$$$$$29 from "./sections/Session.tsx";
+import * as $$$$$$30 from "./sections/SmallBannersTop.tsx";
+import * as $$$$$$31 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$32 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$38 from "./sections/teste001.tsx";
+import * as $$$$$$33 from "./sections/TextWithImage.tsx";
+import * as $$$$$$34 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$35 from "./sections/TrackPackage.tsx";
+import * as $$$$$$36 from "./sections/VideoAndImagePost.tsx";
+import * as $$$$$$37 from "./sections/VideoBeforeAfter.tsx";
 
 const manifest = {
   "loaders": {
@@ -89,15 +91,17 @@ const manifest = {
     "site/sections/Product/SearchResult.tsx": $$$$$$25,
     "site/sections/Product/ShelfWithImage.tsx": $$$$$$26,
     "site/sections/Product/Wishlist.tsx": $$$$$$27,
-    "site/sections/Session.tsx": $$$$$$28,
-    "site/sections/SmallBannersTop.tsx": $$$$$$29,
-    "site/sections/Social/InstagramPosts.tsx": $$$$$$30,
-    "site/sections/Social/WhatsApp.tsx": $$$$$$31,
-    "site/sections/teste001.tsx": $$$$$$36,
-    "site/sections/TextWithImage.tsx": $$$$$$32,
-    "site/sections/Theme/Theme.tsx": $$$$$$33,
-    "site/sections/VideoAndImagePost.tsx": $$$$$$34,
-    "site/sections/VideoBeforeAfter.tsx": $$$$$$35,
+    "site/sections/ProductShelfHorizontal.tsx": $$$$$$28,
+    "site/sections/Session.tsx": $$$$$$29,
+    "site/sections/SmallBannersTop.tsx": $$$$$$30,
+    "site/sections/Social/InstagramPosts.tsx": $$$$$$31,
+    "site/sections/Social/WhatsApp.tsx": $$$$$$32,
+    "site/sections/teste001.tsx": $$$$$$38,
+    "site/sections/TextWithImage.tsx": $$$$$$33,
+    "site/sections/Theme/Theme.tsx": $$$$$$34,
+    "site/sections/TrackPackage.tsx": $$$$$$35,
+    "site/sections/VideoAndImagePost.tsx": $$$$$$36,
+    "site/sections/VideoBeforeAfter.tsx": $$$$$$37,
   },
   "actions": {
     "site/actions/minicart/submit.ts": $$$$$$$$$0,

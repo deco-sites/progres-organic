@@ -12,14 +12,13 @@
         "jsonLD": {
           "__resolveType": "PDP Loader"
         },
-        "jsonLDs": [{}]
+        "jsonLDs": [
+          {}
+        ]
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header"
-      }
+      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -27,7 +26,7 @@
         "__resolveType": "site/sections/Product/ProductDetails.tsx",
         "page": {
           "__resolveType": "vnda/loaders/productDetailsPage.ts",
-          "priceIntl": true,
+          "priceIntl": false,
           "slug": {
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "slug"

@@ -124,14 +124,14 @@ function ProductInfo({ page }: Props) {
       </div>
 
       {/* Shipping Simulation */}
-      <div class="mt-8">
+      {/* <div class="mt-8">
         <ShippingSimulationForm
           items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
         />
-      </div>
+      </div> */}
 
       {/* Description card */}
-      <div class="mt-4 sm:mt-6">
+      {/* <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
             <details>
@@ -143,7 +143,7 @@ function ProductInfo({ page }: Props) {
             </details>
           )}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
