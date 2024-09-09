@@ -1,34 +1,32 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import { useId } from "../../sdk/useId.ts";
-import Image from "apps/website/components/Image.tsx";
-import IframeLoader from "../../islands/ytOtimization.tsx";
+// import Image from "apps/website/components/Image.tsx";
+// import IframeLoader from "../../islands/ytOtimization.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
 }
 
 function ProductDescription({ page }: Props) {
-  const id = useId();
 
   if (page === null) {
     throw new Error("Missing Product Description Page Info");
   }
 
   const { product } = page;
-  const { productID, offers, isVariantOf } = product;
+  const { isVariantOf } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
+
+  
 
   // Função para extrair o ID do vídeo e gerar o embedLink
   function getEmbedLink(videoLink: string) {
     // Extrair o ID do vídeo:
     const videoId = videoLink.split("v=")[1].split("&")[0];
-    console.log(videoId);
 
     // Criar o link embeddable:
     if (videoId) {
       const embedLink = `https://www.youtube.com/embed/${videoId}`;
-      console.log(embedLink);
       return embedLink;
     } else {
       return "Vídeo não encontrado"; // Ou retorne um erro se o ID não for encontrado
@@ -118,10 +116,10 @@ function ProductDescription({ page }: Props) {
       <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
-            <details>
-              <summary class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4">
+            <div >
+              <div class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4">
                 Descricão Geral
-              </summary>
+              </div>
               <p class="text-primary md:text-2xl text-lg text-center font-bold mt-4">
                 {title}
               </p>
@@ -131,7 +129,7 @@ function ProductDescription({ page }: Props) {
                   __html: processDescription(description),
                 }}
               />
-            </details>
+            </div>
           )}
         </span>
       </div>

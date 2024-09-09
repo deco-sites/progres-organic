@@ -5,7 +5,7 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-import ShippingSimulationForm from "../shipping/Form.tsx";
+//import ShippingSimulationForm from "../shipping/Form.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartButton from "./AddToCartButton.tsx";
 import OutOfStock from "./OutOfStock.tsx";
@@ -24,7 +24,7 @@ function ProductInfo({ page }: Props) {
 
   const { breadcrumbList, product } = page;
   const { productID, offers, isVariantOf } = product;
-  const description = product.description || isVariantOf?.description;
+  //const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
 
   const {
@@ -73,24 +73,24 @@ function ProductInfo({ page }: Props) {
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      <span
-        class={clx(
-          "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-          percent < 1 && "opacity-0",
-          "w-fit",
-        )}
-      >
-        {percent} % off
-      </span>
+      {percent > 1 && (
+        <span
+          class={clx(
+            "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
+            percent < 1 && "opacity-0",
+            "w-fit"
+          )}
+        >
+          {percent} % off
+        </span>
+      )}
 
       {/* Product Name */}
-      <span class={clx("text-3xl font-semibold", "pt-4")}>
-        {title}
-      </span>
+      <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
 
       {/* Prices */}
       <div class="flex gap-3 pt-1">
-        <span class="text-3xl font-semibold text-base-400">
+        <span class="text-2xl font-semibold text-base-400">
           {formatPrice(price, offers?.priceCurrency)}
         </span>
         <span class="line-through text-sm font-medium text-gray-400">
@@ -107,20 +107,20 @@ function ProductInfo({ page }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButton
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation"
-                disabled={false}
-              />
-              <WishlistButton item={item} />
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartButton
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary no-animation"
+              disabled={false}
+            />
+            {/* <WishlistButton item={item} /> */}
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
 
       {/* Shipping Simulation */}

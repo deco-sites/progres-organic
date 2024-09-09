@@ -5,6 +5,7 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
+import page from "deco/blocks/page.tsx";
 
 export interface Props {
   /** @title Integration */
@@ -34,10 +35,16 @@ export default function GallerySlider(props: Props) {
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
   const groupImages = isVariantOf?.image ?? pImages ?? [];
+
   const filtered = groupImages.filter((img) =>
     name?.includes(img.alternateName || "")
   );
-  const images = filtered.length > 0 ? filtered : groupImages;
+    const filteredImages = filtered.filter((img)=> img.encodingFormat === "image")
+  const images = filteredImages.length > 0 ? filteredImages : groupImages;
+
+  console.log("{{page}}", groupImages);
+  
+  
 
   return (
     <>
@@ -50,18 +57,15 @@ export default function GallerySlider(props: Props) {
           <div class="relative h-min flex-grow">
             <Slider class="carousel carousel-center gap-6 w-full">
               {images.map((img, index) => (
-                <Slider.Item
-                  index={index}
-                  class="carousel-item w-full"
-                >
+                <Slider.Item index={index} class="carousel-item w-full">
                   <Image
-                    class="w-full"
+                    class="object-contain w-full h-auto"
                     sizes="(max-width: 640px) 100vw, 40vw"
                     style={{ aspectRatio: ASPECT_RATIO }}
                     src={img.url!}
                     alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
+                    width={535}
+                    height={535}
                     // Preload LCP image for better web vitals
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
@@ -101,21 +105,24 @@ export default function GallerySlider(props: Props) {
               "gap-2",
               "max-w-full",
               "overflow-x-auto",
-              "sm:overflow-y-auto",
+              "sm:overflow-y-auto"
             )}
             style={{ maxHeight: "600px" }}
           >
-            {images.map((img, index) => (
-              <li class="carousel-item w-16 h-16">
+            {images.map((item, index) => (
+              <li class="carousel-item w-[95px] h-[101px]">
                 <Slider.Dot index={index}>
-                  <Image
-                    style={{ aspectRatio: "1 / 1" }}
-                    class="group-disabled:border-base-400 border rounded object-cover w-full h-full"
-                    width={64}
-                    height={64}
-                    src={img.url!}
-                    alt={img.alternateName}
-                  />
+                  {item.encodingFormat === "image" && (
+                    <Image
+                      style={{ aspectRatio: "1 / 1" }}
+                      class="group-disabled:border-secondary border rounded object-cover w-full h-full"
+                      width={84}
+                      height={84}
+                      src={item.url!}
+                      alt={item.alternateName}
+                    />
+                  )}
+                  {item.encodingFormat === "video" && <div>video</div>}
                 </Slider.Dot>
               </li>
             ))}
@@ -128,7 +135,7 @@ export default function GallerySlider(props: Props) {
         id={zoomId}
         images={images}
         width={700}
-        height={Math.trunc(700 * HEIGHT / WIDTH)}
+        height={Math.trunc((700 * HEIGHT) / WIDTH)}
       />
     </>
   );

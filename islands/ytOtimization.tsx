@@ -31,7 +31,6 @@ const IframeLoader = ({ videoLink, width = 477, height = 311 }: Props) => {
     // Criar o link embeddable:
     if (videoId) {
       const embedLink = `https://www.youtube.com/embed/${videoId}`;
-      console.log(embedLink);
       return embedLink;
     } else {
       return "Vídeo não encontrado"; // Ou retorne um erro se o ID não for encontrado

@@ -39,7 +39,23 @@
               "__resolveType": "vnda/loaders/productDetailsPageVideo.ts"
             }
           ]
-        }
+        },
+        "sections": [
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 10
+              }
+            }
+          }
+        ]
       }
     },
     {

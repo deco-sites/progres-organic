@@ -5,7 +5,7 @@ import { Minicart } from "../../../components/minicart/Minicart.tsx";
 
 export type Cart = Awaited<ReturnType<typeof a>>;
 
-const normalizeUrl = (url: string) =>
+const normalizeUrl = (url: string ) =>
   url.startsWith("//") ? `https:${url}` : url;
 
 const locale = "pt-BR";
