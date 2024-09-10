@@ -53,7 +53,7 @@ const IframeLoader = ({ videoLink, width = 477, height = 311 }: Props) => {
           }
         });
       },
-      { threshold: 0.5 } // Define o limiar de visibilidade para o carregamento
+      { threshold: 0.5 }, // Define o limiar de visibilidade para o carregamento
     );
 
     observer.observe(currentElement);
@@ -75,7 +75,8 @@ const IframeLoader = ({ videoLink, width = 477, height = 311 }: Props) => {
         allowFullScreen
         ref={targetElement}
         loading="lazy" // Carrega o iframe quando estiver visível
-      ></iframe>
+      >
+      </iframe>
     </div>
   );
 };

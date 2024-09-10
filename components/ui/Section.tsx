@@ -47,7 +47,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
       {...props}
       class={clx(
         "container flex flex-col gap-4 sm:gap-6 md:max-w-[1280px] h-auto py-5 sm:py-10 mx-auto px-8",
-        _class?.toString()
+        _class?.toString(),
       )}
     />
   );

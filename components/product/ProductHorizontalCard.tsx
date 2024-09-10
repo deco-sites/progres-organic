@@ -12,7 +12,9 @@ export interface Props extends SectionHeaderProps {
   products: Product[] | null;
 }
 
-export default function ProductHorizontalCard({products, title, cta, subtitle }: Props) {
+export default function ProductHorizontalCard(
+  { products, title, cta, subtitle }: Props,
+) {
   return (
     <div>
       <h2>{teste}</h2>

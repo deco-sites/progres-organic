@@ -31,7 +31,7 @@ export interface SDK {
     addToCart: (item: Item, platformProps: unknown) => boolean;
     subscribe: (
       cb: (sdk: SDK["CART"]) => void,
-      opts?: boolean | AddEventListenerOptions
+      opts?: boolean | AddEventListenerOptions,
     ) => void;
     dispatch: (form: HTMLFormElement) => void;
   };
@@ -39,7 +39,7 @@ export interface SDK {
     getUser: () => Person | null;
     subscribe: (
       cb: (sdk: SDK["USER"]) => void,
-      opts?: boolean | AddEventListenerOptions
+      opts?: boolean | AddEventListenerOptions,
     ) => void;
     dispatch: (person: Person) => void;
   };
@@ -48,7 +48,7 @@ export interface SDK {
     inWishlist: (productID: string) => boolean;
     subscribe: (
       cb: (sdk: SDK["WISHLIST"]) => void,
-      opts?: boolean | AddEventListenerOptions
+      opts?: boolean | AddEventListenerOptions,
     ) => void;
     dispatch: (form: HTMLFormElement) => void;
   };
@@ -65,8 +65,8 @@ const sdk = () => {
       JSON.parse(
         decodeURIComponent(
           form.querySelector<HTMLInputElement>('input[name="storefront-cart"]')
-            ?.value || "[]"
-        )
+            ?.value || "[]",
+        ),
       );
 
     const sdk: SDK["CART"] = {
@@ -74,18 +74,18 @@ const sdk = () => {
 
       getQuantity: (itemId) =>
         form?.querySelector<HTMLInputElement>(
-          `[data-item-id="${itemId}"] input[type="number"]`
+          `[data-item-id="${itemId}"] input[type="number"]`,
         )?.valueAsNumber,
 
       setQuantity: (itemId, quantity) => {
         const input = form?.querySelector<HTMLInputElement>(
-          `[data-item-id="${itemId}"] input[type="number"]`
+          `[data-item-id="${itemId}"] input[type="number"]`,
         );
 
         const item = getCart()?.items.find(
           (item) =>
             // deno-lint-ignore no-explicit-any
-            (item as any).item_id === itemId
+            (item as any).item_id === itemId,
         );
 
         if (!input || !item) {
@@ -96,10 +96,9 @@ const sdk = () => {
 
         if (input.validity.valid) {
           window.DECO.events.dispatch({
-            name:
-              item.quantity < input.valueAsNumber
-                ? "add_to_cart"
-                : "remove_from_cart",
+            name: item.quantity < input.valueAsNumber
+              ? "add_to_cart"
+              : "remove_from_cart",
             params: { items: [{ ...item, quantity }] },
           });
 
@@ -111,10 +110,10 @@ const sdk = () => {
 
       addToCart: (item, platformProps) => {
         const input = form?.querySelector<HTMLInputElement>(
-          'input[name="add-to-cart"]'
+          'input[name="add-to-cart"]',
         );
         const button = form?.querySelector<HTMLButtonElement>(
-          `button[name="action"][value="add-to-cart"]`
+          `button[name="action"][value="add-to-cart"]`,
         );
 
         if (!input || !button) {
@@ -168,43 +167,44 @@ const sdk = () => {
       }
 
       // Only available on newer safari versions
-      const handleView =
-        typeof IntersectionObserver !== "undefined"
-          ? new IntersectionObserver((items) => {
-              for (const item of items) {
-                const { isIntersecting, target } = item;
+      const handleView = typeof IntersectionObserver !== "undefined"
+        ? new IntersectionObserver((items) => {
+          for (const item of items) {
+            const { isIntersecting, target } = item;
 
-                if (!isIntersecting) {
-                  continue;
-                }
+            if (!isIntersecting) {
+              continue;
+            }
 
-                handleView!.unobserve(target);
-                sendEvent(target);
+            handleView!.unobserve(target);
+            sendEvent(target);
+          }
+        })
+        : null;
+
+      document.body.addEventListener(
+        "htmx:load",
+        (e) =>
+          (e as unknown as { detail: { elt: HTMLElement } }).detail.elt
+            .querySelectorAll("[data-event]")
+            .forEach((node) => {
+              const maybeTrigger = node.getAttribute("data-event-trigger");
+              const on = maybeTrigger === "click" ? "click" : "view";
+
+              if (on === "click") {
+                node.addEventListener("click", handleClick, {
+                  passive: true,
+                });
+
+                return;
               }
-            })
-          : null;
 
-      document.body.addEventListener("htmx:load", (e) =>
-        (e as unknown as { detail: { elt: HTMLElement } }).detail.elt
-          .querySelectorAll("[data-event]")
-          .forEach((node) => {
-            const maybeTrigger = node.getAttribute("data-event-trigger");
-            const on = maybeTrigger === "click" ? "click" : "view";
+              if (on === "view") {
+                handleView?.observe(node);
 
-            if (on === "click") {
-              node.addEventListener("click", handleClick, {
-                passive: true,
-              });
-
-              return;
-            }
-
-            if (on === "view") {
-              handleView?.observe(node);
-
-              return;
-            }
-          })
+                return;
+              }
+            }),
       );
     });
   };
@@ -239,10 +239,10 @@ const sdk = () => {
         }
 
         form.querySelector<HTMLInputElement>(
-          'input[name="product-id"]'
+          'input[name="product-id"]',
         )!.value = productID;
         form.querySelector<HTMLInputElement>(
-          'input[name="product-group-id"]'
+          'input[name="product-group-id"]',
         )!.value = productGroupID;
 
         form.querySelector<HTMLButtonElement>("button")?.click();
@@ -258,7 +258,7 @@ const sdk = () => {
         form = f;
 
         const script = f.querySelector<HTMLScriptElement>(
-          'script[type="application/json"]'
+          'script[type="application/json"]',
         );
         const wishlist: Wishlist | null = script
           ? JSON.parse(script.innerText)
@@ -285,7 +285,7 @@ const sdk = () => {
 export const action = async (
   _props: unknown,
   _req: Request,
-  ctx: AppContext
+  ctx: AppContext,
 ) => {
   const [minicart] = await Promise.all([
     ctx.invoke("site/loaders/minicart.ts"),

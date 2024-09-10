@@ -37,8 +37,6 @@ function Banner({ images, href, alt }: Props) {
   );
 }
 
-export const LoadingFallback = () => (
-  <Section.Placeholder height="635px"  />
-);
+export const LoadingFallback = () => <Section.Placeholder height="635px" />;
 
 export default Banner;

@@ -108,7 +108,7 @@ function Footer({
       <div class="container flex md:justify-between flex-col md:flex-row pt-[38px] gap-6 lg:max-w-[1400px] md:px-5 px-8">
         <div class="md:w-[255px] w-full">
           <h2 class="text-[15px] font-bold w-[168px] pb-5">{siteName}</h2>
-          <p class="text-[11px] ">{description} </p>
+          <p class="text-[11px] ">{description}</p>
         </div>
         <ul class="flex justify-between grow  flex-wrap">
           {links.map(({ title, links }) => (
@@ -239,7 +239,7 @@ function Footer({
       <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between px-5">
         <span class="text-[9px] font-normal text-base-400">{copyright}</span>
         <a href="https://tec3commerce.com.br/" target="blank">
-          <p class="text-[10px]">desenvolvido por: </p>
+          <p class="text-[10px]">desenvolvido por:</p>
           <Image
             loading="lazy"
             alt="desenvolvido por tec3"

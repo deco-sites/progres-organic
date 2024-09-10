@@ -9,11 +9,12 @@ import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 
 export interface Props extends SectionHeaderProps {
- 
   products: Product[] | null;
 }
 
-export default function ProductShelf({ products, title, cta, subtitle }: Props) {
+export default function ProductShelf(
+  { products, title, cta, subtitle }: Props,
+) {
   if (!products || products.length === 0) {
     return null;
   }
@@ -37,7 +38,7 @@ export default function ProductShelf({ products, title, cta, subtitle }: Props) 
 
   return (
     <Section.Container {...viewItemListEvent} class="mx-auto">
-      <Section.Header title={title} cta={cta} subtitle={ subtitle} />
+      <Section.Header title={title} cta={cta} subtitle={subtitle} />
 
       <ProductSlider products={products} itemListName={title} />
     </Section.Container>

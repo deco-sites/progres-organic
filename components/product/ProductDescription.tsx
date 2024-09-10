@@ -7,7 +7,6 @@ interface Props {
 }
 
 function ProductDescription({ page }: Props) {
-
   if (page === null) {
     throw new Error("Missing Product Description Page Info");
   }
@@ -16,8 +15,6 @@ function ProductDescription({ page }: Props) {
   const { isVariantOf } = product;
   const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
-
-  
 
   // Função para extrair o ID do vídeo e gerar o embedLink
   function getEmbedLink(videoLink: string) {
@@ -47,7 +44,9 @@ function ProductDescription({ page }: Props) {
     while ((matchH4 = regexh4.exec(description)) !== null) {
       description = description.replace(
         matchH4[0],
-        `<h4 class="pt-5"><span class="text-base font-medium pt-7 pb-4">${matchH4[1]}</span></h4>`
+        `<h4 class="pt-5"><span class="text-base font-medium pt-7 pb-4">${
+          matchH4[1]
+        }</span></h4>`,
       );
     }
 
@@ -56,7 +55,9 @@ function ProductDescription({ page }: Props) {
     while ((matchH3 = regexh3.exec(description)) !== null) {
       description = description.replace(
         matchH3[0],
-        `<div class="pt-10"><h3><span class="text-lg font-semibold mt-7 mb-4">${matchH3[1]}</span></h3></div>`
+        `<div class="pt-10"><h3><span class="text-lg font-semibold mt-7 mb-4">${
+          matchH3[1]
+        }</span></h3></div>`,
       );
     }
 
@@ -65,7 +66,9 @@ function ProductDescription({ page }: Props) {
     while ((matchH2 = regexh2.exec(description)) !== null) {
       description = description.replace(
         matchH2[0],
-        `<h2 class="pt-10"><span class="text-xl font-bold mt-7 mb-4">${matchH2[1]}</span></h2>`
+        `<h2 class="pt-10"><span class="text-xl font-bold mt-7 mb-4">${
+          matchH2[1]
+        }</span></h2>`,
       );
     }
 
@@ -74,7 +77,9 @@ function ProductDescription({ page }: Props) {
     while ((matchH1 = regexh1.exec(description)) !== null) {
       description = description.replace(
         matchH1[0],
-        `<h1 class="pt-10"><span class="text-2xl font-bold mb-4">${matchH1[1]}</span></h1>`
+        `<h1 class="pt-10"><span class="text-2xl font-bold mb-4">${
+          matchH1[1]
+        }</span></h1>`,
       );
     }
 
@@ -92,7 +97,7 @@ function ProductDescription({ page }: Props) {
             width={100}
             height={100}
             loading="lazy"
-          />`
+          />`,
       );
     }
 
@@ -104,7 +109,7 @@ function ProductDescription({ page }: Props) {
       const embedLink = getEmbedLink(matchVideo[1]);
       description = description.replace(
         matchVideo[0],
-        `<iframe class="w-full" width="560" height="315" src="${embedLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+        `<iframe class="w-full" width="560" height="315" src="${embedLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
       );
     }
 
@@ -116,7 +121,7 @@ function ProductDescription({ page }: Props) {
       <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
-            <div >
+            <div>
               <div class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4">
                 Descricão Geral
               </div>

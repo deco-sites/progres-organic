@@ -27,12 +27,12 @@ export interface Sale {
 interface Props {
   links: ImageLink[];
   /**
-   * @title Promoçao 
-  */
+   * @title Promoçao
+   */
   sales?: Sale;
 }
 
-function ImageLinks({links, sales}: Props) {
+function ImageLinks({ links, sales }: Props) {
   return (
     <div class="hidden xl:flex gap-4 mx-4 items-center">
       {links.length > 0 &&

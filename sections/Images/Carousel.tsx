@@ -41,7 +41,7 @@ function BannerItem(
   const {
     alt,
     desktop,
-   href,
+    href,
   } = image;
   const params = { promotion_name: image.alt };
 
@@ -62,7 +62,6 @@ function BannerItem(
       class="relative block overflow-y-hidden w-full"
     >
       <Picture preload={lcp} {...viewPromotionEvent}>
-
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}

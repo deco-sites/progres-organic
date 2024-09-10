@@ -58,12 +58,12 @@ const onLoad = (id: string) => {
     checkbox.checked = quantity > 0;
 
     // enable interactivity
-    container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
-      node.disabled = false
-    );
-    container?.querySelectorAll<HTMLButtonElement>("input").forEach((node) =>
-      node.disabled = false
-    );
+    // container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
+    //   node.disabled = false
+    // );
+    // container?.querySelectorAll<HTMLButtonElement>("input").forEach((node) =>
+    //   node.disabled = false
+    // );
   });
 };
 
@@ -133,32 +133,33 @@ function AddToCartButton(props: Props) {
       class="flex"
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
-        JSON.stringify({ item, platformProps })
+        JSON.stringify({ item, platformProps }),
       )}
     >
-      <input type="checkbox" class="hidden peer" />
+      {/* <input type="checkbox" class="hidden peer" /> */}
 
       <button
         class={clx(
-          "flex peer-checked:hidden w-[271px] h-[26px] bg-primary text-base-200 min-h-0 ",
-          _class?.toString()
+          "flex  w-[271px] h-[26px] bg-primary text-base-200 min-h-0 ",
+          _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}
+        disabled={false}
       >
-        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:!text-primary">
+        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm">
           Comprar
         </span>
       </button>
 
       {/* Quantity Input */}
-      <div class="flex-grow hidden peer-checked:flex">
+      {/* <div class="flex-grow hidden peer-checked:flex">
         <QuantitySelector
           disabled
           min={0}
           max={100}
           hx-on:change={useScript(onChange)}
         />
-      </div>
+      </div> */}
 
       <script
         type="module"

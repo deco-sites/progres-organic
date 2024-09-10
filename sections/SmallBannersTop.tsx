@@ -90,9 +90,10 @@ function Carousel({ images = [], interval }: Props) {
                 index={index}
                 class={clx(
                   "bg-primary h-2 w-2 no-animation rounded-full",
-                  "disabled:w-8 disabled:bg-neutral disabled:opacity-100 transition-[width]"
+                  "disabled:w-8 disabled:bg-neutral disabled:opacity-100 transition-[width]",
                 )}
-              ></Slider.Dot>
+              >
+              </Slider.Dot>
             </li>
           ))}
         </ul>
@@ -102,9 +103,7 @@ function Carousel({ images = [], interval }: Props) {
 
       {/* desktop */}
       <div class="hidden lg:flex lg:max-w-[1140px] lg:mx-auto lg:justify-between  lg:gap-2 ">
-        {images.map((item) => (
-          <BannerItem image={item} />
-        ))}
+        {images.map((item) => <BannerItem image={item} />)}
       </div>
     </>
   );

@@ -2,15 +2,11 @@ import { AppContext } from "../apps/site.ts";
 import { Minicart } from "../components/minicart/Minicart.tsx";
 import { usePlatform } from "../sdk/usePlatform.tsx";
 
-
 import vnda from "../sdk/cart/vnda/loader.ts";
-
 
 // deno-lint-ignore no-explicit-any
 const loaders: Record<string, any> = {
-  
   vnda,
-  
 };
 
 function loader(

@@ -2,7 +2,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
-  /** @titleby label */
+/** @titleby label */
 export interface ServiceProps {
   /** @title titulo */
   label?: string;
@@ -23,7 +23,6 @@ const PLACEMENT = {
 export default function Services({
   services = [
     {
-  
       label: "Your Title Here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, elit arcu ultricies massa, quis ornare nisl libero vitae urna.",
@@ -61,7 +60,8 @@ export default function Services({
               <p
                 class="text-secondary text-xs"
                 dangerouslySetInnerHTML={{ __html: service.description || "" }}
-              ></p>
+              >
+              </p>
             </div>
           </div>
         </div>

@@ -5,7 +5,6 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-import page from "deco/blocks/page.tsx";
 
 export interface Props {
   /** @title Integration */
@@ -30,7 +29,11 @@ export default function GallerySlider(props: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  const { page: { product: { name, isVariantOf, image: pImages } } } = props;
+  const {
+    page: {
+      product: { name, isVariantOf, image: pImages },
+    },
+  } = props;
 
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
@@ -39,12 +42,24 @@ export default function GallerySlider(props: Props) {
   const filtered = groupImages.filter((img) =>
     name?.includes(img.alternateName || "")
   );
-    const filteredImages = filtered.filter((img)=> img.encodingFormat === "image")
-  const images = filteredImages.length > 0 ? filteredImages : groupImages;
 
-  console.log("{{page}}", groupImages);
-  
-  
+  const images = filtered.length > 0 ? filtered : groupImages;
+
+  console.log(props);
+
+  // Função para extrair o ID do vídeo e gerar o embedLink
+  function getEmbedLink(videoLink: string) {
+    // Extrair o ID do vídeo:
+    const videoId = videoLink.split("v=")[1].split("&")[0];
+
+    // Criar o link embeddable:
+    if (videoId) {
+      const embedLink = `https://www.youtube.com/embed/${videoId}`;
+      return embedLink;
+    } else {
+      return "Vídeo não encontrado"; // Ou retorne um erro se o ID não for encontrado
+    }
+  }
 
   return (
     <>
@@ -56,20 +71,36 @@ export default function GallerySlider(props: Props) {
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
             <Slider class="carousel carousel-center gap-6 w-full">
-              {images.map((img, index) => (
+              {groupImages.map((item, index) => (
                 <Slider.Item index={index} class="carousel-item w-full">
-                  <Image
-                    class="object-contain w-full h-auto"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    src={img.url!}
-                    alt={img.alternateName}
-                    width={535}
-                    height={535}
-                    // Preload LCP image for better web vitals
-                    preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
+                  {item.encodingFormat === "image" && (
+                    <Image
+                      class="object-contain w-full"
+                      sizes="(max-width: 640px) 100vw, 40vw"
+                      style={{ aspectRatio: ASPECT_RATIO }}
+                      src={item.url || ""}
+                      alt={item.alternateName}
+                      width={535}
+                      height={535}
+                      // Preload LCP image for better web vitals
+                      preload={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  )}
+                  {item.encodingFormat === "video" && (
+                    <div class="flex items-center justify-center w-full lg:h-[535px]">
+                      <iframe
+                        class="w-full"
+                        width="560"
+                        height="315"
+                        src={getEmbedLink(item.contentUrl || "")}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      >
+                      </iframe>
+                    </div>
+                  )}
                 </Slider.Item>
               ))}
             </Slider>
@@ -103,26 +134,40 @@ export default function GallerySlider(props: Props) {
               "carousel carousel-center",
               "sm:carousel-vertical",
               "gap-2",
-              "max-w-full",
+              "max-w-full max-h-[535px]",
               "overflow-x-auto",
-              "sm:overflow-y-auto"
+              "sm:overflow-y-auto",
             )}
-            style={{ maxHeight: "600px" }}
           >
-            {images.map((item, index) => (
-              <li class="carousel-item w-[95px] h-[101px]">
+            {groupImages.map((item, index) => (
+              <li class="carousel-item w-[95px] h-[101px] border border-primary   rounded">
                 <Slider.Dot index={index}>
                   {item.encodingFormat === "image" && (
-                    <Image
-                      style={{ aspectRatio: "1 / 1" }}
-                      class="group-disabled:border-secondary border rounded object-cover w-full h-full"
-                      width={84}
-                      height={84}
-                      src={item.url!}
-                      alt={item.alternateName}
-                    />
+                    <>
+                      <Image
+                        style={{ aspectRatio: "1 / 1" }}
+                        class="group-disabled:border-secondary object-cover w-full h-full"
+                        width={84}
+                        height={84}
+                        src={item.url || ""}
+                        alt={item.alternateName}
+                      />
+                    </>
                   )}
-                  {item.encodingFormat === "video" && <div>video</div>}
+                  {item.encodingFormat === "video" && (
+                    <div class="flex items-center justify-center">
+                      <iframe
+                        class="w-full"
+                        width="84"
+                        height="57"
+                        src={getEmbedLink(item.contentUrl || "")}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      >
+                      </iframe>
+                    </div>
+                  )}
                 </Slider.Dot>
               </li>
             ))}
@@ -133,7 +178,7 @@ export default function GallerySlider(props: Props) {
       </div>
       <ProductImageZoom
         id={zoomId}
-        images={images}
+        images={groupImages}
         width={700}
         height={Math.trunc((700 * HEIGHT) / WIDTH)}
       />

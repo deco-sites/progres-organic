@@ -18,11 +18,12 @@ const onClick = (delta: number) => {
 function QuantitySelector(
   { id = useId(), disabled, ...props }: JSX.IntrinsicElements["input"],
 ) {
+  console.log(props.value)
   return (
-    <div class="join border rounded w-full min-h-0 h-[26px]">
+    <div class="join border rounded w-full min-h-0 h-[32px] gap-1">
       <button
         type="button"
-        class="btn btn-square btn-ghost no-animation border border-primary text-primary min-h-0 h-[26px]"
+        class="btn btn-square btn-ghost no-animation border border-primary text-primary min-h-0 h-[32px] w-[32px]"
         hx-on:click={useScript(onClick, -1)}
         disabled={disabled}
       >
@@ -32,15 +33,15 @@ function QuantitySelector(
         data-tip={`Quantity must be between ${props.min} and ${props.max}`}
         class={clx(
           "flex-grow join-item",
-          "flex justify-center items-center text-primary min-h-0 h-[26px]",
-          "has-[:invalid]:tooltip has-[:invalid]:tooltip-error has-[:invalid]:tooltip-open has-[:invalid]:tooltip-bottom"
+          "flex justify-center items-center text-primary min-h-0 h-[32px] font-semibold",
+          "has-[:invalid]:tooltip has-[:invalid]:tooltip-error has-[:invalid]:tooltip-open has-[:invalid]:tooltip-bottom",
         )}
       >
         <input
           id={id}
           class={clx(
             "input text-center flex-grow [appearance:textfield]",
-            "invalid:input-error text-primary border border-primary min-h-0 h-[26px]"
+            "invalid:input-error text-primary border border-primary min-h-0 h-[32px] w-[65px] font-semibold",
           )}
           disabled={disabled}
           inputMode="numeric"
@@ -50,7 +51,7 @@ function QuantitySelector(
       </div>
       <button
         type="button"
-        class="btn btn-square btn-ghost no-animation text-primary border border-primary min-h-0 h-[26px]"
+        class="btn btn-square btn-ghost no-animation text-primary border border-primary min-h-0 h-[32px] w-[32px] font-semibold"
         hx-on:click={useScript(onClick, 1)}
         disabled={disabled}
       >

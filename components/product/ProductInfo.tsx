@@ -6,16 +6,18 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 //import ShippingSimulationForm from "../shipping/Form.tsx";
-import WishlistButton from "../wishlist/WishlistButton.tsx";
-import AddToCartButton from "./AddToCartButton.tsx";
+// import WishlistButton from "../wishlist/WishlistButton.tsx";
+import AddToCartProductDetail from "./AddToCartProductDetail.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import type { ProductIcon } from "./AddToCartProductDetail.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
+  icons: ProductIcon[];
 }
 
-function ProductInfo({ page }: Props) {
+function ProductInfo({ page, icons }: Props) {
   const id = useId();
 
   if (page === null) {
@@ -78,7 +80,7 @@ function ProductInfo({ page }: Props) {
           class={clx(
             "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
             percent < 1 && "opacity-0",
-            "w-fit"
+            "w-fit",
           )}
         >
           {percent} % off
@@ -90,11 +92,11 @@ function ProductInfo({ page }: Props) {
 
       {/* Prices */}
       <div class="flex gap-3 pt-1">
-        <span class="text-2xl font-semibold text-base-400">
-          {formatPrice(price, offers?.priceCurrency)}
-        </span>
         <span class="line-through text-sm font-medium text-gray-400">
           {formatPrice(listPrice, offers?.priceCurrency)}
+        </span>
+        <span class="text-2xl font-semibold text-base-400">
+          {formatPrice(price, offers?.priceCurrency)}
         </span>
       </div>
 
@@ -107,31 +109,35 @@ function ProductInfo({ page }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartButton
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation"
-              disabled={false}
-            />
-            {/* <WishlistButton item={item} /> */}
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartProductDetail
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation"
+                disabled={false}
+                icons={icons}
+              />
+              {/* <WishlistButton item={item} /> */}
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
 
       {/* Shipping Simulation */}
-      {/* <div class="mt-8">
+      {
+        /* <div class="mt-8">
         <ShippingSimulationForm
           items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
         />
-      </div> */}
+      </div> */
+      }
 
       {/* Description card */}
-      {/* <div class="mt-4 sm:mt-6">
+      {
+        /* <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
             <details>
@@ -143,7 +149,8 @@ function ProductInfo({ page }: Props) {
             </details>
           )}
         </span>
-      </div> */}
+      </div> */
+      }
     </div>
   );
 }
