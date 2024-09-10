@@ -4,7 +4,7 @@
   "publicUrl": "www.progressivaorganica.com.br",
   "authToken": {
     "__resolveType": "website/loaders/secret.ts",
-    "encrypted": "e654bbc1d3a4ea0fd96d8bf23d3b6d557bb054648298f2defb84c75f614f0074",
+    "encrypted": "67303f2d4c0971dc7c17bd92d180199e7347be6397e26e17ce5f276876d176cc",
     "name": "ProgressivaDeco"
   },
   "platform": "vnda",
