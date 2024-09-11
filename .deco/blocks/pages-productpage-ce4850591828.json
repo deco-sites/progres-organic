@@ -40,14 +40,34 @@
             }
           ]
         },
-        "sections": [],
-        "icons": [
+        "sections": [
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/ProductShelfHorizontal.tsx",
-              "name": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!"
+              "__resolveType": "site/sections/ProductShelfHorizontal.tsx"
             }
+          }
+        ],
+        "icons": [
+          {
+            "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/2e59d61a-74b9-4706-9be2-a8134991520a/compra.svg",
+            "title": "Compra",
+            "subtitle": "Segura"
+          },
+          {
+            "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/eb8b0b1d-7727-4e57-ba92-30c55fea4575/loja.svg",
+            "title": "Loja",
+            "subtitle": "Oficial"
+          },
+          {
+            "title": "Produtos",
+            "subtitle": "premium",
+            "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/88107288-4677-4cd9-a738-853efe466e25/product.svg"
+          },
+          {
+            "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/35f91c93-2042-4319-9cf8-9336d883a64d/truck.svg",
+            "title": "Entrega",
+            "subtitle": "garantida"
           }
         ]
       }

@@ -122,19 +122,19 @@ function ProductDescription({ page }: Props) {
         <span class="text-sm">
           {description && (
             <div>
-              <label
+              <div
                 for="myCheckbox "
                 class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4"
                 
               >
                 Descricão Geral
-              </label>
-              <input id="myCheckbox" type="checkbox" class="hidden peer" />
-              <p class="text-primary md:text-2xl text-lg text-center font-bold mt-4 hidden peer-checked:block">
+              </div>
+              {/* <input id="myCheckbox" type="checkbox" class="hidden peer" /> */}
+              <p class="text-primary md:text-2xl text-lg text-center font-bold mt-4 ">
                 {title}
               </p>
               <div
-                class="ml-2 mt-2 hidden peer-checked:block"
+                class="ml-2 mt-2 "
                 dangerouslySetInnerHTML={{
                   __html: processDescription(description),
                 }}

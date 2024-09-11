@@ -120,7 +120,6 @@ function ProductInfo({ page, icons }: Props) {
                 disabled={false}
                 icons={icons}
               />
-              {/* <WishlistButton item={item} /> */}
             </>
           )
           : <OutOfStock productID={productID} />}
