@@ -63,9 +63,6 @@ const onLoad = (id: string) => {
     const itemID = container?.getAttribute("data-item-id-pd")!;
 
     const quantity = sdk.getQuantity(itemID) || 0;
-    console.log("container", container);
-    console.log("input", input);
-    console.log("quantity", quantity);
 
     if (!input || !checkbox) {
       return;

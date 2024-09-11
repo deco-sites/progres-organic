@@ -45,8 +45,6 @@ export default function GallerySlider(props: Props) {
 
   const images = filtered.length > 0 ? filtered : groupImages;
 
-  console.log(props);
-
   // Função para extrair o ID do vídeo e gerar o embedLink
   function getEmbedLink(videoLink: string) {
     // Extrair o ID do vídeo:
