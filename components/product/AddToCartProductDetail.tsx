@@ -30,7 +30,7 @@ const onClick = () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item-pd]")!;
   const { item, platformProps } = JSON.parse(
-    decodeURIComponent(container.getAttribute("data-cart-item-pd")!)
+    decodeURIComponent(container.getAttribute("data-cart-item-pd")!),
   );
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
@@ -41,7 +41,6 @@ const onChange = () => {
     .closest("div[data-cart-item-pd]")!
     .getAttribute("data-item-id-pd")!;
   const quantity = Number(input.value);
-
 
   if (!input.validity.valid) {
     return;
@@ -55,10 +54,10 @@ const onLoad = (id: string) => {
   window.STOREFRONT.CART.subscribe((sdk) => {
     const container = document.getElementById(id);
     const checkbox = container?.querySelector<HTMLInputElement>(
-      'input[type="checkbox"]'
+      'input[type="checkbox"]',
     );
     const input = container?.querySelector<HTMLInputElement>(
-      'input[type="number"]'
+      'input[type="number"]',
     );
     const itemID = container?.getAttribute("data-item-id-pd")!;
 
@@ -102,7 +101,7 @@ const useAddToCart = ({ product, seller }: Props) => {
       quantity: 1,
       itemId: productID,
       attributes: Object.fromEntries(
-        additionalProperty.map(({ name, value }) => [name, value])
+        additionalProperty.map(({ name, value }) => [name, value]),
       ),
     };
   }
@@ -120,7 +119,7 @@ const useAddToCart = ({ product, seller }: Props) => {
       itemId: Number(productGroupID),
       add_to_cart_enhanced: "1",
       attributes: Object.fromEntries(
-        additionalProperty.map(({ name, value }) => [name, value])
+        additionalProperty.map(({ name, value }) => [name, value]),
       ),
     };
   }
@@ -148,7 +147,7 @@ function AddToCartProductDetail(props: Props) {
         class="flex flex-col md:flex-row border-t border-neutral pt-4"
         data-item-id-pd={product.productID}
         data-cart-item-pd={encodeURIComponent(
-          JSON.stringify({ item, platformProps })
+          JSON.stringify({ item, platformProps }),
         )}
       >
         <div class="flex w-[290px] flex-wrap gap-10 mx-auto md:mx-0">
@@ -189,13 +188,13 @@ function AddToCartProductDetail(props: Props) {
         class="flex border-t border-neutral mt-4 "
         data-item-id-pd={product.productID}
         data-cart-item-pd={encodeURIComponent(
-          JSON.stringify({ item, platformProps })
+          JSON.stringify({ item, platformProps }),
         )}
       >
         <button
           class={clx(
             "flex w-full h-[48px] bg-primary text-base-200 min-h-0 mt-4 ",
-            _class?.toString()
+            _class?.toString(),
           )}
           hx-on:click={useScript(onClick)}
         >
@@ -203,12 +202,11 @@ function AddToCartProductDetail(props: Props) {
             Comprar
           </span>
         </button>
-
       </div>
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{ __html: useScript(onLoad, id) }}
-        />
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{ __html: useScript(onLoad, id) }}
+      />
     </div>
   );
 }

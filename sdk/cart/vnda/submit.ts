@@ -19,9 +19,10 @@ const actions: CartSubmitActions<AppContext> = {
       cart?.orderForm?.items?.findIndex((product, index) =>
         product?.quantity !== items[index]
       ) ?? -1;
+    const itemId = cart?.orderForm?.items?.[index]?.id;
 
     const props = {
-      itemId: cart?.orderForm?.items?.[index]?.id,
+      itemId: itemId == null ? itemId : String(itemId),
       quantity: items[index],
     };
 

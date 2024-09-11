@@ -125,7 +125,6 @@ function ProductDescription({ page }: Props) {
               <div
                 for="myCheckbox "
                 class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4"
-                
               >
                 Descricão Geral
               </div>

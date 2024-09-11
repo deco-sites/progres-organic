@@ -152,14 +152,16 @@ function AddToCartButton(props: Props) {
       </button>
 
       {/* Quantity Input */}
-      {/* <div class="flex-grow hidden peer-checked:flex">
+      {
+        /* <div class="flex-grow hidden peer-checked:flex">
         <QuantitySelector
           disabled
           min={0}
           max={100}
           hx-on:change={useScript(onChange)}
         />
-      </div> */}
+      </div> */
+      }
 
       <script
         type="module"
