@@ -18,7 +18,7 @@ const onClick = (delta: number) => {
 function QuantitySelector(
   { id = useId(), disabled, ...props }: JSX.IntrinsicElements["input"],
 ) {
-  console.log(props.value)
+  
   return (
     <div class="join border rounded w-full min-h-0 h-[32px] gap-1">
       <button
