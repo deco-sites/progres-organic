@@ -25,20 +25,7 @@
       "section": {
         "__resolveType": "site/sections/Product/ProductDetails.tsx",
         "page": {
-          "__resolveType": "commerce/loaders/product/extensions/detailsPage.ts",
-          "data": {
-            "__resolveType": "vnda/loaders/productDetailsPage.ts",
-            "slug": {
-              "__resolveType": "website/functions/requestToParam.ts",
-              "param": "slug"
-            },
-            "priceIntl": false
-          },
-          "extensions": [
-            {
-              "__resolveType": "vnda/loaders/productDetailsPageVideo.ts"
-            }
-          ]
+          "__resolveType": "PDP Loader"
         },
         "sections": [
           {
