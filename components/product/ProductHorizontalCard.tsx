@@ -17,7 +17,7 @@ export default function ProductHorizontalCard(
 ) {
   return (
     <div>
-      <h2>{teste}</h2>
+      <h2>"teste"</h2>
     </div>
   );
 }

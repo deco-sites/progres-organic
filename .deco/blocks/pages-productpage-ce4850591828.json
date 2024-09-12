@@ -31,7 +31,16 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/ProductShelfHorizontal.tsx"
+              "__resolveType": "site/sections/ProductShelfHorizontal.tsx",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 3,
+                "sort": "newest"
+              },
+              "title": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!"
             }
           }
         ],

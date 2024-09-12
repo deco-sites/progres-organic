@@ -10,6 +10,7 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   product: Product;
   seller: string;
   item: AnalyticsItem;
+  icon: string;
 }
 
 const onClick = () => {
@@ -17,7 +18,7 @@ const onClick = () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
   const { item, platformProps } = JSON.parse(
-    decodeURIComponent(container.getAttribute("data-cart-item")!),
+    decodeURIComponent(container.getAttribute("data-cart-item")!)
   );
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
@@ -40,9 +41,9 @@ const onChange = () => {
 const onLoad = (id: string) => {
   window.STOREFRONT.CART.subscribe((sdk) => {
     const container = document.getElementById(id);
-    const checkbox = container?.querySelector<HTMLInputElement>(
-      'input[type="checkbox"]',
-    );
+    // const checkbox = container?.querySelector<HTMLInputElement>(
+    //   'input[type="checkbox"]',
+    // );
     const input = container?.querySelector<HTMLInputElement>(
       'input[type="number"]',
     );
@@ -50,20 +51,21 @@ const onLoad = (id: string) => {
 
     const quantity = sdk.getQuantity(itemID) || 0;
 
-    if (!input || !checkbox) {
-      return;
-    }
+    // if (!input || !checkbox) {
+    //   return;
+    // }
 
-    input.value = quantity.toString();
-    checkbox.checked = quantity > 0;
+    // input.value = quantity.toString();
+    // checkbox.checked = quantity > 0;
 
-    // enable interactivity
-    // container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
-    //   node.disabled = false
-    // );
-    // container?.querySelectorAll<HTMLButtonElement>("input").forEach((node) =>
-    //   node.disabled = false
-    // );
+    
+    container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
+      node.disabled = false
+    );
+    container?.querySelectorAll<HTMLButtonElement>("input").forEach((node) =>
+      node.disabled = false
+    );
+    return;
   });
 };
 
@@ -123,7 +125,7 @@ const useAddToCart = ({ product, seller }: Props) => {
 };
 
 function AddToCartButton(props: Props) {
-  const { product, item, class: _class } = props;
+  const { product, item, class: _class, icon } = props;
   const platformProps = useAddToCart(props);
   const id = useId();
 
@@ -146,8 +148,8 @@ function AddToCartButton(props: Props) {
         hx-on:click={useScript(onClick)}
         disabled={false}
       >
-        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm">
-          Comprar
+        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm flex justify-center items-center">
+          Comprar{icon !== "" && <img class="ml-1" src={icon} alt="icone de um carrinho de compras" />}
         </span>
       </button>
 

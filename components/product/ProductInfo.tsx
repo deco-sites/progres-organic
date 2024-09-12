@@ -19,6 +19,8 @@ interface Props {
 
 function ProductInfo({ page, icons }: Props) {
   const id = useId();
+  console.log(page);
+  
 
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
@@ -80,7 +82,7 @@ function ProductInfo({ page, icons }: Props) {
           class={clx(
             "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
             percent < 1 && "opacity-0",
-            "w-fit",
+            "w-fit"
           )}
         >
           {percent} % off
@@ -91,12 +93,12 @@ function ProductInfo({ page, icons }: Props) {
       <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
 
       {/* Prices */}
-      <div class="flex gap-3 pt-1">
+      <div class="flex flex-col gap-2 pt-1">
         <span class="line-through text-sm font-medium text-gray-400">
           {formatPrice(listPrice, offers?.priceCurrency)}
         </span>
-        <span class="text-2xl font-semibold text-base-400">
-          {formatPrice(price, offers?.priceCurrency)}
+        <span class="text-3xl font-bold text-primary">
+          {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
         </span>
       </div>
 
@@ -109,34 +111,31 @@ function ProductInfo({ page, icons }: Props) {
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartProductDetail
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation"
-                disabled={false}
-                icons={icons}
-              />
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartProductDetail
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary no-animation"
+              disabled={false}
+              icons={icons}
+            />
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
 
       {/* Shipping Simulation */}
-      {
-        /* <div class="mt-8">
+      {/* <div class="mt-8">
         <ShippingSimulationForm
           items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
         />
-      </div> */
-      }
+      </div> */}
 
       {/* Description card */}
-      {
-        /* <div class="mt-4 sm:mt-6">
+      {/* <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
             <details>
@@ -148,8 +147,7 @@ function ProductInfo({ page, icons }: Props) {
             </details>
           )}
         </span>
-      </div> */
-      }
+      </div> */}
     </div>
   );
 }
