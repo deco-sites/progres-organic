@@ -84,10 +84,7 @@ function ProductCardHorizontal({
         _class
       )}
     >
-      
-      <figure
-        class="relative w-[160px]"
-      >
+      <figure class="relative w-[160px]">
         {/* Product Images */}
         <a
           href={relativeUrl}
@@ -103,10 +100,7 @@ function ProductCardHorizontal({
             alt={front.alternateName}
             width={120}
             height={120}
-            class={clx(
-              "object-contain",
-              "rounded w-full",
-            )}
+            class={clx("object-contain", "rounded w-full")}
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -126,17 +120,15 @@ function ProductCardHorizontal({
           />
         </a>
 
-        {/* Wishlist button */}
-        <div class="absolute top-0 left-0 w-full flex items-center justify-between">
-          {/* Discounts */}
-          <span
-            class={clx(
-              "text-[11px] font-bold text-base-200 bg-primary text-center rounded-badge px-2 py-1",
-              (percent < 1 || !inStock) && "opacity-0"
-            )}
-          >
-            {percent} % off
-          </span>
+        <div
+          class={clx(
+            "text-[7px] font-bold text-base-200 bg-primary text-center rounded-badge px-2 py-1",
+            "absolute top-0 left-0 flex flex-col",
+            (percent < 1 || !inStock) && "opacity-0"
+          )}
+        >
+          <span>{percent}%</span>
+          <span>off</span>
         </div>
       </figure>
 

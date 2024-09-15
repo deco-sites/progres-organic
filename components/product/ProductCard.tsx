@@ -50,9 +50,10 @@ function ProductCard({
   const firstSkuVariations = Object.entries(possibilities)?.[0];
   const variants = Object.entries(firstSkuVariations?.[1] ?? {});
   const relativeUrl = relative(url);
-  const percent = listPrice && price
-    ? Math.round(((listPrice - price) / listPrice) * 100)
-    : 0;
+  const percent =
+    listPrice && offers?.lowPrice
+      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+      : 0;
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -129,27 +130,15 @@ function ProductCard({
           />
         </a>
 
-        {/* Wishlist button */}
-        <div class="absolute top-0 left-0 w-full flex items-center justify-between">
-          {/* Notify Me */}
-          <span
-            class={clx(
-              "text-[10px] font-normal text-secondary text-center rounded-badge px-2 py-1",
-              inStock && "opacity-0"
-            )}
-          >
-            Notify me
-          </span>
-
-          {/* Discounts */}
-          <span
-            class={clx(
-              "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge px-2 py-1",
-              (percent < 1 || !inStock) && "opacity-0"
-            )}
-          >
-            {percent} % off
-          </span>
+        <div
+          class={clx(
+            "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[45px] h-[45px] uppercase",
+            "absolute top-0 left-0 flex flex-col items-center justify-center",
+            (percent < 1 || !inStock) && "opacity-0"
+          )}
+        >
+          <span>{percent}%</span>
+          <span>off</span>
         </div>
       </figure>
 

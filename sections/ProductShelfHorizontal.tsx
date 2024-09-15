@@ -2,18 +2,16 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import type { LoadingFallbackProps } from "deco/mod.ts";
 import ProductSliderHorizontal from "../components/product/ProductSliderHorizontal.tsx";
-import Section, {
-  Props as SectionHeaderProps,
-} from "../components/ui/Section.tsx";
+import Section from "../components/ui/Section.tsx";
 import { useOffer } from "../sdk/useOffer.ts";
 import { useSendEvent } from "../sdk/useSendEvent.ts";
 
-export interface Props extends SectionHeaderProps {
-  title?: "string";
+export interface Props{
+  title: string;
   products: Product[] | null;
 }
 
-export default function ProductShelf({
+export default function ProductShelfHorizontal({
   products,
   title,
 }: Props) {
@@ -41,7 +39,7 @@ export default function ProductShelf({
   return (
     <Section.Container {...viewItemListEvent} class="mx-auto" style={{padding: 0}}>
       {title && (
-        <p class="text-base font-semibold text-secondary border-t border-gray-300 pt-5">
+        <p class="text-base font-semibold text-secondary border-t border-gray-300 pt-5 mt-10">
           {title}
         </p>
       )}

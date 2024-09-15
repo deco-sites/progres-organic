@@ -10,8 +10,6 @@ interface Props {
 function ProductSliderHorizontal({ products, itemListName }: Props) {
   const id = useId();
   
-  
-
   return (
     <>
       <div id={id} class="flex flex-col px-0">

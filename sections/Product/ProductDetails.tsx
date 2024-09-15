@@ -47,7 +47,7 @@ export default function ProductDetails({ page, sections, icons }: Props) {
           <ImageGallerySlider page={page} />
           <ProductDescription page={page} />
         </div>
-        <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1000px]">
+        <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1500px]">
           <ProductInfo page={page} icons={icons} />
           {items}
         </div>

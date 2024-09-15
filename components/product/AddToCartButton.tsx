@@ -74,17 +74,6 @@ const useAddToCart = ({ product, seller }: Props) => {
   const { additionalProperty = [], isVariantOf, productID } = product;
   const productGroupID = isVariantOf?.productGroupID;
 
-  if (platform === "vtex") {
-    return {
-      allowedOutdatedData: ["paymentData"],
-      orderItems: [{ quantity: 1, seller: seller, id: productID }],
-    };
-  }
-
-  if (platform === "shopify") {
-    return { lines: { merchandiseId: productID } };
-  }
-
   if (platform === "vnda") {
     return {
       quantity: 1,
@@ -92,32 +81,6 @@ const useAddToCart = ({ product, seller }: Props) => {
       attributes: Object.fromEntries(
         additionalProperty.map(({ name, value }) => [name, value]),
       ),
-    };
-  }
-
-  if (platform === "wake") {
-    return {
-      productVariantId: Number(productID),
-      quantity: 1,
-    };
-  }
-
-  if (platform === "nuvemshop") {
-    return {
-      quantity: 1,
-      itemId: Number(productGroupID),
-      add_to_cart_enhanced: "1",
-      attributes: Object.fromEntries(
-        additionalProperty.map(({ name, value }) => [name, value]),
-      ),
-    };
-  }
-
-  if (platform === "linx") {
-    return {
-      ProductID: productGroupID,
-      SkuID: productID,
-      Quantity: 1,
     };
   }
 

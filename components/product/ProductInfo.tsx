@@ -19,8 +19,6 @@ interface Props {
 
 function ProductInfo({ page, icons }: Props) {
   const id = useId();
-  console.log(page);
-  
 
   if (page === null) {
     throw new Error("Missing Product Details Page Info");
@@ -31,16 +29,12 @@ function ProductInfo({ page, icons }: Props) {
   //const description = product.description || isVariantOf?.description;
   const title = isVariantOf?.name ?? product.name;
 
-  const {
-    price = 0,
-    listPrice,
-    seller = "1",
-    availability,
-  } = useOffer(offers);
+  const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
-  const percent = listPrice && price
-    ? Math.round(((listPrice - price) / listPrice) * 100)
-    : 0;
+  const percent =
+    listPrice && offers?.lowPrice
+      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+      : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -68,11 +62,15 @@ function ProductInfo({ page, icons }: Props) {
   });
 
   //Checks if the variant name is "title"/"default title" and if so, the SKU Selector div doesn't render
-  const hasValidVariants = isVariantOf?.hasVariant?.some(
-    (variant) =>
-      variant?.name?.toLowerCase() !== "title" &&
-      variant?.name?.toLowerCase() !== "default title",
-  ) ?? false;
+  const hasValidVariants =
+    isVariantOf?.hasVariant?.some(
+      (variant) =>
+        variant?.name?.toLowerCase() !== "title" &&
+        variant?.name?.toLowerCase() !== "default title"
+    ) ?? false;
+  
+
+  
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
@@ -92,22 +90,30 @@ function ProductInfo({ page, icons }: Props) {
       {/* Product Name */}
       <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
 
-      {/* Prices */}
-      <div class="flex flex-col gap-2 pt-1">
-        <span class="line-through text-sm font-medium text-gray-400">
-          {formatPrice(listPrice, offers?.priceCurrency)}
-        </span>
-        <span class="text-3xl font-bold text-primary">
-          {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
-        </span>
-      </div>
+      <div class="flex items-center gap-10">
+        <div>
+          {/* Prices */}
+          <div class="flex flex-col gap-2 pt-1">
+            <span class="line-through text-sm font-medium text-gray-400">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
+            <span class="text-3xl font-bold text-primary">
+              {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
+            </span>
+          </div>
 
-      {/* Sku Selector */}
-      {hasValidVariants && (
-        <div className="mt-4 sm:mt-8">
-          <ProductSelector product={product} />
+          {/* Sku Selector */}
+          {hasValidVariants && (
+            <div className="mt-4 sm:mt-8">
+              <ProductSelector product={product} />
+            </div>
+          )}
         </div>
-      )}
+        <div
+          class="konfidency-reviews-summary review-description"
+          data-sku={productID}
+        ></div>
+      </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
@@ -148,6 +154,11 @@ function ProductInfo({ page, icons }: Props) {
           )}
         </span>
       </div> */}
+
+      <script
+        async
+        src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
+      />
     </div>
   );
 }

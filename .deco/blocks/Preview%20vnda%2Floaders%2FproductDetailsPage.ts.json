@@ -1,3 +1,7 @@
 {
-  "__resolveType": "vnda/loaders/productDetailsPage.ts"
+  "__resolveType": "vnda/loaders/productDetailsPage.ts",
+  "slug": {
+    "__resolveType": "website/functions/requestToParam.ts",
+    "param": "slug"
+  }
 }
