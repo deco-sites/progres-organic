@@ -110,6 +110,7 @@ function ProductInfo({ page, icons }: Props) {
           )}
         </div>
         <div
+          id="teste-review"
           class="konfidency-reviews-summary review-description"
           data-sku={productID}
         ></div>
