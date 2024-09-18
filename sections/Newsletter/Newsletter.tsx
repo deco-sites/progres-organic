@@ -12,15 +12,16 @@ interface NoticeProps {
 }
 
 export interface Props {
-  empty?: NoticeProps;
+  title?: string;
+  description?: string;
   success?: NoticeProps;
   failed?: NoticeProps;
 
-  /** @description Signup label */
-  label?: string;
+  /** @description Nome placeholder */
+  placeholderName?: string;
 
   /** @description Input placeholder */
-  placeholder?: string;
+  placeholderEmail?: string;
 
   /** @hide true */
   status?: "success" | "failed";
@@ -31,12 +32,15 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
 
   const form = await req.formData();
   const email = `${form.get("email") ?? ""}`;
+  const name = `${form.get("name") ?? ""}`;
 
-  if (platform === "vtex") {
+  if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
-    await (ctx as any).invoke("vtex/actions/newsletter/subscribe.ts", {
+    await(ctx as any).invoke("site/actions/sendEmailJS.ts", {
+      name,
       email,
     });
+    console.log(name, email);
 
     return { ...props, status: "success" };
   }
@@ -48,9 +52,13 @@ export function loader(props: Props) {
   return { ...props, status: undefined };
 }
 
-function Notice(
-  { title, description }: { title?: string; description?: string },
-) {
+function Notice({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) {
   return (
     <div class="flex flex-col justify-center items-center sm:items-start gap-4">
       <span class="text-3xl font-semibold text-center sm:text-start">
@@ -64,11 +72,8 @@ function Notice(
 }
 
 function Newsletter({
-  empty = {
-    title: "Get top deals, latest trends, and more.",
-    description:
-      "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here.",
-  },
+  title,
+  description,
   success = {
     title: "Thank you for subscribing!",
     description:
@@ -79,8 +84,8 @@ function Newsletter({
     description:
       "Something went wrong. Please try again. If the problem persists, please contact us.",
   },
-  label = "Enviar",
-  placeholder = "Enter your email address",
+  placeholderName = "Digite seu nome aqui!",
+  placeholderEmail = "Digite seu e-mail aqui",
   status,
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
@@ -89,50 +94,57 @@ function Newsletter({
         <div class="p-14 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
           <Icon
             size={80}
-            class={clx(
-              status === "success" ? "text-success" : "text-error",
-            )}
+            class={clx(status === "success" ? "text-primary" : "text-error")}
             id={status === "success" ? "check-circle" : "error"}
           />
-          <Notice {...status === "success" ? success : failed} />
+          <Notice {...(status === "success" ? success : failed)} />
         </div>
       </Section.Container>
     );
   }
 
   return (
-    <Section.Container class="bg-base-200">
-      <div class="p-14 grid grid-flow-row sm:grid-cols-2 gap-10 sm:gap-20 place-items-center">
-        <Notice {...empty} />
+    <div class="bg-primary text-base-200">
+      <div class="flex flex-col">
+        <div class="flex flex-col justify-center items-center  pt-6">
+          <span class="uppercase text-base">Newsletter</span>
+          <span class="text-2xl font-semibold text-center pt-9 uppercase">
+            {title}
+          </span>
+          <span class="text-base font-normal text-center pt-4">
+            {description}
+          </span>
+        </div>
 
         <form
           hx-target="closest section"
           hx-swap="outerHTML"
           hx-post={useComponent(import.meta.url)}
-          class="flex flex-col sm:flex-row gap-4 w-full"
+          class="flex flex-col items-center sm:flex-row gap-4 mx-auto pt-[60px] pb-12"
         >
           <input
             name="name"
-            class="input input-bordered flex-grow"
+            class="input input-bordered w-[365px] h-[56px]"
             type="text"
-            placeholder={placeholder}
+            placeholder={placeholderName}
           />
           <input
             name="email"
-            class="input input-bordered flex-grow"
+            class="input input-bordered w-[365px] md:-w-[551px] h-[56px]"
             type="text"
-            placeholder={placeholder}
+            placeholder={placeholderEmail}
           />
 
-          <button class="btn btn-primary" type="submit">
+          <button class="btn btn-base-200 w-[189px] h-[56px]" type="submit">
             <span class="[.htmx-request_&]:hidden inline uppercase">
-              {label}
+              Enviar
             </span>
             <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
           </button>
         </form>
       </div>
-    </Section.Container>
+      {/* <NewsletterIsland  /> */}
+    </div>
   );
 }
 
