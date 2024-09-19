@@ -12,10 +12,7 @@
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header"
-      }
+      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -30,15 +27,11 @@
             "desktop": 4
           },
           "variant": "aside",
-          "pagination": "show-more"
+          "pagination": "pagination"
         },
-        "startingPage": 1
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+        "startingPage": 1,
+        "title": "LOREN IPSUM",
+        "subtitle": "Lorem ipsum dolor sit amet consectetur. Quis mi quis at quisque viverra nullam congue nunc neque. Non amet a nibh tristique nulla aenean purus. Volutpat mattis fringilla cursus nec nulla sit."
       }
     },
     {

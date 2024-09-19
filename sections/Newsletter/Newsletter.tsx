@@ -40,7 +40,6 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
       name,
       email,
     });
-    console.log(name, email);
 
     return { ...props, status: "success" };
   }

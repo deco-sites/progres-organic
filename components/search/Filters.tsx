@@ -22,7 +22,7 @@ function ValueItem(
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div aria-checked={selected} class="checkbox" />
-      <span class="text-sm">{label}</span>
+      <span class="text-sm">{label.replace("-", " ")}</span>
       {quantity > 0 && <span class="text-sm text-base-400">({quantity})</span>}
     </a>
   );
@@ -33,7 +33,7 @@ function FilterValues({ key, values }: FilterToggle) {
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
   return (
-    <ul class={clx(`flex flex-wrap gap-2`, flexDirection)}>
+    <ul class={clx(`flex flex-wrap gap-2 `, flexDirection)}>
       {values.map((item) => {
         const { url, selected, value } = item;
 
@@ -66,16 +66,21 @@ function FilterValues({ key, values }: FilterToggle) {
 }
 
 function Filters({ filters }: Props) {
+
+  
   return (
-    <ul class="flex flex-col gap-6 p-4 sm:p-0">
-      {filters
-        .filter(isToggle)
-        .map((filter) => (
-          <li class="flex flex-col gap-4">
-            <span>{filter.label}</span>
-            <FilterValues {...filter} />
-          </li>
-        ))}
+    <ul class="flex flex-col gap-6 p-4 sm:p-0 ">
+      {filters.filter(isToggle).map(
+        (filter) =>
+          filter.label === "marca" && (
+            <li class="flex flex-col gap-4">
+              <span class="text-sm font-semibold first-letter:uppercase">
+                {filter.label}
+              </span>
+              <FilterValues {...filter} />
+            </li>
+          )
+      )}
     </ul>
   );
 }

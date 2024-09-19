@@ -26,7 +26,6 @@ export default async function action(
   };
 
   try {
-    console.log("props", props.name, props.email);
 
     const response = await fetch(
       "https://api.emailjs.com/api/v1.0/email/send",
@@ -38,7 +37,6 @@ export default async function action(
         body: JSON.stringify(emailData),
       }
     );
-    console.log("aquiiii");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
