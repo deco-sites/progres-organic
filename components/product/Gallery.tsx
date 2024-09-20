@@ -5,6 +5,7 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
+import { useOffer } from "../../sdk/useOffer.ts";
 
 export interface Props {
   /** @title Integration */
@@ -31,9 +32,17 @@ export default function GallerySlider(props: Props) {
 
   const {
     page: {
-      product: { name, isVariantOf, image: pImages },
+      product: { name, isVariantOf, image: pImages, offers },
     },
   } = props;
+
+  const {listPrice } = useOffer(offers);
+
+  // % of Discount
+  const percent =
+    listPrice && offers?.lowPrice
+      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+      : 0;
 
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
@@ -68,9 +77,21 @@ export default function GallerySlider(props: Props) {
         {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-            <Slider class="carousel carousel-center gap-6 w-full">
+            <Slider class="carousel carousel-center gap-6 w-full ">
               {groupImages.map((item, index) => (
                 <Slider.Item index={index} class="carousel-item w-full">
+                  {percent > 1 && (
+                    <div
+                      class={clx(
+                        "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[50px] h-[50px] uppercase",
+                        "absolute top-2 left-2 flex flex-col items-center justify-center",
+                        percent < 1 && "opacity-0",
+                      
+                      )}
+                    >
+                      <p>{percent} % off</p>
+                    </div>
+                  )}
                   {item.encodingFormat === "image" && (
                     <Image
                       class="object-contain w-full"
@@ -95,8 +116,7 @@ export default function GallerySlider(props: Props) {
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      >
-                      </iframe>
+                      ></iframe>
                     </div>
                   )}
                 </Slider.Item>
@@ -118,7 +138,7 @@ export default function GallerySlider(props: Props) {
             </Slider.NextButton>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <label class="btn btn-ghost hidden sm:inline-flex" for={zoomId}>
+              <label class="btn btn-ghost btn-circle hidden sm:inline-flex" for={zoomId}>
                 <Icon id="pan_zoom" />
               </label>
             </div>
@@ -134,7 +154,7 @@ export default function GallerySlider(props: Props) {
               "gap-2",
               "max-w-full max-h-[535px]",
               "overflow-x-auto",
-              "sm:overflow-y-auto",
+              "sm:overflow-y-auto"
             )}
           >
             {groupImages.map((item, index) => (
@@ -162,8 +182,7 @@ export default function GallerySlider(props: Props) {
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      >
-                      </iframe>
+                      ></iframe>
                     </div>
                   )}
                 </Slider.Dot>

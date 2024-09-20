@@ -68,14 +68,15 @@ function ProductInfo({ page, icons }: Props) {
         variant?.name?.toLowerCase() !== "title" &&
         variant?.name?.toLowerCase() !== "default title"
     ) ?? false;
-  
 
-  
+  //Calculate the Pix Price Value
+  const pixPrice =
+    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      {percent > 1 && (
+      {/* {percent > 1 && (
         <span
           class={clx(
             "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
@@ -85,7 +86,7 @@ function ProductInfo({ page, icons }: Props) {
         >
           {percent} % off
         </span>
-      )}
+      )} */}
 
       {/* Product Name */}
       <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
@@ -100,18 +101,26 @@ function ProductInfo({ page, icons }: Props) {
             <span class="text-3xl font-bold text-primary">
               {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
             </span>
+
+            {/* Value with PIX discount */}
+            <span class="font-bold text-[18px] text-primary">
+              {formatPrice(pixPrice, offers?.priceCurrency)} com pix
+            </span>
+            <span class="text-sm ">
+              <strong class="font-bold text-primary">5% de desconto</strong> pagando com Pix
+            </span>
           </div>
 
           {/* Sku Selector */}
-          {hasValidVariants && (
+          {/* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )}
+          )} */}
         </div>
         <div
           id="teste-review"
-          class="konfidency-reviews-summary review-description"
+          class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
         ></div>
       </div>

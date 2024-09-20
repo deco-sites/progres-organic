@@ -53,7 +53,6 @@ const NewsletterIsland = () => {
           name,
           email,
         });
-console.log("chegou");
 
         formRef.current?.reset();
       } else {

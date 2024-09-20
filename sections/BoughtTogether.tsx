@@ -15,7 +15,54 @@ export interface Props {
   page: ProductDetailsPage | null;
 }
 
-export default function ProductDetails({ page }: Props) {
+export const loader = async (props: Props, req: Request, ctx: AppContext) => {
+  console.log("Props.RelatedProducts: " + props.relatedProducts);
+  const [productWithAdditionalProperty] = (await ctx.get({
+    __resolveType: "vnda/loaders/productList.ts",
+    tags: [],
+    count: 1,
+    ids: [props.relatedProducts?.product.inProductGroupWithID],
+  })) as unknown as Product[];
+
+  console.log(
+    "Props.RelatedProducts?.product.inProductGroupWithID: " +
+      props.relatedProducts?.product.inProductGroupWithID
+  );
+
+  const tag = productWithAdditionalProperty?.additionalProperty?.find(
+    ({ name }) => {
+      try {
+        return name?.includes("relacionados");
+      } catch (error) {
+        return false;
+      }
+    }
+  );
+
+  if (!tag) {
+    const allTagData = await ctx.get({
+      __resolveType: "vnda/loaders/productList.ts",
+      tags: "todos",
+    });
+
+    return {
+      ...props,
+      relatedProductsList: allTagData ?? [],
+    };
+  }
+
+  const data = await ctx.get({
+    __resolveType: "vnda/loaders/productList.ts",
+    tags: tag.name,
+  });
+
+  return {
+    ...props,
+    relatedProductsList: data ?? [],
+  };
+};
+
+export default function BoughtTogether({ page }: Props) {
   const id = useId();
 
   if (page === null) {
@@ -73,8 +120,6 @@ export default function ProductDetails({ page }: Props) {
 
   const groupImages = isVariantOf?.image ?? pImages ?? [];
   const cardImage = groupImages[0];
-
-  console.log(cardImage);
 
   return (
     <div class="container flex gap-4 sm:gap-5 w-full pt-8 items-center py-5">

@@ -56,8 +56,6 @@ function ProductCardHorizontal({
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
-  console.log("list",offers?.lowPrice);
-
   {
     /* Add click event to dataLayer */
   }
