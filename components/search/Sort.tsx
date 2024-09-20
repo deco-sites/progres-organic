@@ -16,7 +16,7 @@ const getUrl = (href: string, value: string) => {
 };
 
 const labels: Record<string, string> = {
-  "relevance:desc": "Relevância",
+  // "relevance:desc": "Relevância",
   "price:desc": "Maior Preço",
   "price:asc": "Menor Preço",
   "orders:desc": "Mais vendidos",
@@ -27,6 +27,7 @@ const labels: Record<string, string> = {
 };
 
 function Sort({ sortOptions, url }: Props) {
+  
   const current = getUrl(
     url,
     new URL(url).searchParams.get(SORT_QUERY_PARAM) ?? "",
@@ -37,27 +38,19 @@ function Sort({ sortOptions, url }: Props) {
   }));
 
   return (
-    <>
-      <label for="sort" class="sr-only">Sort by</label>
-      <select
-        name="sort"
-        class="select w-full max-w-sm rounded-lg"
-        hx-on:change={useScript(() => {
-          const select = event!.currentTarget as HTMLSelectElement;
-          window.location.href = select.value;
-        })}
-      >
+    <div class="w-full max-w-sm rounded-lg">
+      <span class="text-sm font-semibold first-letter:uppercase"> Ordenar</span>
+      <ul class="list-none p-0">
         {options.map(({ value, label }) => (
-          <option
-            label={labels[label] ?? label}
-            value={value}
-            selected={value === current}
-          >
-            {label}
-          </option>
+          <li key={value} class="py-2 px-4">
+            <a href={value} class="block text-sm">
+              {" "}
+              {labels[label] ?? label}{" "}
+            </a>
+          </li>
         ))}
-      </select>
-    </>
+      </ul>
+    </div>
   );
 }
 

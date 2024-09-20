@@ -15,13 +15,17 @@ import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 
+
 export interface Layout {
   /**
    * @title Pagination
    * @description Format of the pagination
    */
   pagination?: "show-more" | "pagination";
+  
 }
+
+
 
 export interface Props {
   /** @title Integration */
@@ -206,7 +210,7 @@ function Result(props: SectionProps<typeof loader>) {
   const controls = useId();
   const device = useDevice();
 
-  const { startingPage = 0, url, partial } = props;
+  const { startingPage = 0, url, partial} = props;
   const page = props.page!;
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -248,7 +252,7 @@ function Result(props: SectionProps<typeof loader>) {
       <div
         id={container}
         {...viewItemListEvent}
-        class=" max-w-[1440px] mx-auto"
+        class=" max-w-[1440px] mx-auto pt-11"
       >
         {partial ? (
           <PageResult {...props} />
@@ -270,19 +274,21 @@ function Result(props: SectionProps<typeof loader>) {
                       </label>
                     </div>
                     <div class="flex-grow overflow-auto">
-                      <Filters filters={filters} />
+                      <Filters
+                        filters={filters}
+                      />
                     </div>
                   </div>
                 }
               >
                 <div class="flex sm:hidden justify-between items-end">
-                  <div class="flex flex-col">
+                  <div class="flex flex-col border">
                     {results}
                     {sortBy}
                   </div>
 
-                  <label class="btn btn-ghost" for={controls}>
-                    Filters
+                  <label class="btn btn-ghost " for={controls}>
+                    Filtros
                   </label>
                 </div>
               </Drawer>
@@ -295,16 +301,15 @@ function Result(props: SectionProps<typeof loader>) {
                     Filtros
                   </span>
 
-                  <Filters filters={filters} />
+                  <Filters filters={filters}/>
+                  
+                  <div>{sortBy}</div>
                 </aside>
               )}
 
               <div class="flex flex-col gap-9">
                 {device === "desktop" && (
-                  <div class="flex justify-between items-center">
-                    {results}
-                    <div>{sortBy}</div>
-                  </div>
+                  <div class="flex justify-between items-center">{results}</div>
                 )}
                 <PageResult {...props} />
               </div>
