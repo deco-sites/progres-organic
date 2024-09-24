@@ -10,9 +10,10 @@ interface Props {
 function ProductSliderHorizontal({ products, itemListName }: Props) {
   const id = useId();
   
+  
   return (
     <>
-      <div id={id} class="flex flex-col px-0">
+      <div id={id} class="flex flex-col px-0" >
         <div class="">
           <div class="flex flex-col gap-4  w-full pb-5 ">
             {products?.map((product, index) => (
@@ -21,7 +22,7 @@ function ProductSliderHorizontal({ products, itemListName }: Props) {
                   index={index}
                   product={product}
                   itemListName={itemListName}
-                  class="w-[272px] "
+                  class={`w-[272px] ${index} `}
                 />
               </div>
             ))}

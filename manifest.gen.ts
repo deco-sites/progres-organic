@@ -14,10 +14,11 @@ import * as $$$$$$$$$$$5 from "./apps/site.ts";
 import * as $$$0 from "./loaders/availableIcons.ts";
 import * as $$$1 from "./loaders/icons.ts";
 import * as $$$2 from "./loaders/minicart.ts";
-import * as $$$3 from "./loaders/user.ts";
-import * as $$$4 from "./loaders/wishlist.ts";
+import * as $$$3 from "./loaders/productListRelated.ts";
+import * as $$$4 from "./loaders/user.ts";
+import * as $$$5 from "./loaders/wishlist.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
-import * as $$$$$$1 from "./sections/BoughtTogether.tsx";
+import * as $$$$$$1 from "./sections/BuyTogether.tsx";
 import * as $$$$$$2 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$3 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$4 from "./sections/Component.tsx";
@@ -51,7 +52,6 @@ import * as $$$$$$31 from "./sections/Session.tsx";
 import * as $$$$$$32 from "./sections/SmallBannersTop.tsx";
 import * as $$$$$$33 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$34 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$40 from "./sections/teste001.tsx";
 import * as $$$$$$35 from "./sections/TextWithImage.tsx";
 import * as $$$$$$36 from "./sections/Theme/Theme.tsx";
 import * as $$$$$$37 from "./sections/TrackPackage.tsx";
@@ -63,12 +63,13 @@ const manifest = {
     "site/loaders/availableIcons.ts": $$$0,
     "site/loaders/icons.ts": $$$1,
     "site/loaders/minicart.ts": $$$2,
-    "site/loaders/user.ts": $$$3,
-    "site/loaders/wishlist.ts": $$$4,
+    "site/loaders/productListRelated.ts": $$$3,
+    "site/loaders/user.ts": $$$4,
+    "site/loaders/wishlist.ts": $$$5,
   },
   "sections": {
     "site/sections/Animation/Animation.tsx": $$$$$$0,
-    "site/sections/BoughtTogether.tsx": $$$$$$1,
+    "site/sections/BuyTogether.tsx": $$$$$$1,
     "site/sections/Category/CategoryBanner.tsx": $$$$$$2,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$3,
     "site/sections/Component.tsx": $$$$$$4,
@@ -102,7 +103,6 @@ const manifest = {
     "site/sections/SmallBannersTop.tsx": $$$$$$32,
     "site/sections/Social/InstagramPosts.tsx": $$$$$$33,
     "site/sections/Social/WhatsApp.tsx": $$$$$$34,
-    "site/sections/teste001.tsx": $$$$$$40,
     "site/sections/TextWithImage.tsx": $$$$$$35,
     "site/sections/Theme/Theme.tsx": $$$$$$36,
     "site/sections/TrackPackage.tsx": $$$$$$37,

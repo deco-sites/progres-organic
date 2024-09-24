@@ -31,25 +31,7 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/BoughtTogether.tsx",
-              "products": {
-                "__resolveType": "vnda/loaders/productList.ts",
-                "tags": [],
-                "typeTags": [],
-                "ids": [],
-                "sort": "newest"
-              },
-              "title": "Compre Junto",
-              "page": {
-                "__resolveType": "Preview vnda/loaders/productDetailsPage.ts"
-              }
-            }
-          },
-          {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
               "__resolveType": "site/sections/ProductShelfHorizontal.tsx",
-              "title": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "tags": [],
@@ -58,7 +40,20 @@
                 "count": 3,
                 "sort": "newest"
               },
+              "title": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!",
               "cta": "/"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/BuyTogether.tsx",
+              "page": {
+                "__resolveType": "Preview vnda/loaders/productDetailsPage.ts"
+              },
+              "products": {
+                "__resolveType": "Preview vnda/loaders/productList.ts"
+              }
             }
           }
         ],

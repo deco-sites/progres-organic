@@ -37,6 +37,7 @@ function ProductCardHorizontal({
   class: _class,
 }: Props) {
   const id = useId();
+  
 
   const { url, image: images, offers, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
