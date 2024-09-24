@@ -39,7 +39,7 @@ function ProductCard({
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf } = product;
+  const { url, image: images, offers, isVariantOf, productID } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
@@ -143,6 +143,7 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5 flex flex-col items-center">
+        <div class="konfidency-reviews-multi" data-sku="{productID}"></div>
         <span class="font-medium text-base text-secondary text-center">
           {title}
         </span>
@@ -214,6 +215,7 @@ function ProductCard({
           Ver mais
         </a>
       </div>
+      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"></script>
     </div>
   );
 }
