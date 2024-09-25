@@ -31,6 +31,18 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
+              "__resolveType": "site/sections/BuyTogether.tsx",
+              "products": {
+                "__resolveType": "Preview vnda/loaders/productList.ts"
+              },
+              "page": {
+                "__resolveType": "Preview vnda/loaders/productDetailsPage.ts"
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
               "__resolveType": "site/sections/ProductShelfHorizontal.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
@@ -42,18 +54,6 @@
               },
               "title": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!",
               "cta": "/"
-            }
-          },
-          {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/BuyTogether.tsx",
-              "page": {
-                "__resolveType": "Preview vnda/loaders/productDetailsPage.ts"
-              },
-              "products": {
-                "__resolveType": "Preview vnda/loaders/productList.ts"
-              }
             }
           }
         ],
@@ -79,22 +79,6 @@
             "subtitle": "garantida"
           }
         ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "Produtos relacionados",
-        "products": {
-          "__resolveType": "vnda/loaders/productList.ts",
-          "sort": "newest",
-          "tags": [],
-          "typeTags": [],
-          "ids": [],
-          "count": 10
-        },
-        "subtitle": "Os clientes também compraram"
       }
     },
     {
@@ -140,7 +124,17 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "title": "Produtos relacionados",
+        "products": {
+          "__resolveType": "vnda/loaders/productList.ts",
+          "sort": "newest",
+          "tags": [],
+          "typeTags": [],
+          "ids": [],
+          "count": 10
+        },
+        "subtitle": "Os clientes também compraram"
       }
     },
     {

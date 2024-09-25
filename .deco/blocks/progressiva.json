@@ -52,6 +52,7 @@
     ]
   },
   "complementaryColors": {
-    "base-200": "#ffffff"
+    "base-200": "#ffffff",
+    "base-300": "#FF1493"
   }
 }

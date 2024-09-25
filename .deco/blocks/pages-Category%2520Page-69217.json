@@ -1,6 +1,6 @@
 {
   "name": "Category Page",
-  "path": "/*",
+  "path": "/:slug",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -20,10 +20,7 @@
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header"
-      }
+      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -38,7 +35,11 @@
             "property2": "and",
             "property3": "and"
           },
-          "count": 12
+          "count": 12,
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
         },
         "layout": {
           "columns": {
@@ -49,12 +50,6 @@
           "pagination": "show-more"
         },
         "startingPage": 1
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
       }
     },
     {

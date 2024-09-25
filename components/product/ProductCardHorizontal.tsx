@@ -79,7 +79,7 @@ function ProductCardHorizontal({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-md p-3 w-full h-[146px] flex-row gap-[10px] rounded border border-gray-200",
+        "card card-compact group text-sm hover:shadow-md p-3 pt-1 w-full h-[146px] flex-row gap-[10px] rounded border border-gray-200",
         _class
       )}
     >

@@ -39,7 +39,7 @@ export default function ProductDetails({ page, sections, icons }: Props) {
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:my-10 px-5 sm:px-5 max-w-[1440px]">
+    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:my-10 px-5 sm:px-5 max-w-[1440px] pb-10">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
 
       <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">

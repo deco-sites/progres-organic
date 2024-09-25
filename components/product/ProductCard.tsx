@@ -57,7 +57,9 @@ function ProductCard({
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
-  {/* Add click event to dataLayer */}
+  {
+    /* Add click event to dataLayer */
+  }
   const event = useSendEvent({
     on: "click",
     event: {
@@ -72,6 +74,10 @@ function ProductCard({
   //Added it to check the variant name in the SKU Selector later, so it doesn't render the SKU to "shoes size" in the Product Card
   const firstVariantName = firstSkuVariations?.[0]?.toLowerCase();
   const shoeSizeVariant = "shoe size";
+
+  //Calculate the Pix Price Value
+  const pixPrice =
+    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
 
   return (
     <div
@@ -154,10 +160,14 @@ function ProductCard({
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-bold text-base text-primary">
+          <span class="font-bold text-base text-base-300">
             {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
           </span>
         </div>
+          {/* Value with PIX discount */}
+          <span class="font-bold text-[18px] text-primary pt-2">
+            {formatPrice(pixPrice, offers?.priceCurrency)} no pix
+          </span>
       </a>
 
       {/* SKU Selector */}

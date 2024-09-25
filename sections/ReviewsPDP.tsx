@@ -57,7 +57,7 @@ export default function Section({ page }: Props) {
   }
 
   return (
-    <div class="md:px-[132px] md:w-[1440px]  mx-auto text-primary">
+    <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
       {page.product.review ? (
         <div>
           <script
@@ -65,10 +65,9 @@ export default function Section({ page }: Props) {
             src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
           />
           <div class="konfidency-reviews-details"></div>
-          <p>oi</p>
         </div>
       ) : (
-        <div>
+        <div class="mx-auto">
           <div class="flex justify-between mb-[29px]">
             <div class="flex gap-10 items-start">
               <div class="border-b-2 border-primary leading-1 p-2">
@@ -87,10 +86,10 @@ export default function Section({ page }: Props) {
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap gap-6 ">
+          <div class="flex flex-col xl:flex-row gap-6 ">
             {mockReview.reviews.map((review) =>
               review.reviews.map((item) => (
-                <div class="border border-primary h-[250px] w-full max-w-[576px] min-w-[300px] p-3 rounded">
+                <div class="border border-primary h-[250px] w-[576px] min-w-[300px] p-3 rounded">
                   <p class="text-[12px] h-[51px] w-full text-end">
                     {formatDate(item.created)}
                   </p>

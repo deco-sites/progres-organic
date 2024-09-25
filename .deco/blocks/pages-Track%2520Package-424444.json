@@ -1,17 +1,15 @@
 {
-  "name": "Acompanhe seu Pedido",
-  "path": "/acompanhe-seu-pedido",
+  "name": "Track Package",
+  "path": "/rastreio",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header"
-      }
+      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/TrackPackage.tsx"
+        "__resolveType": "site/sections/TrackPackage.tsx",
+        "name": "teste"
       }
     },
     {

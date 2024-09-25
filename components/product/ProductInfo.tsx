@@ -104,7 +104,7 @@ function ProductInfo({ page, icons }: Props) {
 
             {/* Value with PIX discount */}
             <span class="font-bold text-[18px] text-primary">
-              {formatPrice(pixPrice, offers?.priceCurrency)} com pix
+              {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
               <strong class="font-bold text-primary">5% de desconto</strong> pagando com Pix
