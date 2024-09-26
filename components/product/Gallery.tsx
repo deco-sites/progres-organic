@@ -36,13 +36,12 @@ export default function GallerySlider(props: Props) {
     },
   } = props;
 
-  const {listPrice } = useOffer(offers);
+  const { listPrice } = useOffer(offers);
 
   // % of Discount
-  const percent =
-    listPrice && offers?.lowPrice
-      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-      : 0;
+  const percent = listPrice && offers?.lowPrice
+    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+    : 0;
 
   // Filter images when image's alt text matches product name
   // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
@@ -86,7 +85,6 @@ export default function GallerySlider(props: Props) {
                         "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[50px] h-[50px] uppercase",
                         "absolute top-2 left-2 flex flex-col items-center justify-center",
                         percent < 1 && "opacity-0",
-                      
                       )}
                     >
                       <p>{percent} % off</p>
@@ -116,7 +114,8 @@ export default function GallerySlider(props: Props) {
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      ></iframe>
+                      >
+                      </iframe>
                     </div>
                   )}
                 </Slider.Item>
@@ -138,7 +137,10 @@ export default function GallerySlider(props: Props) {
             </Slider.NextButton>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <label class="btn btn-ghost btn-circle hidden sm:inline-flex" for={zoomId}>
+              <label
+                class="btn btn-ghost btn-circle hidden sm:inline-flex"
+                for={zoomId}
+              >
                 <Icon id="pan_zoom" />
               </label>
             </div>
@@ -154,7 +156,7 @@ export default function GallerySlider(props: Props) {
               "gap-2",
               "max-w-full max-h-[535px]",
               "overflow-x-auto",
-              "sm:overflow-y-auto"
+              "sm:overflow-y-auto",
             )}
           >
             {groupImages.map((item, index) => (
@@ -182,7 +184,8 @@ export default function GallerySlider(props: Props) {
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      ></iframe>
+                      >
+                      </iframe>
                     </div>
                   )}
                 </Slider.Dot>

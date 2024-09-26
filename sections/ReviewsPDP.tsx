@@ -58,51 +58,53 @@ export default function Section({ page }: Props) {
 
   return (
     <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
-      {page.product.review ? (
-        <div>
-          <script
-            async
-            src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
-          />
-          <div class="konfidency-reviews-details"></div>
-        </div>
-      ) : (
-        <div class="mx-auto">
-          <div class="flex justify-between mb-[29px]">
-            <div class="flex gap-10 items-start">
-              <div class="border-b-2 border-primary leading-1 p-2">
-                <span>Avaliações</span>
-              </div>
-              <div class="leading-1 h-[42px] flex items-center">
-                <span>Perguntas</span>
-              </div>
-            </div>
-            <div class="flex gap-5 ">
-              <div class="btn btn-outline btn-primary w-[127px] h-[42px] min-h-0">
-                <span>Avaliar</span>
-              </div>
-              <div class="btn btn-outline btn-primary w-[127px] h-[42px]  min-h-0">
-                <span>Perguntar</span>
-              </div>
-            </div>
+      {page.product.review
+        ? (
+          <div>
+            <script
+              async
+              src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
+            />
+            <div class="konfidency-reviews-details"></div>
           </div>
-          <div class="flex flex-col xl:flex-row gap-6 ">
-            {mockReview.reviews.map((review) =>
-              review.reviews.map((item) => (
-                <div class="border border-primary h-[250px] w-[576px] min-w-[300px] p-3 rounded">
-                  <p class="text-[12px] h-[51px] w-full text-end">
-                    {formatDate(item.created)}
-                  </p>
-                  <p class="text-sm h-[148px]">{item.text}</p>
-                  <p class="text-base font-bold text-center h-[51px]">
-                    {item.name}
-                  </p>
+        )
+        : (
+          <div class="mx-auto">
+            <div class="flex justify-between mb-[29px]">
+              <div class="flex gap-10 items-start">
+                <div class="border-b-2 border-primary leading-1 p-2">
+                  <span>Avaliações</span>
                 </div>
-              ))
-            )}
+                <div class="leading-1 h-[42px] flex items-center">
+                  <span>Perguntas</span>
+                </div>
+              </div>
+              <div class="flex gap-5 ">
+                <div class="btn btn-outline btn-primary w-[127px] h-[42px] min-h-0">
+                  <span>Avaliar</span>
+                </div>
+                <div class="btn btn-outline btn-primary w-[127px] h-[42px]  min-h-0">
+                  <span>Perguntar</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col xl:flex-row gap-6 ">
+              {mockReview.reviews.map((review) =>
+                review.reviews.map((item) => (
+                  <div class="border border-primary h-[250px] w-[576px] min-w-[300px] p-3 rounded">
+                    <p class="text-[12px] h-[51px] w-full text-end">
+                      {formatDate(item.created)}
+                    </p>
+                    <p class="text-sm h-[148px]">{item.text}</p>
+                    <p class="text-base font-bold text-center h-[51px]">
+                      {item.name}
+                    </p>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }

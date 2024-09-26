@@ -31,10 +31,9 @@ function ProductInfo({ page, icons }: Props) {
 
   const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
-  const percent =
-    listPrice && offers?.lowPrice
-      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-      : 0;
+  const percent = listPrice && offers?.lowPrice
+    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+    : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -62,21 +61,21 @@ function ProductInfo({ page, icons }: Props) {
   });
 
   //Checks if the variant name is "title"/"default title" and if so, the SKU Selector div doesn't render
-  const hasValidVariants =
-    isVariantOf?.hasVariant?.some(
-      (variant) =>
-        variant?.name?.toLowerCase() !== "title" &&
-        variant?.name?.toLowerCase() !== "default title"
-    ) ?? false;
+  const hasValidVariants = isVariantOf?.hasVariant?.some(
+    (variant) =>
+      variant?.name?.toLowerCase() !== "title" &&
+      variant?.name?.toLowerCase() !== "default title",
+  ) ?? false;
 
   //Calculate the Pix Price Value
-  const pixPrice =
-    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice = offers?.lowPrice &&
+    offers?.lowPrice - offers?.lowPrice * 0.05;
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      {/* {percent > 1 && (
+      {
+        /* {percent > 1 && (
         <span
           class={clx(
             "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
@@ -86,7 +85,8 @@ function ProductInfo({ page, icons }: Props) {
         >
           {percent} % off
         </span>
-      )} */}
+      )} */
+      }
 
       {/* Product Name */}
       <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
@@ -107,51 +107,59 @@ function ProductInfo({ page, icons }: Props) {
               {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
-              <strong class="font-bold text-primary">5% de desconto</strong> pagando com Pix
+              <strong class="font-bold text-primary">5% de desconto</strong>
+              {" "}
+              pagando com Pix
             </span>
           </div>
 
           {/* Sku Selector */}
-          {/* {hasValidVariants && (
+          {
+            /* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )} */}
+          )} */
+          }
         </div>
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
-        ></div>
+        >
+        </div>
       </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartProductDetail
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation"
-              disabled={false}
-              icons={icons}
-            />
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartProductDetail
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation"
+                disabled={false}
+                icons={icons}
+              />
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
 
       {/* Shipping Simulation */}
-      {/* <div class="mt-8">
+      {
+        /* <div class="mt-8">
         <ShippingSimulationForm
           items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
         />
-      </div> */}
+      </div> */
+      }
 
       {/* Description card */}
-      {/* <div class="mt-4 sm:mt-6">
+      {
+        /* <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
             <details>
@@ -163,7 +171,8 @@ function ProductInfo({ page, icons }: Props) {
             </details>
           )}
         </span>
-      </div> */}
+      </div> */
+      }
 
       <script
         async

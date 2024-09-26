@@ -8,7 +8,7 @@ export interface Props {
 export default async function action(
   props: Props,
   _req: Request,
-  _ctx: AppContext
+  _ctx: AppContext,
 ) {
   const serviceId = "service_9kyovmm";
   const templateId = "template_euagkq9";
@@ -26,7 +26,6 @@ export default async function action(
   };
 
   try {
-
     const response = await fetch(
       "https://api.emailjs.com/api/v1.0/email/send",
       {
@@ -35,7 +34,7 @@ export default async function action(
           "Content-Type": "application/json",
         },
         body: JSON.stringify(emailData),
-      }
+      },
     );
 
     if (!response.ok) {

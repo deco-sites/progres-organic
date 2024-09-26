@@ -9,46 +9,39 @@ import Avatar from "../../components/ui/Avatar.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 
-
-
 interface Props {
   filters: ProductListingPage["filters"];
- 
 }
 
 const isToggle = (filter: Filter): filter is FilterToggle =>
   filter["@type"] === "FilterToggle";
 
 function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
- const startsWithLetter = /^[a-zA-Z]/.test(label); 
+  const startsWithLetter = /^[a-zA-Z]/.test(label);
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div aria-checked={selected} class="checkbox" />
       <span class="text-sm first-letter:uppercase">
-        {startsWithLetter
-          ? label.replace("-", " ")
-          : label
-              .split("_")
-              .map(
-                (parte) => `R$${parseFloat(parte).toFixed(2).replace(".", ",")}`
-              )
-              .join(" ~ ")}
+        {startsWithLetter ? label.replace("-", " ") : label
+          .split("_")
+          .map(
+            (parte) => `R$${parseFloat(parte).toFixed(2).replace(".", ",")}`,
+          )
+          .join(" ~ ")}
       </span>
       {quantity > 0 && <span class="text-sm text-base-400">({quantity})</span>}
     </a>
   );
 }
 
-function FilterValues({ key, values }: FilterToggle ) {
+function FilterValues({ key, values }: FilterToggle) {
   const avatars = key === "tamanho" || key === "cor";
   const flexDirection = avatars ? "flex-row items-center" : "flex-col";
 
   return (
     <ul class={clx(`flex flex-wrap gap-2 `, flexDirection)}>
-      
       {values.map((item) => {
-        const { url, selected, value} = item;
-      
+        const { url, selected, value } = item;
 
         if (avatars) {
           return (
@@ -73,18 +66,13 @@ function FilterValues({ key, values }: FilterToggle ) {
           );
         }
 
-        return <ValueItem {...item}/>;
-
-        
+        return <ValueItem {...item} />;
       })}
     </ul>
   );
 }
 
-
 function Filters({ filters }: Props) {
-
-
   return (
     <div>
       <ul class="flex flex-col gap-6 p-4 sm:p-0 ">
@@ -95,9 +83,9 @@ function Filters({ filters }: Props) {
                 <span class="text-sm font-semibold first-letter:uppercase">
                   {filter.label}
                 </span>
-                <FilterValues {...filter}  />
+                <FilterValues {...filter} />
               </li>
-            )
+            ),
         )}
       </ul>
       <ul class="flex flex-col gap-6 p-4 sm:p-0 mt-5">
@@ -108,9 +96,9 @@ function Filters({ filters }: Props) {
                 <span class="text-sm font-semibold first-letter:uppercase">
                   {filter.label}
                 </span>
-                <FilterValues {...filter}  />
+                <FilterValues {...filter} />
               </li>
-            )
+            ),
         )}
       </ul>
     </div>

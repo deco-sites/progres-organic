@@ -26,7 +26,6 @@ const IframeLoader = ({ videoLink, width = 477, height = 311 }: Props) => {
   function getEmbedLink(videoLink: string) {
     // Extrair o ID do vídeo:
     const videoId = videoLink.split("v=")[1].split("&")[0];
-   
 
     // Criar o link embeddable:
     if (videoId) {

@@ -6,7 +6,7 @@ import Section from "../components/ui/Section.tsx";
 import { useOffer } from "../sdk/useOffer.ts";
 import { useSendEvent } from "../sdk/useSendEvent.ts";
 
-export interface Props{
+export interface Props {
   title: string;
   products: Product[] | null;
 }
@@ -37,7 +37,11 @@ export default function ProductShelfHorizontal({
   });
 
   return (
-    <Section.Container {...viewItemListEvent} class="mx-auto" style={{padding: 0}}>
+    <Section.Container
+      {...viewItemListEvent}
+      class="mx-auto"
+      style={{ padding: 0 }}
+    >
       {title && (
         <p class="text-base font-semibold text-secondary border-t border-gray-300 pt-5 mt-10">
           {title}

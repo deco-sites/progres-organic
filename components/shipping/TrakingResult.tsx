@@ -1,6 +1,6 @@
 import { AppContext } from "apps/vnda/mod.ts";
 
-export interface TrakingData  {
+export interface TrakingData {
   id: number;
   tracking_code: string;
   tracked_at: string;
@@ -14,12 +14,11 @@ export interface Props {
   trakingData: TrakingData;
 }
 
-export async function loader (
+export async function loader(
   props: Props,
   _req: Request,
-  _ctx: AppContext
+  _ctx: AppContext,
 ) {
-
   try {
     const response = await fetch(
       `https://api.vnda.com.br/api/v2/orders/${props.orderCode}/packages/${props.packageCode}/trackings`,
@@ -37,8 +36,7 @@ export async function loader (
   }
 }
 
-export default function TrakingResult({orderCode, packageCode}: Props) {
-
+export default function TrakingResult({ orderCode, packageCode }: Props) {
   return (
     <div>
       <p>oi</p>

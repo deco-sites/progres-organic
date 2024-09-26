@@ -21,7 +21,7 @@ const onClick = () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
   const { item, platformProps } = JSON.parse(
-    decodeURIComponent(container.getAttribute("data-cart-item")!)
+    decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
@@ -48,7 +48,7 @@ const onLoad = (id: string) => {
     //   'input[type="checkbox"]',
     // );
     const input = container?.querySelector<HTMLInputElement>(
-      'input[type="number"]'
+      'input[type="number"]',
     );
     const itemID = container?.getAttribute("data-item-id")!;
 
@@ -81,7 +81,7 @@ const useAddToCart = ({ product }: Props) => {
       quantity: 1,
       itemId: productID,
       attributes: Object.fromEntries(
-        additionalProperty.map(({ name, value }) => [name, value])
+        additionalProperty.map(({ name, value }) => [name, value]),
       ),
     };
   }
@@ -115,7 +115,7 @@ function AddToCartButton(props: Props) {
       class="flex"
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
-        JSON.stringify({ item, itemP2, platformProps })
+        JSON.stringify({ item, itemP2, platformProps }),
       )}
     >
       {/* <input type="checkbox" class="hidden peer" /> */}
@@ -123,7 +123,7 @@ function AddToCartButton(props: Props) {
       <button
         class={clx(
           "flex  w-[271px] h-[26px] bg-primary text-base-200 min-h-0 ",
-          _class?.toString()
+          _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}
         disabled={false}
@@ -141,14 +141,16 @@ function AddToCartButton(props: Props) {
       </button>
 
       {/* Quantity Input */}
-      {/* <div class="flex-grow hidden peer-checked:flex">
+      {
+        /* <div class="flex-grow hidden peer-checked:flex">
         <QuantitySelector
           disabled
           min={0}
           max={100}
           hx-on:change={useScript(onChange)}
         />
-      </div> */}
+      </div> */
+      }
 
       <script
         type="module"

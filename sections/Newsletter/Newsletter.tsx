@@ -36,7 +36,7 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
 
   if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
-    await(ctx as any).invoke("site/actions/sendEmailJS.ts", {
+    await (ctx as any).invoke("site/actions/sendEmailJS.ts", {
       name,
       email,
     });

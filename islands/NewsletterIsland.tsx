@@ -15,10 +15,10 @@ const NewsletterIsland = () => {
 
   const validateForm = () => {
     const nameInput = formRef.current?.querySelector(
-      "#nameInput"
+      "#nameInput",
     ) as HTMLInputElement;
     const emailInput = formRef.current?.querySelector(
-      "#emailInput"
+      "#emailInput",
     ) as HTMLInputElement;
 
     const name = nameInput.value.trim().length > 2;
@@ -26,9 +26,10 @@ const NewsletterIsland = () => {
 
     // Adicione mais validações conforme necessário
     const isEmailValid =
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(
-        email
-      );
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/
+        .test(
+          email,
+        );
 
     setIsFormValid(name && isEmailValid);
   };
@@ -38,12 +39,12 @@ const NewsletterIsland = () => {
 
     if (formRef.current) {
       const nomeInput = formRef.current.querySelector(
-        "#nameInput"
+        "#nameInput",
       ) as HTMLInputElement;
       const name = nomeInput.value;
 
       const emailInput = formRef.current.querySelector(
-        "#emailInput"
+        "#emailInput",
       ) as HTMLInputElement;
       const email = emailInput.value;
 
@@ -58,7 +59,7 @@ const NewsletterIsland = () => {
       } else {
         // Exibe uma mensagem de erro ou alerta ao usuário
         console.error(
-          "Por favor, preencha todos os campos obrigatórios corretamente."
+          "Por favor, preencha todos os campos obrigatórios corretamente.",
         );
       }
     }

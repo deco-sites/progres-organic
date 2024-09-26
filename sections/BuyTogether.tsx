@@ -26,9 +26,8 @@ export default function BuyTogether({ page, products }: Props) {
   const { product } = page;
   const { productID, offers } = product;
 
-   const { availability } = useOffer(offers);
+  const { availability } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
-     
 
   const pdpProductTag = product.additionalProperty?.find(({ name }) =>
     name?.includes("related")
@@ -37,12 +36,12 @@ export default function BuyTogether({ page, products }: Props) {
   // Find the related product
   const secondProduct = pdpProductTag
     ? products.find((item) => {
-        return (
-          item.additionalProperty?.find(({ name }) =>
+      return (
+        item.additionalProperty?.find(({ name }) =>
             name?.includes(pdpProductTag)
           ) !== undefined && item.productID !== productID
-        );
-      })
+      );
+    })
     : undefined;
 
   return (
@@ -68,31 +67,33 @@ export default function BuyTogether({ page, products }: Props) {
       </div>
 
       <div class="flex flex-col items-center">
-        <p class="text-sm font-semibold ">Valor total: </p>
+        <p class="text-sm font-semibold ">Valor total:</p>
         <p class="text-lg font-bold text-warning">
           {" "}
           {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
         </p>
 
         <div>
-          {inStock && secondProduct ? (
-            <AddToCartBuyTogether
-              product={product}
-              productBt={secondProduct}
-              class={clx("btn btn-primary no-animation w-full")}
-              icon=""
-            />
-          ) : (
-            <p
-              class={clx(
-                "btn",
-                "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
-              )}
-            >
-              Fora de estoque
-            </p>
-          )}
+          {inStock && secondProduct
+            ? (
+              <AddToCartBuyTogether
+                product={product}
+                productBt={secondProduct}
+                class={clx("btn btn-primary no-animation w-full")}
+                icon=""
+              />
+            )
+            : (
+              <p
+                class={clx(
+                  "btn",
+                  "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                  "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
+                )}
+              >
+                Fora de estoque
+              </p>
+            )}
         </div>
       </div>
     </div>

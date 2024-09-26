@@ -32,7 +32,9 @@ const onClick = () => {
   const { item, platformProps } = JSON.parse(
     decodeURIComponent(container.getAttribute("data-cart-item-pd")!),
   );
-  const totalValue = document.getElementById("productDetailValue") as HTMLInputElement;
+  const totalValue = document.getElementById(
+    "productDetailValue",
+  ) as HTMLInputElement;
   platformProps.quantity = totalValue.valueAsNumber;
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };

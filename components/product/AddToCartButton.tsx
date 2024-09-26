@@ -18,7 +18,7 @@ const onClick = () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
   const { item, platformProps } = JSON.parse(
-    decodeURIComponent(container.getAttribute("data-cart-item")!)
+    decodeURIComponent(container.getAttribute("data-cart-item")!),
   );
   window.STOREFRONT.CART.addToCart(item, platformProps);
 };
@@ -58,7 +58,6 @@ const onLoad = (id: string) => {
     // input.value = quantity.toString();
     // checkbox.checked = quantity > 0;
 
-    
     container?.querySelectorAll<HTMLButtonElement>("button").forEach((node) =>
       node.disabled = false
     );
@@ -112,7 +111,13 @@ function AddToCartButton(props: Props) {
         disabled={false}
       >
         <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm flex justify-center items-center">
-          Comprar{icon !== "" && <img class="ml-1" src={icon} alt="icone de um carrinho de compras" />}
+          Comprar{icon !== "" && (
+            <img
+              class="ml-1"
+              src={icon}
+              alt="icone de um carrinho de compras"
+            />
+          )}
         </span>
       </button>
 

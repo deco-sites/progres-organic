@@ -8,7 +8,6 @@ export interface Props {
 }
 
 export default function Section({ orderCode, packageCode }: Props) {
-  
   return (
     <div class="mt-20 max-w-[1440px] mx-auto flex flex-col items-center">
       <h2 class="text-2xl text-center font-bold">Rastreio</h2>
