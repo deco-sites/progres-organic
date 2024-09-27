@@ -87,7 +87,7 @@ function ProductCardHorizontal({
           href={relativeUrl}
           aria-label="view product"
           class={clx(
-            "absolute top-0 left-0",
+            "absolute top-2 left-0",
             "w-full",
             !inStock && "opacity-70",
           )}

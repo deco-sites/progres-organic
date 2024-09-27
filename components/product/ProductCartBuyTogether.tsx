@@ -72,7 +72,7 @@ function ProductCardBuyTogether({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-lg p-3 h-auto w-[296px]",
+        "card card-compact group text-sm hover:shadow-lg p-2 w-[250px]",
         _class,
       )}
     >
@@ -94,8 +94,8 @@ function ProductCardBuyTogether({
           <Image
             src={front.url!}
             alt={front.alternateName}
-            width={272}
-            height={298}
+            width={242}
+            height={248}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",

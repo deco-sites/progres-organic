@@ -13,7 +13,6 @@ interface TrakingData {
 }
 
 interface Props {
-  notFoundMessage: string;
   /** @hide true */
   status?: "";
 }
@@ -43,7 +42,6 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
       const data = await response.json() as TrakingData
       console.log("Traking response:", response.status);
       console.log("Traking response:", response);
-      console.log(props);
       
       return {
         ...props,
@@ -51,7 +49,6 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
         status: "success", // Indicate success
       };
     } else {
-      console.log(props)
       return {
         ...props,
         
@@ -67,11 +64,11 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
   }
 }
 
-export default function TrackPackage({ data, notFoundMessage, status }: SectionProps<typeof loader>) {
-  console.log(notFoundMessage);
+export default function TrackPackage({ data,  status }: SectionProps<typeof loader>) {
+
   
   return (
-    <div class="mt-20 max-w-[1440px] mx-auto flex flex-col items-center">
+    <div class="mt-20 max-w-[1440px] mx-auto flex flex-col items-center mb-10">
       <h2 class="text-2xl text-center font-bold">Rastreio</h2>
       <form
         hx-target="closest section"
@@ -122,7 +119,7 @@ export default function TrackPackage({ data, notFoundMessage, status }: SectionP
               Informações sobre o seu pedido
             </h3>
 
-            <p>{notFoundMessage}</p>
+            <p class="pt-3 font-semibold text-center">Não encontramos o seu pedido</p>
           </div>
         ) : null)}
     </div>

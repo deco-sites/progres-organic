@@ -43,59 +43,68 @@ export default function BuyTogether({ page, products }: Props) {
       );
     })
     : undefined;
+  console.log(page);
+  console.log(secondProduct);
+  
 
   return (
     <div class="container flex gap-4 sm:gap-5 w-full pt-8 items-center py-5">
-      <ProductCardBuyTogether index={1} product={product} class="w-[272px] " />
-      <div class="py-auto w-[25px] h-[25px]">
-        <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
-          +
-        </p>
-      </div>
-      {secondProduct && (
-        <ProductCardBuyTogether
-          index={1}
-          product={secondProduct}
-          class="w-[272px] "
-        />
+      {(page!== undefined || secondProduct !== undefined) && (
+        <>
+          <ProductCardBuyTogether
+            index={1}
+            product={product}
+            class="w-[272px] "
+          />
+          <div class="py-auto w-[25px] h-[25px]">
+            <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
+              +
+            </p>
+          </div>
+          {secondProduct && (
+            <ProductCardBuyTogether
+              index={1}
+              product={secondProduct}
+              class="w-[272px] "
+            />
+          )}
+
+          <div class="py-auto w-[25px] h-[25px]">
+            <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
+              =
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <p class="text-sm font-semibold ">Valor total:</p>
+            <p class="text-lg font-bold text-warning">
+              {" "}
+              {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
+            </p>
+
+            <div>
+              {inStock && secondProduct ? (
+                <AddToCartBuyTogether
+                  product={product}
+                  productBt={secondProduct}
+                  class={clx("btn btn-primary no-animation w-full")}
+                  icon=""
+                />
+              ) : (
+                <p
+                  class={clx(
+                    "btn",
+                    "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                    "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
+                  )}
+                >
+                  Fora de estoque
+                </p>
+              )}
+            </div>
+          </div>
+        </>
       )}
-
-      <div class="py-auto w-[25px] h-[25px]">
-        <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
-          =
-        </p>
-      </div>
-
-      <div class="flex flex-col items-center">
-        <p class="text-sm font-semibold ">Valor total:</p>
-        <p class="text-lg font-bold text-warning">
-          {" "}
-          {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
-        </p>
-
-        <div>
-          {inStock && secondProduct
-            ? (
-              <AddToCartBuyTogether
-                product={product}
-                productBt={secondProduct}
-                class={clx("btn btn-primary no-animation w-full")}
-                icon=""
-              />
-            )
-            : (
-              <p
-                class={clx(
-                  "btn",
-                  "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                  "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
-                )}
-              >
-                Fora de estoque
-              </p>
-            )}
-        </div>
-      </div>
     </div>
   );
 }

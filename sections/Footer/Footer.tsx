@@ -225,8 +225,8 @@ function Footer({
               <a key={badge.title} href={badge.href}>
                 <Image
                   alt={badge.title}
-                  width={72}
-                  height={22}
+                  width={144}
+                  height={44}
                   loading="lazy"
                   src={badge.image}
                 />
