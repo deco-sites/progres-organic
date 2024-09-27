@@ -27,7 +27,7 @@
             "desktop": 4
           },
           "variant": "aside",
-          "pagination": "pagination",
+          "pagination": "show-more",
           "filtersByPrice": [
             {
               "minPrice": "1,00",

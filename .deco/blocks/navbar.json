@@ -19,6 +19,12 @@
     },
     {
       "@type": "SiteNavigationElement",
+      "url": "/activities",
+      "name": "Activities",
+      "children": []
+    },
+    {
+      "@type": "SiteNavigationElement",
       "url": "/valentines-day",
       "name": "Valentine's Day",
       "children": [
@@ -35,6 +41,12 @@
     },
     {
       "@type": "SiteNavigationElement",
+      "url": "/clearance",
+      "name": "Clearance",
+      "children": []
+    },
+    {
+      "@type": "SiteNavigationElement",
       "url": "/women",
       "name": "Women",
       "children": []
@@ -43,18 +55,6 @@
       "@type": "SiteNavigationElement",
       "url": "/men",
       "name": "Men",
-      "children": []
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "url": "/clearance",
-      "name": "Clearance",
-      "children": []
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "url": "/activities",
-      "name": "Activities",
       "children": []
     }
   ],

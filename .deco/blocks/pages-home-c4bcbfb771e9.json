@@ -234,7 +234,8 @@
                 "href": "/"
               }
             ],
-            "preload": true
+            "preload": true,
+            "interval": 5
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
