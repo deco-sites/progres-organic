@@ -9,7 +9,8 @@
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "site/sections/TrackPackage.tsx",
-        "name": "teste"
+        "name": "teste",
+        "notFoundMessage": "Não encontramos o seu pedido"
       }
     },
     {
