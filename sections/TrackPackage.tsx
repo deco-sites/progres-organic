@@ -43,14 +43,18 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
       const data = await response.json() as TrakingData
       console.log("Traking response:", response.status);
       console.log("Traking response:", response);
+      console.log(props);
+      
       return {
         ...props,
         data,
         status: "success", // Indicate success
       };
     } else {
+      console.log(props)
       return {
         ...props,
+        
         status: "packageNotFound",
       };
     }
@@ -64,6 +68,8 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
 }
 
 export default function TrackPackage({ data, notFoundMessage, status }: SectionProps<typeof loader>) {
+  console.log(notFoundMessage);
+  
   return (
     <div class="mt-20 max-w-[1440px] mx-auto flex flex-col items-center">
       <h2 class="text-2xl text-center font-bold">Rastreio</h2>
@@ -94,34 +100,29 @@ export default function TrackPackage({ data, notFoundMessage, status }: SectionP
       </form>
       {status !== "incomplete" &&
         (status === "success" ? (
-          <div>
-            <div>
-              <span>Ultima atualização:</span>
-              <span>{data.tracked_at}</span>
-            </div>
-            <div>
-              <span>Nome da Transportadora:</span>
-              <span>{data.company}</span>
-            </div>
-            <div>
-              <span>Link do rastreamento do pedido na transportadora:</span>
-              <span>{data.url}</span>
-            </div>
+          <div class="max-w-[400px] mx-center my-20 flex flex-col">
+            <h3 class="text-xl text-primary font-bold  text-center">
+              Informações sobre o seu pedido
+            </h3>
+
+            <p class="text-sm font-semibold pt-2">Última atualização:</p>
+            <p>{data.tracked_at}</p>
+
+            <p class="text-sm font-semibold pt-2">Nome da Transportadora:</p>
+            <p>{data.company}</p>
+
+            <p class="text-sm font-semibold pt-2">
+              Link do rastreamento do pedido na transportadora:
+            </p>
+            <p>{data.url}</p>
           </div>
         ) : status === "packageNotFound" ? (
-          <div>
-            <div>
-              <span>Ultima atualização:</span>
-              <span>00/00/0000</span>
-            </div>
-            <div>
-              <span>Nome da Transportadora:</span>
-              <span>Correios</span>
-            </div>
-            <div>
-              <span>Link do rastreamento do pedido na transportadora:</span>
-              <span>www.meupedido.com.br/004433</span>
-            </div>
+          <div class="max-w-[400px] mx-center my-20 flex flex-col">
+            <h3 class="text-xl text-primary font-bold  text-center">
+              Informações sobre o seu pedido
+            </h3>
+
+            <p>{notFoundMessage}</p>
           </div>
         ) : null)}
     </div>
