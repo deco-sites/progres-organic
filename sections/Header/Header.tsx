@@ -25,6 +25,7 @@ import {
 } from "../../constants.ts";
 import ImageLinks from "../../components/header/ImageLinks.tsx";
 import type { ImageLink, Sale } from "../../components/header/ImageLinks.tsx";
+import type { SocialMedia } from "../../components/header/Alert.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -35,6 +36,8 @@ export interface Logo {
 
 export interface SectionProps {
   alerts?: HTMLWidget[];
+  icons?: SocialMedia[];
+  interval?: number;
 
   /**
    * @title Navigation items
@@ -214,6 +217,8 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
 
 function Header({
   alerts = [],
+  icons = [],
+  interval,
   logo = {
     src:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
@@ -234,7 +239,7 @@ function Header({
       }}
     >
       <div class="bg-base-100 fixed w-full z-40">
-        {alerts.length > 0 && <Alert alerts={alerts} />}
+        {alerts.length > 0 && <Alert alerts={alerts} icons={ icons} interval={interval}/>}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />
           : <Mobile logo={logo} {...props} />}
