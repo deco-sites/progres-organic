@@ -2,15 +2,15 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $$$$$$$$$0 from "./actions/minicart/submit.ts";
-import * as $$$$$$$$$1 from "./actions/sendEmailJS.ts";
-import * as $$$$$$$$$2 from "./actions/wishlist/submit.ts";
+import * as $$$$$$$$$0 from "./actions/buyTogether.ts";
+import * as $$$$$$$$$1 from "./actions/minicart/submit.ts";
+import * as $$$$$$$$$2 from "./actions/sendEmailJS.ts";
+import * as $$$$$$$$$3 from "./actions/wishlist/submit.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/analytics.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/konfidency.ts";
-import * as $$$$$$$$$$$3 from "./apps/deco/shopify.ts";
-import * as $$$$$$$$$$$4 from "./apps/deco/vnda.ts";
-import * as $$$$$$$$$$$5 from "./apps/site.ts";
+import * as $$$$$$$$$$$3 from "./apps/deco/vnda.ts";
+import * as $$$$$$$$$$$4 from "./apps/site.ts";
 import * as $$$0 from "./loaders/availableIcons.ts";
 import * as $$$1 from "./loaders/icons.ts";
 import * as $$$2 from "./loaders/minicart.ts";
@@ -110,17 +110,17 @@ const manifest = {
     "site/sections/VideoBeforeAfter.tsx": $$$$$$40,
   },
   "actions": {
-    "site/actions/minicart/submit.ts": $$$$$$$$$0,
-    "site/actions/sendEmailJS.ts": $$$$$$$$$1,
-    "site/actions/wishlist/submit.ts": $$$$$$$$$2,
+    "site/actions/buyTogether.ts": $$$$$$$$$0,
+    "site/actions/minicart/submit.ts": $$$$$$$$$1,
+    "site/actions/sendEmailJS.ts": $$$$$$$$$2,
+    "site/actions/wishlist/submit.ts": $$$$$$$$$3,
   },
   "apps": {
     "site/apps/deco/analytics.ts": $$$$$$$$$$$0,
     "site/apps/deco/htmx.ts": $$$$$$$$$$$1,
     "site/apps/deco/konfidency.ts": $$$$$$$$$$$2,
-    "site/apps/deco/shopify.ts": $$$$$$$$$$$3,
-    "site/apps/deco/vnda.ts": $$$$$$$$$$$4,
-    "site/apps/site.ts": $$$$$$$$$$$5,
+    "site/apps/deco/vnda.ts": $$$$$$$$$$$3,
+    "site/apps/site.ts": $$$$$$$$$$$4,
   },
   "name": "site",
   "baseUrl": import.meta.url,

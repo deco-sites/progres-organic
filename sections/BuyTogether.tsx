@@ -43,8 +43,6 @@ export default function BuyTogether({ page, products }: Props) {
       );
     })
     : undefined;
-  console.log(page);
-  console.log(secondProduct);
   
 
   return (

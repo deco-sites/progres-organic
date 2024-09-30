@@ -7,6 +7,7 @@ import { usePlatform } from "../../sdk/usePlatform.tsx";
 import QuantitySelector from "../ui/QuantitySelector.tsx";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
+import type { Props as AddToCartProps } from "../../actions/buyTogether.ts";
 
 export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   product: Product;
@@ -71,23 +72,41 @@ const onLoad = (id: string) => {
   });
 };
 
-const useAddToCart = ({ product }: Props) => {
+const useAddToCart = ({ product, productBt }: Props) => {
   const platform = usePlatform();
   const { additionalProperty = [], isVariantOf, productID } = product;
   const productGroupID = isVariantOf?.productGroupID;
 
   if (platform === "vnda") {
+    const items: AddToCartProps["productsList"] = [
+      {
+        itemId: productID,
+        quantity: 1,
+        attributes: Object.fromEntries(
+          additionalProperty.map(({ name, value }) => [name, value])
+        ),
+      },
+    ];
+
+    if (productBt) {
+      const { additionalProperty = [], isVariantOf, productID } = productBt;
+      items.push({
+        itemId: productID,
+        quantity: 1,
+        attributes: Object.fromEntries(
+          additionalProperty.map(({ name, value }) => [name, value])
+        ),
+      });
+    }
     return {
-      quantity: 1,
-      itemId: productID,
-      attributes: Object.fromEntries(
-        additionalProperty.map(({ name, value }) => [name, value]),
-      ),
+      
+      productsList: items,
     };
   }
 
   return null;
 };
+
 
 function AddToCartButton(props: Props) {
   const { product, class: _class, icon, productBt } = props;
@@ -129,7 +148,7 @@ function AddToCartButton(props: Props) {
         disabled={false}
       >
         <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm flex justify-center items-center">
-          Comprar
+          Compre Junto
           {icon !== "" && (
             <img
               class="ml-1"

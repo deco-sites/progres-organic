@@ -1,6 +1,8 @@
 {
-  "name": "Search Page",
-  "path": "/s",
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -30,7 +32,22 @@
       "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
-          "__resolveType": "PLP Loader"
+          "data": {
+            "__resolveType": "vnda/loaders/productListingPage.ts",
+            "count": 12,
+            "tags": [
+              "saloes"
+            ],
+            "filterOperator": {
+              "type_tags": "and",
+              "property2": "and",
+              "property3": "and",
+              "property1": "and"
+            },
+            "filterByTags": false
+          },
+          "extensions": [],
+          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
         },
         "layout": {
           "columns": {
@@ -38,7 +55,7 @@
             "desktop": 4
           },
           "variant": "aside",
-          "pagination": "show-more",
+          "pagination": "pagination",
           "filtersByPrice": [
             {
               "minPrice": "1,00",
@@ -51,7 +68,7 @@
           ]
         },
         "startingPage": 1,
-        "title": "LOREN IPSUM",
+        "title": "Tratamento Capilar",
         "subtitle": "Lorem ipsum dolor sit amet consectetur. Quis mi quis at quisque viverra nullam congue nunc neque. Non amet a nibh tristique nulla aenean purus. Volutpat mattis fringilla cursus nec nulla sit.",
         "filtersByPrice": [
           {
@@ -73,8 +90,6 @@
       }
     }
   ],
-  "seo": {
-    "__resolveType": "website/sections/Seo/SeoV2.tsx"
-  },
-  "__resolveType": "website/pages/Page.tsx"
+  "name": "Por Tipo de Cabelo",
+  "path": "/por-tipo-de-cabelo"
 }

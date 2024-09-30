@@ -42,7 +42,7 @@ export interface Props {
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-10">
-      <span>Not Found!</span>
+      <span>Nenhum produto encontrado!</span>
     </div>
   );
 }
@@ -104,6 +104,10 @@ function PageResult(props: SectionProps<typeof loader>) {
           <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
         </a>
       </div>
+      <div>
+        <h2 class="font-bold text-2xl text-secondary">{props.title}</h2>
+        <p class="text-secondary pt-1 pr-2">{ props.subtitle}</p>
+      </div>
 
       <div
         data-product-list
@@ -126,7 +130,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         ))}
       </div>
 
-      <div class={clx("pt-2 sm:pt-10 w-full", "")}>
+      <div class={clx("pt-2 sm:pt-10 w-[400px] mx-auto")}>
         {infinite
           ? (
             <div class="flex justify-center [&_section]:contents border border-primary">
@@ -139,13 +143,13 @@ function PageResult(props: SectionProps<typeof loader>) {
                 hx-swap="outerHTML show:parent:top"
                 hx-get={partialNext}
               >
-                <span class="inline [.htmx-request_&]:hidden">Show More</span>
+                <span class="inline [.htmx-request_&]:hidden">Veja mais</span>
                 <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
               </a>
             </div>
           )
           : (
-            <div class={clx("join", infinite && "hidden")}>
+            <div class={clx("join w-full flex justify-center", infinite && "hidden")}>
               <a
                 rel="prev"
                 aria-label="previous page link"
@@ -155,8 +159,8 @@ function PageResult(props: SectionProps<typeof loader>) {
               >
                 <Icon id="chevron-right" class="rotate-180" />
               </a>
-              <span class="btn btn-ghost join-item">
-                Page {zeroIndexedOffsetPage + 1}
+              <span class="btn btn-ghost join-item ">
+                Página {zeroIndexedOffsetPage + 1}
               </span>
               <a
                 rel="next"
@@ -250,7 +254,7 @@ function Result(props: SectionProps<typeof loader>) {
       <div
         id={container}
         {...viewItemListEvent}
-        class=" max-w-[1440px] mx-auto pt-11"
+        class=" max-w-[1440px] mx-auto pt-5"
       >
         {partial
           ? <PageResult {...props} />
