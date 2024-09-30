@@ -314,6 +314,13 @@
             "section": {
               "__resolveType": "Footer"
             }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Social/WhatsApp.tsx",
+              "phone": 819065432069
+            }
           }
         ],
         "rule": {

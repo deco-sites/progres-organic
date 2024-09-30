@@ -87,10 +87,10 @@ export function ErrorFallback() {
     <div class="flex flex-col flex-grow justify-center items-center overflow-hidden w-full gap-2">
       <div class="flex flex-col gap-1 p-6 justify-center items-center">
         <span class="font-semibold">
-          Error while updating cart
+          Erro ao carregar o carrinho
         </span>
         <span class="text-sm text-center">
-          Click in the button below to retry or refresh the page
+          Click no botão abaixo ou carregue a página novamente
         </span>
       </div>
 
@@ -100,7 +100,7 @@ export function ErrorFallback() {
         hx-swap="outerHTML"
         hx-target="closest div"
       >
-        Retry
+        Recarregar
       </button>
     </div>
   );
@@ -170,12 +170,12 @@ export default function Cart({
           {count === 0
             ? (
               <div class="flex flex-col gap-6">
-                <span class="font-medium text-2xl">Your bag is empty</span>
+                <span class="font-medium text-2xl">O carrinho está vazio</span>
                 <label
                   for={MINICART_DRAWER_ID}
                   class="btn btn-outline no-animation"
                 >
-                  Choose products
+                  Escolha alguns produtos
                 </label>
               </div>
             )
@@ -241,7 +241,7 @@ export default function Cart({
                       </output>
                     </div>
                     <span class="text-sm text-base-300">
-                      Fees and shipping will be calculated at checkout
+                      Taxas e frete serão calculados no checkout
                     </span>
                   </div>
 
@@ -252,7 +252,7 @@ export default function Cart({
                       hx-on:click={useScript(sendBeginCheckoutEvent)}
                     >
                       <span class="[.htmx-request_&]:hidden">
-                        Begin Checkout
+                        Checkout
                       </span>
                       <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
                     </a>
