@@ -7,7 +7,7 @@ function UserIcon() {
         <span class="hidden indicator-item badge badge-primary badge-sm font-thin" />
 
         <a
-          href="/"
+          href="/entrar"
           class="btn btn-square btn-sm btn-outline no-animation hover:bg-accent text-secondary border border-secondary hover:border-secondary"
         >
           <Image
