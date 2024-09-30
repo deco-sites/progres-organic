@@ -82,62 +82,7 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
-              "title": "Hottest Deals",
-              "tabs": [
-                {
-                  "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "hat and bag",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
-                  },
-                  "title": "Accessories"
-                },
-                {
-                  "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "Shirts",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
-                  },
-                  "title": "Fashion"
-                },
-                {
-                  "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "stickers",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
-                  },
-                  "title": "Stickers"
-                }
-              ],
-              "cta": "/links"
+              "__resolveType": "PromocoesDaSemana"
             }
           },
           {
@@ -334,55 +279,7 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
-              "title": "Hottest Deals",
-              "tabs": [
-                {
-                  "products": {
-                    "__resolveType": "vnda/loaders/productList.ts",
-                    "sort": "newest",
-                    "tags": [],
-                    "typeTags": [],
-                    "ids": [],
-                    "count": 10
-                  },
-                  "title": "Accessories"
-                },
-                {
-                  "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "Shirts",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
-                  },
-                  "title": "Fashion"
-                },
-                {
-                  "products": {
-                    "__resolveType": "shopify/loaders/ProductList.ts",
-                    "props": {
-                      "sort": "",
-                      "query": "stickers",
-                      "count": 10
-                    },
-                    "filters": {
-                      "tags": [],
-                      "productTypes": [],
-                      "productVendors": [],
-                      "variantOptions": []
-                    }
-                  },
-                  "title": "Stickers"
-                }
-              ]
+              "__resolveType": "PromocoesDaSemana"
             }
           },
           {
