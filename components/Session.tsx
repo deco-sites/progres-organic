@@ -54,7 +54,7 @@ export interface SDK {
   };
 }
 
-const sdk = () => {
+const sdk = (minicartId:string) => {
   const target = new EventTarget();
 
   const createCartSDK = (): SDK["CART"] => {
@@ -116,6 +116,7 @@ const sdk = () => {
           `button[name="action"][value="add-to-cart"]`,
         );
 
+
         if (!input || !button) {
           return false;
         }
@@ -127,6 +128,11 @@ const sdk = () => {
 
         input.value = encodeURIComponent(JSON.stringify(platformProps));
         button.click();
+
+        const checkbox = document.getElementById(minicartId) as HTMLInputElement;
+        if (checkbox) {
+          checkbox.checked = true;
+        }
 
         return true;
       },
@@ -326,7 +332,7 @@ export default function Session({
         <Head>
           <script
             type="module"
-            dangerouslySetInnerHTML={{ __html: useScript(sdk) }}
+            dangerouslySetInnerHTML={{ __html: useScript(sdk, MINICART_DRAWER_ID) }}
           />
         </Head>
         <div hx-trigger="load" hx-post={useComponent(import.meta.url)} />

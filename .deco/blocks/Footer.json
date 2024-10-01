@@ -269,7 +269,8 @@
     }
   ],
   "delivery": [
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/2cd6d16b-4f00-4724-ae8a-1dc8fb3efc27"
+    "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/560c3b1b-03ac-488a-9aa3-bec8450c358c/kangu.png",
+    "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/44e8e550-5435-4227-8dda-5900313d2d1a/correios.jpeg"
   ],
   "copyright": "Copyright Progressiva Orgânica Cosméticos LTDA - 32902095000125 - 2024. Todos os direitos reservados."
 }

@@ -205,13 +205,14 @@ function Footer({
               <p class="text-[15px] font-semibold w-[279px]">Meios de envio</p>
               <ul class="flex flex-wrap gap-2">
                 {delivery.map((item) => (
-                  <li class="h-[25px] w-[50px] border border-base-100 rounded flex justify-center items-center">
+                  <li class="h-[25px] w-[50px] bg-base-200 border  border-base-100 rounded flex justify-center items-center">
                     <Image
                       src={item}
                       alt="metodo de entrega"
-                      width={50}
+                      width={65}
                       height={25}
                       loading="lazy"
+                      class="bg-base-200 object-cover"
                     />
                   </li>
                 ))}
@@ -238,16 +239,27 @@ function Footer({
 
       <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between px-5">
         <span class="text-[9px] font-normal text-base-400">{copyright}</span>
-        <a href="https://tec3commerce.com.br/" target="blank">
-          <p class="text-[10px]">desenvolvido por:</p>
-          <Image
-            loading="lazy"
-            alt="desenvolvido por tec3"
-            width={60}
-            height={20}
-            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
-          />
-        </a>
+        <div class="flex gap-5 items-center">
+          <a href="https://deco.cx/" target="blank">
+            <Image
+              loading="lazy"
+              alt="desenvolvido com deco.cx"
+              width={70}
+              height={30}
+              src="https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d97b3bf5-d9b4-4b91-812e-40fc89687c69/deco.svg"
+            />
+          </a>
+          <a href="https://tec3commerce.com.br/" target="blank">
+            <p class="text-[10px]">desenvolvido por:</p>
+            <Image
+              loading="lazy"
+              alt="desenvolvido por tec3"
+              width={60}
+              height={20}
+              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );

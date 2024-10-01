@@ -83,8 +83,7 @@ export default function BuyTogether({ page, products }: Props) {
               {inStock && secondProduct
                 ? (
                   <AddToCartBuyTogether
-                    product={product}
-                    productBt={secondProduct}
+                    products={[product,secondProduct]}
                     class={clx("btn btn-primary no-animation w-full")}
                     icon=""
                   />
