@@ -43,10 +43,15 @@ export default function BuyTogether({ page, products }: Props) {
       );
     })
     : undefined;
-
+  
+  const totalPrice =
+    offers &&
+    secondProduct &&
+    offers.lowPrice + (secondProduct.offers?.lowPrice || 0);
+  
   return (
     <div class="container flex gap-4 sm:gap-5 w-full pt-8 items-center py-5">
-      {(page !== undefined || secondProduct !== undefined) && (
+      {(page !== undefined && secondProduct !== undefined) && (
         <>
           <ProductCardBuyTogether
             index={1}
@@ -76,7 +81,7 @@ export default function BuyTogether({ page, products }: Props) {
             <p class="text-sm font-semibold ">Valor total:</p>
             <p class="text-lg font-bold text-warning">
               {" "}
-              {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
+              {formatPrice(totalPrice, offers?.priceCurrency)}
             </p>
 
             <div>

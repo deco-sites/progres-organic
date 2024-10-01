@@ -73,13 +73,13 @@ function AddToCartButton(props: Props) {
 
       <button
         class={clx(
-          "flex  w-[271px] h-[26px] bg-primary text-base-200 min-h-0 ",
+          "flex  w-[271px] h-[46px] bg-primary text-base-200 min-h-0 ",
           _class?.toString()
         )}
         hx-on:click={useScript(onClick)}
         disabled={false}
       >
-        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm flex justify-center items-center">
+        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm flex justify-center items-center ">
           Compre Junto
           {icon !== "" && (
             <img

@@ -72,12 +72,16 @@ function ProductCardBuyTogether({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-lg p-2 w-[250px]",
-        _class,
+        "card card-compact group text-sm hover:shadow-lg p-2 w-[200px] ",
+        _class
       )}
     >
       <figure
-        class={clx("relative bg-base-200", "rounded border border-transparent")}
+        class={clx(
+          "relative bg-base-200",
+          "rounded border border-transparent w-[200px]",
+          "mx-auto"
+        )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
         {/* Product Images */}
@@ -88,21 +92,20 @@ function ProductCardBuyTogether({
             "absolute top-0 left-0",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
-            !inStock && "opacity-70",
+            !inStock && "opacity-70"
           )}
         >
           <Image
             src={front.url!}
             alt={front.alternateName}
-            width={242}
-            height={248}
+            width={180}
+            height={220}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",
-              "rounded w-full",
-              "col-span-full row-span-full",
+              "rounded",
+              "col-span-full row-span-full"
             )}
-            sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -110,16 +113,15 @@ function ProductCardBuyTogether({
           <Image
             src={back?.url ?? front.url!}
             alt={back?.alternateName ?? front.alternateName}
-            width={272}
-            height={298}
+            width={180}
+            height={220}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
-              "object-fit",
-              "rounded w-full",
+              "object-cover",
+              "rounded",
               "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent",
+              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent"
             )}
-            sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
           />
@@ -129,7 +131,7 @@ function ProductCardBuyTogether({
           class={clx(
             "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[45px] h-[45px] uppercase",
             "absolute top-0 left-0 flex flex-col items-center justify-center",
-            (percent < 1 || !inStock) && "opacity-0",
+            (percent < 1 || !inStock) && "opacity-0"
           )}
         >
           <span>{percent}%</span>
@@ -178,28 +180,26 @@ function ProductCardBuyTogether({
       <div class="flex-grow pt-5" />
 
       <div>
-        {inStock
-          ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
-              class={clx("btn btn-primary no-animation w-full")}
-              icon={""}
-            />
-          )
-          : (
-            <a
-              href={relativeUrl}
-              class={clx(
-                "btn",
-                "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
-              )}
-            >
-              Fora de estoque
-            </a>
-          )}
+        {inStock ? (
+          <AddToCartButton
+            product={product}
+            seller={seller}
+            item={item}
+            class={clx("btn btn-primary no-animation w-full")}
+            icon={""}
+          />
+        ) : (
+          <a
+            href={relativeUrl}
+            class={clx(
+              "btn",
+              "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+              "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
+            )}
+          >
+            Fora de estoque
+          </a>
+        )}
       </div>
 
       <div>
