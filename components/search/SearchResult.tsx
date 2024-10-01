@@ -125,7 +125,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             product={product}
             preload={index === 0}
             index={offset + index}
-            class=""
+            class="w-[167px]"
           />
         ))}
       </div>
@@ -261,70 +261,68 @@ function Result(props: SectionProps<typeof loader>) {
         {...viewItemListEvent}
         class=" max-w-[1440px] mx-auto pt-5"
       >
-        {partial
-          ? <PageResult {...props} />
-          : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
-              {/* <Breadcrumb itemListElement={breadcrumb?.itemListElement} /> */}
+        {partial ? (
+          <PageResult {...props} />
+        ) : (
+          <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+            {/* <Breadcrumb itemListElement={breadcrumb?.itemListElement} /> */}
 
-              {device === "mobile" && (
-                <Drawer
-                  id={controls}
-                  aside={
-                    <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
-                      <div class="flex justify-between items-center">
-                        <h1 class="px-4 py-3">
-                          <span class="font-medium text-2xl">Filters</span>
-                        </h1>
-                        <label class="btn btn-ghost" for={controls}>
-                          <Icon id="close" />
-                        </label>
-                      </div>
-                      <div class="flex-grow overflow-auto">
-                        <Filters
-                          filters={filters}
-                        />
-                      </div>
+            {device === "mobile" && (
+              <Drawer
+                id={controls}
+                aside={
+                  <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+                    <div class="flex justify-between items-center text-secondary">
+                      <h1 class="px-4 py-3">
+                        <span class="font-medium text-2xl">Filtros</span>
+                      </h1>
+                      <label class="btn btn-ghost" for={controls}>
+                        <Icon id="close" />
+                      </label>
                     </div>
-                  }
-                >
-                  <div class="flex sm:hidden justify-between items-end">
-                    <div class="flex flex-col border">
-                      {/* {results} */}
+                    <div class="flex-grow overflow-auto">
+                      <Filters filters={filters} />
+                      <div class="ml-3">
+
                       {sortBy}
+                      </div>
                     </div>
-
-                    <label class="btn btn-ghost " for={controls}>
-                      Filtros
-                    </label>
                   </div>
-                </Drawer>
+                }
+              >
+                <div class="flex sm:hidden justify-between items-end">
+
+                  <label class="btn btn-outline btn-secondary min-h-0 " for={controls}>
+                    Filtros
+                  </label>
+                </div>
+              </Drawer>
+            )}
+
+            <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              {device === "desktop" && (
+                <aside class="place-self-start flex flex-col gap-9">
+                  <span class="text-base font-bold h-12 flex items-center uppercase">
+                    Filtros
+                  </span>
+
+                  <Filters filters={filters} />
+
+                  <div>{sortBy}</div>
+                </aside>
               )}
 
-              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              <div class="flex flex-col gap-9">
                 {device === "desktop" && (
-                  <aside class="place-self-start flex flex-col gap-9">
-                    <span class="text-base font-bold h-12 flex items-center uppercase">
-                      Filtros
-                    </span>
-
-                    <Filters filters={filters} />
-
-                    <div>{sortBy}</div>
-                  </aside>
+                  <div class="flex justify-between items-center">
+                    {/* {results} */}
+                  </div>
                 )}
-
-                <div class="flex flex-col gap-9">
-                  {device === "desktop" && (
-                    <div class="flex justify-between items-center">
-                      {/* {results} */}
-                    </div>
-                  )}
-                  <PageResult {...props} />
-                </div>
+                <PageResult {...props} />
               </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
 
       <script
@@ -333,7 +331,7 @@ function Result(props: SectionProps<typeof loader>) {
           __html: useScript(
             setPageQuerystring,
             `${pageInfo.currentPage}`,
-            container,
+            container
           ),
         }}
       />

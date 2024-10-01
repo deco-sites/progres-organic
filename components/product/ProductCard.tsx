@@ -81,8 +81,8 @@ function ProductCard({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-lg p-3 h-auto w-[296px]",
-        _class,
+        "card card-compact group text-sm hover:shadow-lg p-3 h-auto md:w-[296px]",
+        _class
       )}
     >
       <figure
@@ -97,7 +97,7 @@ function ProductCard({
             "absolute top-0 left-0",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
-            !inStock && "opacity-70",
+            !inStock && "opacity-70"
           )}
         >
           <Image
@@ -109,7 +109,7 @@ function ProductCard({
             class={clx(
               "object-cover",
               "rounded w-full",
-              "col-span-full row-span-full",
+              "col-span-full row-span-full"
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
@@ -126,7 +126,7 @@ function ProductCard({
               "object-fit",
               "rounded w-full",
               "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent",
+              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent"
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
@@ -138,7 +138,7 @@ function ProductCard({
           class={clx(
             "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[45px] h-[45px] uppercase",
             "absolute top-0 left-0 flex flex-col items-center justify-center",
-            (percent < 1 || !inStock) && "opacity-0",
+            (percent < 1 || !inStock) && "opacity-0"
           )}
         >
           <span>{percent}%</span>
@@ -148,7 +148,7 @@ function ProductCard({
 
       <a href={relativeUrl} class="pt-5 flex flex-col items-center">
         <div class="konfidency-reviews-multi" data-sku="{productID}"></div>
-        <span class="font-medium text-base text-secondary text-center h-[96px]">
+        <span class="font-medium text-base text-secondary text-center h-[96px] overflow-y-auto">
           {title}
         </span>
 
@@ -192,28 +192,26 @@ function ProductCard({
       <div class="flex-grow pt-5" />
 
       <div>
-        {inStock
-          ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
-              class={clx("btn btn-primary no-animation w-full")}
-              icon={""}
-            />
-          )
-          : (
-            <a
-              href={relativeUrl}
-              class={clx(
-                "btn",
-                "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
-              )}
-            >
-              Fora de estoque
-            </a>
-          )}
+        {inStock ? (
+          <AddToCartButton
+            product={product}
+            seller={seller}
+            item={item}
+            class={clx("btn btn-primary no-animation w-full")}
+            icon={""}
+          />
+        ) : (
+          <a
+            href={relativeUrl}
+            class={clx(
+              "btn",
+              "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+              "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
+            )}
+          >
+            Fora de estoque
+          </a>
+        )}
       </div>
 
       <div>
@@ -225,8 +223,7 @@ function ProductCard({
           Ver mais
         </a>
       </div>
-      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js">
-      </script>
+      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"></script>
     </div>
   );
 }
