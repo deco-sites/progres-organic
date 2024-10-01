@@ -1,8 +1,0 @@
-{
-  "redirect": {
-    "from": "/sorvetinho",
-    "to": "/sorvetao",
-    "type": "permanent"
-  },
-  "__resolveType": "website/loaders/redirect.ts"
-}

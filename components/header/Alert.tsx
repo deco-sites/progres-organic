@@ -1,4 +1,3 @@
-
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";

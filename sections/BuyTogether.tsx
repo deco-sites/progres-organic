@@ -43,11 +43,10 @@ export default function BuyTogether({ page, products }: Props) {
       );
     })
     : undefined;
-  
 
   return (
     <div class="container flex gap-4 sm:gap-5 w-full pt-8 items-center py-5">
-      {(page!== undefined || secondProduct !== undefined) && (
+      {(page !== undefined || secondProduct !== undefined) && (
         <>
           <ProductCardBuyTogether
             index={1}
@@ -81,24 +80,26 @@ export default function BuyTogether({ page, products }: Props) {
             </p>
 
             <div>
-              {inStock && secondProduct ? (
-                <AddToCartBuyTogether
-                  product={product}
-                  productBt={secondProduct}
-                  class={clx("btn btn-primary no-animation w-full")}
-                  icon=""
-                />
-              ) : (
-                <p
-                  class={clx(
-                    "btn",
-                    "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                    "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
-                  )}
-                >
-                  Fora de estoque
-                </p>
-              )}
+              {inStock && secondProduct
+                ? (
+                  <AddToCartBuyTogether
+                    product={product}
+                    productBt={secondProduct}
+                    class={clx("btn btn-primary no-animation w-full")}
+                    icon=""
+                  />
+                )
+                : (
+                  <p
+                    class={clx(
+                      "btn",
+                      "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                      "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
+                    )}
+                  >
+                    Fora de estoque
+                  </p>
+                )}
             </div>
           </div>
         </>

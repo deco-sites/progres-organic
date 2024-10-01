@@ -106,7 +106,7 @@ function PageResult(props: SectionProps<typeof loader>) {
       </div>
       <div>
         <h2 class="font-bold text-2xl text-secondary">{props.title}</h2>
-        <p class="text-secondary pt-1 pr-2">{ props.subtitle}</p>
+        <p class="text-secondary pt-1 pr-2">{props.subtitle}</p>
       </div>
 
       <div
@@ -149,7 +149,12 @@ function PageResult(props: SectionProps<typeof loader>) {
             </div>
           )
           : (
-            <div class={clx("join w-full flex justify-center", infinite && "hidden")}>
+            <div
+              class={clx(
+                "join w-full flex justify-center",
+                infinite && "hidden",
+              )}
+            >
               <a
                 rel="prev"
                 aria-label="previous page link"

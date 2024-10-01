@@ -239,7 +239,9 @@ function Header({
       }}
     >
       <div class="bg-base-100 fixed w-full z-40">
-        {alerts.length > 0 && <Alert alerts={alerts} icons={ icons} interval={interval}/>}
+        {alerts.length > 0 && (
+          <Alert alerts={alerts} icons={icons} interval={interval} />
+        )}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />
           : <Mobile logo={logo} {...props} />}

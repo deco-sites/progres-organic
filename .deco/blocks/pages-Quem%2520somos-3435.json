@@ -16,79 +16,9 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/TextWithImage.tsx",
-        "name": "dhe55tt",
-        "services": [
-          {
-            "placement": "left",
-            "label": "Conheça nossa história",
-            "description": "<div><br data-mce-bogus=\"1\"></div><p>Lorem ipsum dolor sit amet consectetur. At iaculis volutpat accumsan sed tortor. Odio a aliquet nisl nulla. Quis sagittis dignissim ac purus phasellus scelerisque eget fusce sed. Lorem neque vulputate lobortis scelerisque dictumst dignissim lorem. Vitae quam enim maecenas mattis ultrices. Sit morbi eget ac tristique ullamcorper volutpat risus. Arcu ut pulvinar duis iaculis cursus quis tellus. Cursus lorem lorem tincidunt nunc. Odio risus aliquam sagittis libero ornare turpis eu. Sit est congue risus pretium sit. Ullamcorper sagittis diam suspendisse auctor commodo egestas. Nisl et a pulvinar senectus ultricies orci viverra quam. Id nisl vulputate elementum magna non sollicitudin. Sem blandit aliquet ut vel egestas magna neque.<br>Imperdiet eget sit interdum amet auctor mauris sit tempus. Nunc sed velit velit ipsum nisi ullamcorper pretium arcu. Tincidunt libero tortor dignissim mi. Lacus duis fusce sit nibh vestibulum purus at ac. Ornare molestie enim arcu sed. Massa feugiat amet pharetra at. Elit nibh vel est commodo pulvinar.<br>Placerat libero semper adipiscing accumsan varius pharetra quisque. Nulla lorem risus consectetur erat sed tempus varius. Eget congue ac volutpat duis dolor. Quam sagittis sapien aliquet laoreet. Enim justo adipiscing mauris aenean adipiscing quisque. Nec suscipit sit lorem pulvinar eget. Cursus tellus pellentesque non a quis eu proin et luctus. Sem facilisi purus etiam et ac amet quis. Ut amet etiam vel laoreet eleifend odio libero purus tincidunt. Adipiscing ut mattis consectetur quam porta varius. Feugiat aenean sed enim adipiscing id arcu neque. Vivamus justo arcu neque viverra.</p>",
-            "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d7aa65ed-243a-4dd0-b55c-fe8ee979a650/Rectangle-171.png"
-          },
-          {
-            "placement": "right",
-            "label": "Conheça nossa história",
-            "description": "<div><br data-mce-bogus=\"1\"></div><p>Lorem ipsum dolor sit amet consectetur. At iaculis volutpat accumsan sed tortor. Odio a aliquet nisl nulla. Quis sagittis dignissim ac purus phasellus scelerisque eget fusce sed. Lorem neque vulputate lobortis scelerisque dictumst dignissim lorem. Vitae quam enim maecenas mattis ultrices. Sit morbi eget ac tristique ullamcorper volutpat risus. Arcu ut pulvinar duis iaculis cursus quis tellus. Cursus lorem lorem tincidunt nunc. Odio risus aliquam sagittis libero ornare turpis eu. Sit est congue risus pretium sit. Ullamcorper sagittis diam suspendisse auctor commodo egestas. Nisl et a pulvinar senectus ultricies orci viverra quam. Id nisl vulputate elementum magna non sollicitudin. Sem blandit aliquet ut vel egestas magna neque.<br>Imperdiet eget sit interdum amet auctor mauris sit tempus. Nunc sed velit velit ipsum nisi ullamcorper pretium arcu. Tincidunt libero tortor dignissim mi. Lacus duis fusce sit nibh vestibulum purus at ac. Ornare molestie enim arcu sed. Massa feugiat amet pharetra at. Elit nibh vel est commodo pulvinar.<br>Placerat libero semper adipiscing accumsan varius pharetra quisque. Nulla lorem risus consectetur erat sed tempus varius. Eget congue ac volutpat duis dolor. Quam sagittis sapien aliquet laoreet. Enim justo adipiscing mauris aenean adipiscing quisque. Nec suscipit sit lorem pulvinar eget. Cursus tellus pellentesque non a quis eu proin et luctus. Sem facilisi purus etiam et ac amet quis. Ut amet etiam vel laoreet eleifend odio libero purus tincidunt. Adipiscing ut mattis consectetur quam porta varius. Feugiat aenean sed enim adipiscing id arcu neque. Vivamus justo arcu neque viverra.</p>",
-            "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d7aa65ed-243a-4dd0-b55c-fe8ee979a650/Rectangle-171.png"
-          }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/VideoAndImagePost.tsx",
-        "title": "ARTIGOS - PROGRESSIVA ORGÂNICA",
-        "layout": {
-          "variation": "Slider"
-        },
-        "news": [
-          {
-            "titleNews": "TÍTULO: XXXXXXXX",
-            "subtitleNews": "SUBTÍTULO: XXXXXXXXXXXXXXX",
-            "image": {
-              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7",
-              "alt": "logo"
-            },
-            "post": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.</p>"
-          },
-          {
-            "titleNews": "TÍTULO: XXXXXXXX",
-            "subtitleNews": "SUBTÍTULO: XXXXXXXXXXXXXXX",
-            "image": {
-              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7",
-              "alt": "logo"
-            },
-            "post": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.</p>"
-          },
-          {
-            "titleNews": "TÍTULO: XXXXXXXX",
-            "subtitleNews": "SUBTÍTULO: XXXXXXXXXXXXXXX",
-            "image": {
-              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7",
-              "alt": "logo"
-            },
-            "post": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.</p>"
-          },
-          {
-            "titleNews": "TÍTULO: XXXXXXXX",
-            "subtitleNews": "SUBTÍTULO: XXXXXXXXXXXXXXX",
-            "image": {
-              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7",
-              "alt": "logo"
-            },
-            "post": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.</p>"
-          },
-          {
-            "titleNews": "TÍTULO: XXXXXXXX",
-            "subtitleNews": "SUBTÍTULO: XXXXXXXXXXXXXXX",
-            "image": {
-              "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/87ca19cb-a16f-4f62-a0a2-8026a79c01d7",
-              "alt": "logo"
-            },
-            "post": "<p>Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.</p>"
-          }
-        ]
+        "__resolveType": "site/sections/Informations.tsx",
+        "title": "Quem Somos",
+        "text": "<p>​Somos o site&nbsp;<strong>Progressiva Orgânica&nbsp;</strong>especializado em alisamentos orgânicos e cosméticos para cabelos,&nbsp; nosso compromisso é oferecer beleza com saúde, para tanto buscamos os melhores produtos da atualidade para oferecer aos nossos clientes. Aqui em nosso site você encontra os melhores produtos para cuidar de seus cabelos, as melhores progressivas orgânicas do mercado em um só lugar.&nbsp;<strong>Somos O Maior&nbsp;de Alisamento Orgânico do Brasil</strong></p><p><strong>MISSÃO</strong></p><p>Cuidar das pessoas através de experiências únicas valorizando a sua beleza e compartilhando felicidade.</p><p><strong>VALORES</strong><br>Amor, bem-estar comum, entusiasmo, liderança pelo exemplo, ética, comprometimento, aprimoramento constante.</p><p><a href=\"https://www.progressivaorganica.com.br/\" data-mce-href=\"https://www.progressivaorganica.com.br/\" data-mce-selected=\"inline-boundary\"><strong>Site Progressiva Orgânica</strong></a></p><p><br data-mce-bogus=\"1\"></p><p><strong>Atenciosamente;</strong></p><p><strong>Equipe site Progressiva Orgânica</strong></p>"
       }
     },
     {

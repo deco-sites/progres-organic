@@ -1,6 +1,5 @@
 // import { AppContext } from "apps/vnda/mod.ts";
 
-
 // // export interface TrakingData {
 // //   id: number;
 // //   tracking_code: string;
@@ -10,7 +9,7 @@
 // // }
 
 // interface Props {
-//   data = {} 
+//   data = {}
 // }
 
 // export default function TrakingResult({ data }: Props) {

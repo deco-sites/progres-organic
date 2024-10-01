@@ -83,7 +83,7 @@ const useAddToCart = ({ product, productBt }: Props) => {
         itemId: productID,
         quantity: 1,
         attributes: Object.fromEntries(
-          additionalProperty.map(({ name, value }) => [name, value])
+          additionalProperty.map(({ name, value }) => [name, value]),
         ),
       },
     ];
@@ -94,19 +94,17 @@ const useAddToCart = ({ product, productBt }: Props) => {
         itemId: productID,
         quantity: 1,
         attributes: Object.fromEntries(
-          additionalProperty.map(({ name, value }) => [name, value])
+          additionalProperty.map(({ name, value }) => [name, value]),
         ),
       });
     }
     return {
-      
       productsList: items,
     };
   }
 
   return null;
 };
-
 
 function AddToCartButton(props: Props) {
   const { product, class: _class, icon, productBt } = props;

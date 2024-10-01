@@ -15,7 +15,7 @@ export interface Props {
 const action = async (
   props: Props,
   req: Request,
-  ctx: AppContext
+  ctx: AppContext,
 ): Promise<Cart> => {
   const { api } = ctx;
   // const { itemId, quantity, attributes } = props;
@@ -35,9 +35,9 @@ const action = async (
     { cartId },
     {
       body: {
-        list
+        list,
       },
-    }
+    },
   );
 
   return cartLoader({}, req, ctx);

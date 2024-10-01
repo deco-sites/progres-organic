@@ -27,22 +27,21 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
   const packageCode = `${form.get("packageCode") ?? ""}`;
 
   try {
-  if (!orderCode || !packageCode) {
-    // You can return a status like "incomplete" if required
-    return { ...props, status: "incomplete" };
-  }
-
+    if (!orderCode || !packageCode) {
+      // You can return a status like "incomplete" if required
+      return { ...props, status: "incomplete" };
+    }
 
     const response = await fetch(
-      `https://api.vnda.com.br/api/v2/orders/${orderCode}/packages/${packageCode}/trackings`
+      `https://api.vnda.com.br/api/v2/orders/${orderCode}/packages/${packageCode}/trackings`,
     );
 
     // Check for a successful response (status code 200)
     if (response.status === 200) {
-      const data = await response.json() as TrakingData
+      const data = await response.json() as TrakingData;
       console.log("Traking response:", response.status);
       console.log("Traking response:", response);
-      
+
       return {
         ...props,
         data,
@@ -51,7 +50,7 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
     } else {
       return {
         ...props,
-        
+
         status: "packageNotFound",
       };
     }
@@ -59,14 +58,14 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
     console.error("Error traking package:", error);
     return {
       ...props,
-      status: "failed", 
+      status: "failed",
     };
   }
 }
 
-export default function TrackPackage({ data,  status }: SectionProps<typeof loader>) {
-
-  
+export default function TrackPackage(
+  { data, status }: SectionProps<typeof loader>,
+) {
   return (
     <div class="mt-20 max-w-[1440px] mx-auto flex flex-col items-center mb-10">
       <h2 class="text-2xl text-center font-bold">Rastreio</h2>
@@ -96,33 +95,38 @@ export default function TrackPackage({ data,  status }: SectionProps<typeof load
         </button>
       </form>
       {status !== "incomplete" &&
-        (status === "success" ? (
-          <div class="max-w-[400px] mx-center my-20 flex flex-col">
-            <h3 class="text-xl text-primary font-bold  text-center">
-              Informações sobre o seu pedido
-            </h3>
+        (status === "success"
+          ? (
+            <div class="max-w-[400px] mx-center my-20 flex flex-col">
+              <h3 class="text-xl text-primary font-bold  text-center">
+                Informações sobre o seu pedido
+              </h3>
 
-            <p class="text-sm font-semibold pt-2">Última atualização:</p>
-            <p>{data.tracked_at}</p>
+              <p class="text-sm font-semibold pt-2">Última atualização:</p>
+              <p>{data.tracked_at}</p>
 
-            <p class="text-sm font-semibold pt-2">Nome da Transportadora:</p>
-            <p>{data.company}</p>
+              <p class="text-sm font-semibold pt-2">Nome da Transportadora:</p>
+              <p>{data.company}</p>
 
-            <p class="text-sm font-semibold pt-2">
-              Link do rastreamento do pedido na transportadora:
-            </p>
-            <p>{data.url}</p>
-          </div>
-        ) : status === "packageNotFound" ? (
-          <div class="max-w-[400px] mx-center my-20 flex flex-col">
-            <h3 class="text-xl text-primary font-bold  text-center">
-              Informações sobre o seu pedido
-            </h3>
+              <p class="text-sm font-semibold pt-2">
+                Link do rastreamento do pedido na transportadora:
+              </p>
+              <p>{data.url}</p>
+            </div>
+          )
+          : status === "packageNotFound"
+          ? (
+            <div class="max-w-[400px] mx-center my-20 flex flex-col">
+              <h3 class="text-xl text-primary font-bold  text-center">
+                Informações sobre o seu pedido
+              </h3>
 
-            <p class="pt-3 font-semibold text-center">Não encontramos o seu pedido</p>
-          </div>
-        ) : null)}
+              <p class="pt-3 font-semibold text-center">
+                Não encontramos o seu pedido
+              </p>
+            </div>
+          )
+          : null)}
     </div>
   );
 }
-
