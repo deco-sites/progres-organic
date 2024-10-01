@@ -17,6 +17,24 @@
       "image": [],
       "name": "Para Salões",
       "url": "/para-saloes"
+    },
+    {
+      "children": [],
+      "image": [],
+      "url": "/por-tipo-de-cabelo",
+      "name": "Por Tipo de Cabelo"
+    },
+    {
+      "children": [],
+      "image": [],
+      "url": "/promocao-do-mes",
+      "name": "Promoção do Mês"
+    },
+    {
+      "children": [],
+      "image": [],
+      "url": "/kits-promocionais",
+      "name": "Kits Promocionais"
     }
   ],
   "__resolveType": "commerce/loaders/navbar.ts"

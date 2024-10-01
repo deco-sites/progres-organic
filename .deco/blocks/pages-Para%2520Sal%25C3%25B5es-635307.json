@@ -44,7 +44,11 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": false,
+            "slug": {
+              "__resolveType": "website/functions/requestToParam.ts",
+              "param": "slug"
+            }
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
@@ -68,7 +72,6 @@
           ]
         },
         "startingPage": 1,
-        "title": "Tratamento Capilar",
         "subtitle": "Lorem ipsum dolor sit amet consectetur. Quis mi quis at quisque viverra nullam congue nunc neque. Non amet a nibh tristique nulla aenean purus. Volutpat mattis fringilla cursus nec nulla sit.",
         "filtersByPrice": [
           {
@@ -80,7 +83,8 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "title": "Para Salões"
       }
     },
     {

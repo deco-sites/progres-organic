@@ -88,7 +88,7 @@ function PageResult(props: SectionProps<typeof loader>) {
 
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
-      <div
+      {/* <div
         class={clx(
           "pb-2 sm:pb-10",
           (!prevPageUrl || partial === "hideLess") && "hidden",
@@ -103,7 +103,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           <span class="inline [.htmx-request_&]:hidden">Show Less</span>
           <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
         </a>
-      </div>
+      </div> */}
       <div>
         <h2 class="font-bold text-2xl text-secondary">{props.title}</h2>
         <p class="text-secondary pt-1 pr-2">{props.subtitle}</p>
@@ -290,7 +290,7 @@ function Result(props: SectionProps<typeof loader>) {
                 >
                   <div class="flex sm:hidden justify-between items-end">
                     <div class="flex flex-col border">
-                      {results}
+                      {/* {results} */}
                       {sortBy}
                     </div>
 
@@ -317,7 +317,7 @@ function Result(props: SectionProps<typeof loader>) {
                 <div class="flex flex-col gap-9">
                   {device === "desktop" && (
                     <div class="flex justify-between items-center">
-                      {results}
+                      {/* {results} */}
                     </div>
                   )}
                   <PageResult {...props} />

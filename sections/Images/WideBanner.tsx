@@ -30,7 +30,7 @@ function Banner({ images, href, alt }: Props) {
         <img
           src={images.desktop}
           alt={alt}
-          class=" w-screen  max-w-[1440px] h-auto object-cover mx-auto"
+          class=" w-screen  max-w-[1440px] h-auto object-cover mx-auto pt-12"
         />
       </Picture>
     </a>

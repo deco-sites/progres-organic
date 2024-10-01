@@ -148,7 +148,7 @@ function ProductCard({
 
       <a href={relativeUrl} class="pt-5 flex flex-col items-center">
         <div class="konfidency-reviews-multi" data-sku="{productID}"></div>
-        <span class="font-medium text-base text-secondary text-center">
+        <span class="font-medium text-base text-secondary text-center h-[96px]">
           {title}
         </span>
 
@@ -169,7 +169,7 @@ function ProductCard({
       </a>
 
       {/* SKU Selector */}
-      {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
+      {/* {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto border border-primary">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
@@ -187,7 +187,7 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )}
+      )} */}
 
       <div class="flex-grow pt-5" />
 
