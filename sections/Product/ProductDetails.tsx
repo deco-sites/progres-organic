@@ -7,6 +7,7 @@ import { clx } from "../../sdk/clx.ts";
 import ProductDescription from "../../components/product/ProductDescription.tsx";
 import type { Section } from "deco/blocks/section.ts";
 import type { ProductIcon } from "../../components/product/AddToCartProductDetail.tsx";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 export interface Props {
   /** @title Integration */
@@ -16,6 +17,7 @@ export interface Props {
 }
 
 export default function ProductDetails({ page, sections, icons }: Props) {
+  const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>
       <Component {...props} />
@@ -41,17 +43,29 @@ export default function ProductDetails({ page, sections, icons }: Props) {
   return (
     <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:my-10 px-5 sm:px-5 max-w-[1440px] pb-10">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
+      {device === "mobile" && (
+        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">
+          <div class="sm:col-span-2">
+            <ImageGallerySlider page={page} />
+            <ProductInfo page={page} icons={icons} />
+            <ProductDescription page={page} />
+            {items}
+          </div>
+        </div>
+      )}
 
-      <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">
-        <div class="sm:col-span-2">
-          <ImageGallerySlider page={page} />
-          <ProductDescription page={page} />
+      {device === "desktop" && (
+        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">
+          <div class="sm:col-span-2">
+            <ImageGallerySlider page={page} />
+            <ProductDescription page={page} />
+          </div>
+          <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1500px]">
+            <ProductInfo page={page} icons={icons} />
+            {items}
+          </div>
         </div>
-        <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1500px]">
-          <ProductInfo page={page} icons={icons} />
-          {items}
-        </div>
-      </div>
+      )}
     </div>
   );
 }

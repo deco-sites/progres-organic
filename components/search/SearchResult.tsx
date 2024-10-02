@@ -114,7 +114,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-center",
           "grid-cols-2 gap-2",
-          "lg:grid-cols-3 sm:gap-10",
+          "xl:grid-cols-3 sm:gap-10",
           "2xl:grid-cols-4",
           "w-full",
         )}
@@ -301,8 +301,8 @@ function Result(props: SectionProps<typeof loader>) {
 
             <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
               {device === "desktop" && (
-                <aside class="place-self-start flex flex-col gap-9">
-                  <span class="text-base font-bold h-12 flex items-center uppercase">
+                <aside class="place-self-start flex flex-col gap-9 ml-3">
+                  <span class="text-base font-bold  flex items-center uppercase">
                     Filtros
                   </span>
 

@@ -7,6 +7,7 @@ import Section, {
 } from "../../components/ui/Section.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;

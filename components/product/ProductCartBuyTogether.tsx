@@ -72,14 +72,14 @@ function ProductCardBuyTogether({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm hover:shadow-lg p-2 w-[200px] ",
+        "card card-compact group text-sm hover:shadow-lg p-2  ",
         _class
       )}
     >
       <figure
         class={clx(
           "relative bg-base-200",
-          "rounded border border-transparent w-[200px]",
+          "rounded border border-transparent md:w-[180px] w-[150px]",
           "mx-auto"
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
@@ -89,7 +89,7 @@ function ProductCardBuyTogether({
           href={relativeUrl}
           aria-label="view product"
           class={clx(
-            "absolute top-0 left-0",
+            "absolute top-0 left-0 m-auto ",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
             !inStock && "opacity-70"
@@ -99,7 +99,7 @@ function ProductCardBuyTogether({
             src={front.url!}
             alt={front.alternateName}
             width={180}
-            height={220}
+            height={200}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",
@@ -114,7 +114,7 @@ function ProductCardBuyTogether({
             src={back?.url ?? front.url!}
             alt={back?.alternateName ?? front.alternateName}
             width={180}
-            height={220}
+            height={200}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
               "object-cover",

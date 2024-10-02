@@ -39,7 +39,7 @@ export default function ProductShelfHorizontal({
   return (
     <Section.Container
       {...viewItemListEvent}
-      class="mx-auto"
+      class="mx-auto "
       style={{ padding: 0 }}
     >
       {title && (

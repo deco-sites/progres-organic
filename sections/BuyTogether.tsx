@@ -50,63 +50,62 @@ export default function BuyTogether({ page, products }: Props) {
     offers.lowPrice + (secondProduct.offers?.lowPrice || 0);
   
   return (
-    <div class="container flex gap-4 sm:gap-5 w-full pt-8 items-center py-5">
-      {(page !== undefined && secondProduct !== undefined) && (
-        <>
-          <ProductCardBuyTogether
-            index={1}
-            product={product}
-            class="w-[272px] "
-          />
-          <div class="py-auto w-[25px] h-[25px]">
-            <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
-              +
-            </p>
-          </div>
-          {secondProduct && (
+    <div class="container flex gap-4 sm:gap-5 md:w-full pt-8 items-center py-5 w-screen mx-auto">
+      {page !== undefined && secondProduct !== undefined && (
+        <div class="flex md:flex-row flex-col md:items-center md:mx-auto md:gap-2">
+          <div class="flex items-center">
             <ProductCardBuyTogether
               index={1}
-              product={secondProduct}
-              class="w-[272px] "
+              product={product}
+              class="md:w-[200px] w-[150px]"
             />
-          )}
-
-          <div class="py-auto w-[25px] h-[25px]">
-            <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
-              =
-            </p>
+            <div class="py-auto w-[25px] h-[25px] z-10">
+              <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
+                +
+              </p>
+            </div>
+            {secondProduct && (
+              <ProductCardBuyTogether
+                index={1}
+                product={secondProduct}
+                class="md:w-[200px] w-[150px]"
+              />
+            )}
           </div>
+          <div class="flex flex-col mt-3 md:mt-0">
+            <div class="py-auto w-[25px] h-[25px] mx-auto">
+              <p class="w-full h-full text-xl font-bold text-base-200 bg-secondary rounded-full flex items-center justify-center">
+                =
+              </p>
+            </div>
 
-          <div class="flex flex-col items-center">
-            <p class="text-sm font-semibold ">Valor total:</p>
-            <p class="text-lg font-bold text-warning">
-              {" "}
-              {formatPrice(totalPrice, offers?.priceCurrency)}
-            </p>
+            <div class="flex flex-col items-center md:justify-center">
+              <p class="text-sm font-semibold ">Valor total:</p>
+              <p class="text-lg font-bold text-warning">
+                {" "}
+                {formatPrice(totalPrice, offers?.priceCurrency)}
+              </p>
 
-            <div>
-              {inStock && secondProduct
-                ? (
-                  <AddToCartBuyTogether
-                    products={[product,secondProduct]}
-                    class={clx("btn btn-primary no-animation w-full")}
-                    icon=""
-                  />
-                )
-                : (
-                  <p
-                    class={clx(
-                      "btn",
-                      "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                      "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
-                    )}
-                  >
-                    Fora de estoque
-                  </p>
-                )}
+              {inStock && secondProduct ? (
+                <AddToCartBuyTogether
+                  products={[product, secondProduct]}
+                  class={clx("btn btn-primary no-animation w-full p-5")}
+                  icon=""
+                />
+              ) : (
+                <p
+                  class={clx(
+                    "btn",
+                    "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                    "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
+                  )}
+                >
+                  Fora de estoque
+                </p>
+              )}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

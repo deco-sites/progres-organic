@@ -6,11 +6,11 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 //import ShippingSimulationForm from "../shipping/Form.tsx";
-// import WishlistButton from "../wishlist/WishlistButton.tsx";
 import AddToCartProductDetail from "./AddToCartProductDetail.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import type { ProductIcon } from "./AddToCartProductDetail.tsx";
+
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -89,9 +89,9 @@ function ProductInfo({ page, icons }: Props) {
       }
 
       {/* Product Name */}
-      <span class={clx("text-3xl font-semibold text-primary")}>{title}</span>
+      <span class={clx("md:text-3xl text-base font-semibold text-primary")}>{title}</span>
 
-      <div class="flex items-center gap-10">
+      <div class="flex md:flex-row flex-col md:items-center gap-10">
         <div>
           {/* Prices */}
           <div class="flex flex-col gap-2 pt-1">
@@ -157,22 +157,6 @@ function ProductInfo({ page, icons }: Props) {
       </div> */
       }
 
-      {/* Description card */}
-      {
-        /* <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Description</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </details>
-          )}
-        </span>
-      </div> */
-      }
 
       <script
         async
