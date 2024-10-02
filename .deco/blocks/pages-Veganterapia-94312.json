@@ -1,6 +1,6 @@
 {
   "name": "Veganterapia",
-  "path": "/progressiva-organica/veganterapia/",
+  "path": "/progressiva-organica/veganterapia",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

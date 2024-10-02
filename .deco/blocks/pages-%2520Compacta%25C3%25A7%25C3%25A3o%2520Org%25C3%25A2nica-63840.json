@@ -1,6 +1,6 @@
 {
   "name": " Compactação Orgânica",
-  "path": "/progressiva-organica/compactacao-organica/",
+  "path": "/progressiva-organica/compactacao-organica",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -42,7 +42,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": true
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"

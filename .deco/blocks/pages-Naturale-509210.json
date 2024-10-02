@@ -1,6 +1,6 @@
 {
   "name": "Naturale",
-  "path": "/progressiva-organica/progressiva-naturale/",
+  "path": "/progressiva-organica/progressiva-naturale",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

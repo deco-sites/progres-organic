@@ -1,6 +1,6 @@
 {
   "name": "Antiqueda",
-  "path": "/cabelos-tratamento/tratamento-para-cabelos-crescimento-capilar/",
+  "path": "/cabelos-tratamento/tratamento-para-cabelos-crescimento-capilar",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

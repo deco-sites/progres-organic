@@ -70,12 +70,15 @@ function ProductInfo({ page, icons }: Props) {
   //Calculate the Pix Price Value
   const pixPrice = offers?.lowPrice &&
     offers?.lowPrice - offers?.lowPrice * 0.05;
+  
+  //Calculate Price/6
+  const dividedPrice =
+    offers?.lowPrice && offers?.lowPrice/6;
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
       {/* Price tag */}
-      {
-        /* {percent > 1 && (
+      {/* {percent > 1 && (
         <span
           class={clx(
             "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
@@ -85,11 +88,12 @@ function ProductInfo({ page, icons }: Props) {
         >
           {percent} % off
         </span>
-      )} */
-      }
+      )} */}
 
       {/* Product Name */}
-      <span class={clx("md:text-3xl text-base font-semibold text-primary")}>{title}</span>
+      <span class={clx("md:text-3xl text-base font-semibold text-primary")}>
+        {title}
+      </span>
 
       <div class="flex md:flex-row flex-col md:items-center gap-10">
         <div>
@@ -107,56 +111,55 @@ function ProductInfo({ page, icons }: Props) {
               {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
-              <strong class="font-bold text-primary">5% de desconto</strong>
-              {" "}
+              <strong class="font-bold text-primary">5% de desconto</strong>{" "}
               pagando com Pix
             </span>
+
+            <div>
+              <p class="text-sm text-secondary">6x de {formatPrice(dividedPrice, offers?.priceCurrency)} sem juros</p>
+            </div>
           </div>
 
           {/* Sku Selector */}
-          {
-            /* {hasValidVariants && (
+          {/* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )} */
-          }
+          )} */}
         </div>
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
-        >
-        </div>
+        ></div>
       </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartProductDetail
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation"
-                disabled={false}
-                icons={icons}
-              />
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartProductDetail
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary no-animation"
+              disabled={false}
+              icons={icons}
+            />
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
 
       {/* Shipping Simulation */}
       {
-        /* <div class="mt-8">
-        <ShippingSimulationForm
-          items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
-        />
-      </div> */
+        //   <div class="mt-8">
+        //   <ShippingSimulationForm
+        //     items={[{ id: Number(product.sku), quantity: 1, seller: seller }]}
+        //   />
+        // </div>
       }
-
 
       <script
         async

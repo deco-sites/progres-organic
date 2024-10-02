@@ -49,9 +49,10 @@ function ProductCard({
   const firstSkuVariations = Object.entries(possibilities)?.[0];
   const variants = Object.entries(firstSkuVariations?.[1] ?? {});
   const relativeUrl = relative(url);
-  const percent = listPrice && offers?.lowPrice
-    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-    : 0;
+  const percent =
+    listPrice && offers?.lowPrice
+      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+      : 0;
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -74,8 +75,11 @@ function ProductCard({
   const shoeSizeVariant = "shoe size";
 
   //Calculate the Pix Price Value
-  const pixPrice = offers?.lowPrice &&
-    offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice =
+    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
+
+  //Calculate Price/6
+  const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
 
   return (
     <div
@@ -166,6 +170,9 @@ function ProductCard({
         <span class="font-bold text-[18px] text-primary pt-2">
           {formatPrice(pixPrice, offers?.priceCurrency)} no pix
         </span>
+        <p class="text-sm text-secondary pt-2">
+          6x de {formatPrice(dividedPrice, offers?.priceCurrency)} sem juros
+        </p>
       </a>
 
       {/* SKU Selector */}

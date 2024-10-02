@@ -1,6 +1,6 @@
 {
   "name": "Finalizadores",
-  "path": "/cabelos-tratamento/finalizadores/",
+  "path": "/cabelos-tratamento/finalizadores",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

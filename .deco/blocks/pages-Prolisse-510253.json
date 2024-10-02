@@ -34,7 +34,7 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "tipo-de-cabelo"
+              "prolisse"
             ],
             "filterOperator": {
               "type_tags": "and",
@@ -42,7 +42,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": true
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
@@ -66,8 +66,7 @@
           ]
         },
         "startingPage": 1,
-        "title": "Por tipo de cabelo",
-        "subtitle": "Lorem ipsum dolor sit amet consectetur. Quis mi quis at quisque viverra nullam congue nunc neque. Non amet a nibh tristique nulla aenean purus. Volutpat mattis fringilla cursus nec nulla sit.",
+        "title": "Prolisse",
         "filtersByPrice": [
           {
             "minPrice": 1,

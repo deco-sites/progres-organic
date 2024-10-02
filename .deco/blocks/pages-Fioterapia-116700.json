@@ -1,6 +1,6 @@
 {
   "name": "Fioterapia",
-  "path": "/progressiva-organica/fioterapia/",
+  "path": "/progressiva-organica/fioterapia",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

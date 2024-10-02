@@ -43,7 +43,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": true
           },
           "extensions": []
         },

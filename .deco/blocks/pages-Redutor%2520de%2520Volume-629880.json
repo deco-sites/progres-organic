@@ -1,6 +1,6 @@
 {
   "name": "Redutor de Volume",
-  "path": "/cabelos-tratamento/botox-organico/",
+  "path": "/cabelos-tratamento/botox-organico",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -42,7 +42,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": true
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
