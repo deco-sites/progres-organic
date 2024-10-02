@@ -40,7 +40,7 @@ function Menu({ navItems = [] }: Props) {
         ))}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-base-200">
+      {/* <ul class="flex flex-col py-2 bg-base-200">
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
@@ -77,7 +77,7 @@ function Menu({ navItems = [] }: Props) {
             <span class="text-sm">Minha conta</span>
           </a>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
