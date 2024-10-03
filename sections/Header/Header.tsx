@@ -113,7 +113,7 @@ const Desktop = ({
           </a>
         </div>
 
-        <div class=" flex items-center justify-center gap-2 w-full mx-8">
+        <div class=" flex items-center justify-center gap-2 w-screen mx-8">
           <Searchbar {...searchbar} />
           <ImageLinks links={topLinks} sales={sales} />
         </div>
@@ -159,8 +159,8 @@ const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
             ? (
               <div
                 id={SIDEMENU_CONTAINER_ID}
-                class="h-full flex items-center justify-center"
-                style={{ minWidth: "100vw" }}
+                class="h-full flex items-center justify-center w-screen"
+                
               >
                 <span class="loading loading-spinner" />
               </div>
@@ -238,7 +238,7 @@ function Header({
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="bg-base-100 fixed w-full z-40">
+      <div class="bg-base-100 fixed z-40">
         {alerts.length > 0 && (
           <Alert alerts={alerts} icons={icons} interval={interval} />
         )}

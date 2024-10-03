@@ -111,7 +111,7 @@ function ProductCard({
             height={298}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
-              "object-cover",
+              "object-contain",
               "rounded w-full",
               "col-span-full row-span-full"
             )}
@@ -127,7 +127,7 @@ function ProductCard({
             height={298}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
-              "object-fit",
+              "object-contain",
               "rounded w-full",
               "col-span-full row-span-full",
               "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent"

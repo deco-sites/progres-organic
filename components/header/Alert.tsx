@@ -24,9 +24,9 @@ function Alert({ alerts = [], interval = 5, icons }: Props) {
   const id = useId();
 
   return (
-    <div id={id} class="bg-primary">
-      <div class=" flex items-center max-w-[1440px] mx-auto">
-        <div class="flex gap-2 pl-3">
+    <div id={id} class="bg-primary w-screen">
+      <div class=" flex items-center lg:max-w-[1440px] mx-auto">
+        <div class="flex gap-2 pl-3 ">
           {icons &&
             icons.map((item) => (
               <a
@@ -44,10 +44,13 @@ function Alert({ alerts = [], interval = 5, icons }: Props) {
               </a>
             ))}
         </div>
-        <div class="flex flex-grow justify-center">
-          <Slider class="carousel carousel-center  h-10 gap-6  text-secondary-content text-[12px]">
+        <div class="flex justify-center items-center lg:w-full">
+          <Slider class="carousel carousel-center text-secondary-content text-[12px]">
             {alerts.map((alert, index) => (
-              <Slider.Item index={index} class="carousel-item">
+              <Slider.Item
+                index={index}
+                class="carousel-item w-[250px] lg:w-[500px] "
+              >
                 <span
                   class="py-3 text-center "
                   dangerouslySetInnerHTML={{ __html: alert }}

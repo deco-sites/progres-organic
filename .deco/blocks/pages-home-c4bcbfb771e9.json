@@ -64,25 +64,70 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "ProductList"
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Promoções da semana",
+              "cta": "/",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 10
+              },
+              "subtitle": "Os mais procurados pelos nossos clientes"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "PromocoesDaSemana"
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 8
+              },
+              "title": "Promoções da semana",
+              "subtitle": "Os mais procurados pelos nossos clientes",
+              "cta": "/"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "LongBanner"
+              "__resolveType": "site/sections/Images/Banner.tsx",
+              "title": "Progressiva Organica",
+              "cta": {
+                "href": "#",
+                "label": "Lorem Ipsum"
+              },
+              "description": "<p><span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">Lorem Ipsum</span></p>",
+              "images": {
+                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/26baf1ed-8e8c-4abe-a6ae-a1d3a4aebbc1",
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4994cf90-905a-4497-a89a-a1e4981a1471"
+              },
+              "alt": "Banner tratamento",
+              "href": "/"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "PromocoesDaSemana"
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 8
+              },
+              "title": "Promoções da semana",
+              "subtitle": "Os mais procurados pelos nossos clientes",
+              "cta": "/"
             }
           },
           {
@@ -112,7 +157,12 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "VideoHome"
+              "__resolveType": "site/sections/VideoBeforeAfter.tsx",
+              "title": "Compactação Amazon Therapy Supreme",
+              "subtile": "Cabelos alinhados, sem frizz e com muito brilho!",
+              "text": "Conheça esse produto",
+              "video": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
+              "href": "/"
             }
           },
           {
@@ -132,7 +182,9 @@
               "failed": {
                 "title": "Oops!. Something went wrong!",
                 "description": "Something went wrong. Please try again. If the problem persists, please contact us."
-              }
+              },
+              "title": "Receba todas as promoções",
+              "description": "Quer receber nossas ofertas? Cadastre-se e comece a recebê-las!"
             }
           },
           {

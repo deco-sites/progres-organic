@@ -178,7 +178,7 @@ function Footer({
           )}
         </div>
       </div>
-      <div class="flex  container lg:max-w-[1400px] px-5 mt-10 justify-between">
+      <div class="flex  container lg:max-w-[1400px] px-5 mt-10 lg:justify-between flex-col lg:flex-row">
         <div class="flex flex-col  gap-6 items-center sm:items-start">
           {paymentMethods && (
             <div class="flex flex-wrap">
@@ -221,7 +221,7 @@ function Footer({
           )}
         </div>
         {badges && (
-          <div class="flex  items-center justify-center gap-4">
+          <div class="flex  items-center justify-center gap-4 pt-6 lg:pt-0">
             {badges.map((badge) => (
               <a key={badge.title} href={badge.href}>
                 <Image
@@ -237,9 +237,9 @@ function Footer({
         )}
       </div>
 
-      <div class="flex gap-8 mt-10 pb-8 container lg:max-w-[1400px] md:justify-between px-5">
-        <span class="text-[9px] font-normal text-base-400">{copyright}</span>
-        <div class="flex gap-5 items-center">
+      <p class="text-[9px] font-normal text-center mx-3 pt-5">{copyright}</p>
+      <div class="flex gap-8 mt-4 pb-8 container lg:max-w-[1400px] justify-center">
+        <div class="flex gap-5 items-center mx-auto">
           <a href="https://deco.cx/" target="blank">
             <Image
               loading="lazy"

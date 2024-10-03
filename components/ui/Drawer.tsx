@@ -56,8 +56,8 @@ function Drawer({
         <aside
           data-aside
           class={clx(
-            "drawer-side h-full z-40 overflow-hidden",
-            "[[data-aside]&_section]:contents", // lazy-loading via useSection
+            "drawer-side h-full z-40 overflow-x-hidden",
+            "[[data-aside]&_section]:contents ", // lazy-loading via useSection
           )}
         >
           <label for={id} class="drawer-overlay" />
@@ -82,7 +82,7 @@ function Aside(
   return (
     <div
       data-aside
-      class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y"
+      class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y "
       style={{ maxWidth: "100vw" }}
     >
       <div class="flex justify-between items-center">

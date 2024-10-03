@@ -90,7 +90,7 @@ function Newsletter({
   if (status === "success" || status === "failed") {
     return (
       <Section.Container class="bg-base-200">
-        <div class="p-14 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
+        <div class="p-10 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
           <Icon
             size={80}
             class={clx(status === "success" ? "text-primary" : "text-error")}
@@ -103,8 +103,8 @@ function Newsletter({
   }
 
   return (
-    <div class="bg-primary text-base-200">
-      <div class="flex flex-col">
+    <div class="bg-primary text-base-200 mb-8">
+      <div class="flex flex-col ">
         <div class="flex flex-col justify-center items-center  pt-6">
           <span class="uppercase text-base">Newsletter</span>
           <span class="text-2xl font-semibold text-center pt-9 uppercase">
@@ -119,17 +119,17 @@ function Newsletter({
           hx-target="closest section"
           hx-swap="outerHTML"
           hx-post={useComponent(import.meta.url)}
-          class="flex flex-col items-center sm:flex-row gap-4 mx-auto pt-[60px] pb-12"
+          class="flex flex-col items-center lg:flex-row gap-4 mx-auto pt-[60px] pb-12"
         >
           <input
             name="name"
-            class="input input-bordered w-[365px] h-[56px]"
+            class="input input-bordered lg:w-[365px] h-[56px] w-[330px]"
             type="text"
             placeholder={placeholderName}
           />
           <input
             name="email"
-            class="input input-bordered w-[365px] md:-w-[551px] h-[56px]"
+            class="input input-bordered w-[330px] lg:w-[551px] h-[56px]"
             type="text"
             placeholder={placeholderEmail}
           />

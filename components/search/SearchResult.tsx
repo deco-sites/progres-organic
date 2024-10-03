@@ -132,7 +132,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         ))}
       </div>
 
-      <div class={clx("pt-2 sm:pt-10 w-[400px] mx-auto")}>
+      <div class={clx("pt-2 sm:pt-10 lg:w-[400px] mx-auto")}>
         {infinite
           ? (
             <div class="flex justify-center [&_section]:contents border border-primary">

@@ -50,7 +50,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     <a
       {...selectPromotionEvent}
       href={href ?? "#"}
-      class="relative block overflow-y-hidden md:w-full mx-auto w-screen"
+      class="relative block overflow-y-hidden md:w-full mx-auto w-screen mt-8 lg:mt-8"
     >
       <Image
         preload={lcp}

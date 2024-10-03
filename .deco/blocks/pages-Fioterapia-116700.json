@@ -17,67 +17,25 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Images/WideBanner.tsx",
-        "images": {
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/496b5e00-5aea-4021-85aa-ff3e4fec95da",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/be431e27-e307-422c-8636-5d1e43c8a732"
-        },
-        "alt": "salao de beleza "
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
-          "data": {
-            "__resolveType": "vnda/loaders/productListingPage.ts",
-            "count": 12,
-            "tags": [
-              "fioterapia"
-            ],
-            "filterOperator": {
-              "type_tags": "and",
-              "property2": "and",
-              "property3": "and",
-              "property1": "and"
-            },
-            "filterByTags": false
+          "__resolveType": "vnda/loaders/productListingPage.ts",
+          "tags": [
+            "fioterapia"
+          ],
+          "filterOperator": {
+            "type_tags": "and",
+            "property1": "and",
+            "property2": "and",
+            "property3": "and"
           },
-          "extensions": [],
-          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
-        },
-        "layout": {
-          "columns": {
-            "mobile": 2,
-            "desktop": 4
-          },
-          "variant": "aside",
-          "pagination": "pagination",
-          "filtersByPrice": [
-            {
-              "minPrice": "1,00",
-              "maxPrice": "2,99"
-            },
-            {
-              "minPrice": "3,00",
-              "maxPrice": "6,00"
-            }
-          ]
-        },
-        "startingPage": 1,
-        "title": "Fioterapia",
-        "filtersByPrice": [
-          {
-            "minPrice": 1,
-            "maxPrice": 3,
-            "selected": false
-          },
-          {
-            "minPrice": 3,
-            "maxPrice": 6
+          "count": 12,
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
           }
-        ]
+        },
+        "title": "Fioterapia"
       }
     },
     {

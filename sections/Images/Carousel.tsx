@@ -91,7 +91,7 @@ function Carousel({ images = [], preload, interval }: Props) {
         "grid-rows-[1fr_1fr_1fr]",
         "grid-cols-[32px_1fr_32px] min-h-[660px]",
         "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "max-w-[1440px] mx-auto ",
+        "max-w-[1440px] mx-auto mt-14",
       )}
     >
       <div class="col-span-full row-span-full">

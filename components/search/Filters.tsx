@@ -80,11 +80,11 @@ function FilterValues({ key, values }: FilterToggle) {
 function Filters({ filters, categoryList }: Props) {
   return (
     <div>
-      <span class="text-sm font-semibold first-letter:uppercase p-4 mt-3">
+      <span class="text-sm font-semibold first-letter:uppercase mt-3">
         {categoryList?.title}
       </span>
       {categoryList && (
-        <ul class="flex flex-col gap-5 p-4 sm:p-0">
+        <ul class="flex flex-col mt-5 p-4 sm:p-0 gap-4">
           {categoryList.links.map((item) => (
             <li class="text-sm">
               <a href={item.url}>{item.label}</a>

@@ -29,9 +29,9 @@ interface Props {
 
 export default function Section({ title, subtile, text, video, href }: Props) {
   return (
-    <div class="w-screen pt-[30px]">
-      <div class="md:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
-        <div class="md:w-[667px] md:h-[374px] w-[390px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
+    <div class="w-screen pt-[30px] mb-8 px-4">
+      <div class="lg:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
+        <div class="md:w-[667px] md:h-[374px] w-[350px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
           <IframeLoader
             videoLink={video || ""}
             preload={false}
