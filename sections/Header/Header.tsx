@@ -133,12 +133,12 @@ const Desktop = ({
   </>
 );
 
-const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
+const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
       aside={
-        <Drawer.Aside title="Search" drawer={SEARCHBAR_DRAWER_ID}>
+        <Drawer.Aside title="Pesquisar" drawer={SEARCHBAR_DRAWER_ID}>
           <div class="w-screen overflow-y-auto">
             {loading === "lazy"
               ? (
@@ -165,7 +165,7 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
                 <span class="loading loading-spinner" />
               </div>
             )
-            : <Menu navItems={navItems ?? []} />}
+            : <Menu navItems={navItems ?? []} topLinks={ topLinks} />}
         </Drawer.Aside>
       }
     />

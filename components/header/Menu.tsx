@@ -1,8 +1,11 @@
 import Icon from "../../components/ui/Icon.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type {ImageLink}from "../../components/header/ImageLinks.tsx"
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   navItems?: SiteNavigationElement[];
+  topLinks: ImageLink[];
 }
 
 function MenuItem({ item }: { item: SiteNavigationElement }) {
@@ -26,58 +29,39 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
   );
 }
 
-function Menu({ navItems = [] }: Props) {
+function Menu({ navItems = [] , topLinks}: Props) {
   return (
     <div
-      class="flex flex-col h-full overflow-y-auto"
+      class="flex flex-col h-full overflow-y-auto  bg-base-200"
       style={{ minWidth: "100vw" }}
     >
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 overflow-y-auto">
+      <ul class="px-4  flex flex-col divide-y divide-base-200 overflow-y-auto ">
         {navItems.map((item) => (
           <li>
             <MenuItem item={item} />
           </li>
         ))}
       </ul>
-
-      {/* <ul class="flex flex-col py-2 bg-base-200">
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="/wishlist"
-          >
-            <Icon id="favorite" />
-            <span class="text-sm">Lista de desejos</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="home_pin" />
-            <span class="text-sm">Nossas lojas</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="call" />
-            <span class="text-sm">Fale conosco</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="account_circle" />
-            <span class="text-sm">Minha conta</span>
-          </a>
-        </li>
-      </ul> */}
+      <div class="border-t border-primary mt-10 ">
+        <ul class="flex flex-col py-2 px-8 items-start gap-6 mt-5">
+          {topLinks.length > 0 &&
+            topLinks.map((item) => (
+              <a
+                href={item.href}
+                class="flex justify-center  gap-4 items-center"
+              >
+                <Image
+                  class="object-contain"
+                  src={item.image}
+                  alt={item.text}
+                  width={37}
+                  height={37}
+                />
+                <p class="text-[12px]">{item.text}</p>
+              </a>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }

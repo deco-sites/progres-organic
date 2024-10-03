@@ -36,6 +36,7 @@ export interface SearchbarProps {
 
   /** @description Loader to run when suggesting new elements */
   loader: Resolved<Suggestion | null>;
+  title: string;
 }
 
 const script = (formId: string, name: string, popupId: string) => {
@@ -85,7 +86,7 @@ export default function Searchbar(
       <form
         id={SEARCHBAR_INPUT_FORM_ID}
         action={ACTION}
-        class="join max-w-[447px] min-w-[350px] h-[46px] relative"
+        class="join max-w-[447px] min-w-[350px] h-[46px] relative mx-auto "
       >
         <input
           autoFocus

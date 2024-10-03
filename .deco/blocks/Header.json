@@ -5,7 +5,8 @@
       "__resolveType": "resolved",
       "data": null
     },
-    "placeholder": "O que você está buscando?"
+    "placeholder": "O que você está buscando?",
+    "title": "Pesquisar"
   },
   "alerts": [
     "<p>Sua primeira compra? Use o cupom <strong>PRIMEIRA COMPRA</strong></p>"

@@ -87,7 +87,7 @@ function Aside(
     >
       <div class="flex justify-between items-center">
         <h1 class="px-4 py-3">
-          <span class="font-medium text-2xl">{title}</span>
+          <span class="font-medium text-xl text-primary">{title}</span>
         </h1>
         <label for={drawer} aria-label="X" class="btn btn-ghost">
           <Icon id="close" />
