@@ -93,11 +93,11 @@ function ProductDescription({ page }: Props) {
       description = description.replace(
         matchImg[0],
         ` <Image
-            class="w-full"
+            class="w-[70%] mx-auto"
             src="${matchImg[1]}"
             alt={"img.alternateName"}
-            width={100}
-            height={100}
+            width={300}
+            height={300}
             loading="lazy"
           />`
       );
@@ -126,16 +126,16 @@ function ProductDescription({ page }: Props) {
             <div>
               <div
                 for="myCheckbox "
-                class="cursor-pointer font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4"
+                class=" font-semibold border-t border-b border-primary text-sm md:text-xl pt-4 pb-4"
               >
                 Descricão Geral
               </div>
               {/* <input id="myCheckbox" type="checkbox" class="hidden peer" /> */}
-              <p class="text-primary md:text-2xl text-lg text-center font-bold mt-4 ">
+              <h2 class="text-primary md:text-2xl text-lg text-center font-bold mt-8 mb-5">
                 {title}
-              </p>
+              </h2>
               <div
-                class="ml-2 mt-2 "
+                class="ml-2 mt-2  px-3"
                 dangerouslySetInnerHTML={{
                   __html: processDescription(description),
                 }}

@@ -1,13 +1,111 @@
 {
   "items": [
     {
-      "children": [],
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/progressiva-organica-sem-formol-amazon-therapy1",
+          "name": "Compactação Amazon Therapy"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Amazon Therapy Supreme",
+          "url": "/progressiva-organica/amazon-therapy-supreme-liso-perfeito"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Amazon Therapy Compactação Orgânica",
+          "url": "/progressiva-organica/compactacao-organica"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Vegan Hair Orgânica com Biotina e Macadamia",
+          "url": "/progressiva-organica/progressiva-vegan-hair"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/progressiva-natuplus",
+          "name": "Prolisse"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/progressiva-organica-selagem-organica",
+          "name": "Selagem Orgânica"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/fioterapia",
+          "name": "Fioterapia"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/veganterapia",
+          "name": "Veganterapia"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/progressiva-natublond-organica",
+          "name": "Natublond"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/progressiva-organica/progressiva-naturale",
+          "name": "Naturale"
+        }
+      ],
       "image": [],
       "name": "Transformação",
       "url": "/progressiva-organica"
     },
     {
-      "children": [],
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/tratamento-para-cabelos-crescimento-capilar",
+          "name": "Antiqueda e Crescimento Capilar"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/botox-organico",
+          "name": "Redutor de Volume e Frizz"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/cronograma-capilar",
+          "name": "Cronograma Capilar"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/finalizadores",
+          "name": "Finalizadores"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/mascaras-de-tratamentos",
+          "name": "Máscaras de Tratamentos"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/manutencao-home-care",
+          "name": "Manutenção Home Care"
+        }
+      ],
       "image": [],
       "url": "/cabelos-tratamento",
       "name": "Tratamento Capilar"
@@ -19,7 +117,26 @@
       "url": "/para-saloes"
     },
     {
-      "children": [],
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "url": "/por-tipo-de-cabelo/cabelos-loiros-luzes-mechas",
+          "name": "Cabelos Loiros - Luzes - Mechas"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/por-tipo-de-cabelo/cabelos-grossos-afros-cacheados",
+          "name": "Cabelos Grossos - Afros - Cacheados"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "Cabelos Finos",
+          "url": "por-tipo-de-cabelo/cabelos-finos"
+        }
+      ],
       "image": [],
       "url": "/por-tipo-de-cabelo",
       "name": "Por Tipo de Cabelo"

@@ -9,8 +9,17 @@ import Avatar from "../../components/ui/Avatar.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 
+export interface CategoryFilter {
+  title: string;
+  links: {
+    label: string;
+    url: string;
+  }[];
+}
+
 interface Props {
   filters: ProductListingPage["filters"];
+  categoryList?: CategoryFilter;
 }
 
 const isToggle = (filter: Filter): filter is FilterToggle =>
@@ -22,12 +31,14 @@ function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div aria-checked={selected} class="checkbox" />
       <span class="text-sm first-letter:uppercase">
-        {startsWithLetter ? label.replace("-", " ") : label
-          .split("_")
-          .map(
-            (parte) => `R$${parseFloat(parte).toFixed(2).replace(".", ",")}`,
-          )
-          .join(" ~ ")}
+        {startsWithLetter
+          ? label.replace("-", " ")
+          : label
+              .split("_")
+              .map(
+                (parte) => `R$${parseFloat(parte).toFixed(2).replace(".", ",")}`
+              )
+              .join(" ~ ")}
       </span>
       {quantity > 0 && <span class="text-sm text-base-400">({quantity})</span>}
     </a>
@@ -57,13 +68,7 @@ function FilterValues({ key, values }: FilterToggle) {
         if (key === "price-range") {
           const range = parseRange(item.value);
 
-          return (
-            range && (
-              <ValueItem
-                {...item}
-              />
-            )
-          );
+          return range && <ValueItem {...item} />;
         }
 
         return <ValueItem {...item} />;
@@ -72,10 +77,22 @@ function FilterValues({ key, values }: FilterToggle) {
   );
 }
 
-function Filters({ filters }: Props) {
+function Filters({ filters, categoryList }: Props) {
   return (
     <div>
-      <ul class="flex flex-col gap-6 p-4 sm:p-0 ">
+      <span class="text-sm font-semibold first-letter:uppercase p-4 mt-3">
+        {categoryList?.title}
+      </span>
+      {categoryList && (
+        <ul class="flex flex-col gap-5 p-4 sm:p-0">
+          {categoryList.links.map((item) => (
+            <li class="text-sm">
+              <a href={item.url}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+      <ul class="flex flex-col gap-6 p-4 sm:p-0 mt-6">
         {filters.filter(isToggle).map(
           (filter) =>
             filter.label === "marca" && (
@@ -85,10 +102,10 @@ function Filters({ filters }: Props) {
                 </span>
                 <FilterValues {...filter} />
               </li>
-            ),
+            )
         )}
       </ul>
-      <ul class="flex flex-col gap-6 p-4 sm:p-0 mt-5">
+      <ul class="flex flex-col gap-6 p-4 sm:p-0 mt-6">
         {filters.filter(isToggle).map(
           (filter) =>
             filter.label === "filtro-preco" && (
@@ -98,7 +115,7 @@ function Filters({ filters }: Props) {
                 </span>
                 <FilterValues {...filter} />
               </li>
-            ),
+            )
         )}
       </ul>
     </div>

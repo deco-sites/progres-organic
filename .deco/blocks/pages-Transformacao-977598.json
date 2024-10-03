@@ -73,7 +73,6 @@
         },
         "startingPage": 1,
         "title": "Transformação",
-        "subtitle": "Lorem ipsum dolor sit amet consectetur. Quis mi quis at quisque viverra nullam congue nunc neque. Non amet a nibh tristique nulla aenean purus. Volutpat mattis fringilla cursus nec nulla sit.",
         "filtersByPrice": [
           {
             "minPrice": 1,
@@ -84,7 +83,22 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "categoryList": {
+          "title": "Transformação",
+          "links": [
+            {
+              "url": "/progressiva-organica/progressiva-organica-sem-formol-amazon-therapy1",
+              "title": "Compactação Amazon Therapy",
+              "label": "Compactação Amazon Therapy"
+            },
+            {
+              "title": "Amazon Therapy Supreme",
+              "url": "/progressiva-organica/amazon-therapy-supreme-liso-perfeito",
+              "label": "Amazon Therapy Supreme"
+            }
+          ]
+        }
       }
     },
     {

@@ -91,9 +91,9 @@ function ProductInfo({ page, icons }: Props) {
       )} */}
 
       {/* Product Name */}
-      <span class={clx("md:text-3xl text-base font-semibold text-primary")}>
+      <h1 class={clx("md:text-3xl text-base font-semibold text-primary")}>
         {title}
-      </span>
+      </h1>
 
       <div class="flex md:flex-row flex-col md:items-center gap-10">
         <div>

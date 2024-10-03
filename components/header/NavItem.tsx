@@ -23,11 +23,11 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
       {children && children.length > 0 && (
         <div
-          class="fixed hidden hover:flex group-hover:flex bg-base-100 z-40 items-center justify-center gap-6 border-t-2 border-b-2 border-base-200 max-w-[1440px] mx-auto"
+          class="fixed hidden hover:flex group-hover:flex bg-base-200 z-40 items-center justify-center gap-2 max-w-[1440px] mx-auto  top-[150px]"
           style={{
             // top: "0px",
             // left: "0px",
-            marginTop: HEADER_HEIGHT_DESKTOP,
+            //marginTop: HEADER_HEIGHT_DESKTOP,
           }}
         >
           {image?.url && (
@@ -40,11 +40,11 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
               loading="lazy"
             />
           )}
-          <ul class="flex flex-col items-start justify-start gap-6 container p-6">
+          <ul class="flex flex-col  items-start justify-start  p-6">
             {children.map((node) => (
               <li class="">
                 <a
-                  class="hover:underline text-secondary text-sm"
+                  class="hover:underline text-primary text-sm font-semibold pr-3"
                   href={node.url}
                 >
                   <span>{node.name}</span>

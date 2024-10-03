@@ -55,7 +55,7 @@ export default function ProductDetails({ page, sections, icons }: Props) {
       )}
 
       {device === "desktop" && (
-        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">
+        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-10 relative mx-auto ">
           <div class="sm:col-span-2">
             <ImageGallerySlider page={page} />
             <ProductDescription page={page} />

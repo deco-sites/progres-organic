@@ -14,6 +14,7 @@ import Breadcrumb from "../ui/Breadcrumb.tsx";
 import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
+import type {CategoryFilter} from "./Filters.tsx"
 
 export interface Layout {
   /**
@@ -37,6 +38,7 @@ export interface Props {
   title?: string;
   /** @title subtitulo */
   subtitle?: string;
+  categoryList?: CategoryFilter;
 }
 
 function NotFound() {
@@ -281,18 +283,20 @@ function Result(props: SectionProps<typeof loader>) {
                       </label>
                     </div>
                     <div class="flex-grow overflow-auto">
-                      <Filters filters={filters} />
-                      <div class="ml-3">
-
-                      {sortBy}
-                      </div>
+                      <Filters
+                        filters={filters}
+                        categoryList={props.categoryList}
+                      />
+                      <div class="ml-3">{sortBy}</div>
                     </div>
                   </div>
                 }
               >
                 <div class="flex sm:hidden justify-between items-end">
-
-                  <label class="btn btn-outline btn-secondary min-h-0 " for={controls}>
+                  <label
+                    class="btn btn-outline btn-secondary min-h-0 "
+                    for={controls}
+                  >
                     Filtros
                   </label>
                 </div>
@@ -306,7 +310,10 @@ function Result(props: SectionProps<typeof loader>) {
                     Filtros
                   </span>
 
-                  <Filters filters={filters} />
+                  <Filters
+                    filters={filters}
+                    categoryList={props.categoryList}
+                  />
 
                   <div>{sortBy}</div>
                 </aside>
