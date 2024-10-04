@@ -219,15 +219,8 @@
                 "href": "/"
               },
               {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/48049567-a2df-4227-ba0d-cfafef523bce",
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/32a9276c-4f49-4f10-a3e5-737554904ef2",
-                "alt": "Liso dos sonhos",
-                "action": {
-                  "href": "/",
-                  "title": "Liso dos sonhos",
-                  "subTitle": "Promocao",
-                  "label": "Clique aqui"
-                },
+                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae",
+                "alt": "teste carrousel",
                 "href": "/"
               }
             ],
@@ -280,9 +273,9 @@
                   "href": "/para-saloes"
                 },
                 {
-                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
                   "alt": "Home Care",
-                  "href": "/home-care"
+                  "href": "/home-care",
+                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081"
                 }
               ]
             }
@@ -291,23 +284,35 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Promoções da semana",
+              "title": "Mais Vendidos!",
               "cta": "/",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [
+                  "promocoes-da-semana"
+                ],
+                "typeTags": [],
+                "ids": [],
+                "count": 10
+              }
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
                 "tags": [],
                 "typeTags": [],
                 "ids": [],
-                "count": 10
+                "count": 8
               },
-              "subtitle": "Os mais procurados pelos nossos clientes"
-            }
-          },
-          {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "PromocoesDaSemana"
+              "title": "Promoções da semana",
+              "subtitle": "Os mais procurados pelos nossos clientes",
+              "cta": "/"
             }
           },
           {
@@ -331,7 +336,18 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "PromocoesDaSemana"
+              "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "products": {
+                "__resolveType": "vnda/loaders/productList.ts",
+                "sort": "newest",
+                "tags": [],
+                "typeTags": [],
+                "ids": [],
+                "count": 8
+              },
+              "title": "Promoções da semana",
+              "subtitle": "Os mais procurados pelos nossos clientes",
+              "cta": "/"
             }
           },
           {
@@ -358,7 +374,12 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "VideoHome"
+              "__resolveType": "site/sections/VideoBeforeAfter.tsx",
+              "title": "Compactação Amazon Therapy Supreme",
+              "subtile": "Cabelos alinhados, sem frizz e com muito brilho!",
+              "text": "Conheça esse produto",
+              "video": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
+              "href": "/"
             }
           },
           {
