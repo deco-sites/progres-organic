@@ -34,13 +34,13 @@
     },
     {
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/3f3a2003-5a48-43d1-b246-6547eba59c9e",
-      "href": "/",
+      "href": "/contato",
       "text": "Central de Atendimento"
     }
   ],
   "sales": {
     "title": "Promoções Imperdíveis",
-    "href": "/",
+    "href": "/promocao-do-mes",
     "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ec085ee4-214e-49d7-818d-e06758ed8215"
   },
   "icons": [

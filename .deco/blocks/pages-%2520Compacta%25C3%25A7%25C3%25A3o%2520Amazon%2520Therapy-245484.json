@@ -42,7 +42,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": true
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
