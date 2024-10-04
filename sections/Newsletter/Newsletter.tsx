@@ -123,13 +123,13 @@ function Newsletter({
         >
           <input
             name="name"
-            class="input input-bordered lg:w-[365px] h-[56px] w-[330px]"
+            class="input input-bordered lg:w-[365px] h-[56px] w-[330px] text-secondary"
             type="text"
             placeholder={placeholderName}
           />
           <input
             name="email"
-            class="input input-bordered w-[330px] lg:w-[551px] h-[56px]"
+            class="input input-bordered w-[330px] lg:w-[551px] h-[56px] text-secondary"
             type="text"
             placeholder={placeholderEmail}
           />
@@ -142,7 +142,6 @@ function Newsletter({
           </button>
         </form>
       </div>
-      {/* <NewsletterIsland  /> */}
     </div>
   );
 }

@@ -164,6 +164,7 @@ function ProductCard({
           <span>{percent}%</span>
           <span>off</span>
         </div>
+        
         {/* Free Delivery */}
         {freeDelivery && (
           <span

@@ -43,7 +43,7 @@ export default function ProductShelfHorizontal({
       style={{ padding: 0 }}
     >
       {title && (
-        <p class="text-base font-semibold text-secondary border-t border-gray-300 pt-5 mt-10">
+        <p class="text-base font-semibold text-secondary border-t border-gray-300 pt-5 mt-10 px-3">
           {title}
         </p>
       )}

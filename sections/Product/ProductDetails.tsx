@@ -50,7 +50,8 @@ export default function ProductDetails({ page, sections, icons, paymentIcons }: 
           <div class="sm:col-span-2">
             <ImageGallerySlider page={page} />
             <ProductInfo page={page} icons={icons} />
-            <ProductDescription page={page} />
+
+            {/* <ProductDescription page={page} /> */}
             {items}
           </div>
         </div>

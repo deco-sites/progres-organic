@@ -49,10 +49,11 @@ export default function BuyTogether({ page, products }: Props) {
     secondProduct &&
     offers.lowPrice + (secondProduct.offers?.lowPrice || 0);
   
+  
   return (
-    <div class="container flex gap-4 sm:gap-5 md:w-full pt-8 items-center py-5 w-screen mx-auto">
+    <div class="container flex gap-4 sm:gap-5 md:w-full pt-8 items-center py-5 w-[350px]  mx-auto">
       {page !== undefined && secondProduct !== undefined && (
-        <div class="flex md:flex-row flex-col md:items-center md:mx-auto md:gap-2">
+        <div class="flex md:flex-row flex-col md:items-center mx-auto md:gap-2">
           <div class="flex items-center">
             <ProductCardBuyTogether
               index={1}
