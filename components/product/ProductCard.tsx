@@ -38,7 +38,14 @@ function ProductCard({
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf, productID } = product;
+  const {
+    url,
+    image: images,
+    offers,
+    isVariantOf,
+    productID,
+    additionalProperty,
+  } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
   const [front, back] = images ?? [];
@@ -70,6 +77,13 @@ function ProductCard({
     },
   });
 
+  //calculate if delivery is free
+  const freeDelivery =
+    additionalProperty &&
+    additionalProperty.some((item) => {
+      return item.name === "frete-gratis";
+    });
+
   //Added it to check the variant name in the SKU Selector later, so it doesn't render the SKU to "shoes size" in the Product Card
   const firstVariantName = firstSkuVariations?.[0]?.toLowerCase();
   const shoeSizeVariant = "shoe size";
@@ -80,6 +94,8 @@ function ProductCard({
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
+  console.log(freeDelivery);
+  
 
   return (
     <div
@@ -148,6 +164,17 @@ function ProductCard({
           <span>{percent}%</span>
           <span>off</span>
         </div>
+        {/* Free Delivery */}
+        {freeDelivery && (
+          <span
+            class={clx(
+              "absolute top-12 left-0 flex flex-col items-center justify-center",
+              "text-[12px] font-semibold text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[110px]"
+            )}
+          >
+            Frete Grátis
+          </span>
+        )}
       </figure>
 
       <a href={relativeUrl} class="pt-5 flex flex-col items-center">

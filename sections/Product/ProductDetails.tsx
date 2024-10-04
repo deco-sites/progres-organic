@@ -8,15 +8,17 @@ import ProductDescription from "../../components/product/ProductDescription.tsx"
 import type { Section } from "deco/blocks/section.ts";
 import type { ProductIcon } from "../../components/product/AddToCartProductDetail.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
+import type { PaymentIcon } from "../../components/product/ProductInfo.tsx";
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
   sections?: Section[];
   icons: ProductIcon[];
+  paymentIcons?: PaymentIcon;
 }
 
-export default function ProductDetails({ page, sections, icons }: Props) {
+export default function ProductDetails({ page, sections, icons, paymentIcons }: Props) {
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>
@@ -61,7 +63,11 @@ export default function ProductDetails({ page, sections, icons }: Props) {
             <ProductDescription page={page} />
           </div>
           <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1500px]">
-            <ProductInfo page={page} icons={icons} />
+            <ProductInfo
+              page={page}
+              icons={icons}
+              paymentIcons={paymentIcons}
+            />
             {items}
           </div>
         </div>
