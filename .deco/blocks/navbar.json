@@ -82,7 +82,13 @@
           "name": "Redutor de Volume e Frizz"
         },
         {
-          "image": [],
+          "image": [
+            {
+              "image": [],
+              "video": [],
+              "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/7c3c4813-a3ef-4d96-b376-f8825db896e4/WhatsApp-Image-2024-10-03-at-10.56.10.jpeg"
+            }
+          ],
           "children": [],
           "url": "/cabelos-tratamento/cronograma-capilar",
           "name": "Cronograma Capilar"
@@ -106,7 +112,17 @@
           "name": "Manutenção Home Care"
         }
       ],
-      "image": [],
+      "image": [
+        {
+          "image": [],
+          "video": []
+        },
+        {
+          "image": [],
+          "video": [],
+          "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/7c3c4813-a3ef-4d96-b376-f8825db896e4/WhatsApp-Image-2024-10-03-at-10.56.10.jpeg"
+        }
+      ],
       "url": "/cabelos-tratamento",
       "name": "Tratamento Capilar"
     },
