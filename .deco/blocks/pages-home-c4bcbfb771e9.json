@@ -300,11 +300,19 @@
                 "sort": "newest",
                 "tags": [],
                 "typeTags": [],
-                "ids": [],
+                "ids": [
+                  28,
+                  33,
+                  15,
+                  14,
+                  27,
+                  35,
+                  12
+                ],
                 "count": 8
               },
               "title": "Promoções da semana",
-              "subtitle": "Os mais procurados pelos nossos clientes",
+              "subtitle": "Aproveite As Promoções da Semana",
               "cta": "/"
             }
           },
