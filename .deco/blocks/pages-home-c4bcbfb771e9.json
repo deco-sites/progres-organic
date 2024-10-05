@@ -287,7 +287,19 @@
               "title": "Mais Vendidos!",
               "cta": "/",
               "products": {
-                "__resolveType": "Preview vnda/loaders/productList.ts"
+                "__resolveType": "vnda/loaders/productList.ts",
+                "count": 8,
+                "wildcard": true,
+                "ids": [
+                  20,
+                  32,
+                  42,
+                  18,
+                  13,
+                  10,
+                  34,
+                  12
+                ]
               },
               "subtitle": "Os Produtos Mais Vendidos"
             }
