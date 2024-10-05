@@ -19,8 +19,8 @@
       "section": {
         "__resolveType": "site/sections/Images/WideBanner.tsx",
         "images": {
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/496b5e00-5aea-4021-85aa-ff3e4fec95da",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/be431e27-e307-422c-8636-5d1e43c8a732"
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/0c9f43c9-3137-4cad-ba22-9d3139712cc9/WhatsApp-Image-2024-10-03-at-10.56.15.jpeg",
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/0c9f43c9-3137-4cad-ba22-9d3139712cc9/WhatsApp-Image-2024-10-03-at-10.56.15.jpeg"
         },
         "alt": "salao de beleza "
       }
