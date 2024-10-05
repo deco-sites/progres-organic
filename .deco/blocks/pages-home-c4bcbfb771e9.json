@@ -207,8 +207,7 @@
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b5082e6f-9284-4204-8fb9-8471c298f40d",
-                "alt": "Progressiva organica",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/95498a6d-6b0c-4d80-9b72-c409aff172a8/WhatsApp-Image-2024-10-03-at-10.56.14.jpeg",
                 "action": {
                   "href": "/",
                   "title": "Hair",
@@ -216,12 +215,18 @@
                   "label": "Organica"
                 },
                 "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae",
-                "href": "/"
+                "href": "/promocao-do-mes",
+                "alt": "Black Friday Progressiva Orgânica"
               },
               {
-                "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae",
-                "alt": "teste carrousel",
-                "href": "/"
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/ceae7fcb-ef81-498d-b369-81319f43c3a5/WhatsApp-Image-2024-10-03-at-10.56.14-(1).jpeg",
+                "href": "/promocao-do-mes",
+                "alt": "Promoção Black Friday Progressiva Orgânica"
+              },
+              {
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/4cbc220c-e208-44ae-b774-61c6b931daea/BANNER---ESQUENTA-BLACK-FRETE-GRATIS.jpg",
+                "alt": "Black Friday Progressiva Orgânica - Frete Grátis",
+                "href": "promocao-do-mes"
               }
             ],
             "preload": true,
