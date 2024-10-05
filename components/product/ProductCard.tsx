@@ -94,7 +94,7 @@ function ProductCard({
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
-  console.log(freeDelivery);
+  
   
 
   return (
@@ -164,7 +164,7 @@ function ProductCard({
           <span>{percent}%</span>
           <span>off</span>
         </div>
-        
+
         {/* Free Delivery */}
         {freeDelivery && (
           <span

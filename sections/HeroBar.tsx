@@ -22,7 +22,9 @@ export interface TopItem {
 }
 
 interface Props {
-  /** @title Conteúdo */
+  /**
+   * @title Conteudo
+   * @maximum 4 */
   content: TopItem[];
 }
 
@@ -32,6 +34,7 @@ export default function TopBar({ content }: Props) {
       {content.map((item) => (
         <a
           href={item.href}
+          target="blank"
           class="flex items-center mr-7 md:mr-0 ml-6 h-[70px]"
         >
           <div class="flex items-center justify-center w-[50px] h-[50px] ">

@@ -82,22 +82,7 @@ const Desktop = ({
   sales,
 }: Props) => (
   <>
-    {
-      /* <Modal id={SEARCHBAR_POPUP_ID}>
-      <div
-        class="absolute top-0 bg-base-100 container"
-        style={{ marginTop: HEADER_HEIGHT_MOBILE }}
-      >
-        {loading === "lazy" ? (
-          <div class="flex justify-center items-center">
-            <span class="loading loading-spinner" />
-          </div>
-        ) : (
-          <Searchbar {...searchbar} />
-        )}
-      </div>
-    </Modal> */
-    }
+
 
     <div class="flex flex-col container max-w-[1440px] ">
       <div class="flex justify-between items-center border-b border-primary h-20">
@@ -133,20 +118,27 @@ const Desktop = ({
   </>
 );
 
-const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
+const Mobile = ({
+  logo,
+  searchbar,
+  navItems,
+  loading,
+  topLinks,
+  sales,
+}: Props) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
       aside={
         <Drawer.Aside title="Pesquisar" drawer={SEARCHBAR_DRAWER_ID}>
           <div class="w-screen overflow-y-auto">
-            {loading === "lazy"
-              ? (
-                <div class="h-full w-full flex items-center justify-center">
-                  <span class="loading loading-spinner" />
-                </div>
-              )
-              : <Searchbar {...searchbar} />}
+            {loading === "lazy" ? (
+              <div class="h-full w-full flex items-center justify-center">
+                <span class="loading loading-spinner" />
+              </div>
+            ) : (
+              <Searchbar {...searchbar} />
+            )}
           </div>
         </Drawer.Aside>
       }
@@ -155,17 +147,16 @@ const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
       id={SIDEMENU_DRAWER_ID}
       aside={
         <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
-          {loading === "lazy"
-            ? (
-              <div
-                id={SIDEMENU_CONTAINER_ID}
-                class="h-full flex items-center justify-center w-screen"
-                
-              >
-                <span class="loading loading-spinner" />
-              </div>
-            )
-            : <Menu navItems={navItems ?? []} topLinks={ topLinks} />}
+          {loading === "lazy" ? (
+            <div
+              id={SIDEMENU_CONTAINER_ID}
+              class="h-full flex items-center justify-center w-screen"
+            >
+              <span class="loading loading-spinner" />
+            </div>
+          ) : (
+            <Menu navItems={navItems ?? []} topLinks={topLinks} sales={sales} />
+          )}
         </Drawer.Aside>
       }
     />
