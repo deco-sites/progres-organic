@@ -94,7 +94,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
       {freeDelivery && (
         <span
           class={clx(
-            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]",
+            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]"
           )}
         >
           Frete Grátis
@@ -122,15 +122,14 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
               {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
-              <strong class="font-bold text-primary">5% de desconto</strong>
-              {" "}
+              <strong class="font-bold text-primary">5% de desconto</strong>{" "}
               pagando com Pix
             </span>
 
             <div>
               <p class="text-sm text-secondary">
-                6x de {formatPrice(dividedPrice, offers?.priceCurrency)}{" "}
-                sem juros
+                6x de {formatPrice(dividedPrice, offers?.priceCurrency)} sem
+                juros
               </p>
             </div>
 
@@ -144,7 +143,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
 
             {/* Abre em um modal as informacoes de pagamento */}
             <Modal id="my_modal_6">
-              <div class="bg-base-200 w-full md:w-[700px] h-[450px] p-5 overflow-y-auto rounded-md ">
+              <div class="bg-base-200 w-full md:w-[700px] h-[500px] p-5 overflow-y-auto rounded-md ">
                 <div class="flex justify-between bg-primary  items-center rounded">
                   <h3 class="text-lg font-bold text-base-200 pl-2">
                     Meios de Pagamento
@@ -172,10 +171,11 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                       Array.from({ length: 12 }, (_, index) => index + 1).map(
                         (numParcelas) => {
                           if (offers?.lowPrice / numParcelas >= 20) {
-                            const parcelaComJuros = numParcelas > 6
-                              ? (offers?.lowPrice / numParcelas) *
-                                (1 + 0.0211) ** numParcelas
-                              : offers?.lowPrice / numParcelas;
+                            const parcelaComJuros =
+                              numParcelas > 6
+                                ? (offers?.lowPrice / numParcelas) *
+                                  (1 + 0.0211) ** numParcelas
+                                : offers?.lowPrice / numParcelas;
                             const totalComJuros = parcelaComJuros * numParcelas;
 
                             return (
@@ -183,27 +183,27 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                                 key={numParcelas}
                                 className="flex justify-between py-2 border-b border-gray-500"
                               >
-                                <p>
+                                <p class="text-[10px] md:text-sm">
                                   <strong>{numParcelas}</strong>x de{" "}
                                   <strong>
                                     {formatPrice(
                                       parcelaComJuros,
-                                      offers?.priceCurrency,
+                                      offers?.priceCurrency
                                     )}
                                   </strong>
                                   {numParcelas <= 6 ? " sem juros" : ""}
                                 </p>
-                                <p>
+                                <p class="text-[10px] md:text-sm">
                                   <strong>Total:</strong>
                                   {formatPrice(
                                     totalComJuros,
-                                    offers?.priceCurrency,
+                                    offers?.priceCurrency
                                   )}
                                 </p>
                               </div>
                             );
                           }
-                        },
+                        }
                       )}
                   </div>
                 </div>
@@ -219,7 +219,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                       height={30}
                       class="object-contain bg-base-200 border border-gray-500"
                     />
-                    <p class="pt-3">
+                    <p class="pt-3 text-[10px] md:text-sm">
                       Total:{" "}
                       <strong>
                         {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
@@ -239,16 +239,16 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                     />
                     {/* Value with PIX discount */}
                     <div class="flex flex-col gap-2 pt-3">
-                      <span class="text-sm ">
+                      <span class="text-[10px] md-text-sm">
                         <strong class="font-bold text-primary">
                           5% de desconto
                         </strong>{" "}
                         pagando com Pix
                       </span>
-                      <span class="line-through text-sm font-medium text-gray-400">
+                      <span class="line-through text-[10px] md:text-sm font-medium text-gray-400">
                         {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
                       </span>
-                      <span class="font-bold ">
+                      <span class="font-bold text-[10px] md:text-sm">
                         {formatPrice(pixPrice, offers?.priceCurrency)} no pix
                       </span>
                     </div>
@@ -259,38 +259,35 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
           </div>
 
           {/* Sku Selector */}
-          {
-            /* {hasValidVariants && (
+          {/* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )} */
-          }
+          )} */}
         </div>
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
-        >
-        </div>
+        ></div>
       </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartProductDetail
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation"
-                disabled={false}
-                icons={icons}
-              />
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+        {availability === "https://schema.org/InStock" ? (
+          <>
+            <AddToCartProductDetail
+              item={item}
+              seller={seller}
+              product={product}
+              class="btn btn-primary no-animation"
+              disabled={false}
+              icons={icons}
+            />
+          </>
+        ) : (
+          <OutOfStock productID={productID} />
+        )}
       </div>
 
       {/* Shipping Simulation */}
