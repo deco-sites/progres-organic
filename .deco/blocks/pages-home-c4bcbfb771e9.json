@@ -72,7 +72,16 @@
                 "sort": "newest",
                 "tags": [],
                 "typeTags": [],
-                "ids": [],
+                "ids": [
+                  20,
+                  32,
+                  42,
+                  18,
+                  13,
+                  10,
+                  34,
+                  12
+                ],
                 "count": 10
               },
               "subtitle": "Os mais procurados pelos nossos clientes"
