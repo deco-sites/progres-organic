@@ -8,9 +8,29 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Informations.tsx",
-        "title": "Entre em contato",
-        "text": "<p>Em caso de qualquer dúvida entre em contato conosco:</p><p>whatsapp: +55 11 94296-7682</p>"
+        "__resolveType": "site/sections/Contact.tsx",
+        "title": "Entre em contato conosco",
+        "description": "Estamos sempre à disposição para ouvir suas dúvidas, sugestões ou parcerias! Se precisar de ajuda ou apenas dizer olá, não hesite em nos enviar uma mensagem.",
+        "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/edfc987f-f4dd-491b-b86b-6eb726e3a3dd/telemarketing.png",
+        "alt": "mulher atendente de telemarketing",
+        "whatsapp": "5511942967682"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "title": "Promoções da semana",
+        "products": {
+          "__resolveType": "vnda/loaders/productList.ts",
+          "sort": "newest",
+          "tags": [],
+          "typeTags": [],
+          "ids": [],
+          "count": 8
+        },
+        "subtitle": "Os mais procurados pelos nossos clientes",
+        "cta": "/"
       }
     },
     {
