@@ -139,12 +139,21 @@
                 "sort": "newest",
                 "tags": [],
                 "typeTags": [],
-                "ids": [],
+                "ids": [
+                  31,
+                  30,
+                  27,
+                  26,
+                  25,
+                  29,
+                  24,
+                  28
+                ],
                 "count": 8
               },
-              "title": "Promoções da semana",
-              "subtitle": "Os mais procurados pelos nossos clientes",
-              "cta": "/"
+              "title": "Promoções",
+              "subtitle": "Combos Promocionais Progressiva Orgânica",
+              "cta": "/kits-promocionais"
             }
           },
           {
