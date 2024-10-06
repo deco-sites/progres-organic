@@ -82,8 +82,6 @@ const Desktop = ({
   sales,
 }: Props) => (
   <>
-
-
     <div class="flex flex-col container max-w-[1440px] ">
       <div class="flex justify-between items-center border-b border-primary h-20">
         <div class=" pl-6 w-[148px] h-[50px] flex flex-shrink-0">
@@ -132,13 +130,13 @@ const Mobile = ({
       aside={
         <Drawer.Aside title="Pesquisar" drawer={SEARCHBAR_DRAWER_ID}>
           <div class="w-screen overflow-y-auto">
-            {loading === "lazy" ? (
-              <div class="h-full w-full flex items-center justify-center">
-                <span class="loading loading-spinner" />
-              </div>
-            ) : (
-              <Searchbar {...searchbar} />
-            )}
+            {loading === "lazy"
+              ? (
+                <div class="h-full w-full flex items-center justify-center">
+                  <span class="loading loading-spinner" />
+                </div>
+              )
+              : <Searchbar {...searchbar} />}
           </div>
         </Drawer.Aside>
       }
@@ -147,16 +145,22 @@ const Mobile = ({
       id={SIDEMENU_DRAWER_ID}
       aside={
         <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
-          {loading === "lazy" ? (
-            <div
-              id={SIDEMENU_CONTAINER_ID}
-              class="h-full flex items-center justify-center w-screen"
-            >
-              <span class="loading loading-spinner" />
-            </div>
-          ) : (
-            <Menu navItems={navItems ?? []} topLinks={topLinks} sales={sales} />
-          )}
+          {loading === "lazy"
+            ? (
+              <div
+                id={SIDEMENU_CONTAINER_ID}
+                class="h-full flex items-center justify-center w-screen"
+              >
+                <span class="loading loading-spinner" />
+              </div>
+            )
+            : (
+              <Menu
+                navItems={navItems ?? []}
+                topLinks={topLinks}
+                sales={sales}
+              />
+            )}
         </Drawer.Aside>
       }
     />

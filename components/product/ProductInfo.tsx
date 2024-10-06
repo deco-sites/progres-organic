@@ -40,10 +40,9 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
 
   const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
-  const percent =
-    listPrice && offers?.lowPrice
-      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-      : 0;
+  const percent = listPrice && offers?.lowPrice
+    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+    : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -71,25 +70,23 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
   });
 
   //Checks if the variant name is "title"/"default title" and if so, the SKU Selector div doesn't render
-  const hasValidVariants =
-    isVariantOf?.hasVariant?.some(
-      (variant) =>
-        variant?.name?.toLowerCase() !== "title" &&
-        variant?.name?.toLowerCase() !== "default title"
-    ) ?? false;
+  const hasValidVariants = isVariantOf?.hasVariant?.some(
+    (variant) =>
+      variant?.name?.toLowerCase() !== "title" &&
+      variant?.name?.toLowerCase() !== "default title",
+  ) ?? false;
 
   //Calculate the Pix Price Value
-  const pixPrice =
-    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice = offers?.lowPrice &&
+    offers?.lowPrice - offers?.lowPrice * 0.05;
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
 
   //calculate if delivery is free
-  const freeDelivery = 
-    additionalProperty && additionalProperty.some((item) => {
-     return item.value === "frete-gratis"
-   })
+  const freeDelivery = additionalProperty && additionalProperty.some((item) => {
+    return item.value === "frete-gratis";
+  });
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
@@ -97,7 +94,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
       {freeDelivery && (
         <span
           class={clx(
-            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]"
+            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]",
           )}
         >
           Frete Grátis
@@ -125,14 +122,15 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
               {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
-              <strong class="font-bold text-primary">5% de desconto</strong>{" "}
+              <strong class="font-bold text-primary">5% de desconto</strong>
+              {" "}
               pagando com Pix
             </span>
 
             <div>
               <p class="text-sm text-secondary">
-                6x de {formatPrice(dividedPrice, offers?.priceCurrency)} sem
-                juros
+                6x de {formatPrice(dividedPrice, offers?.priceCurrency)}{" "}
+                sem juros
               </p>
             </div>
 
@@ -144,6 +142,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
               Ver mais detalhes
             </label>
 
+            {/* Abre em um modal as informacoes de pagamento */}
             <Modal id="my_modal_6">
               <div class="bg-base-200 w-full md:w-[700px] h-[450px] p-5 overflow-y-auto rounded-md ">
                 <div class="flex justify-between bg-primary  items-center rounded">
@@ -173,11 +172,10 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                       Array.from({ length: 12 }, (_, index) => index + 1).map(
                         (numParcelas) => {
                           if (offers?.lowPrice / numParcelas >= 20) {
-                            const parcelaComJuros =
-                              numParcelas > 6
-                                ? (offers?.lowPrice / numParcelas) *
-                                  (1 + 0.0211) ** numParcelas
-                                : offers?.lowPrice / numParcelas;
+                            const parcelaComJuros = numParcelas > 6
+                              ? (offers?.lowPrice / numParcelas) *
+                                (1 + 0.0211) ** numParcelas
+                              : offers?.lowPrice / numParcelas;
                             const totalComJuros = parcelaComJuros * numParcelas;
 
                             return (
@@ -190,22 +188,22 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                                   <strong>
                                     {formatPrice(
                                       parcelaComJuros,
-                                      offers?.priceCurrency
+                                      offers?.priceCurrency,
                                     )}
                                   </strong>
                                   {numParcelas <= 6 ? " sem juros" : ""}
                                 </p>
                                 <p>
-                                  <strong>Total: </strong>
+                                  <strong>Total:</strong>
                                   {formatPrice(
                                     totalComJuros,
-                                    offers?.priceCurrency
+                                    offers?.priceCurrency,
                                   )}
                                 </p>
                               </div>
                             );
                           }
-                        }
+                        },
                       )}
                   </div>
                 </div>
@@ -258,40 +256,41 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                 )}
               </div>
             </Modal>
-
-          
           </div>
 
           {/* Sku Selector */}
-          {/* {hasValidVariants && (
+          {
+            /* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )} */}
+          )} */
+          }
         </div>
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
-        ></div>
+        >
+        </div>
       </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartProductDetail
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation"
-              disabled={false}
-              icons={icons}
-            />
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartProductDetail
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation"
+                disabled={false}
+                icons={icons}
+              />
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
 
       {/* Shipping Simulation */}

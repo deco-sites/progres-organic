@@ -19,7 +19,7 @@ const onClick = () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   const container = button!.closest<HTMLDivElement>("div[data-cart-item]")!;
   const { items, platformProps = [] } = JSON.parse(
-    decodeURIComponent(container.getAttribute("data-cart-item")!)
+    decodeURIComponent(container.getAttribute("data-cart-item")!),
   ) as { items: Item[]; platformProps: ReturnType<typeof useAddToCart> };
   items.forEach((item, index) => {
     window.STOREFRONT.CART.addToCart(item, platformProps?.[index]);
@@ -34,7 +34,7 @@ const useAddToCart = ({ products }: Props) => {
       itemId: item.productID,
       quantity: 1,
       atributes: Object.fromEntries(
-        item.additionalProperty?.map(({ name, value }) => [name, value]) || []
+        item.additionalProperty?.map(({ name, value }) => [name, value]) || [],
       ),
     }));
 
@@ -59,22 +59,18 @@ function AddToCartButton(props: Props) {
     });
   });
 
-
   return (
     <div
       id={id}
       class="flex"
-  
       data-cart-item={encodeURIComponent(
-        JSON.stringify({ items, platformProps })
+        JSON.stringify({ items, platformProps }),
       )}
     >
-    
-
       <button
         class={clx(
           "flex  w-[271px] h-[46px] bg-primary text-base-200 min-h-0 ",
-          _class?.toString()
+          _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}
         disabled={false}

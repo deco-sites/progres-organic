@@ -56,10 +56,9 @@ function ProductCard({
   const firstSkuVariations = Object.entries(possibilities)?.[0];
   const variants = Object.entries(firstSkuVariations?.[1] ?? {});
   const relativeUrl = relative(url);
-  const percent =
-    listPrice && offers?.lowPrice
-      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-      : 0;
+  const percent = listPrice && offers?.lowPrice
+    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+    : 0;
 
   const item = mapProductToAnalyticsItem({ product, price, listPrice, index });
 
@@ -78,8 +77,7 @@ function ProductCard({
   });
 
   //calculate if delivery is free
-  const freeDelivery =
-    additionalProperty &&
+  const freeDelivery = additionalProperty &&
     additionalProperty.some((item) => {
       return item.name === "frete-gratis";
     });
@@ -89,20 +87,18 @@ function ProductCard({
   const shoeSizeVariant = "shoe size";
 
   //Calculate the Pix Price Value
-  const pixPrice =
-    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice = offers?.lowPrice &&
+    offers?.lowPrice - offers?.lowPrice * 0.05;
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
-  
-  
 
   return (
     <div
       {...event}
       class={clx(
         "card card-compact group text-sm hover:shadow-lg p-3 h-auto md:w-[296px]",
-        _class
+        _class,
       )}
     >
       <figure
@@ -117,7 +113,7 @@ function ProductCard({
             "absolute top-0 left-0",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
-            !inStock && "opacity-70"
+            !inStock && "opacity-70",
           )}
         >
           <Image
@@ -129,7 +125,7 @@ function ProductCard({
             class={clx(
               "object-contain",
               "rounded w-full",
-              "col-span-full row-span-full"
+              "col-span-full row-span-full",
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
@@ -146,7 +142,7 @@ function ProductCard({
               "object-contain",
               "rounded w-full",
               "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent"
+              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent",
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
@@ -158,7 +154,7 @@ function ProductCard({
           class={clx(
             "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[45px] h-[45px] uppercase",
             "absolute top-0 left-0 flex flex-col items-center justify-center",
-            (percent < 1 || !inStock) && "opacity-0"
+            (percent < 1 || !inStock) && "opacity-0",
           )}
         >
           <span>{percent}%</span>
@@ -170,7 +166,7 @@ function ProductCard({
           <span
             class={clx(
               "absolute top-12 left-0 flex flex-col items-center justify-center",
-              "text-[12px] font-semibold text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[110px]"
+              "text-[12px] font-semibold text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[110px]",
             )}
           >
             Frete Grátis
@@ -204,7 +200,8 @@ function ProductCard({
       </a>
 
       {/* SKU Selector */}
-      {/* {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
+      {
+        /* {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto border border-primary">
           {variants
             .map(([value, link]) => [value, relative(link)] as const)
@@ -222,31 +219,34 @@ function ProductCard({
               </li>
             ))}
         </ul>
-      )} */}
+      )} */
+      }
 
       <div class="flex-grow pt-5" />
 
       <div>
-        {inStock ? (
-          <AddToCartButton
-            product={product}
-            seller={seller}
-            item={item}
-            class={clx("btn btn-primary no-animation w-full")}
-            icon={""}
-          />
-        ) : (
-          <a
-            href={relativeUrl}
-            class={clx(
-              "btn",
-              "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-              "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
-            )}
-          >
-            Fora de estoque
-          </a>
-        )}
+        {inStock
+          ? (
+            <AddToCartButton
+              product={product}
+              seller={seller}
+              item={item}
+              class={clx("btn btn-primary no-animation w-full")}
+              icon={""}
+            />
+          )
+          : (
+            <a
+              href={relativeUrl}
+              class={clx(
+                "btn",
+                "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
+              )}
+            >
+              Fora de estoque
+            </a>
+          )}
       </div>
 
       <div>
@@ -258,7 +258,8 @@ function ProductCard({
           Ver mais
         </a>
       </div>
-      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"></script>
+      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js">
+      </script>
     </div>
   );
 }

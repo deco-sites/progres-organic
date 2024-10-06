@@ -1,6 +1,6 @@
 import Icon from "../../components/ui/Icon.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import type {ImageLink, Sale}from "../../components/header/ImageLinks.tsx"
+import type { ImageLink, Sale } from "../../components/header/ImageLinks.tsx";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
@@ -10,8 +10,6 @@ export interface Props {
 }
 
 function MenuItem({ item }: { item: SiteNavigationElement }) {
-  
-  
   return (
     <div class="collapse collapse-plus">
       <input type="checkbox" />
@@ -33,7 +31,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 }
 
 function Menu({ navItems = [], topLinks, sales }: Props) {
-  console.log("sales",sales);
+  console.log("sales", sales);
   return (
     <div class="flex flex-col h-full bg-base-200 ">
       <ul class="px-4  flex flex-col divide-y divide-base-200 overflow-y-auto ">
