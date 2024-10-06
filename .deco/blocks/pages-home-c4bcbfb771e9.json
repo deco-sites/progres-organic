@@ -17,6 +17,12 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
+              "__resolveType": "PO-whatsapp"
+            }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
               "__resolveType": "site/sections/SmallBannersTop.tsx",
               "preload": true,
               "images": [
@@ -71,8 +77,6 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Mais Vendidos",
-              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
@@ -90,8 +94,8 @@
                 ],
                 "count": 10
               },
-              "title": "Promoções da semana",
-              "subtitle": "Os mais procurados pelos nossos clientes",
+              "title": "Mais Vendidos",
+              "subtitle": "Os Produtos Mais Vendidos ",
               "cta": "/"
             }
           },
@@ -117,9 +121,7 @@
                 ],
                 "count": 8
               },
-              "title": "Promoções da semana",
-              "subtitle": "Aproveite As Promoções da Semana",
-              "cta": "/"
+              "subtitle": "Aproveite As Promoções da Semana"
             }
           },
           {
@@ -248,6 +250,12 @@
             "__resolveType": "Header"
           },
           {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "PO-whatsapp"
+            }
+          },
+          {
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
@@ -335,8 +343,6 @@
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "count": 8,
-                "wildcard": true,
                 "ids": [
                   20,
                   32,
@@ -346,9 +352,13 @@
                   10,
                   34,
                   12
-                ]
+                ],
+                "count": 8,
+                "wildcard": true
               },
-              "subtitle": "Os Produtos Mais Vendidos"
+              "title": "Mais Vendidos!",
+              "subtitle": "Os Produtos Mais Vendidos",
+              "cta": "/"
             }
           },
           {
@@ -373,9 +383,7 @@
                 ],
                 "count": 8
               },
-              "title": "Promoções da semana",
-              "subtitle": "Aproveite As Promoções da Semana",
-              "cta": "/"
+              "subtitle": "Aproveite As Promoções da Semana"
             }
           },
           {

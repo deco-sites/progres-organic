@@ -23,6 +23,12 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "PO-whatsapp"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
           "__resolveType": "vnda/loaders/productListingPage.ts",
