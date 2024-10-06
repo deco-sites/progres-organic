@@ -65,7 +65,7 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Promoções da semana",
+              "title": "Mais Vendidos",
               "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
@@ -84,7 +84,7 @@
                 ],
                 "count": 10
               },
-              "subtitle": "Os mais procurados pelos nossos clientes"
+              "subtitle": "Os Produtos Mais Vendidos "
             }
           },
           {
