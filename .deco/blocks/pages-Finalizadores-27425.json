@@ -17,6 +17,12 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "PO-whatsapp"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "site/sections/Images/WideBanner.tsx",
         "images": {
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/0c9f43c9-3137-4cad-ba22-9d3139712cc9/WhatsApp-Image-2024-10-03-at-10.56.15.jpeg",
