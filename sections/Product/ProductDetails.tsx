@@ -18,9 +18,12 @@ export interface Props {
   paymentIcons?: PaymentIcon;
 }
 
-export default function ProductDetails(
-  { page, sections, icons, paymentIcons }: Props,
-) {
+export default function ProductDetails({
+  page,
+  sections,
+  icons,
+  paymentIcons,
+}: Props) {
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>
@@ -33,8 +36,8 @@ export default function ProductDetails(
    */
   if (!page) {
     return (
-      <div class="w-full flex justify-center items-center py-28">
-        <div class="flex flex-col items-center justify-center gap-6">
+      <div class="flex justify-center items-center py-28 w-full">
+        <div class="flex flex-col justify-center items-center gap-6">
           <span class="font-medium text-2xl">Produto não encontrado</span>
           <a href="/" class="btn no-animation">
             Home
@@ -45,13 +48,17 @@ export default function ProductDetails(
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:my-10 px-5 sm:px-5 max-w-[1440px] pb-10">
+    <div class="flex flex-col gap-4 sm:gap-5 sm:my-10 px-5 sm:px-5 py-4 pb-10 w-full max-w-[1440px] container">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
-      {device === "mobile" && (
-        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-6 relative mx-auto ">
+      {(device === "mobile" || device === "tablet") && (
+        <div class="relative gap-2 sm:gap-6 grid grid-cols-1 sm:grid-cols-4 mx-auto py-0 container">
           <div class="sm:col-span-2">
             <ImageGallerySlider page={page} />
-            <ProductInfo page={page} icons={icons} />
+            <ProductInfo
+              page={page}
+              icons={icons}
+              paymentIcons={paymentIcons}
+            />
 
             {/* <ProductDescription page={page} /> */}
             {items}
@@ -60,12 +67,12 @@ export default function ProductDetails(
       )}
 
       {device === "desktop" && (
-        <div class="container grid grid-cols-1 gap-2 py-0 sm:grid-cols-4 sm:gap-10 relative mx-auto ">
+        <div class="relative gap-2 sm:gap-10 grid grid-cols-1 sm:grid-cols-4 mx-auto py-0 container">
           <div class="sm:col-span-2">
             <ImageGallerySlider page={page} />
             <ProductDescription page={page} />
           </div>
-          <div class="sm:col-span-2 sm:sticky sm:top-[170px] sm:h-[1500px]">
+          <div class="sm:top-[170px] sm:sticky sm:col-span-2 sm:h-[1500px]">
             <ProductInfo
               page={page}
               icons={icons}

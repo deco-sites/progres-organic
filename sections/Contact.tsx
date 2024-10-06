@@ -1,10 +1,10 @@
 import { SectionProps } from "deco/mod.ts";
-import { AppContext } from "../../apps/site.ts";
-import Icon from "../../components/ui/Icon.tsx";
-import Section from "../../components/ui/Section.tsx";
-import { clx } from "../../sdk/clx.ts";
-import { usePlatform } from "../../sdk/usePlatform.tsx";
-import { useComponent } from "../Component.tsx";
+import { AppContext } from "../apps/site.ts";
+import Icon from "../components/ui/Icon.tsx";
+import Section from "../components/ui/Section.tsx";
+import { clx } from "../sdk/clx.ts";
+import { usePlatform } from "../sdk/usePlatform.tsx";
+import { useComponent } from "./Component.tsx";
 
 interface NoticeProps {
   title?: string;
@@ -20,8 +20,14 @@ export interface Props {
   /** @description Nome placeholder */
   placeholderName?: string;
 
-  /** @description E-mail placeholder */
+  /** @description Email placeholder */
   placeholderEmail?: string;
+
+  /** @description Assunto placeholder */
+  placeholderTitle?: string;
+
+  /** @description Mensagem placeholder */
+  placeholderMessage?: string;
 
   /** @hide true */
   status?: "success" | "failed";
@@ -33,12 +39,16 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const form = await req.formData();
   const email = `${form.get("email") ?? ""}`;
   const name = `${form.get("name") ?? ""}`;
+  const title = `${form.get("title") ?? ""}`;
+  const message = `${form.get("message") ?? ""}`;
 
   if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
     await (ctx as any).invoke("site/actions/sendEmailJS.ts", {
       name,
       email,
+      title,
+      message
     });
 
     return { ...props, status: "success" };
@@ -70,21 +80,23 @@ function Notice({
   );
 }
 
-function Newsletter({
+function Contact({
   title,
   description,
   success = {
-    title: "Thank you for subscribing!",
+    title: "Muito obrigado por nos enviar uma mensagem",
     description:
-      "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!",
+      "Responderemos o mais breve possível",
   },
   failed = {
-    title: "Oops. Something went wrong!",
+    title: "Oops. Tivemos um probleminha ao enviar seu e-mail",
     description:
-      "Something went wrong. Please try again. If the problem persists, please contact us.",
+      "Por favor, tente novamente",
   },
-  placeholderName = "Digite seu nome aqui!",
-  placeholderEmail = "Digite seu e-mail aqui",
+  placeholderName = "Digite seu nome!",
+  placeholderEmail = "Digite seu e-mail",
+  placeholderTitle = "Digite o assunto da sua mensagem",
+  placeholderMessage="Deixe sua mensagem...",
   status,
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
@@ -133,6 +145,18 @@ function Newsletter({
             type="text"
             placeholder={placeholderEmail}
           />
+          <input
+            name="title"
+            class="input-bordered w-[330px] lg:w-[365px] h-[56px] text-secondary input"
+            type="text"
+            placeholder={placeholderTitle}
+          />
+          <input
+            name="mensagem"
+            class="input-bordered w-[330px] lg:w-[551px] h-[56px] text-secondary input"
+            type="text"
+            placeholder={placeholderMessage}
+          />
 
           <button class="w-[189px] h-[56px] btn btn-base-200" type="submit">
             <span class="inline [.htmx-request_&]:hidden uppercase">
@@ -148,4 +172,4 @@ function Newsletter({
 
 export const LoadingFallback = () => <Section.Placeholder height="412px" />;
 
-export default Newsletter;
+export default Contact;
