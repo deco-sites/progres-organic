@@ -18,7 +18,9 @@ export interface Props {
   paymentIcons?: PaymentIcon;
 }
 
-export default function ProductDetails({ page, sections, icons, paymentIcons }: Props) {
+export default function ProductDetails(
+  { page, sections, icons, paymentIcons }: Props,
+) {
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>

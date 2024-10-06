@@ -12,6 +12,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 import type { ProductIcon } from "./AddToCartProductDetail.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import Modal from "../ui/Modal.tsx";
 
 export interface PaymentIcon {
   pix?: ImageWidget;
@@ -39,10 +40,9 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
 
   const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
-  const percent =
-    listPrice && offers?.lowPrice
-      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-      : 0;
+  const percent = listPrice && offers?.lowPrice
+    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+    : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -70,25 +70,23 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
   });
 
   //Checks if the variant name is "title"/"default title" and if so, the SKU Selector div doesn't render
-  const hasValidVariants =
-    isVariantOf?.hasVariant?.some(
-      (variant) =>
-        variant?.name?.toLowerCase() !== "title" &&
-        variant?.name?.toLowerCase() !== "default title"
-    ) ?? false;
+  const hasValidVariants = isVariantOf?.hasVariant?.some(
+    (variant) =>
+      variant?.name?.toLowerCase() !== "title" &&
+      variant?.name?.toLowerCase() !== "default title",
+  ) ?? false;
 
   //Calculate the Pix Price Value
-  const pixPrice =
-    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice = offers?.lowPrice &&
+    offers?.lowPrice - offers?.lowPrice * 0.05;
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
 
   //calculate if delivery is free
-  const freeDelivery = 
-    additionalProperty && additionalProperty.some((item) => {
-     return item.value === "frete-gratis"
-   })
+  const freeDelivery = additionalProperty && additionalProperty.some((item) => {
+    return item.value === "frete-gratis";
+  });
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
@@ -96,8 +94,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
       {freeDelivery && (
         <span
           class={clx(
-            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]"
-      
+            "text-[12px] font-normal text-base-200 bg-primary text-center rounded-badge px-2 py-1 w-[120px]",
           )}
         >
           Frete Grátis
@@ -125,129 +122,123 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
               {formatPrice(pixPrice, offers?.priceCurrency)} no pix
             </span>
             <span class="text-sm ">
-              <strong class="font-bold text-primary">5% de desconto</strong>{" "}
+              <strong class="font-bold text-primary">5% de desconto</strong>
+              {" "}
               pagando com Pix
             </span>
 
             <div>
               <p class="text-sm text-secondary">
-                6x de {formatPrice(dividedPrice, offers?.priceCurrency)} sem
-                juros
+                6x de {formatPrice(dividedPrice, offers?.priceCurrency)}{" "}
+                sem juros
               </p>
             </div>
 
             {/* The button to open modal */}
-            <label htmlFor="my_modal_6" className="btn">
+            <label
+              htmlFor="my_modal_6"
+              className="text-primary text-sm cursor-pointer font-semibold"
+            >
               Ver mais detalhes
             </label>
 
-            <div class="relative ">
-              <input type="checkbox" id="my_modal_6" class="modal-toggle " />
-              <div class="modal " role="dialog">
-                <div class="modal-box bg-base-200 z-100 h-[800px] w-[1000px] mt-[200px] overflow-y-scroll">
-                  <div class="flex w-full justify-between bg-primary ">
-                    <h3 class="text-lg font-bold text-base-200">
-                      Meios de Pagamento
-                    </h3>
-                    <div class="modal-action m-0 ">
-                      <label
-                        htmlFor="my_modal_6"
-                        class="btn min-h-0 btn-ghost"
-                      >
-                        <span class="text-base-200">x</span>
-                      </label>
-                    </div>
+            {/* Abre em um modal as informacoes de pagamento */}
+            <Modal id="my_modal_6">
+              <div class="bg-base-200 w-full md:w-[700px] h-[450px] p-5 overflow-y-auto rounded-md ">
+                <div class="flex justify-between bg-primary  items-center rounded">
+                  <h3 class="text-lg font-bold text-base-200 pl-2">
+                    Meios de Pagamento
+                  </h3>
+                  <div class="modal-action m-0 ">
+                    <label htmlFor="my_modal_6" class="btn min-h-0 btn-ghost">
+                      <span class="text-base-200 ">x</span>
+                    </label>
                   </div>
-                  <p class="py-4">Cartões de Crédito</p>
-                  <p>
+                </div>
+                <div class="px-3">
+                  <p class="py-2 text-md font-semibold text-primary ">
+                    Cartões de Crédito
+                  </p>
+                  <p class="text-center p-2 ">
                     Total em 1 parcela:{" "}
-                    {formatPrice(offers?.lowPrice, offers?.priceCurrency)} com
-                    todos os cartões
+                    <strong>
+                      {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
+                    </strong>{" "}
+                    com todos os cartões
                   </p>
                   <div>
-                    <div>
-                      {/* Calcular o valores das parcelas */}
-                      {offers?.lowPrice &&
-                        Array.from({ length: 12 }, (_, index) => index + 1).map(
-                          (numParcelas) => {
-                            if (offers?.lowPrice / numParcelas >= 20) {
-                              const parcelaComJuros =
-                                numParcelas > 6
-                                  ? (offers?.lowPrice / numParcelas) *
-                                    (1 + 0.0211) ** numParcelas
-                                  : offers?.lowPrice / numParcelas;
-                              const totalComJuros =
-                                parcelaComJuros * numParcelas;
+                    {/* Calcular o valores das parcelas */}
+                    {offers?.lowPrice &&
+                      Array.from({ length: 12 }, (_, index) => index + 1).map(
+                        (numParcelas) => {
+                          if (offers?.lowPrice / numParcelas >= 20) {
+                            const parcelaComJuros = numParcelas > 6
+                              ? (offers?.lowPrice / numParcelas) *
+                                (1 + 0.0211) ** numParcelas
+                              : offers?.lowPrice / numParcelas;
+                            const totalComJuros = parcelaComJuros * numParcelas;
 
-                              return (
-                                <div
-                                  key={numParcelas}
-                                  className="flex justify-between"
-                                >
-                                  <p>
-                                    <strong>{numParcelas}</strong>x de{" "}
-                                    <strong>
-                                      {formatPrice(
-                                        parcelaComJuros,
-                                        offers?.priceCurrency
-                                      )}
-                                    </strong>
-                                    {numParcelas <= 6 ? " sem juros" : ""}
-                                  </p>
-                                  <p>
-                                    <strong>Total: </strong>
+                            return (
+                              <div
+                                key={numParcelas}
+                                className="flex justify-between py-2 border-b border-gray-500"
+                              >
+                                <p>
+                                  <strong>{numParcelas}</strong>x de{" "}
+                                  <strong>
                                     {formatPrice(
-                                      totalComJuros,
-                                      offers?.priceCurrency
+                                      parcelaComJuros,
+                                      offers?.priceCurrency,
                                     )}
-                                  </p>
-                                </div>
-                              );
-                            }
+                                  </strong>
+                                  {numParcelas <= 6 ? " sem juros" : ""}
+                                </p>
+                                <p>
+                                  <strong>Total:</strong>
+                                  {formatPrice(
+                                    totalComJuros,
+                                    offers?.priceCurrency,
+                                  )}
+                                </p>
+                              </div>
+                            );
                           }
-                        )}
-                    </div>
+                        },
+                      )}
                   </div>
-                  <div class="flex gap-2">
-                    {paymentIcons?.creditCard.map((item) => (
-                      <Image
-                        src={item}
-                        alt="payment icon"
-                        width={50}
-                        height={30}
-                        class="object-contain bg-base-200 border border-gray-500"
-                      />
-                    ))}
+                </div>
+                {paymentIcons?.boleto && (
+                  <div class="px-3">
+                    <p class="py-3 text-md font-semibold text-primary ">
+                      Boleto
+                    </p>
+                    <Image
+                      src={paymentIcons?.boleto}
+                      alt="payment icon"
+                      width={50}
+                      height={30}
+                      class="object-contain bg-base-200 border border-gray-500"
+                    />
+                    <p class="pt-3">
+                      Total:{" "}
+                      <strong>
+                        {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
+                      </strong>
+                    </p>
                   </div>
-                  {paymentIcons?.boleto && (
-                    <div>
-                      <p>Boleto</p>
-                      <Image
-                        src={paymentIcons?.boleto}
-                        alt="payment icon"
-                        width={50}
-                        height={30}
-                        class="object-contain bg-base-200 border border-gray-500"
-                      />
-                      <p>
-                        Total:{" "}
-                        <strong>
-                          {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
-                        </strong>
-                      </p>
-                    </div>
-                  )}
-                  {paymentIcons?.pix && (
-                    <div>
-                      <p>Pix</p>
-                      <Image
-                        src={paymentIcons?.pix}
-                        alt="payment icon"
-                        width={50}
-                        height={30}
-                        class="object-contain bg-base-200 border border-gray-500"
-                      />
-                      {/* Value with PIX discount */}
+                )}
+                {paymentIcons?.pix && (
+                  <div class="px-3 pb-8">
+                    <p class="py-3  text-md font-semibold text-primary ">Pix</p>
+                    <Image
+                      src={paymentIcons?.pix}
+                      alt="payment icon"
+                      width={50}
+                      height={30}
+                      class="object-contain bg-base-200 border border-gray-500"
+                    />
+                    {/* Value with PIX discount */}
+                    <div class="flex flex-col gap-2 pt-3">
                       <span class="text-sm ">
                         <strong class="font-bold text-primary">
                           5% de desconto
@@ -257,46 +248,49 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
                       <span class="line-through text-sm font-medium text-gray-400">
                         {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
                       </span>
-                      <span class="font-bold text-[18px] text-primary">
+                      <span class="font-bold ">
                         {formatPrice(pixPrice, offers?.priceCurrency)} no pix
                       </span>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
-            </div>
+            </Modal>
           </div>
 
           {/* Sku Selector */}
-          {/* {hasValidVariants && (
+          {
+            /* {hasValidVariants && (
             <div className="mt-4 sm:mt-8">
               <ProductSelector product={product} />
             </div>
-          )} */}
+          )} */
+          }
         </div>
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={productID}
-        ></div>
+        >
+        </div>
       </div>
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock" ? (
-          <>
-            <AddToCartProductDetail
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation"
-              disabled={false}
-              icons={icons}
-            />
-          </>
-        ) : (
-          <OutOfStock productID={productID} />
-        )}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              <AddToCartProductDetail
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation"
+                disabled={false}
+                icons={icons}
+              />
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
 
       {/* Shipping Simulation */}

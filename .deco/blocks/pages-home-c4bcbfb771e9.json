@@ -6,6 +6,12 @@
       {
         "value": [
           {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "PO-whatsapp"
+            }
+          },
+          {
             "__resolveType": "Header"
           },
           {
@@ -84,13 +90,17 @@
                 ],
                 "count": 10
               },
-              "subtitle": "Os Produtos Mais Vendidos "
+              "title": "Promoções da semana",
+              "subtitle": "Os mais procurados pelos nossos clientes",
+              "cta": "/"
             }
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Promoções da semana",
+              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
@@ -134,6 +144,8 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Promoções da semana",
+              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
@@ -195,6 +207,7 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+              "title": "Receba todas as promoções",
               "label": "Sign up",
               "placeholder": "E-mail",
               "empty": {
@@ -209,7 +222,6 @@
                 "title": "Oops!. Something went wrong!",
                 "description": "Something went wrong. Please try again. If the problem persists, please contact us."
               },
-              "title": "Receba todas as promoções",
               "description": "Quer receber nossas ofertas? Cadastre-se e comece a recebê-las!"
             }
           },
@@ -226,6 +238,12 @@
       },
       {
         "value": [
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "PO-whatsapp"
+            }
+          },
           {
             "__resolveType": "Header"
           },
@@ -315,8 +333,6 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Mais Vendidos!",
-              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "count": 8,
@@ -339,6 +355,8 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Promoções da semana",
+              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
@@ -440,13 +458,6 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "Footer"
-            }
-          },
-          {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Social/WhatsApp.tsx",
-              "phone": 819065432069
             }
           }
         ],

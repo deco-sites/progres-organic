@@ -39,10 +39,10 @@ const DEFAULT_PROPS: Props = {
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
         src:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10800/63ac083e-899f-4874-bd10-5eee034dd255",
+          "",
         alt: "",
       },
-      video: "https://www.youtube.com/watch?v=mi-4LRHh8rQ",
+      video: "",
       post:
         "Lorem ipsum dolor sit amet consectetur. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus. Non arcu nisl posuere eget proin maecenas ante quisque risus. Ut lorem penatibus lectus venenatis integer. Volutpat id habitasse duis phasellus pulvinar purus.",
     },
@@ -62,8 +62,7 @@ const DEFAULT_PROPS: Props = {
       titleNews: "TÍTULO: XXXXXXXX",
       subtitleNews: "XXXXXXXXXXXXXXX",
       image: {
-        src:
-          "",
+        src: "",
         alt: "",
       },
       video: "",

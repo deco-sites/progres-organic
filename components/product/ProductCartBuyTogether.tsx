@@ -73,14 +73,14 @@ function ProductCardBuyTogether({
       {...event}
       class={clx(
         "card card-compact group text-sm hover:shadow-lg p-2  ",
-        _class
+        _class,
       )}
     >
       <figure
         class={clx(
           "relative bg-base-200",
           "rounded border border-transparent md:w-[180px] w-[150px]",
-          "mx-auto"
+          "mx-auto",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -92,7 +92,7 @@ function ProductCardBuyTogether({
             "absolute top-0 left-0 m-auto ",
             "grid grid-cols-1 grid-rows-1",
             "w-full",
-            !inStock && "opacity-70"
+            !inStock && "opacity-70",
           )}
         >
           <Image
@@ -104,7 +104,7 @@ function ProductCardBuyTogether({
             class={clx(
               "object-cover",
               "rounded",
-              "col-span-full row-span-full"
+              "col-span-full row-span-full",
             )}
             preload={preload}
             loading={preload ? "eager" : "lazy"}
@@ -120,7 +120,7 @@ function ProductCardBuyTogether({
               "object-cover",
               "rounded",
               "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent"
+              "transition-opacity opacity-0 lg:group-hover:opacity-100 border border-accent",
             )}
             loading="lazy"
             decoding="async"
@@ -131,7 +131,7 @@ function ProductCardBuyTogether({
           class={clx(
             "text-[12px] font-bold text-base-200 bg-primary text-center rounded-badge w-[45px] h-[45px] uppercase",
             "absolute top-0 left-0 flex flex-col items-center justify-center",
-            (percent < 1 || !inStock) && "opacity-0"
+            (percent < 1 || !inStock) && "opacity-0",
           )}
         >
           <span>{percent}%</span>
@@ -180,26 +180,28 @@ function ProductCardBuyTogether({
       <div class="flex-grow pt-5" />
 
       <div>
-        {inStock ? (
-          <AddToCartButton
-            product={product}
-            seller={seller}
-            item={item}
-            class={clx("btn btn-primary no-animation w-full")}
-            icon={""}
-          />
-        ) : (
-          <a
-            href={relativeUrl}
-            class={clx(
-              "btn",
-              "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-              "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
-            )}
-          >
-            Fora de estoque
-          </a>
-        )}
+        {inStock
+          ? (
+            <AddToCartButton
+              product={product}
+              seller={seller}
+              item={item}
+              class={clx("btn btn-primary no-animation w-full")}
+              icon={""}
+            />
+          )
+          : (
+            <a
+              href={relativeUrl}
+              class={clx(
+                "btn",
+                "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
+              )}
+            >
+              Fora de estoque
+            </a>
+          )}
       </div>
 
       <div>

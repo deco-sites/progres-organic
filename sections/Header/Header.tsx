@@ -82,23 +82,6 @@ const Desktop = ({
   sales,
 }: Props) => (
   <>
-    {
-      /* <Modal id={SEARCHBAR_POPUP_ID}>
-      <div
-        class="absolute top-0 bg-base-100 container"
-        style={{ marginTop: HEADER_HEIGHT_MOBILE }}
-      >
-        {loading === "lazy" ? (
-          <div class="flex justify-center items-center">
-            <span class="loading loading-spinner" />
-          </div>
-        ) : (
-          <Searchbar {...searchbar} />
-        )}
-      </div>
-    </Modal> */
-    }
-
     <div class="flex flex-col container max-w-[1440px] ">
       <div class="flex justify-between items-center border-b border-primary h-20">
         <div class=" pl-6 w-[148px] h-[50px] flex flex-shrink-0">
@@ -133,7 +116,14 @@ const Desktop = ({
   </>
 );
 
-const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
+const Mobile = ({
+  logo,
+  searchbar,
+  navItems,
+  loading,
+  topLinks,
+  sales,
+}: Props) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
@@ -160,12 +150,17 @@ const Mobile = ({ logo, searchbar, navItems, loading,topLinks }: Props) => (
               <div
                 id={SIDEMENU_CONTAINER_ID}
                 class="h-full flex items-center justify-center w-screen"
-                
               >
                 <span class="loading loading-spinner" />
               </div>
             )
-            : <Menu navItems={navItems ?? []} topLinks={ topLinks} />}
+            : (
+              <Menu
+                navItems={navItems ?? []}
+                topLinks={topLinks}
+                sales={sales}
+              />
+            )}
         </Drawer.Aside>
       }
     />

@@ -64,7 +64,7 @@ const onLoad = (formID: string) => {
           ?.querySelectorAll("input")
           .forEach((node) => (node.disabled = true));
       });
-    }
+    },
   );
 };
 
@@ -148,7 +148,7 @@ export default function Cart({
           type="hidden"
           name="storefront-cart"
           value={encodeURIComponent(
-            JSON.stringify({ coupon, currency, value: total, items })
+            JSON.stringify({ coupon, currency, value: total, items }),
           )}
         />
 
@@ -162,97 +162,102 @@ export default function Cart({
         <div
           class={clx(
             "flex flex-col flex-grow justify-center items-center overflow-hidden w-full",
-            "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300"
+            "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
           )}
         >
-          {count === 0 ? (
-            <div class="flex flex-col gap-6">
-              <span class="font-medium text-2xl">O carrinho está vazio</span>
-              <label
-                for={MINICART_DRAWER_ID}
-                class="btn btn-outline no-animation"
-              >
-                Escolha alguns produtos
-              </label>
-            </div>
-          ) : (
-            <>
-              {/* Free Shipping Bar */}
-              <div class="px-2 py-4 w-full">
-                <FreeShippingProgressBar
-                  total={total}
-                  locale={locale}
-                  currency={currency}
-                  target={freeShippingTarget}
-                />
+          {count === 0
+            ? (
+              <div class="flex flex-col gap-6">
+                <span class="font-medium text-2xl">O carrinho está vazio</span>
+                <label
+                  for={MINICART_DRAWER_ID}
+                  class="btn btn-outline no-animation"
+                >
+                  Escolha alguns produtos
+                </label>
               </div>
+            )
+            : (
+              <>
+                {/* Free Shipping Bar */}
+                <div class="px-2 py-4 w-full">
+                  <FreeShippingProgressBar
+                    total={total}
+                    locale={locale}
+                    currency={currency}
+                    target={freeShippingTarget}
+                  />
+                </div>
 
-              {/* Cart Items */}
-              <ul
-                role="list"
-                class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
-              >
-                {items.map((item, index) => (
-                  <li>
-                    <CartItem
-                      item={item}
-                      index={index}
-                      locale={locale}
-                      currency={currency}
-                    />
-                  </li>
-                ))}
-              </ul>
+                {/* Cart Items */}
+                <ul
+                  role="list"
+                  class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+                >
+                  {items.map((item, index) => (
+                    <li>
+                      <CartItem
+                        item={item}
+                        index={index}
+                        locale={locale}
+                        currency={currency}
+                      />
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Cart Footer */}
-              <footer class="w-full">
-                {/* Subtotal */}
-                <div class="border-t border-base-200 py-2 flex flex-col">
-                  {discounts > 0 && (
-                    <div class="flex justify-between items-center px-4">
-                      <span class="text-sm">Discounts</span>
-                      <span class="text-sm">
-                        {formatPrice(discounts, currency, locale)}
-                      </span>
+                {/* Cart Footer */}
+                <footer class="w-full">
+                  {/* Subtotal */}
+                  <div class="border-t border-base-200 py-2 flex flex-col">
+                    {discounts > 0 && (
+                      <div class="flex justify-between items-center px-4">
+                        <span class="text-sm">Discounts</span>
+                        <span class="text-sm">
+                          {formatPrice(discounts, currency, locale)}
+                        </span>
+                      </div>
+                    )}
+                    <div class="w-full flex justify-between px-4 text-sm">
+                      <span>Subtotal</span>
+                      <output form={MINICART_FORM_ID}>
+                        {formatPrice(subtotal, currency, locale)}
+                      </output>
                     </div>
-                  )}
-                  <div class="w-full flex justify-between px-4 text-sm">
-                    <span>Subtotal</span>
-                    <output form={MINICART_FORM_ID}>
-                      {formatPrice(subtotal, currency, locale)}
-                    </output>
+                    {enableCoupon && <Coupon coupon={coupon} />}
                   </div>
-                  {enableCoupon && <Coupon coupon={coupon} />}
-                </div>
 
-                {/* Total */}
-                <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
-                  <div class="flex justify-between items-center w-full">
-                    <span>Total</span>
-                    <output form={MINICART_FORM_ID} class="font-medium text-xl">
-                      {formatPrice(total, currency, locale)}
-                    </output>
-                  </div>
-                  <span class="text-sm text-base-300">
-                    Taxas e frete serão calculados no checkout
-                  </span>
-                </div>
-
-                <div class="p-4">
-                  <a
-                    class="btn btn-primary w-full no-animation"
-                    href={checkoutHref}
-                    hx-on:click={useScript(sendBeginCheckoutEvent)}
-                  >
-                    <span class="[.htmx-request_&]:hidden">
-                      Finalizar Compra
+                  {/* Total */}
+                  <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+                    <div class="flex justify-between items-center w-full">
+                      <span>Total</span>
+                      <output
+                        form={MINICART_FORM_ID}
+                        class="font-medium text-xl"
+                      >
+                        {formatPrice(total, currency, locale)}
+                      </output>
+                    </div>
+                    <span class="text-sm text-base-300">
+                      Taxas e frete serão calculados no checkout
                     </span>
-                    <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
-                  </a>
-                </div>
-              </footer>
-            </>
-          )}
+                  </div>
+
+                  <div class="p-4">
+                    <a
+                      class="btn btn-primary w-full no-animation"
+                      href={checkoutHref}
+                      hx-on:click={useScript(sendBeginCheckoutEvent)}
+                    >
+                      <span class="[.htmx-request_&]:hidden">
+                        Finalizar Compra
+                      </span>
+                      <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
+                    </a>
+                  </div>
+                </footer>
+              </>
+            )}
         </div>
       </form>
       <script
