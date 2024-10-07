@@ -10,10 +10,10 @@ export interface Props {
 export default async function action(
   props: Props,
   _req: Request,
-  _ctx: AppContext,
+  _ctx: AppContext
 ) {
   const serviceId = "service_9kyovmm";
-  const templateId = "template_euagkq9";
+  const templateId = "template_ref6w1q";
   const publicKey = "B9E47HFjV5fG5hav6";
   const privateKey = "UN60d8jwN335boxKgsObD";
 
@@ -36,7 +36,7 @@ export default async function action(
           "Content-Type": "application/json",
         },
         body: JSON.stringify(emailData),
-      },
+      }
     );
 
     if (!response.ok) {

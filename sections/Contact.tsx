@@ -51,7 +51,7 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
 
   if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
-    await (ctx as any).invoke("site/actions/sendEmailJS.ts", {
+    await (ctx as any).invoke("site/actions/sendContactEmailJS.ts", {
       name,
       email,
       title,
@@ -167,7 +167,7 @@ function Contact({
               placeholder={placeholderTitle}
             />
             <textarea
-              name="mensagem"
+              name="message"
               class="pt-2 input-bordered w-[330px] lg:w-[500px] h-[96px] text-secondary input"
               placeholder={placeholderMessage}
             />
