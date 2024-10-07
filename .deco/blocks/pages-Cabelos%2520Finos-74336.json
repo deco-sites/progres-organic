@@ -12,13 +12,13 @@
       }
     },
     {
+      "__resolveType": "Header"
+    },
+    {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "PO-whatsapp"
       }
-    },
-    {
-      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -36,7 +36,6 @@
       "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
-          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
           "data": {
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
@@ -55,7 +54,8 @@
               "param": "slug"
             }
           },
-          "extensions": []
+          "extensions": [],
+          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
         },
         "layout": {
           "columns": {
@@ -76,6 +76,7 @@
           ]
         },
         "startingPage": 1,
+        "title": "Cabelos Finos",
         "filtersByPrice": [
           {
             "minPrice": 1,
@@ -87,17 +88,7 @@
             "maxPrice": 6
           }
         ],
-        "subtitle": "Descubra produtos incríveis para cabelos loiros, com luzes e mechas. Alinhe, hidrate e mantenha seus fios saudáveis com nossas opções orgânicas!",
-        "categoryList": {
-          "links": [
-            {
-              "label": "Cabelos Finos",
-              "url": "por-tipo-de-cabelo/cabelos-finos"
-            }
-          ],
-          "title": "Cabelos Finos"
-        },
-        "title": "Cabelos Finos"
+        "subtitle": "Descubra nossa seleção de produtos para cabelos finos. Redutores de volume, finalizadores e tratamentos que promovem hidratação e alinhamento dos fios."
       }
     },
     {
