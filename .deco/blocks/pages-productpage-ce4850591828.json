@@ -92,7 +92,8 @@
               "__resolveType": "site/sections/ProductShelfHorizontal.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "count": 3
+                "count": 3,
+                "sort": "newest"
               },
               "title": "Adicione Produtos Complementares ao Seu Carrinho e Tenha Resultados Surpreendentes!"
             }
