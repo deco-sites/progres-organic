@@ -56,7 +56,6 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
       email,
       title,
       message,
-      
     });
 
     return { ...props, status: "success" };
@@ -138,7 +137,8 @@ function Contact({
               href={`https://api.whatsapp.com/send/?phone=${whatsapp}&text&type=phone_number&app_absent=0`}
               target="blank"
             >
-              Ou ligue para nós no <span class="font-semibold text-primary">{whatsapp}</span>
+              Ou ligue para nós no{" "}
+              <span class="font-semibold text-primary">{whatsapp}</span>
             </a>
           </div>
 
@@ -188,7 +188,7 @@ function Contact({
               width={700}
               height={450}
               loading="lazy"
-              class="object-cover h-[650px]"
+              class="object-contain h-[650px]"
             />
           </div>
         )}
