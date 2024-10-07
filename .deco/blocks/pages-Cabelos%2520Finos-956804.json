@@ -36,7 +36,26 @@
       "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
-          "__resolveType": "PLP Loader"
+          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
+          "data": {
+            "__resolveType": "vnda/loaders/productListingPage.ts",
+            "count": 12,
+            "tags": [
+              "cabelos-finos"
+            ],
+            "filterOperator": {
+              "type_tags": "and",
+              "property2": "and",
+              "property3": "and",
+              "property1": "and"
+            },
+            "filterByTags": false,
+            "slug": {
+              "__resolveType": "website/functions/requestToParam.ts",
+              "param": "slug"
+            }
+          },
+          "extensions": []
         },
         "layout": {
           "columns": {
@@ -57,7 +76,6 @@
           ]
         },
         "startingPage": 1,
-        "title": "Cabelos Finos",
         "filtersByPrice": [
           {
             "minPrice": 1,
@@ -71,14 +89,9 @@
         ],
         "subtitle": "Descubra produtos incríveis para cabelos loiros, com luzes e mechas. Alinhe, hidrate e mantenha seus fios saudáveis com nossas opções orgânicas!",
         "categoryList": {
-          "title": "Cabelos Finos",
-          "links": [
-            {
-              "url": "/cabelos-finos",
-              "label": "Cabelos Finos"
-            }
-          ]
-        }
+          "links": []
+        },
+        "title": "Cabelos Finos"
       }
     },
     {
