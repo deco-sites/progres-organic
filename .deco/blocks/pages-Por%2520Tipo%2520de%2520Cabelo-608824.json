@@ -87,7 +87,24 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "categoryList": {
+          "title": "Por Tipo de Cabelo",
+          "links": [
+            {
+              "url": "por-tipo-de-cabelo/cabelos-loiros-luzes-mechas",
+              "label": "Cabelos Loiros - Luzes - Mechas"
+            },
+            {
+              "url": "por-tipo-de-cabelo/cabelos-grossos-afros-cacheados",
+              "label": "Cabelos Grossos - Afros - Cacheados"
+            },
+            {
+              "url": "por-tipo-de-cabelo/por-tipo-de-cabelo/cabelos-finos",
+              "label": "Cabelos Finos"
+            }
+          ]
+        }
       }
     },
     {
