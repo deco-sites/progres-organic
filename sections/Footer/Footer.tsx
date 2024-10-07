@@ -205,6 +205,7 @@ function Footer({
                       width={31}
                       height={19}
                       loading="lazy"
+                      class="object-cover"
                     />
                   </li>
                 ))}
