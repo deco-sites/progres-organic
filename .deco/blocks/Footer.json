@@ -174,7 +174,8 @@
         {
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/2e1a0cdc-aa28-46f9-b3a9-ebccb1a93d09",
           "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
-          "title": "5511942967682"
+          "title": "5511942967682",
+          "isBlank": true
         },
         {
           "title": "(11) 94296-7682",

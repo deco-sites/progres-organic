@@ -12,6 +12,10 @@ interface Item {
   title: string;
   /** @tile Url do Link */
   href?: string;
+  /**
+   * @title Abrir em uma nova janela
+   * @description se quiser que o link abra em uma nova janela marque abaixo */
+  isBlank?: boolean;
 }
 
 /** @titleBy title */
@@ -103,6 +107,9 @@ function Footer({
   delivery = [],
   badges = [],
 }: Props) {
+
+
+
   return (
     <footer class="w-screen  sm:mt-10 bg-primary text-base-200">
       <div class="container flex md:justify-between flex-col md:flex-row pt-[38px] gap-6 lg:max-w-[1400px] md:px-5 px-8">
@@ -111,13 +118,17 @@ function Footer({
           <p class="text-[11px] ">{description}</p>
         </div>
         <ul class="flex justify-between grow  flex-wrap">
-          {links.map(({ title, links }) => (
+          {links.map(({ title, links}) => (
             <li class="flex flex-col  mt-10 md:mt-0">
               <p class="text-[15px] font-semibold pb-5">{title}</p>
               <ul class="flex flex-col gap-5">
-                {links.map(({ title, href, image }) => (
+                {links.map(({ title, href, image, isBlank }) => (
                   <li>
-                    <a class="text-[11px] flex gap-1" href={href}>
+                    <a
+                      class="text-[11px] flex gap-1"
+                      href={href}
+                     target={isBlank ? "blank" : ""}
+                    >
                       {image && (
                         <Image
                           src={image}
@@ -156,7 +167,7 @@ function Footer({
 
           {mobileApp && (
             <div class="flex flex-nowrap  gap-6 pt-7">
-              <a href={mobileAppLink.apple}>
+              <a href={mobileAppLink.apple} target="blank">
                 <Image
                   alt="apple"
                   width={72}
@@ -165,7 +176,7 @@ function Footer({
                   src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5c0dade1-22e2-468c-bbc9-6c1545e3ed8a"
                 />
               </a>
-              <a href={mobileAppLink.android}>
+              <a href={mobileAppLink.android} target="blank">
                 <Image
                   alt="android"
                   width={72}
@@ -223,7 +234,7 @@ function Footer({
         {badges && (
           <div class="flex  items-center justify-center gap-4 pt-6 lg:pt-0">
             {badges.map((badge) => (
-              <a key={badge.title} href={badge.href}>
+              <a key={badge.title} href={badge.href} target="blank">
                 <Image
                   alt={badge.title}
                   width={144}

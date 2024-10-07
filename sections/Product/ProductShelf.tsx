@@ -21,6 +21,10 @@ export default function ProductShelf({
   if (!products || products.length === 0) {
     return null;
   }
+  const inStockProducts = products.filter((product) => {
+    const { availability } = useOffer(product.offers);
+    return availability === "https://schema.org/InStock";
+  });
 
   const viewItemListEvent = useSendEvent({
     on: "view",
@@ -43,7 +47,7 @@ export default function ProductShelf({
     <Section.Container {...viewItemListEvent} class="mx-auto overflow-hidden">
       <Section.Header title={title} cta={cta} subtitle={subtitle} />
 
-      <ProductSlider products={products} itemListName={title} />
+      <ProductSlider products={inStockProducts} itemListName={title} />
     </Section.Container>
   );
 }
