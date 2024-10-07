@@ -3,13 +3,13 @@
   "path": "/perguntas-frequentes",
   "sections": [
     {
+      "__resolveType": "Header"
+    },
+    {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "PO-whatsapp"
       }
-    },
-    {
-      "__resolveType": "Header"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

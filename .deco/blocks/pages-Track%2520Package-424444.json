@@ -8,6 +8,12 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "PO-whatsapp"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "site/sections/TrackPackage.tsx",
         "name": "teste",
         "notFoundMessage": "Não encontramos o seu pedido"

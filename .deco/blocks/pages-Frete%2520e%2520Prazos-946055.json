@@ -25,7 +25,8 @@
         "__resolveType": "site/sections/Product/ProductShelf.tsx",
         "products": {
           "__resolveType": "vnda/loaders/productList.ts",
-          "count": 10
+          "count": 10,
+          "sort": "newest"
         },
         "title": "Os Mais Vendidos",
         "subtitle": "Os mais procurados pelos nossos clientes"
