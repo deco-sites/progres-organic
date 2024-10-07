@@ -34,7 +34,7 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "cabelos-loiros-luzes-mechas"
+              "cabelos-loiro-luzes-mechas"
             ],
             "filterOperator": {
               "type_tags": "and",
@@ -42,7 +42,11 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": true
+            "filterByTags": true,
+            "slug": {
+              "__resolveType": "website/functions/requestToParam.ts",
+              "param": "slug"
+            }
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
