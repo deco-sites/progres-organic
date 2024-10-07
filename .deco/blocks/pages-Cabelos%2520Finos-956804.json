@@ -89,7 +89,13 @@
         ],
         "subtitle": "Descubra produtos incríveis para cabelos loiros, com luzes e mechas. Alinhe, hidrate e mantenha seus fios saudáveis com nossas opções orgânicas!",
         "categoryList": {
-          "links": []
+          "links": [
+            {
+              "label": "Cabelos Finos",
+              "url": "por-tipo-de-cabelo/cabelos-finos"
+            }
+          ],
+          "title": "Cabelos Finos"
         },
         "title": "Cabelos Finos"
       }
