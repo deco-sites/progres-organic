@@ -42,7 +42,8 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "tipo-de-cabelo"
+              "tipo-de-cabelo",
+              "cabelos-loiros-luzes-mechas"
             ],
             "filterOperator": {
               "type_tags": "and",
