@@ -27,6 +27,13 @@ import ImageLinks from "../../components/header/ImageLinks.tsx";
 import type { ImageLink, Sale } from "../../components/header/ImageLinks.tsx";
 import type { SocialMedia } from "../../components/header/Alert.tsx";
 
+// export interface FreeShipping{
+//   /** @title Frete Grátis
+//    * @description Colocar o valor da compra minima (usar . no lugar da ,)
+//    */
+//   freeShippingValue: number;
+// }
+
 export interface Logo {
   src: ImageWidget;
   alt: string;
@@ -35,6 +42,7 @@ export interface Logo {
 }
 
 export interface SectionProps {
+  
   alerts?: HTMLWidget[];
   icons?: SocialMedia[];
   interval?: number;

@@ -107,9 +107,6 @@ function Footer({
   delivery = [],
   badges = [],
 }: Props) {
-
-
-
   return (
     <footer class="w-screen  sm:mt-10 bg-primary text-base-200">
       <div class="container flex md:justify-between flex-col md:flex-row pt-[38px] gap-6 lg:max-w-[1400px] md:px-5 px-8">
@@ -118,7 +115,7 @@ function Footer({
           <p class="text-[11px] ">{description}</p>
         </div>
         <ul class="flex justify-between grow  flex-wrap">
-          {links.map(({ title, links}) => (
+          {links.map(({ title, links }) => (
             <li class="flex flex-col  mt-10 md:mt-0">
               <p class="text-[15px] font-semibold pb-5">{title}</p>
               <ul class="flex flex-col gap-5">
@@ -127,7 +124,7 @@ function Footer({
                     <a
                       class="text-[11px] flex gap-1"
                       href={href}
-                     target={isBlank ? "blank" : ""}
+                      target={isBlank ? "blank" : ""}
                     >
                       {image && (
                         <Image
@@ -273,6 +270,7 @@ function Footer({
           </a>
         </div>
       </div>
+      
     </footer>
   );
 }
