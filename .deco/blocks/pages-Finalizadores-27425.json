@@ -28,7 +28,7 @@
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/0c9f43c9-3137-4cad-ba22-9d3139712cc9/WhatsApp-Image-2024-10-03-at-10.56.15.jpeg",
           "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/0c9f43c9-3137-4cad-ba22-9d3139712cc9/WhatsApp-Image-2024-10-03-at-10.56.15.jpeg"
         },
-        "alt": "salao de beleza "
+        "alt": "Descubra nossos finalizadores para cabelos. Produtos que hidratam, protegem e deixam seus fios sedosos e brilhantes. Ideal para todos os tipos de cabelo!"
       }
     },
     {
@@ -48,7 +48,8 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": false,
+            "term": "finalizadores"
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
@@ -83,7 +84,8 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "subtitle": "Descubra nossos finalizadores para cabelos. Produtos que hidratam, protegem e deixam seus fios sedosos e brilhantes. Ideal para todos os tipos de cabelo!"
       }
     },
     {
