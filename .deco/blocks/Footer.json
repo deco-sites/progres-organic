@@ -261,7 +261,7 @@
     "android": "/"
   },
   "Badges": [],
-  "mobileApp": true,
+  "mobileApp": false,
   "badges": [
     {
       "title": "Google Verify",
