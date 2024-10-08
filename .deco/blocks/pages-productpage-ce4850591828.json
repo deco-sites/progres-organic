@@ -326,11 +326,14 @@
               "title": "Produtos relacionados",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "sort": "newest",
-                "tags": [],
+                "tags": [
+                  "promocao-do-mes",
+                  "kits-promocionais"
+                ],
                 "typeTags": [],
                 "ids": [],
-                "count": 10
+                "count": 10,
+                "wildcard": false
               },
               "subtitle": "Os clientes também compraram"
             }
