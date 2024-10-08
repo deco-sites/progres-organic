@@ -26,9 +26,9 @@
         "__resolveType": "site/sections/Images/WideBanner.tsx",
         "images": {
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/496b5e00-5aea-4021-85aa-ff3e4fec95da",
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/226d9633-0874-4e1e-b8bf-c4eb246f89b0/WhatsApp-Image-2024-10-03-at-10.56.13-(1).jpeg"
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/204040a5-b2cc-4a78-a04f-4e7b36c47fef/WhatsApp-Image-2024-10-03-at-10.56.13.jpeg"
         },
-        "alt": "salao de beleza "
+        "alt": "Selagem Orgânica reduz volume e frizz em todos os tipos de cabelos, promovendo cabelos selados, disciplinados, macios e com brilho intenso, livre de frizz. Adquira já! até 6x sem juros e Frete grátis!"
       }
     },
     {
@@ -83,7 +83,8 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "subtitle": "Selagem Orgânica reduz volume e frizz em todos os tipos de cabelos, promovendo cabelos selados, disciplinados, macios e com brilho intenso, livre de frizz. Adquira já! até 6x sem juros e Frete grátis!"
       }
     },
     {
