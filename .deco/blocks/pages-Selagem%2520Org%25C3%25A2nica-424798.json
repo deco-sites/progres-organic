@@ -41,7 +41,7 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "bellaliss"
+              "selagem-organica"
             ],
             "filterOperator": {
               "type_tags": "and",
@@ -53,7 +53,8 @@
             "slug": {
               "__resolveType": "website/functions/requestToParam.ts",
               "param": "slug"
-            }
+            },
+            "term": "selagem"
           },
           "extensions": []
         },
