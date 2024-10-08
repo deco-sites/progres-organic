@@ -218,10 +218,10 @@ function Footer({
                     <Image
                       src={item}
                       alt="metodo de entrega"
-                      width={65}
+                      width={50}
                       height={25}
                       loading="lazy"
-                      class="bg-base-200 object-cover"
+                      class=" object-contain w-12 h-6"
                     />
                   </li>
                 ))}
