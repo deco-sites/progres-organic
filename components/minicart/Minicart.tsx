@@ -21,8 +21,8 @@ export interface Minicart {
     locale: string;
     currency: string;
     enableCoupon?: boolean;
-    freeShippingTarget: number;
     checkoutHref: string;
+    freeShippingTarget: number;
   };
 }
 

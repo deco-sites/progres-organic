@@ -23,17 +23,31 @@ export interface Props {
 
 function Banner({ images, href, alt }: Props) {
   return (
-    <a class="relative bg-base-200 mx-auto w-screen " href={href}>
-      <Picture>
-        <Source media="(max-width: 640px)" src={images.mobile} width={390} />
-        <Source media="(min-width: 640px)" src={images.desktop} width={1440} />
-        <img
-          src={images.desktop}
-          alt={alt}
-          class=" w-screen  max-w-[1440px] h-auto object-cover mx-auto md:pt-12"
-        />
-      </Picture>
-    </a>
+    <>
+      {(images.desktop || images.desktop ) && (
+        <a className="relative bg-base-200 mx-auto w-screen" href={href}>
+          <Picture>
+            <Source
+              media="(max-width: 640px)"
+              src={images.mobile || images.desktop}
+              width={390}
+            />
+            {/* Use 'desktop' image for larger screens */}
+            <Source
+              media="(min-width: 640px)"
+              src={images.desktop}
+              width={1440}
+            />
+            {/* Fallback to 'desktop' image if both are not available */}
+            <img
+              src={images.desktop}
+              alt={alt}
+              className="w-screen max-w-[1440px] h-auto object-cover mx-auto md:pt-12"
+            />
+          </Picture>
+        </a>
+      )}
+    </>
   );
 }
 
