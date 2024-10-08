@@ -36,6 +36,7 @@
       "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
+          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
           "data": {
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
@@ -48,10 +49,13 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false
+            "filterByTags": false,
+            "slug": {
+              "__resolveType": "website/functions/requestToParam.ts",
+              "param": "slug"
+            }
           },
-          "extensions": [],
-          "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
+          "extensions": []
         },
         "layout": {
           "columns": {
