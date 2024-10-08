@@ -39,14 +39,17 @@
           "data": {
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
-            "tags": [],
+            "tags": [
+              "antiqueda"
+            ],
             "filterOperator": {
               "type_tags": "and",
               "property2": "and",
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": true
+            "filterByTags": true,
+            "term": "antiqueda"
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
