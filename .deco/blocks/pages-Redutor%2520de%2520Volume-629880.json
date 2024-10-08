@@ -1,5 +1,5 @@
 {
-  "name": "Redutor de Volume",
+  "name": "Redutor de Volume e Frizz",
   "path": "/cabelos-tratamento/botox-organico",
   "sections": [
     {
@@ -28,7 +28,7 @@
           "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/981302e6-e59d-4228-9b13-6a4c6376ab5f/WhatsApp-Image-2024-10-03-at-10.56.11.jpeg",
           "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/981302e6-e59d-4228-9b13-6a4c6376ab5f/WhatsApp-Image-2024-10-03-at-10.56.11.jpeg"
         },
-        "alt": "salao de beleza "
+        "alt": "Transforme seus cabelos com nossos redutores de volume e frizz. Hidratação, brilho e alinhamento em um só produto. Confira nossa seleção!"
       }
     },
     {
@@ -48,7 +48,8 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": true
+            "filterByTags": true,
+            "term": "redutor de"
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
@@ -83,7 +84,8 @@
             "minPrice": 3,
             "maxPrice": 6
           }
-        ]
+        ],
+        "subtitle": "Transforme seus cabelos com nossos redutores de volume e frizz. Hidratação, brilho e alinhamento em um só produto. Confira nossa seleção!"
       }
     },
     {
