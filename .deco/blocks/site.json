@@ -37,16 +37,16 @@
   ],
   "routes": [
     {
-      "__resolveType": "vnda/loaders/proxy.ts",
-      "includeSiteMap": [],
-      "excludePathsFromDecoSiteMap": [],
-      "pagesToProxy": []
-    },
-    {
       "__resolveType": "website/loaders/pages.ts"
     },
     {
       "__resolveType": "website/loaders/redirects.ts"
+    },
+    {
+      "__resolveType": "vnda/loaders/proxy.ts",
+      "includeSiteMap": [],
+      "excludePathsFromDecoSiteMap": [],
+      "pagesToProxy": []
     }
   ],
   "caching": {
