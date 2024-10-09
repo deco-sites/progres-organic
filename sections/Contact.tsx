@@ -7,7 +7,6 @@ import { usePlatform } from "../sdk/usePlatform.tsx";
 import { useComponent } from "./Component.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { SecretString } from "apps/website/loaders/secretString.ts";
 
 interface NoticeProps {
   title?: string;
@@ -138,7 +137,8 @@ function Contact({
               href={`https://api.whatsapp.com/send/?phone=${whatsapp}&text&type=phone_number&app_absent=0`}
               target="blank"
             >
-              Ou ligue para nós no <span class="font-semibold text-primary">{whatsapp}</span>
+              Ou ligue para nós no{" "}
+              <span class="font-semibold text-primary">{whatsapp}</span>
             </a>
           </div>
 
@@ -185,10 +185,11 @@ function Contact({
             <Image
               src={image}
               alt={alt}
-              width={700}
-              height={450}
+              width={450}
+              height={650}
               loading="lazy"
-              class="object-cover h-[650px]"
+              fit="contain"
+              class="object-cover"
             />
           </div>
         )}

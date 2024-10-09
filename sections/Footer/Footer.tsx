@@ -221,6 +221,7 @@ function Footer({
                       width={50}
                       height={25}
                       loading="lazy"
+                      fit="contain"
                       class=" object-contain w-12 h-6"
                     />
                   </li>
