@@ -175,7 +175,7 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5 flex flex-col items-center">
-        <div class="konfidency-reviews-multi" data-sku="{productID}"></div>
+        {/* <div class="konfidency-reviews-multi" data-sku="{productID}"></div> */}
         <span class="font-medium text-base text-secondary text-center h-[96px] overflow-y-auto">
           {title}
         </span>
@@ -258,8 +258,8 @@ function ProductCard({
           Ver mais
         </a>
       </div>
-      <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js">
-      </script>
+      {/* <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js">
+      </script> */}
     </div>
   );
 }
