@@ -1,6 +1,3 @@
-import { VideoWidget } from "apps/admin/widgets.ts";
-//import IframeLoader from "../islands/ytOtimization.tsx";
-
 interface Props {
   /**
    * @title Título
@@ -25,12 +22,17 @@ interface Props {
    * @title You Tube Video
    * @description Link do youTube (link copiado do navegador e nao do botao de Compartilhar)
    */
-  video?: VideoWidget;
+
   videoyt: string;
 }
 
-export default function Section({ title, subtile, text, video, href, videoyt }: Props) {
-
+export default function Section({
+  title,
+  subtile,
+  text,
+  href,
+  videoyt,
+}: Props) {
   function getEmbedLink(videoyt: string) {
     // Extrair o ID do vídeo:
     const videoId = videoyt.split("v=")[1].split("&")[0];

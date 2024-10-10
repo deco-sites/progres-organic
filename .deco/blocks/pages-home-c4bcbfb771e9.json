@@ -21,17 +21,17 @@
               "preload": true,
               "images": [
                 {
-                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/1d2ac4a6-9642-405b-92f3-246ae22b6081",
+                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/c53f10a3-cbe5-4f0e-9045-808dabb24593/Rectangle01.webp",
                   "alt": "Tratamentos",
                   "href": "/tratamentos"
                 },
                 {
-                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5d409902-8c88-4a85-a474-c394a02dce6e",
+                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/dd5d4c0a-7993-4039-90ea-9605c6f15b08/Rectangle-175.webp",
                   "alt": "Para Salões",
                   "href": "/para-saloes"
                 },
                 {
-                  "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/b9a75eaa-2b46-42f0-8c79-8b402e728d16",
+                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/eaf65730-dd58-4eb7-933f-a5220f7d18fb/Rectangle-176.webp",
                   "alt": "Home Care",
                   "href": "/home-care"
                 }
@@ -194,7 +194,8 @@
               "subtile": "Cabelos alinhados, sem frizz e com muito brilho!",
               "text": "Conheça esse produto",
               "video": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
-              "href": "/"
+              "href": "/",
+              "videoyt": "https://www.youtube.com/watch?v=mDUIcqYdJKI"
             }
           },
           {
