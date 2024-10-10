@@ -1,4 +1,5 @@
-import IframeLoader from "../islands/ytOtimization.tsx";
+import { VideoWidget } from "apps/admin/widgets.ts";
+//import IframeLoader from "../islands/ytOtimization.tsx";
 
 interface Props {
   /**
@@ -24,7 +25,7 @@ interface Props {
    * @title You Tube Video
    * @description Link do youTube (link copiado do navegador e nao do botao de Compartilhar)
    */
-  video?: string;
+  video?: VideoWidget;
 }
 
 export default function Section({ title, subtile, text, video, href }: Props) {
@@ -32,12 +33,13 @@ export default function Section({ title, subtile, text, video, href }: Props) {
     <div class="w-screen pt-[30px] mb-8 px-4">
       <div class="lg:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
         <div class="md:w-[667px] md:h-[374px] w-[350px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
-          <IframeLoader
+          {/* <IframeLoader
             videoLink={video || ""}
             preload={false}
             width={667}
             height={375}
-          />
+          /> */}
+          <video src={video || ""} controls></video>
         </div>
         <div class="md:max-w-[425px] mx-auto md:mx-0 flex flex-col items-center md:items-start">
           <h2 class="text-2xl font-semibold text-secondary md:pb-5 md:pt-3 pt-10 pb-3 text-center">

@@ -1,11 +1,9 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Icon from "../components/ui/Icon.tsx";
 import Slider from "../components/ui/Slider.tsx";
 import { clx } from "../sdk/clx.ts";
 import { useId } from "../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useSendEvent } from "../sdk/useSendEvent.ts";
-import { itemToAnalyticsItem } from "apps/linx/hooks/useCart.ts";
 
 /**
  * @titleBy alt
@@ -56,6 +54,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         preload={lcp}
         {...viewPromotionEvent}
         loading="eager"
+        fetchPriority="high"
         src={desktop}
         width={364}
         height={417}
