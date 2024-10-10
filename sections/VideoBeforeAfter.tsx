@@ -26,9 +26,24 @@ interface Props {
    * @description Link do youTube (link copiado do navegador e nao do botao de Compartilhar)
    */
   video?: VideoWidget;
+  videoyt: string;
 }
 
-export default function Section({ title, subtile, text, video, href }: Props) {
+export default function Section({ title, subtile, text, video, href, videoyt }: Props) {
+
+  function getEmbedLink(videoyt: string) {
+    // Extrair o ID do vídeo:
+    const videoId = videoyt.split("v=")[1].split("&")[0];
+
+    // Criar o link embeddable:
+    if (videoId) {
+      const embedLink = `https://www.youtube.com/embed/${videoId}`;
+      return embedLink;
+    } else {
+      return "Vídeo não encontrado"; // Ou retorne um erro se o ID não for encontrado
+    }
+  }
+
   return (
     <div class="w-screen pt-[30px] mb-8 px-4">
       <div class="lg:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
@@ -39,7 +54,16 @@ export default function Section({ title, subtile, text, video, href }: Props) {
             width={667}
             height={375}
           /> */}
-          <video src={video || ""} controls></video>
+          {/* <video src={video || ""} controls class=""></video> */}
+          <iframe
+            class="w-full"
+            width="560"
+            height="315"
+            src={getEmbedLink(videoyt) || ""}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
         </div>
         <div class="md:max-w-[425px] mx-auto md:mx-0 flex flex-col items-center md:items-start">
           <h2 class="text-2xl font-semibold text-secondary md:pb-5 md:pt-3 pt-10 pb-3 text-center">
