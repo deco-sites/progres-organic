@@ -81,13 +81,10 @@ export default function ProductDetails({
             />
             {items}
           </div>
-<<<<<<< HEAD
           {/* <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
             <div class="konfidency-reviews-details"></div>
           </div> */}
           <div class="konfidency-reviews-details"></div>
-=======
->>>>>>> parent of 66052da (feat: konfidency ajust)
         </div>
       )}
       <Head>
