@@ -87,12 +87,12 @@ export default function ProductDetails({
           <div class="konfidency-reviews-details"></div>
         </div>
       )}
-      <Head>
+    
         <script
           async
           src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
         />
-      </Head>
+      
     </div>
   );
 }
