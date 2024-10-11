@@ -89,7 +89,7 @@ export default function Searchbar(
         class="join max-w-[447px] min-w-[350px] h-[46px] relative mx-auto "
       >
         <input
-          autoFocus
+          
           tabIndex={0}
           class="input input-secondary border-opacity-2 w-full"
           name={NAME}

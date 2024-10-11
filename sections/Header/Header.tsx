@@ -116,7 +116,7 @@ const Desktop = ({
       </div>
 
       <div class="flex justify-center items-center w-full">
-        <ul class="flex mx-center px-6  gap-16">
+        <ul class="flex mx-center px-6">
           {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
         </ul>
       </div>

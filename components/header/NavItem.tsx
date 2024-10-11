@@ -11,24 +11,23 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
   return (
     <li
-      class="group flex items-center"
+      class="group flex items-center text-accent"
       style={{ height: NAVBAR_HEIGHT_DESKTOP }}
     >
-      <a
-        href={url}
-        class="group-hover:underline text-sm font-bold text-primary"
-      >
+      <a href={url} class="group-hover:underline text-sm font-bold text-accent">
         {name}
       </a>
 
       {children && children.length > 0 && (
         <div
           class="fixed hidden hover:flex group-hover:flex bg-base-200 z-40 items-center justify-center gap-2 max-w-[1440px] mx-auto  top-[150px]"
-          style={{
-            // top: "0px",
-            // left: "0px",
-            //marginTop: HEADER_HEIGHT_DESKTOP,
-          }}
+          style={
+            {
+              // top: "0px",
+              // left: "0px",
+              //marginTop: HEADER_HEIGHT_DESKTOP,
+            }
+          }
         >
           {image?.url && (
             <Image
@@ -44,7 +43,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             {children.map((node) => (
               <li class="">
                 <a
-                  class="hover:underline text-primary text-sm font-semibold pr-3"
+                  class="hover:underline text-accent text-sm font-semibold pr-3"
                   href={node.url}
                 >
                   <span>{node.name}</span>
@@ -54,7 +53,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                   {node.children?.map((leaf) => (
                     <li>
                       <a class="hover:underline " href={leaf.url}>
-                        <span class="text-secondary text-sm">{leaf.name}</span>
+                        <span class="text-accent text-sm">{leaf.name}</span>
                       </a>
                     </li>
                   ))}
