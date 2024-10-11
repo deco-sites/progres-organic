@@ -299,10 +299,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
         // </div>
       }
 
-      <script
-        async
-        src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
-      />
+     
     </div>
   );
 }

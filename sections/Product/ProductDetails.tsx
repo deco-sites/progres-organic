@@ -9,6 +9,7 @@ import type { Section } from "deco/blocks/section.ts";
 import type { ProductIcon } from "../../components/product/AddToCartProductDetail.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import type { PaymentIcon } from "../../components/product/ProductInfo.tsx";
+import { Head } from "$fresh/runtime.ts";
 
 export interface Props {
   /** @title Integration */
@@ -80,13 +81,18 @@ export default function ProductDetails({
             />
             {items}
           </div>
-          <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
-         
-              <div class="konfidency-reviews-details"></div>
-           
-          </div>
+          {/* <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
+            <div class="konfidency-reviews-details"></div>
+          </div> */}
+          <div class="konfidency-reviews-details"></div>
         </div>
       )}
+      <Head>
+        <script
+          async
+          src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
+        />
+      </Head>
     </div>
   );
 }
