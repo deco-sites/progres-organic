@@ -272,6 +272,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={isVariantOf?.productGroupID}
+          
         ></div>
    
       </div>
