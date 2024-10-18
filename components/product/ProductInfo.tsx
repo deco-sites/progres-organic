@@ -273,7 +273,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={isVariantOf?.productGroupID}
         ></div>
-        <p> {isVariantOf?.productGroupID} </p>
+   
       </div>
 
       {/* Add to Cart and Favorites button */}
