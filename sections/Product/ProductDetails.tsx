@@ -37,7 +37,7 @@ export default function ProductDetails({
    */
   if (!page) {
     return (
-      <div class="flex justify-center items-center py-28 w-full">
+      <div class="flex justify-center items-center pt-28 pb-3 w-full">
         <div class="flex flex-col justify-center items-center gap-6">
           <span class="font-medium text-2xl">Produto não encontrado</span>
           <a href="/" class="btn no-animation">
