@@ -3,7 +3,6 @@ import Slider from "../components/ui/Slider.tsx";
 import { clx } from "../sdk/clx.ts";
 import { useId } from "../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useSendEvent } from "../sdk/useSendEvent.ts";
 
 /**
  * @titleBy alt
@@ -33,26 +32,26 @@ export interface Props {
 
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   const { alt, desktop, href } = image;
-  const params = { promotion_name: image.alt };
+  // const params = { promotion_name: image.alt };
 
-  const selectPromotionEvent = useSendEvent({
-    on: "click",
-    event: { name: "select_promotion", params },
-  });
+  // // const selectPromotionEvent = useSendEvent({
+  // //   on: "click",
+  // //   event: { name: "select_promotion", params },
+  // // });
 
-  const viewPromotionEvent = useSendEvent({
-    on: "view",
-    event: { name: "view_promotion", params },
-  });
+  // // const viewPromotionEvent = useSendEvent({
+  // //   on: "view",
+  // //   event: { name: "view_promotion", params },
+  // // });
   return (
     <a
-      {...selectPromotionEvent}
+      // {...selectPromotionEvent}
       href={href ?? "#"}
       class="relative block overflow-y-hidden md:w-full mx-auto w-screen mt-8 lg:mt-0"
     >
       <Image
         preload={lcp}
-        {...viewPromotionEvent}
+        // {...viewPromotionEvent}
         loading="eager"
         fetchPriority="high"
         src={desktop}

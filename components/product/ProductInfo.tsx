@@ -33,6 +33,9 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
+  console.log(page.product.isVariantOf?.productGroupID);
+  
+
   const { breadcrumbList, product } = page;
   const { productID, offers, isVariantOf, additionalProperty } = product;
   //const description = product.description || isVariantOf?.description;
@@ -268,8 +271,9 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
         <div
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
-          data-sku={productID}
+          data-sku={isVariantOf?.productGroupID}
         ></div>
+        <p> {isVariantOf?.productGroupID} </p>
       </div>
 
       {/* Add to Cart and Favorites button */}
@@ -298,8 +302,8 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
         //   />
         // </div>
       }
-
-     
+{/* 
+      <div class="konfidency-reviews-details"></div> */}
     </div>
   );
 }

@@ -84,15 +84,10 @@ export default function ProductDetails({
           {/* <div class="hidden md:flex  xl:px-[132px] md:w-[1440px]  mx-auto text-primary pt-10 mb-8">
             <div class="konfidency-reviews-details"></div>
           </div> */}
-          <div class="konfidency-reviews-details"></div>
+          
         </div>
       )}
-    
-        <script
-          async
-          src="https://reviews.konfidency.com.br/progressivaorganica/loader.js"
-        />
-      
+     
     </div>
   );
 }

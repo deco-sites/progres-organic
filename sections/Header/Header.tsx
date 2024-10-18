@@ -95,11 +95,12 @@ const Desktop = ({
         <div class=" pl-6 w-[148px] h-[50px] flex flex-shrink-0">
           <a href="/" aria-label="Store logo">
             <Image
-              class="w-[148px] h-[50px] "
+              class="w-[148px] h-[50px] fit-cover"
               src={logo.src}
               alt={logo.alt}
               width={logo.width || 141}
               height={logo.height || 48}
+              fit="cover"
             />
           </a>
         </div>
@@ -203,6 +204,7 @@ const Mobile = ({
             alt={logo.alt}
             width={logo.width || 100}
             height={logo.height || 13}
+            fit="contain"
           />
         </a>
       )}

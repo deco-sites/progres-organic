@@ -152,6 +152,7 @@ function ProductDescription({ page }: Props) {
           )}
         </span>
       </div>
+   
     </div>
   );
 }
