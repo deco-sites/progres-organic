@@ -13,9 +13,7 @@
   ],
   "logo": {
     "alt": "Deco Storefront",
-    "width": 111,
-    "height": 46,
-    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/474cbb7e-89f1-49f0-81ef-b1fcea6dbfdd/logo-header.jpg"
+    "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/4bbde0ec-8648-46c6-ac16-322649492af6/Design-sem-nome-(89).png"
   },
   "navItems": {
     "__resolveType": "navbar"
