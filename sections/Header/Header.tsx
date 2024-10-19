@@ -202,9 +202,9 @@ const Mobile = ({
           <Image
             src={logo.src}
             alt={logo.alt}
-            width={logo.width || 100}
+            width={logo.width || 80}
             height={logo.height || 13}
-            fit="contain"
+            fit="cover"
           />
         </a>
       )}
