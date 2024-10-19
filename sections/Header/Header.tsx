@@ -203,7 +203,7 @@ const Mobile = ({
             src={logo.src}
             alt={logo.alt}
             width={logo.width || 80}
-            height={logo.height || 13}
+            height={logo.height || 33}
             fit="cover"
           />
         </a>
