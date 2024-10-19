@@ -12,7 +12,9 @@
     "<p>Sua primeira compra? Use o cupom <strong>PRIMEIRACOMPRA</strong></p>"
   ],
   "logo": {
-    "alt": "Progressiva Organica - logo",
+    "alt": "Deco Storefront",
+    "width": 111,
+    "height": 46,
     "src": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/474cbb7e-89f1-49f0-81ef-b1fcea6dbfdd/logo-header.jpg"
   },
   "navItems": {
