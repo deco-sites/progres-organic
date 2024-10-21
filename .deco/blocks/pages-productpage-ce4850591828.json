@@ -48,7 +48,8 @@
               },
               "page": {
                 "__resolveType": "Preview vnda/loaders/productDetailsPage.ts"
-              }
+              },
+              "title": "Compre Junto"
             }
           },
           {
