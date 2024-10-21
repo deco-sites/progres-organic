@@ -19,6 +19,8 @@ export interface Props {
   title: string;
 }
 
+
+
 export default function BuyTogether({ page, products, title }: Props) {
   if (page === null || products === null) {
     throw new Error("Informações do produto insdisponível");
