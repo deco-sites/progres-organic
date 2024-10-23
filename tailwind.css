@@ -68,3 +68,9 @@
 .konfidency-badge {
   display:none;
 } */
+
+.vndaReferralsInviteReminder {
+  position: fixed;
+  top:0;
+  left:0;
+}
