@@ -83,5 +83,8 @@
 
 .vndaReferralsInviteReminder button {
   position: absolute !important;
-  top: -20px !important;
+  top: -35px !important;
+   background-color: white !important ;
+ border-radius: 50%;
+   border: 1px solid #06503c;
 }
