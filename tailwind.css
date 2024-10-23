@@ -82,6 +82,6 @@
 }
 
 .vndaReferralsInviteReminder button {
-  position: absolute;
-  top: -20px;
+  position: absolute !important;
+  top: -20px !important;
 }
