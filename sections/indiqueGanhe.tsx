@@ -1,6 +1,6 @@
 export default function indiqueGanhe() {
   return (
-    <div id="">
+    <div class="hidden">
       <button
         id="btn-vnda-referrals"
         hx-trigger="click"
