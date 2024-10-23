@@ -73,15 +73,10 @@
   top: 50%; /* Move o elemento 50% da altura da tela */
   left: 50%; /* Move o elemento 50% da largura da tela */
   transform: translate(-50%, -50%); /* Centraliza o elemento */
-  padding: 36px;
+  padding: 46px !important;
   border: 1px solid #06503C;
   border-radius: 8px;
-  width: 80%;
-  max-width: 1200px;
+background-color: #cbcbcbcb
 }
 
-.vndaReferralsInviteReminder button {
-  margin-left: 20px;
-  background-color:white;
-  border: 1px solid #06503C;
-}
+
