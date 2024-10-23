@@ -36,6 +36,7 @@ import * as $$$$$$15 from "./sections/Images/Carousel.tsx";
 import * as $$$$$$16 from "./sections/Images/ImageGallery.tsx";
 import * as $$$$$$17 from "./sections/Images/ShoppableBanner.tsx";
 import * as $$$$$$18 from "./sections/Images/WideBanner.tsx";
+import * as $$$$$$43 from "./sections/indiqueGanhe.tsx";
 import * as $$$$$$19 from "./sections/Informations.tsx";
 import * as $$$$$$20 from "./sections/Links/LinkTree.tsx";
 import * as $$$$$$21 from "./sections/Miscellaneous/CampaignTimer.tsx";
@@ -89,6 +90,7 @@ const manifest = {
     "site/sections/Images/ImageGallery.tsx": $$$$$$16,
     "site/sections/Images/ShoppableBanner.tsx": $$$$$$17,
     "site/sections/Images/WideBanner.tsx": $$$$$$18,
+    "site/sections/indiqueGanhe.tsx": $$$$$$43,
     "site/sections/Informations.tsx": $$$$$$19,
     "site/sections/Links/LinkTree.tsx": $$$$$$20,
     "site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$21,

@@ -30,6 +30,9 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+        <script
+          src="https://cdn.vnda.com.br/referrals/invite-widget.js?v=v27"
+        />
       </Head>
 
       {/* Rest of Preact tree */}

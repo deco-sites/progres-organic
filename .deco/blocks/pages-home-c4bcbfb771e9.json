@@ -15,28 +15,25 @@
             }
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/SmallBannersTop.tsx",
-              "preload": true,
-              "images": [
-                {
-                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/3753d83a-aa68-486a-ad0a-fd9b736c4abc/black-friday-progressiva-organica-(1).jpg",
-                  "href": "/promocao-do-mes",
-                  "alt": "Black Friday Progressiva Orgânica"
-                },
-                {
-                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/c897b87a-e65f-47ad-bc3e-e0eff0d6e682/progressivaorganica-frete-gratis-(1).jpg",
-                  "href": "/promocao-do-mes",
-                  "alt": "progressiva orgânica frete grátis"
-                },
-                {
-                  "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/ba86066e-5d8a-48d1-8948-25177eda162f/promocao-progressiva-organica-(1).jpg",
-                  "href": "/promocao-do-mes",
-                  "alt": "Promoção Progressiva Orgânica"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/SmallBannersTop.tsx",
+            "preload": true,
+            "images": [
+              {
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/3753d83a-aa68-486a-ad0a-fd9b736c4abc/black-friday-progressiva-organica-(1).jpg",
+                "href": "/promocao-do-mes",
+                "alt": "Black Friday Progressiva Orgânica"
+              },
+              {
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/c897b87a-e65f-47ad-bc3e-e0eff0d6e682/progressivaorganica-frete-gratis-(1).jpg",
+                "href": "/promocao-do-mes",
+                "alt": "progressiva orgânica frete grátis"
+              },
+              {
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/ba86066e-5d8a-48d1-8948-25177eda162f/promocao-progressiva-organica-(1).jpg",
+                "href": "/promocao-do-mes",
+                "alt": "Promoção Progressiva Orgânica"
+              }
+            ]
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -235,6 +232,12 @@
             }
           },
           {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/indiqueGanhe.tsx"
+            }
+          },
+          {
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
@@ -323,6 +326,8 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Mais Vendidos!",
+              "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "ids": [
@@ -338,9 +343,7 @@
                 "count": 8,
                 "wildcard": true
               },
-              "title": "Mais Vendidos!",
-              "subtitle": "Os Produtos Mais Vendidos",
-              "cta": "/"
+              "subtitle": "Os Produtos Mais Vendidos"
             }
           },
           {
