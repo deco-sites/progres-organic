@@ -68,9 +68,14 @@
   display:none;
 } */
 
-/* .vndaReferralsInviteReminder {
+.vndaReferralsInviteReminder {
   position: fixed;
-   top: 50%; /* Move o elemento 50% da altura da tela */
-      left: 50%; /* Move o elemento 50% da largura da tela */
-      transform: translate(-50%, -50%); /* Centraliza o elemento */
-} */
+  top: 50%; /* Move o elemento 50% da altura da tela */
+  left: 50%; /* Move o elemento 50% da largura da tela */
+  transform: translate(-50%, -50%); /* Centraliza o elemento */
+  padding: 36px;
+}
+
+.vndaReferralsInviteReminder button {
+  padding-left: 20px;
+}
