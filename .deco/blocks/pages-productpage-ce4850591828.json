@@ -164,7 +164,11 @@
                     "__resolveType": "vnda/loaders/productList.ts",
                     "tags": [],
                     "typeTags": [],
-                    "ids": [],
+                    "ids": [
+                      35,
+                      17,
+                      15
+                    ],
                     "count": 3,
                     "sort": "newest"
                   },
