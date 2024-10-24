@@ -17,13 +17,13 @@ function ProductSlider({ products, itemListName }: Props) {
     <>
       <div
         id={id}
-        class="grid grid-rows-1 md:max-w-[1280px]"
+        class="grid grid-rows-1 md:max-w-[1300px]"
         style={{
           gridTemplateColumns: "min-content 1fr min-content",
         }}
       >
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
-          <Slider class="carousel carousel-center sm:carousel-end gap-8  w-full pb-5">
+          <Slider class="carousel carousel-center sm:carousel-end gap-7  w-full pb-5">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
@@ -44,13 +44,13 @@ function ProductSlider({ products, itemListName }: Props) {
           </Slider>
         </div>
 
-        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[5%] right-12">
+        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-4 relative bottom-[5%] right-12">
           <Slider.PrevButton class="hidden md:flex  btn btn-outline btn-primary btn-sm btn-circle no-animation">
             <Icon id="chevron-right" class="rotate-180" />
           </Slider.PrevButton>
         </div>
 
-        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[5%] left-12">
+        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-4 relative bottom-[5%] left-12">
           <Slider.NextButton class="hidden md:flex  btn btn-outline btn-primary btn-sm btn-circle no-animation">
             <Icon id="chevron-right" />
           </Slider.NextButton>
