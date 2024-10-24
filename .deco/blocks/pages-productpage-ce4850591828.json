@@ -246,5 +246,11 @@
       }
     ]
   },
-  "__resolveType": "website/pages/Page.tsx"
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "jsonLD": {
+      "__resolveType": "PDP Loader"
+    },
+    "__resolveType": "commerce/sections/Seo/SeoPDPV2.tsx"
+  }
 }
