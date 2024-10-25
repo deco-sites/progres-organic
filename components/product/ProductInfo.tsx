@@ -34,7 +34,6 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
   }
 
   console.log(page.product.isVariantOf?.productGroupID);
-  
 
   const { breadcrumbList, product } = page;
   const { productID, offers, isVariantOf, additionalProperty } = product;
@@ -43,9 +42,10 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
 
   const { price = 0, listPrice, seller = "1", availability } = useOffer(offers);
 
-  const percent = listPrice && offers?.lowPrice
-    ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
-    : 0;
+  const percent =
+    listPrice && offers?.lowPrice
+      ? Math.round(((listPrice - offers?.lowPrice) / listPrice) * 100)
+      : 0;
 
   const breadcrumb = {
     ...breadcrumbList,
@@ -73,23 +73,26 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
   });
 
   //Checks if the variant name is "title"/"default title" and if so, the SKU Selector div doesn't render
-  const hasValidVariants = isVariantOf?.hasVariant?.some(
-    (variant) =>
-      variant?.name?.toLowerCase() !== "title" &&
-      variant?.name?.toLowerCase() !== "default title",
-  ) ?? false;
+  const hasValidVariants =
+    isVariantOf?.hasVariant?.some(
+      (variant) =>
+        variant?.name?.toLowerCase() !== "title" &&
+        variant?.name?.toLowerCase() !== "default title"
+    ) ?? false;
 
   //Calculate the Pix Price Value
-  const pixPrice = offers?.lowPrice &&
-    offers?.lowPrice - offers?.lowPrice * 0.05;
+  const pixPrice =
+    offers?.lowPrice && offers?.lowPrice - offers?.lowPrice * 0.05;
 
   //Calculate Price/6
   const dividedPrice = offers?.lowPrice && offers?.lowPrice / 6;
 
   //calculate if delivery is free
-  const freeDelivery = additionalProperty && additionalProperty.some((item) => {
-    return item.value === "frete-gratis";
-  });
+  const freeDelivery =
+    additionalProperty &&
+    additionalProperty.some((item) => {
+      return item.value === "frete-gratis";
+    });
 
   return (
     <div {...viewItemEvent} class="flex flex-col" id={id}>
@@ -272,9 +275,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
           id="teste-review"
           class="konfidency-reviews-summary review-description ml-5"
           data-sku={isVariantOf?.productGroupID}
-          
         ></div>
-   
       </div>
 
       {/* Add to Cart and Favorites button */}
@@ -303,7 +304,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
         //   />
         // </div>
       }
-{/* 
+      {/* 
       <div class="konfidency-reviews-details"></div> */}
     </div>
   );

@@ -42,7 +42,7 @@ export default function BuyTogether({ page, products,}: Props) {
         return (
           item.additionalProperty?.find(({ name }) =>
             name?.includes(pdpProductTag)
-          ) !== undefined && item.productID !== productID
+          ) !== undefined && item.productID !== product.productID
         );
       })
     : undefined;

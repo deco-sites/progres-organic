@@ -91,17 +91,24 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Produtos relacionados",
+              "__resolveType": "site/sections/Product/ProductShelfRelated.tsx",
+              "page": {
+                "__resolveType": "vnda/loaders/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                }
+              },
+              "subtitle": " Os clientes também compraram",
+              "title": "Produtos Relacionados",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
+                "count": 10,
                 "sort": "newest",
                 "tags": [],
                 "typeTags": [],
-                "ids": [],
-                "count": 10
-              },
-              "subtitle": "Os clientes também compraram"
+                "ids": []
+              }
             }
           },
           {
@@ -221,20 +228,24 @@
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
-              "__resolveType": "site/sections/Product/ProductShelf.tsx",
-              "title": "Produtos relacionados",
+              "__resolveType": "site/sections/Product/ProductShelfRelated.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "tags": [
-                  "promocao-do-mes",
-                  "kits-promocionais"
-                ],
+                "tags": [],
                 "typeTags": [],
                 "ids": [],
                 "count": 10,
-                "wildcard": false
+                "sort": "newest"
               },
-              "subtitle": "Os clientes também compraram"
+              "page": {
+                "__resolveType": "vnda/loaders/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                }
+              },
+              "title": "Produtos Relacionados",
+              "subtitle": " Os clientes também compraram"
             }
           },
           {
