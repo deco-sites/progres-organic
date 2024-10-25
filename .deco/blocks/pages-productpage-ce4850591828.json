@@ -231,7 +231,9 @@
               "__resolveType": "site/sections/Product/ProductShelfRelated.tsx",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "tags": [],
+                "tags": [
+                  "transformacao"
+                ],
                 "typeTags": [],
                 "ids": [],
                 "count": 10,
