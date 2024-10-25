@@ -28,30 +28,25 @@ export default function ProductShelf({
     throw new Error("Informações do produto insdisponível");
   }
 
-    const inStockProducts = products.filter((product) => {
-      const { availability } = useOffer(product.offers);
-      return availability === "https://schema.org/InStock";
-    });
+  const inStockProducts = products.filter((product) => {
+    const { availability } = useOffer(product.offers);
+    return availability === "https://schema.org/InStock";
+  });
 
   const { product } = page;
-   const pdpProductTag = product.additionalProperty?.find(({ name }) =>
-     name?.includes("categoria")
-   )?.value;
-  
-   const productsList = pdpProductTag
-     ? inStockProducts.filter((item) => {
-         return (
-           item.additionalProperty?.find(({ name }) =>
-             name?.includes(pdpProductTag)
-           ) !== undefined && item.productID !== product.productID
-         );
-       })
-     : []; 
-  
+  const pdpProductTag = product.additionalProperty?.find(({ name }) =>
+    name?.includes("categoria")
+  )?.value;
 
-console.log(page);
-
-
+  const productsList = pdpProductTag
+    ? inStockProducts.filter((item) => {
+        return (
+          item.additionalProperty?.find(({ name }) =>
+            name?.includes(pdpProductTag)
+          ) !== undefined && item.productID !== product.productID
+        );
+      })
+    : [];
 
   const viewItemListEvent = useSendEvent({
     on: "view",

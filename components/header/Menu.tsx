@@ -31,7 +31,7 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 }
 
 function Menu({ navItems = [], topLinks, sales }: Props) {
-  console.log("sales", sales);
+ 
   return (
     <div class="flex flex-col h-full bg-base-200 ">
       <ul class="px-4  flex flex-col divide-y divide-base-200 overflow-y-auto ">

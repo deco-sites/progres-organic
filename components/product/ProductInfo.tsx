@@ -33,8 +33,6 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  console.log(page.product.isVariantOf?.productGroupID);
-
   const { breadcrumbList, product } = page;
   const { productID, offers, isVariantOf, additionalProperty } = product;
   //const description = product.description || isVariantOf?.description;
