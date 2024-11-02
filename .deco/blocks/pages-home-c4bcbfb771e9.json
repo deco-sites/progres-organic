@@ -19,14 +19,19 @@
             "preload": true,
             "images": [
               {
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/c5b20170-e578-47b9-af73-27a3f023454e/progressiva-organica-desconto-progressivo-black-friday.png",
+                "href": "https://www.progressivaorganica.com.br/produto/kit-progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-19?skuId=SUPREME-PAI-PRINCIPAL",
+                "alt": "progressiva orgânica desconto progressivo black friday"
+              },
+              {
                 "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/2b638cfd-55ea-4a63-a81b-1dad690a746c/progressiva-organica-black-friday-descontos-imperdiveis.png",
                 "href": "/promocao-do-mes",
                 "alt": "Black Friday Progressiva Orgânica"
               },
               {
                 "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/27d3e04f-5f21-4038-914c-7ca945335585/progressiva-organica-black-friday-promocoes.png",
-                "href": "/promocao-do-mes",
-                "alt": "Promoção Progressiva Orgânica"
+                "alt": "Promoção Progressiva Orgânica",
+                "href": "/promocao-do-mes"
               }
             ]
           },
