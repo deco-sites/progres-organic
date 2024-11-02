@@ -9,9 +9,7 @@
     "title": "Pesquisar"
   },
   "alerts": [
-    "<p>Sua primeira compra? Use o cupom <strong>PRIMEIRACOMPRA</strong></p>",
-    "<p>Mês da <strong>BLACK FRIDAY</strong> até 33% OFF</p>",
-    "<p>5% de&nbsp;<strong>DESCONTO&nbsp;</strong><span id=\"_mce_caret\" data-mce-bogus=\"1\" data-mce-type=\"format-caret\">﻿no PIX</span></p>"
+    "<p>Mês da <strong>BLACK FRIDAY</strong> até 33% OFF</p>"
   ],
   "logo": {
     "alt": "Deco Storefront",
