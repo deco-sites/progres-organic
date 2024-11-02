@@ -40,7 +40,8 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "antiqueda"
+              "antiqueda",
+              "TONICO"
             ],
             "filterOperator": {
               "type_tags": "and",
