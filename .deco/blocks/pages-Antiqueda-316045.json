@@ -1,5 +1,5 @@
 {
-  "name": "Antiqueda",
+  "name": "Antiqueda e Crescimento Capilar",
   "path": "/cabelos-tratamento/tratamento-para-cabelos-crescimento-capilar",
   "sections": [
     {
@@ -48,7 +48,8 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": true
+            "filterByTags": true,
+            "term": "antiqueda"
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
