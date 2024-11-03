@@ -40,7 +40,7 @@
             "__resolveType": "vnda/loaders/productListingPage.ts",
             "count": 12,
             "tags": [
-              "antiqueda"
+              "antiqueda-e-crescimento-capilar"
             ],
             "filterOperator": {
               "type_tags": "and",
@@ -48,8 +48,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": false,
-            "term": "antiqueda"
+            "filterByTags": false
           },
           "extensions": [],
           "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
