@@ -66,12 +66,6 @@
         {
           "image": [],
           "children": [],
-          "url": "/tratamento-para-cabelos-crescimento-capilar",
-          "name": "Antiqueda e Crescimento Capilar"
-        },
-        {
-          "image": [],
-          "children": [],
           "url": "/cabelos-tratamento/botox-organico",
           "name": "Redutor de Volume e Frizz"
         },
@@ -104,6 +98,13 @@
           "children": [],
           "url": "/cabelos-tratamento/manutencao-home-care",
           "name": "Manutenção Home Care"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/cabelos-tratamento/tratamento-para-cabelos-crescimento-capilar",
+          "name": "Antiqueda e Crescimento Capilar",
+          "identifier": "Antiqueda e Crescimento Capilar"
         }
       ],
       "image": [
