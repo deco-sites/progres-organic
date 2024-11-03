@@ -49,7 +49,7 @@
               "property3": "and",
               "property1": "and"
             },
-            "filterByTags": true,
+            "filterByTags": false,
             "term": "antiqueda"
           },
           "extensions": [],
