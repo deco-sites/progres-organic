@@ -241,12 +241,12 @@
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/090a819c-e7c9-465a-afdb-c36fff54b00b/Texto-do-seu-paragrafo-(5)-(1).png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d89b4d5a-a1a1-4f29-81e6-06ca9aea9258/Texto-do-seu-paragrafo-(5)-(1).webp",
                 "href": "https://www.progressivaorganica.com.br/produto/kit-progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-19?skuId=SUPREME-PAI-PRINCIPAL",
                 "alt": "PROGRESSIVA ORGÂNICA VEGANA"
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/24347236-1239-4512-be32-b4c65a4c6e81/progressiva-organica-black-friday-descontos-1440-x-437.png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/080a99d8-f99e-4ba7-a796-3a723238bd99/WhatsApp-Image-2024-11-04-at-20.58.33-(1).jpeg",
                 "href": "/promocao-do-mes",
                 "alt": "Black Friday Progressiva Orgânica",
                 "action": {
@@ -258,7 +258,7 @@
                 "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae"
               },
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/47345474-08c6-41b7-9b85-be4b7975f0cd/progressiva-organica-black-friday-beneficios-11440-x-437.png",
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/577722fb-05ad-4786-897b-2a2caa475a17/011080-x-350.webp",
                 "alt": "Promoção Black Friday Progressiva Orgânica",
                 "href": "/promocao-do-mes"
               }
