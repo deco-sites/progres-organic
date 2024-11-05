@@ -19,19 +19,9 @@
             "preload": true,
             "images": [
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/b067b295-7d9f-4171-a770-efa2c3972a54/Texto-do-seu-paragrafo-(364-x-417-px)-(1)-(1).png",
-                "href": "https://www.progressivaorganica.com.br/produto/kit-progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-19?skuId=SUPREME-PAI-PRINCIPAL",
-                "alt": "progressiva orgânica desconto progressivo black friday"
-              },
-              {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/2b638cfd-55ea-4a63-a81b-1dad690a746c/progressiva-organica-black-friday-descontos-imperdiveis.png",
-                "href": "/promocao-do-mes",
-                "alt": "Black Friday Progressiva Orgânica"
-              },
-              {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/27d3e04f-5f21-4038-914c-7ca945335585/progressiva-organica-black-friday-promocoes.png",
-                "alt": "Promoção Progressiva Orgânica",
-                "href": "/promocao-do-mes"
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/37e2c0c6-ac5c-46e3-8de6-2b8225e5b657/progressiva-organmica-promocao.webp",
+                "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1",
+                "alt": "site oficial progressiva organica"
               }
             ]
           },
@@ -241,26 +231,9 @@
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d89b4d5a-a1a1-4f29-81e6-06ca9aea9258/Texto-do-seu-paragrafo-(5)-(1).webp",
-                "href": "https://www.progressivaorganica.com.br/produto/kit-progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-19?skuId=SUPREME-PAI-PRINCIPAL",
-                "alt": "PROGRESSIVA ORGÂNICA VEGANA"
-              },
-              {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/b1dab984-cb17-4d62-affe-24141b65809f/desconto-progressivaorganica.webp",
-                "href": "/promocao-do-mes",
-                "alt": "Black Friday Progressiva Orgânica",
-                "action": {
-                  "href": "/",
-                  "title": "Hair",
-                  "subTitle": "Progressiva",
-                  "label": "Organica"
-                },
-                "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/4ce1ae0a-d236-47d4-8d7c-97bb311d5fae"
-              },
-              {
-                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/577722fb-05ad-4786-897b-2a2caa475a17/011080-x-350.webp",
-                "alt": "Promoção Black Friday Progressiva Orgânica",
-                "href": "/promocao-do-mes"
+                "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/83352e30-8274-4219-b9b0-4012229b225c/progressiva-organica-vegana.webp",
+                "alt": "PROGRESSIVA ORGÂNICA VEGANA",
+                "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1"
               }
             ],
             "preload": true,
