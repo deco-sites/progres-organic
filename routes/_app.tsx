@@ -33,8 +33,10 @@ export default defineApp(async (_req, ctx) => {
           href="https://cdn.vnda.com.br/referrals/invite-widget.css?v=v27"
           rel="stylesheet"
         /> */}
+        <link
         href={asset(`/indiqueGanheStyle.css`)}
-        rel="stylesheet"
+          rel="stylesheet"
+        />
       </Head>
 
       {/* Rest of Preact tree */}
