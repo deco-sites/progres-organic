@@ -224,6 +224,7 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  visibility: hidden;
 }
 
 .Button_btn__xxmf6::after {
