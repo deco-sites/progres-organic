@@ -21,13 +21,11 @@ export default defineApp(async (_req, ctx) => {
             __html: `@view-transition { navigation: auto; }`,
           }}
         />
-
         {/* Tailwind v3 CSS file */}
         <link
           href={asset(`/styles.css?revision=${revision}`)}
           rel="stylesheet"
         />
-
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
         <script src="https://cdn.vnda.com.br/referrals/invite-widget.js?v=v27" />
@@ -35,10 +33,8 @@ export default defineApp(async (_req, ctx) => {
           href="https://cdn.vnda.com.br/referrals/invite-widget.css?v=v27"
           rel="stylesheet"
         /> */}
-        <link
-          href="./indiqueGanheStyle.css"
-          rel="stylesheet"
-        />
+        href={asset(`/indiqueGanheStyle.css`)}
+        rel="stylesheet"
       </Head>
 
       {/* Rest of Preact tree */}
