@@ -226,6 +226,11 @@
   text-transform: uppercase;
 }
 
+.Button_btn__xxmf6::after {
+    content: 'Copiar cupom'; /* Adiciona " Cupom" ao final do texto do botão */
+    color: red; /* Define a cor do texto adicional */
+}
+
 .Button_bntFullWidth__Xv894 {
   width: 100%;
 }
