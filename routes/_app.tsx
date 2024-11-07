@@ -34,7 +34,7 @@ export default defineApp(async (_req, ctx) => {
           rel="stylesheet"
         /> */}
         <link
-        href={asset(`/indiqueGanheStyle.css`)}
+        href="./indiqueGanheStyle.css"
           rel="stylesheet"
         />
       </Head>
