@@ -37,6 +37,28 @@ export default defineApp(async (_req, ctx) => {
           href="https://cdn.vnda.com.br/referrals/invite-widget.css?v=v27"
           rel="stylesheet"
         />
+
+        <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+<script>
+  if (window._NEXT_DATA_) {
+    console.log('Checkout - Google Merchant!');
+    
+    var order = window._NEXT_DATA_.props.pageProps.order;
+    var order_id = order.code;
+    var email = order.email;
+    var estimated_delivery_date = order.expected_delivery_date;
+  
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render({
+        "merchant_id": "545541741",
+        "order_id": order_id,
+        "email": email,
+        "delivery_country": "BR",
+        "estimated_delivery_date": estimated_delivery_date,
+      });
+    });
+  }
+</script>
       </Head>
 
       {/* Rest of Preact tree */}
