@@ -4,9 +4,13 @@ import { useScript } from "deco/hooks/useScript.ts";
 import { Context } from "deco/deco.ts";
 
 const serviceWorkerScript = () =>
-  addEventListener("load", () =>
-    navigator && navigator.serviceWorker &&
-    navigator.serviceWorker.register("/sw.js"));
+  addEventListener(
+    "load",
+    () =>
+      navigator &&
+      navigator.serviceWorker &&
+      navigator.serviceWorker.register("/sw.js")
+  );
 
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
@@ -28,12 +32,11 @@ export default defineApp(async (_req, ctx) => {
         />
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
-        {/* <script src="https://cdn.vnda.com.br/referrals/invite-widget.js?v=v27" /> */}
-        {/* <link
+        <script src="https://cdn.vnda.com.br/referrals/invite-widget.js?v=v27" />
+        <link
           href="https://cdn.vnda.com.br/referrals/invite-widget.css?v=v27"
           rel="stylesheet"
-        /> */}
-        
+        />
       </Head>
 
       {/* Rest of Preact tree */}
