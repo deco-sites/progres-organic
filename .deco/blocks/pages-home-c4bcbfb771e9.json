@@ -19,9 +19,9 @@
             "preload": true,
             "images": [
               {
-                "desktop": "https://data.decoassets.com/progres-organic/12be8f82-0de8-4334-8b76-a16ab55e8a5e/Promocao-relampago-(364-x-417-px)-(2).png",
+                "desktop": "https://data.decoassets.com/progres-organic/105dba6d-63b1-428f-a857-214cdb96aa6b/ESCOVA-ORGANICA-E-UMA-PROGRESSIVA-SEM-FORMOL-ALISAMENTO-100-NATURAL-ALISA-TODOS-OS-TIPOS-DE-CABELOS.jpg",
                 "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1",
-                "alt": "site oficial progressiva organica"
+                "alt": "ESCOVAA ORGÂNICA - PROGRESSIVA ORGÂNICA - PROGRESSIVA SEM FORMOL"
               }
             ]
           },
@@ -233,7 +233,7 @@
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
-                "desktop": "https://data.decoassets.com/progres-organic/7878b4e5-1ed1-400e-822f-51b2642722ed/progressiva-organica-oficial-sem-formol.png",
+                "desktop": "https://data.decoassets.com/progres-organic/8a2f7fea-d058-4e19-a9b7-cdd0ab81b0b1/PROGRESSIVA-ORGANICA-SITE-OFICIAL.jpg",
                 "alt": "PROGRESSIVA ORGÂNICA VEGANA",
                 "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1"
               }
