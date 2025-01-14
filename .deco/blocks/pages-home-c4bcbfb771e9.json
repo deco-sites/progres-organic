@@ -236,6 +236,11 @@
                 "desktop": "https://data.decoassets.com/progres-organic/8a2f7fea-d058-4e19-a9b7-cdd0ab81b0b1/PROGRESSIVA-ORGANICA-SITE-OFICIAL.jpg",
                 "alt": "PROGRESSIVA ORGÂNICA VEGANA",
                 "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1"
+              },
+              {
+                "desktop": "https://data.decoassets.com/progres-organic/29bcb61b-0df4-4615-b247-fb643c21c180/ESCOVA-ORGANICA-PROGRESSIVA-ORGANICA-SEM-FORMOL-VEGAN-HAIR.jpeg",
+                "alt": "ESCOVA ORGÂNICA PROGRESSIVA ORGÂNICA SEM FORMOL VEGAN HAIR",
+                "href": "https://www.progressivaorganica.com.br/progressiva-organica/progressiva-vegan-hair?page=1"
               }
             ],
             "preload": true,
