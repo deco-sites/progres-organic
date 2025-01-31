@@ -20,8 +20,6 @@ export interface Props {
 export default function ProductDetails(
   { page, sections, icons, paymentIcons }: Props,
 ) {
-  console.log('pageee: ', page?.product.sku)
-
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>
