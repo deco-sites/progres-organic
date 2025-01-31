@@ -1,7 +1,6 @@
-import { useSection } from "deco/hooks/useSection.ts";
 import Image from "apps/website/components/Image.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
-
+import { useSection } from "@deco/deco/hooks";
 interface Props {
   /**
    * @title Título
@@ -31,59 +30,56 @@ interface Props {
   /** @hide renderVideo*/
   renderVideo: boolean;
 }
-
-export default function Section({
-  title,
-  subtile,
-  text,
-  href,
-  videoyt,
-  imageYoutube,
-  renderVideo = false,
-}: Props) {
+export default function Section(
+  { title, subtile, text, href, videoyt, imageYoutube, renderVideo = false }:
+    Props,
+) {
   // Extrair o ID do vídeo:
   const videoId = videoyt.split("v=")[1].split("&")[0];
   function getEmbedLink(videoId: string) {
-    if (!videoId) return "Vídeo não encontrado";
+    if (!videoId) {
+      return "Vídeo não encontrado";
+    }
     // Criar o link embeddable:
     if (videoId) {
       const embedLink = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
       return embedLink;
     }
   }
-
-
   return (
     <div class="w-screen pt-[30px] mb-8 px-4">
       <div class="lg:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
         <div class="md:w-[667px] md:h-[474px] w-[350px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
-          {renderVideo ? (
-            <iframe
-              class="w-full"
-              width="560"
-              height="415"
-              src={getEmbedLink(videoId) || ""}
-              title="YouTube video player"
-              frameborder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
-          ) : (
-            <div
-              hx-get={useSection({ props: { renderVideo: true } })}
-              hx-target="closest section"
+          {renderVideo
+            ? (
+              <iframe
+                class="w-full"
+                width="560"
+                height="415"
+                src={getEmbedLink(videoId) || ""}
+                title="YouTube video player"
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              >
+              </iframe>
+            )
+            : (
+              <div
+                hx-get={useSection({ props: { renderVideo: true } })}
+                hx-target="closest section"
                 hx-swap="outerHTML"
                 class="mb-5"
-            >
-              <Image
-                src={imageYoutube || ""}
-                class=""
-                width={560}
-                height={315}
-                loading="lazy"
-              />
-            </div>
-          )}
+              >
+                <Image
+                  src={imageYoutube || ""}
+                  class=""
+                  width={560}
+                  height={315}
+                  loading="lazy"
+                />
+              </div>
+            )}
         </div>
         <div class="md:max-w-[425px] mx-auto md:mx-0 flex flex-col items-center md:items-start">
           <h2 class="text-2xl font-semibold text-secondary md:pb-5 md:pt-3 pt-10 pb-3 text-center">

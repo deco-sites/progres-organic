@@ -1,9 +1,8 @@
-// deno-lint-ignore-file no-explicit-any
-import { useSection } from "deco/hooks/useSection.ts";
-import type { SectionProps } from "deco/mod.ts";
 import { Component, type ComponentType } from "preact";
 import { toFileUrl } from "std/path/mod.ts";
 import type { AppContext } from "../apps/site.ts";
+import { useSection } from "@deco/deco/hooks";
+import { type SectionProps } from "@deco/deco";
 
 interface Props {
   component: string;
@@ -17,13 +16,12 @@ export type ComponentProps<LoaderFunc, ActionFunc = LoaderFunc> = SectionProps<
 
 const ROOT = toFileUrl(Deno.cwd()).href;
 
-export class ErrorBoundary extends Component<
-  { fallback?: ComponentType<{ error: Error }> },
-  { error: Error | null }
-> {
-  state = { error: null };
+export class ErrorBoundary extends Component<{
+  fallback?: ComponentType<{ error: Error }>;
+}, { error: Error | null }> {
+  override state = { error: null };
 
-  static getDerivedStateFromError(error: Error) {
+  static override getDerivedStateFromError(error: Error) {
     return { error };
   }
 
@@ -61,23 +59,25 @@ export const loader = async (
   req: Request,
   ctx: AppContext,
 ) => {
-  const { default: Component, loader, action, ErrorFallback } = await import(
-    `${ROOT}${component}`
-  );
-
   try {
-    const p = await (loader || action || identity)(props, req, ctx);
+    const { default: Component, loader, action, ErrorFallback } = await import(
+      `${ROOT}${component}`
+    );
+    if (!Component) throw new Error(`Componente não definido: ${component}`);
 
+    const p = await (loader || action || identity)(props, req, ctx);
     return {
       Component: () => (
-        <ErrorBoundary fallback={ErrorFallback}>
+        <ErrorBoundary fallback={ErrorFallback || fallbackComponent}>
           <Component {...p} />
         </ErrorBoundary>
       ),
     };
   } catch (error) {
+    const err = error as Error; // Converta para o tipo Error
+    console.error("Erro ao carregar o componente:", err.message);
     return {
-      Component: () => <ErrorFallback error={error} />,
+      Component: () => <div>Erro ao carregar componente 1: {err.message}</div>,
     };
   }
 };
@@ -87,23 +87,25 @@ export const action = async (
   req: Request,
   ctx: AppContext,
 ) => {
-  const { default: Component, action, loader, ErrorFallback } = await import(
-    `${ROOT}${component}`
-  );
-
   try {
-    const p = await (action || loader || identity)(props, req, ctx);
+    const { default: Component, action, loader, ErrorFallback } = await import(
+      `${ROOT}${component}`
+    );
+    if (!Component) throw new Error(`Componente não definido: ${component}`);
 
+    const p = await (action || loader || identity)(props, req, ctx);
     return {
       Component: () => (
-        <ErrorBoundary fallback={ErrorFallback}>
+        <ErrorBoundary fallback={ErrorFallback || fallbackComponent}>
           <Component {...p} />
         </ErrorBoundary>
       ),
     };
   } catch (error) {
+    const err = error as Error; // Converta para o tipo Error
+    console.error("Erro ao carregar o componente:", err.message);
     return {
-      Component: () => <ErrorFallback error={error} />,
+      Component: () => <div>Erro ao carregar componente 2: {err.message}</div>,
     };
   }
 };
@@ -111,3 +113,5 @@ export const action = async (
 export default function Section({ Component }: { Component: any }) {
   return <Component />;
 }
+
+const fallbackComponent = () => <div>Erro ao carregar componente 3.</div>;

@@ -1,7 +1,8 @@
 export default function indiqueGanhe() {
   return (
     <div class="hidden">
-      {/* <button
+      {
+        /* <button
         id="btn-vnda-referrals"
         hx-trigger="click"
         hx-target="#invite-widget-container"
@@ -13,7 +14,8 @@ export default function indiqueGanhe() {
       <div
         id="invite-widget-container"
         hx-ext="vndaReferralsInviteWidget"
-      ></div> */}
+      ></div> */
+      }
     </div>
   );
 }

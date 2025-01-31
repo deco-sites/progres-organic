@@ -24,7 +24,7 @@ export interface Props {
 function Banner({ images, href, alt }: Props) {
   return (
     <>
-      {(images.desktop || images.desktop ) && (
+      {(images.desktop || images.desktop) && (
         <a className="relative bg-base-200 mx-auto w-screen" href={href}>
           <Picture>
             <Source

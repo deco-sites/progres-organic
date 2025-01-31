@@ -1,8 +1,6 @@
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
-import { LoadingFallbackProps } from "deco/mod.ts";
 import Alert from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
 import User from "../../components/header/User.tsx";
@@ -26,69 +24,54 @@ import {
 import ImageLinks from "../../components/header/ImageLinks.tsx";
 import type { ImageLink, Sale } from "../../components/header/ImageLinks.tsx";
 import type { SocialMedia } from "../../components/header/Alert.tsx";
-
+import { useDevice } from "@deco/deco/hooks";
+import { type LoadingFallbackProps } from "@deco/deco";
 // export interface FreeShipping{
 //   /** @title Frete Grátis
 //    * @description Colocar o valor da compra minima (usar . no lugar da ,)
 //    */
 //   freeShippingValue: number;
 // }
-
 export interface Logo {
   src: ImageWidget;
   alt: string;
   width?: number;
   height?: number;
 }
-
 export interface SectionProps {
-  
   alerts?: HTMLWidget[];
   icons?: SocialMedia[];
   interval?: number;
-
   /**
    * @title Navigation items
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: SiteNavigationElement[] | null;
-
   /**
    * @title Searchbar
    * @description Searchbar configuration
    */
   searchbar: SearchbarProps;
-
   /** @title Logo */
   logo: Logo;
-
   /**
    * @title Links com Icones
    * @maximum 3
    * @description Links que vão ao lado da barra de pesquisa */
   topLinks: ImageLink[];
-
   /**
    * @title Banner de Promoção
    */
   sales?: Sale;
-
   /**
    * @description Usefull for lazy loading hidden elements, like hamburguer menus etc
    * @hide true */
   loading?: "eager" | "lazy";
 }
-
 type Props = Omit<SectionProps, "alert">;
-
-const Desktop = ({
-  navItems,
-  logo,
-  searchbar,
-  loading,
-  topLinks,
-  sales,
-}: Props) => (
+const Desktop = (
+  { navItems, logo, searchbar, loading, topLinks, sales }: Props,
+) => (
   <>
     <div class="flex flex-col container max-w-[1440px] ">
       <div class="flex justify-between items-center border-b border-primary h-20">
@@ -118,23 +101,15 @@ const Desktop = ({
 
       <div class="flex justify-between items-center w-full">
         <ul class="flex justify-between mx-center px-6 w-full">
-          {navItems?.slice(0, 10).map((item) => (
-            <NavItem item={item} />
-          ))}
+          {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
         </ul>
       </div>
     </div>
   </>
 );
-
-const Mobile = ({
-  logo,
-  searchbar,
-  navItems,
-  loading,
-  topLinks,
-  sales,
-}: Props) => (
+const Mobile = (
+  { logo, searchbar, navItems, loading, topLinks, sales }: Props,
+) => (
   <>
     <Drawer
       id={SEARCHBAR_DRAWER_ID}
@@ -221,7 +196,6 @@ const Mobile = ({
     </div>
   </>
 );
-
 function Header({
   alerts = [],
   icons = [],
@@ -236,7 +210,6 @@ function Header({
   ...props
 }: Props) {
   const device = useDevice();
-
   return (
     <header
       style={{
@@ -256,10 +229,8 @@ function Header({
     </header>
   );
 }
-
 export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
   // deno-lint-ignore no-explicit-any
   <Header {...(props as any)} loading="eager" />
 );
-
 export default Header;

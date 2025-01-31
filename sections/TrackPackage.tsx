@@ -1,9 +1,8 @@
-import { SectionProps } from "deco/mod.ts";
 //import TrakingResult from "../components/shipping/TrakingResult.tsx";
 //import type { Props as Traking } from "../components/shipping/TrakingResult.tsx";
 import { useComponent } from "./Component.tsx";
 import { AppContext } from "apps/vnda/mod.ts";
-
+import { type SectionProps } from "@deco/deco";
 interface TrakingData {
   id: number;
   tracking_code: string;
@@ -11,37 +10,30 @@ interface TrakingData {
   url: string;
   company: string;
 }
-
 interface Props {
   /** @hide true */
   status?: "";
 }
-
 export async function loader(props: Props, req: Request, _ctx: AppContext) {
   if (!req.headers.get("Content-Type")) {
     req.headers.set("Content-Type", "application/x-www-form-urlencoded");
   }
-
   const form = await req.formData();
   const orderCode = `${form.get("orderCode") ?? ""}`;
   const packageCode = `${form.get("packageCode") ?? ""}`;
-
   try {
     if (!orderCode || !packageCode) {
       // You can return a status like "incomplete" if required
       return { ...props, status: "incomplete" };
     }
-
     const response = await fetch(
       `https://api.vnda.com.br/api/v2/orders/${orderCode}/packages/${packageCode}/trackings`,
     );
-
     // Check for a successful response (status code 200)
     if (response.status === 200) {
       const data = await response.json() as TrakingData;
       console.log("Traking response:", response.status);
       console.log("Traking response:", response);
-
       return {
         ...props,
         data,
@@ -50,7 +42,6 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
     } else {
       return {
         ...props,
-
         status: "packageNotFound",
       };
     }
@@ -62,7 +53,6 @@ export async function loader(props: Props, req: Request, _ctx: AppContext) {
     };
   }
 }
-
 export default function TrackPackage(
   { data, status }: SectionProps<typeof loader>,
 ) {

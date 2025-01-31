@@ -78,15 +78,13 @@
   border-radius: 8px;
   width: 90%;
   max-width: 1200px;
-  background-color: #cbcbcbcb !important ;
+  background-color: #cbcbcbcb !important;
 }
 
 .vndaReferralsInviteReminder button {
   position: absolute !important;
   top: -55px !important;
-  background-color: white !important ;
+  background-color: white !important;
   border-radius: 50%;
   border: 1px solid #06503c;
 }
-
-

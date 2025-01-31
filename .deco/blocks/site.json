@@ -46,7 +46,9 @@
       "__resolveType": "vnda/loaders/proxy.ts",
       "includeSiteMap": [],
       "excludePathsFromDecoSiteMap": [],
-      "pagesToProxy": []
+      "pagesToProxy": [
+        "/frete_produto"
+      ]
     }
   ],
   "caching": {
@@ -61,6 +63,9 @@
   "abTesting": {
     "replaces": [],
     "includeScriptsToHead": {
+      "includes": []
+    },
+    "includeScriptsToBody": {
       "includes": []
     }
   },

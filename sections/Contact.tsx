@@ -1,4 +1,3 @@
-import { SectionProps } from "deco/mod.ts";
 import { AppContext } from "../apps/site.ts";
 import Icon from "../components/ui/Icon.tsx";
 import Section from "../components/ui/Section.tsx";
@@ -7,47 +6,37 @@ import { usePlatform } from "../sdk/usePlatform.tsx";
 import { useComponent } from "./Component.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-
+import { type SectionProps } from "@deco/deco";
 interface NoticeProps {
   title?: string;
   description?: string;
 }
-
 export interface Props {
   title: string;
   description: string;
   whatsapp: string;
   success?: NoticeProps;
   failed?: NoticeProps;
-
   /** @description Nome placeholder */
   placeholderName?: string;
-
   /** @description Email placeholder */
   placeholderEmail?: string;
-
   /** @description Assunto placeholder */
   placeholderTitle?: string;
-
   /** @description Mensagem placeholder */
   placeholderMessage?: string;
-
   image?: ImageWidget;
   alt?: string;
-
   /** @hide true */
   status?: "success" | "failed";
 }
-
 export async function action(props: Props, req: Request, ctx: AppContext) {
   const platform = usePlatform();
-
   const form = await req.formData();
   const email = `${form.get("email") ?? ""}`;
   const name = `${form.get("name") ?? ""}`;
   const title = `${form.get("title") ?? ""}`;
   const message = `${form.get("message") ?? ""}`;
-
   if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
     await (ctx as any).invoke("site/actions/sendContactEmailJS.ts", {
@@ -55,23 +44,15 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
       email,
       title,
       message,
-      
     });
-
     return { ...props, status: "success" };
   }
-
   return { ...props, status: "failed" };
 }
-
 export function loader(props: Props) {
   return { ...props, status: undefined };
 }
-
-function Notice({
-  title,
-  description,
-}: {
+function Notice({ title, description }: {
   title?: string;
   description?: string;
 }) {
@@ -86,7 +67,6 @@ function Notice({
     </div>
   );
 }
-
 function Contact({
   title,
   description,
@@ -121,7 +101,6 @@ function Contact({
       </Section.Container>
     );
   }
-
   return (
     <div class="mx-auto mt-14 mb-10  w-80 lg:w-[1400px] text-secondary">
       <div class="flex lg:flex-row flex-col gap-10 mx-auto lg:border lg:border-primary border-0 rounded-md justify-center">
@@ -197,7 +176,5 @@ function Contact({
     </div>
   );
 }
-
 export const LoadingFallback = () => <Section.Placeholder height="412px" />;
-
 export default Contact;
