@@ -45,7 +45,7 @@ export default function ProductDetails(
   }
 
   return (
-    <div class="flex flex-col gap-4 sm:gap-5 sm:my-10 px-5 sm:px-5 py-4 pb-10 w-full max-w-[1440px] container">
+    <div class="flex flex-col gap-4 sm:gap-5 sm:my-10 px-5 sm:px-5 py-5 pb-10 w-full max-w-[1440px] container">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
       {(device === "mobile" || device === "tablet") && (
         <div class="relative gap-2 sm:gap-6 grid grid-cols-1 sm:grid-cols-4 mx-auto py-0 container">
@@ -70,7 +70,7 @@ export default function ProductDetails(
             <ImageGallerySlider page={page} />
             <ProductDescription page={page} />
           </div>
-          <div class="sm:top-[170px] sm:sticky sm:col-span-2 sm:h-[1500px]">
+          <div class="sm:col-span-2">
             <ProductInfo
               page={page}
               icons={icons}
