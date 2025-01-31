@@ -66,7 +66,6 @@ export default defineApp(async (_req, ctx) => {
           }}
         />
 
-        
 
         {/* Google Platform Script */}
         <script

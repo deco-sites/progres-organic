@@ -295,7 +295,6 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
       </div>
 
       <Shipping />
-      
     </div>
   );
 }
