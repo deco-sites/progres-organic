@@ -53,11 +53,13 @@ export default defineApp(async (_req, ctx) => {
                 height: 70px !important;
                 bottom: -6px !important;
                 right: -4px !important;
+                width: 170px !important;
               }
 
               .rating-badge-container iframe {
                 border-top-left-radius: 4px;
                 height: 100% !important;
+                width: 100% !important;
               }
 
               .rating-badge-container a {
