@@ -91,6 +91,7 @@ export default defineApp(async (_req, ctx) => {
                 ratingBadgeContainer.style.position = "fixed";
                 ratingBadgeContainer.style.bottom = "16px";
                 ratingBadgeContainer.style.right = "16px";
+                ratingBadgeContainer.style.display = "none";
                 document.body.appendChild(ratingBadgeContainer);
 
                 // Load the Google Badge

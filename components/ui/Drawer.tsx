@@ -12,20 +12,20 @@ export interface Props {
 }
 const script = (id: string) => {
   const handler = () => {
-    const reviewsGoogle = document.querySelector('.rating-badge-container')
+    const reviewsGoogle = document.querySelector(".rating-badge-container");
 
     const input = document.getElementById(id) as HTMLInputElement | null;
     if (!input) {
       return;
     }
 
-    if(input.checked) {
+    if (input.checked) {
       if (reviewsGoogle instanceof HTMLElement) {
-        reviewsGoogle.style.display = 'none';
+        reviewsGoogle.style.display = "none";
       }
     } else {
       if (reviewsGoogle instanceof HTMLElement) {
-        reviewsGoogle.style.display = 'flex';
+        reviewsGoogle.style.display = "flex";
       }
     }
   };

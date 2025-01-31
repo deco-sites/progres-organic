@@ -43,15 +43,15 @@ import * as $$$$$$21 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$22 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$23 from "./sections/NewSection.tsx";
 import * as $$$$$$24 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$25 from "./sections/Product/ProductDescription.tsx";
-import * as $$$$$$26 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$27 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$28 from "./sections/Product/ProductShelfRelated.tsx";
-import * as $$$$$$29 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$30 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$31 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$32 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$33 from "./sections/ProductShelfHorizontal.tsx";
+import * as $$$$$$26 from "./sections/Product/ProductDescription.tsx";
+import * as $$$$$$27 from "./sections/Product/ProductDetails.tsx";
+import * as $$$$$$28 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$29 from "./sections/Product/ProductShelfRelated.tsx";
+import * as $$$$$$30 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$31 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$32 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$33 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$25 from "./sections/ProductShelfHorizontal.tsx";
 import * as $$$$$$34 from "./sections/ReviewsPDP.tsx";
 import * as $$$$$$35 from "./sections/Session.tsx";
 import * as $$$$$$36 from "./sections/SmallBannersTop.tsx";
@@ -98,15 +98,15 @@ const manifest = {
     "site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$22,
     "site/sections/NewSection.tsx": $$$$$$23,
     "site/sections/Newsletter/Newsletter.tsx": $$$$$$24,
-    "site/sections/Product/ProductDescription.tsx": $$$$$$25,
-    "site/sections/Product/ProductDetails.tsx": $$$$$$26,
-    "site/sections/Product/ProductShelf.tsx": $$$$$$27,
-    "site/sections/Product/ProductShelfRelated.tsx": $$$$$$28,
-    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$29,
-    "site/sections/Product/SearchResult.tsx": $$$$$$30,
-    "site/sections/Product/ShelfWithImage.tsx": $$$$$$31,
-    "site/sections/Product/Wishlist.tsx": $$$$$$32,
-    "site/sections/ProductShelfHorizontal.tsx": $$$$$$33,
+    "site/sections/Product/ProductDescription.tsx": $$$$$$26,
+    "site/sections/Product/ProductDetails.tsx": $$$$$$27,
+    "site/sections/Product/ProductShelf.tsx": $$$$$$28,
+    "site/sections/Product/ProductShelfRelated.tsx": $$$$$$29,
+    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$30,
+    "site/sections/Product/SearchResult.tsx": $$$$$$31,
+    "site/sections/Product/ShelfWithImage.tsx": $$$$$$32,
+    "site/sections/Product/Wishlist.tsx": $$$$$$33,
+    "site/sections/ProductShelfHorizontal.tsx": $$$$$$25,
     "site/sections/ReviewsPDP.tsx": $$$$$$34,
     "site/sections/Session.tsx": $$$$$$35,
     "site/sections/SmallBannersTop.tsx": $$$$$$36,

@@ -45,8 +45,12 @@ const onClick = async () => {
     );
   }
 
-  const skuInput = document.querySelector<HTMLInputElement>("[data-shipping-sku]");
-  const quantityInput = document.querySelector<HTMLInputElement>('#productDetailValue');
+  const skuInput = document.querySelector<HTMLInputElement>(
+    "[data-shipping-sku]",
+  );
+  const quantityInput = document.querySelector<HTMLInputElement>(
+    "#productDetailValue",
+  );
   const sku = skuInput?.getAttribute("data-shipping-sku") || "";
   const quantity = quantityInput?.value || "1";
 
