@@ -24,9 +24,10 @@ interface Props {
   page: ProductDetailsPage | null;
   icons: ProductIcon[];
   paymentIcons?: PaymentIcon;
+  sku?: string;
 }
 
-function ProductInfo({ page, icons, paymentIcons }: Props) {
+function ProductInfo({ page, icons, paymentIcons, sku }: Props) {
   const id = useId();
 
   if (page === null) {
@@ -294,7 +295,7 @@ function ProductInfo({ page, icons, paymentIcons }: Props) {
           : <OutOfStock productID={productID} />}
       </div>
 
-      <Shipping />
+      <Shipping sku={sku} />
     </div>
   );
 }

@@ -45,11 +45,9 @@ const onClick = async () => {
     );
   }
 
-  const skuInput = document.querySelector<HTMLInputElement>("[data-sku]");
-  const quantityInput = document.querySelector<HTMLInputElement>(
-    '[data-product-box] [name="quantity"]',
-  );
-  const sku = skuInput?.getAttribute("data-sku") || "";
+  const skuInput = document.querySelector<HTMLInputElement>("[data-shipping-sku]");
+  const quantityInput = document.querySelector<HTMLInputElement>('#productDetailValue');
+  const sku = skuInput?.getAttribute("data-shipping-sku") || "";
   const quantity = quantityInput?.value || "1";
 
   const formData = new URLSearchParams();
@@ -135,7 +133,7 @@ const onChange = () => {
   if (x) input.value = !x[2] ? x[1] : x[1] + "-" + x[2];
 };
 
-export function Shipping() {
+export function Shipping({ sku }: { sku?: string }) {
   const id = useId();
 
   return (
@@ -143,6 +141,7 @@ export function Shipping() {
       id={id}
       class="flex flex-col border-t border-neutral pt-4"
       data-shipping
+      data-shipping-sku={sku}
     >
       <div class="mt-8">
         <p class="text-sm font-medium text-gray-500">

@@ -20,6 +20,8 @@ export interface Props {
 export default function ProductDetails(
   { page, sections, icons, paymentIcons }: Props,
 ) {
+  console.log('pageee: ', page?.product.sku)
+
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
     <div>
@@ -41,6 +43,7 @@ export default function ProductDetails(
       </div>
     );
   }
+
   return (
     <div class="flex flex-col gap-4 sm:gap-5 sm:my-10 px-5 sm:px-5 py-4 pb-10 w-full max-w-[1440px] container">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
@@ -52,6 +55,7 @@ export default function ProductDetails(
               page={page}
               icons={icons}
               paymentIcons={paymentIcons}
+              sku={page?.product.sku}
             />
 
             {/* <ProductDescription page={page} /> */}
@@ -71,6 +75,7 @@ export default function ProductDetails(
               page={page}
               icons={icons}
               paymentIcons={paymentIcons}
+              sku={page?.product.sku}
             />
             {items}
           </div>
