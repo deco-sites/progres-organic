@@ -47,12 +47,19 @@ export default defineApp(async (_req, ctx) => {
             __html: `
               .rating-badge-container {
                 background-color: #fff;
-                border-top-left-radius: 8px;
+                border-top-left-radius: 4px;
+                box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) !important;
+                padding: 8px !important;
+                height: 70px !important;
+                bottom: -6px !important;
+                right: -4px !important;
+                width: 170px !important;
               }
 
-              .rating-badge-container img {
-                max-width: 150px;
-                border-top-left-radius: 8px;
+              .rating-badge-container iframe {
+                border-top-left-radius: 4px;
+                height: 100% !important;
+                width: 100% !important;
               }
 
               .rating-badge-container a {
@@ -92,12 +99,6 @@ export default defineApp(async (_req, ctx) => {
                     "merchant_id": "545541741",
                     "position": "BOTTOM_RIGHT"
                   });
-
-                  // Custom Image
-                  const newImage = document.createElement('img');
-                  newImage.src = 'https://data.decoassets.com/progres-organic/71979039-9775-4e8c-abe7-c6e3b8ea4d04/google_badge.png';
-                  newImage.alt = 'google-badge';
-                  ratingBadgeContainer.appendChild(newImage);
 
                   // Custom Link
                   const newLink = document.createElement('a');
