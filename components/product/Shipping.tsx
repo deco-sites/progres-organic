@@ -7,6 +7,7 @@ const onClick = async () => {
   const button = event?.currentTarget as HTMLButtonElement | null;
   if (!button) return;
 
+  
   button.innerText = "Calculando...";
 
   const container = button.closest<HTMLDivElement>("div[data-shipping]")!;

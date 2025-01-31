@@ -3,22 +3,18 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Section, {
   type Props as SectionHeaderProps,
 } from "../../components/ui/Section.tsx";
-import { LoadingFallbackProps } from "deco/mod.ts";
-
+import { type LoadingFallbackProps } from "@deco/deco";
 /**
  * @titleBy alt
  */
 interface Banner {
   mobile: ImageWidget;
   desktop?: ImageWidget;
-
   /** @description Image alt texts */
   alt: string;
-
   /** @description Adicione um link */
   href: string;
 }
-
 interface Props extends SectionHeaderProps {
   /**
    * @maxItems 4
@@ -26,7 +22,6 @@ interface Props extends SectionHeaderProps {
    */
   banners?: Banner[];
 }
-
 function Banner({ mobile, desktop, alt, href }: Banner) {
   return (
     <a href={href} class="overflow-hidden">
@@ -55,7 +50,6 @@ function Banner({ mobile, desktop, alt, href }: Banner) {
     </a>
   );
 }
-
 function Gallery({
   title,
   cta,
@@ -108,7 +102,6 @@ function Gallery({
     </Section.Container>
   );
 }
-
 export const LoadingFallback = (
   { title, cta }: LoadingFallbackProps<Props>,
 ) => (
@@ -118,5 +111,4 @@ export const LoadingFallback = (
     <Section.Placeholder height="635px" />;
   </Section.Container>
 );
-
 export default Gallery;

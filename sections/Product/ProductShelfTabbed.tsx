@@ -1,35 +1,29 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import { LoadingFallbackProps } from "deco/types.ts";
 import ProductSlider from "../../components/product/ProductSlider.tsx";
 import Section, {
   Props as SectionHeaderProps,
 } from "../../components/ui/Section.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-
+import { type LoadingFallbackProps } from "@deco/deco";
 /** @titleBy title */
 interface Tab {
   title: string;
   products: Product[] | null;
 }
-
 export interface Props extends SectionHeaderProps {
   tabs: Tab[];
-
   /** @hide true */
   tabIndex?: number;
 }
-
 export default function TabbedProductShelf(
   { tabs, title, cta, tabIndex }: Props,
 ) {
   const ti = typeof tabIndex === "number"
     ? Math.min(Math.max(tabIndex, 0), tabs.length)
     : 0;
-
   const { products } = tabs[ti];
-
   const viewItemListEvent = useSendEvent({
     on: "view",
     event: {
@@ -46,7 +40,6 @@ export default function TabbedProductShelf(
       },
     },
   });
-
   return (
     <Section.Container {...viewItemListEvent}>
       <Section.Header title={title} cta={cta} />
@@ -63,7 +56,6 @@ export default function TabbedProductShelf(
     </Section.Container>
   );
 }
-
 export const LoadingFallback = (
   { title, cta }: LoadingFallbackProps<Props>,
 ) => (

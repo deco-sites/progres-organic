@@ -1,60 +1,45 @@
-import { SectionProps } from "deco/mod.ts";
 import { AppContext } from "../../apps/site.ts";
 import Icon from "../../components/ui/Icon.tsx";
 import Section from "../../components/ui/Section.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { useComponent } from "../Component.tsx";
-
+import { type SectionProps } from "@deco/deco";
 interface NoticeProps {
   title?: string;
   description?: string;
 }
-
 export interface Props {
   title?: string;
   description?: string;
   success?: NoticeProps;
   failed?: NoticeProps;
-
   /** @description Nome placeholder */
   placeholderName?: string;
-
   /** @description E-mail placeholder */
   placeholderEmail?: string;
-
   /** @hide true */
   status?: "success" | "failed";
 }
-
 export async function action(props: Props, req: Request, ctx: AppContext) {
   const platform = usePlatform();
-
   const form = await req.formData();
   const email = `${form.get("email") ?? ""}`;
   const name = `${form.get("name") ?? ""}`;
-
   if (platform === "vnda") {
     // deno-lint-ignore no-explicit-any
     await (ctx as any).invoke("site/actions/sendEmailJS.ts", {
       name,
       email,
     });
-
     return { ...props, status: "success" };
   }
-
   return { ...props, status: "failed" };
 }
-
 export function loader(props: Props) {
   return { ...props, status: undefined };
 }
-
-function Notice({
-  title,
-  description,
-}: {
+function Notice({ title, description }: {
   title?: string;
   description?: string;
 }) {
@@ -69,7 +54,6 @@ function Notice({
     </div>
   );
 }
-
 function Newsletter({
   title,
   description,
@@ -101,7 +85,6 @@ function Newsletter({
       </Section.Container>
     );
   }
-
   return (
     <div class="bg-primary mb-8 text-base-200">
       <div class="flex flex-col">
@@ -145,7 +128,5 @@ function Newsletter({
     </div>
   );
 }
-
 export const LoadingFallback = () => <Section.Placeholder height="412px" />;
-
 export default Newsletter;

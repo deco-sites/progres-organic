@@ -16,12 +16,9 @@ export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
   products: Product[] | null;
-  
 }
 
-
-
-export default function BuyTogether({ page, products,}: Props) {
+export default function BuyTogether({ page, products }: Props) {
   if (page === null || products === null) {
     throw new Error("Informações do produto insdisponível");
   }
@@ -39,16 +36,15 @@ export default function BuyTogether({ page, products,}: Props) {
   // Find the related product
   const secondProduct = pdpProductTag
     ? products.find((item) => {
-        return (
-          item.additionalProperty?.find(({ name }) =>
+      return (
+        item.additionalProperty?.find(({ name }) =>
             name?.includes(pdpProductTag)
           ) !== undefined && item.productID !== product.productID
-        );
-      })
+      );
+    })
     : undefined;
 
-  const totalPrice =
-    offers &&
+  const totalPrice = offers &&
     secondProduct &&
     offers.lowPrice + (secondProduct.offers?.lowPrice || 0);
 
@@ -93,23 +89,25 @@ export default function BuyTogether({ page, products,}: Props) {
                   {formatPrice(totalPrice, offers?.priceCurrency)}
                 </p>
 
-                {inStock && secondProduct ? (
-                  <AddToCartBuyTogether
-                    products={[product, secondProduct]}
-                    class={clx("btn btn-primary no-animation w-full p-5")}
-                    icon=""
-                  />
-                ) : (
-                  <p
-                    class={clx(
-                      "btn",
-                      "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
-                      "text-center border border-secondary btn-secondary min-h-0 h-[26px]"
-                    )}
-                  >
-                    Fora de estoque
-                  </p>
-                )}
+                {inStock && secondProduct
+                  ? (
+                    <AddToCartBuyTogether
+                      products={[product, secondProduct]}
+                      class={clx("btn btn-primary no-animation w-full p-5")}
+                      icon=""
+                    />
+                  )
+                  : (
+                    <p
+                      class={clx(
+                        "btn",
+                        "btn-outline justify-center  !text-[12px] !font-medium px-0 no-animation w-full",
+                        "text-center border border-secondary btn-secondary min-h-0 h-[26px]",
+                      )}
+                    >
+                      Fora de estoque
+                    </p>
+                  )}
               </div>
             </div>
           </div>

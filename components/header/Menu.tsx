@@ -31,7 +31,6 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 }
 
 function Menu({ navItems = [], topLinks, sales }: Props) {
- 
   return (
     <div class="flex flex-col h-full bg-base-200 ">
       <ul class="px-4  flex flex-col divide-y divide-base-200 overflow-y-auto ">
