@@ -11,18 +11,28 @@ export interface Props {
   id?: string;
 }
 const script = (id: string) => {
-  const handler = (e: KeyboardEvent) => {
-    if (e.key !== "Escape" && e.keyCode !== 27) {
-      return;
-    }
+  const handler = () => {
+    const reviewsGoogle = document.querySelector('.rating-badge-container')
+
     const input = document.getElementById(id) as HTMLInputElement | null;
     if (!input) {
       return;
     }
-    input.checked = false;
+
+    if(input.checked) {
+      if (reviewsGoogle instanceof HTMLElement) {
+        reviewsGoogle.style.display = 'none';
+      }
+    } else {
+      if (reviewsGoogle instanceof HTMLElement) {
+        reviewsGoogle.style.display = 'flex';
+      }
+    }
   };
-  addEventListener("keydown", handler);
+
+  addEventListener("click", handler);
 };
+
 function Drawer(
   { children, aside, open, class: _class = "", id = useId() }: Props,
 ) {
