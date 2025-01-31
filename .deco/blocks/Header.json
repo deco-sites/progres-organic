@@ -23,23 +23,27 @@
     {
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/9a2de97f-4fc6-4ece-9628-d2364080e6cc",
       "href": "/rastreio",
-      "text": "Acompanhe seu pedido"
+      "text": "Acompanhe seu pedido",
+      "alt": "Clique e veja seus pedidos"
     },
     {
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/d4045bdf-e26b-4d86-88aa-f086f411eb3b",
       "href": "/clube-de-beneficios-da-organica",
-      "text": "Clube de benefícios da Orgânica"
+      "text": "Clube de benefícios da Orgânica",
+      "alt": "Clieque se descubra sobre beneficios da Orgânica"
     },
     {
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/3f3a2003-5a48-43d1-b246-6547eba59c9e",
       "href": "/contato",
-      "text": "Central de Atendimento"
+      "text": "Central de Atendimento",
+      "alt": "Clique e entre na nossa central de atendimento"
     }
   ],
   "sales": {
     "title": "Promoções Imperdíveis",
     "href": "/promocao-do-mes",
-    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ec085ee4-214e-49d7-818d-e06758ed8215"
+    "icon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ec085ee4-214e-49d7-818d-e06758ed8215",
+    "alt": "Clique e entre na nossa seção de promoção"
   },
   "icons": [
     {

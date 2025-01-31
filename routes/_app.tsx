@@ -94,15 +94,22 @@ export default defineApp(async (_req, ctx) => {
                 document.body.appendChild(ratingBadgeContainer);
 
                 // Load the Google Badge
-                window.gapi.load('ratingbadge', function() {
-                  window.gapi.ratingbadge.render(ratingBadgeContainer, {
-                    "merchant_id": "545541741",
-                    "position": "BOTTOM_RIGHT"
-                  });
+                  window.gapi.load('ratingbadge', function() {
+                      window.gapi.ratingbadge.render(ratingBadgeContainer, {
+                          "merchant_id": "545541741",
+                          "position": "BOTTOM_RIGHT"
+                      }, function() {
+                          // Callback executado quando o badge é renderizado
+                          const iframe = ratingBadgeContainer.querySelector("iframe");
+                          if (iframe) {
+                              iframe.title = "Avaliações do Google";
+                          }
+                      });
 
                   // Custom Link
                   const newLink = document.createElement('a');
                   newLink.href = 'https://customerreviews.google.com/v/merchant?q=progressivaorganica.com.br&c=BR&v=19&hl=pt_BR';
+                  newLink.setAttribute('aria-label', 'Avaliações do Google');
                   newLink.target = '_blank';
                   ratingBadgeContainer.appendChild(newLink);
                 });

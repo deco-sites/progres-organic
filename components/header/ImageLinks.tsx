@@ -16,12 +16,18 @@ export interface ImageLink {
    * @title Texto
    */
   text: string;
+  /**
+   * @title Alt
+   * @description Melhora pontos de acessibilidade na loja
+   */
+  alt: string;
 }
 
 export interface Sale {
   title: string;
   href: string;
   icon: ImageWidget;
+  alt: string;
 }
 
 interface Props {
@@ -44,7 +50,7 @@ function ImageLinks({ links, sales }: Props) {
             <Image
               class="object-contain"
               src={item.image}
-              alt={item.text}
+              alt={item.alt}
               width={37}
               height={37}
             />
@@ -59,7 +65,7 @@ function ImageLinks({ links, sales }: Props) {
           <Image
             class="object-contain w-4 h-4"
             src={sales.icon}
-            alt={sales.title}
+            alt={sales.alt}
             width={16}
             height={16}
           />

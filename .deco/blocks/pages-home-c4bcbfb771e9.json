@@ -234,10 +234,7 @@
             }
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/indiqueGanhe.tsx"
-            }
+            "__resolveType": "site/sections/indiqueGanhe.tsx"
           },
           {
             "__resolveType": "site/sections/Images/Carousel.tsx",
