@@ -23,7 +23,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
       {children && children.length > 0 && (
         <div
-          class="fixed hidden hover:flex group-hover:flex bg-base-200 z-40 items-center justify-center gap-2 max-w-[1440px] mx-auto  top-[150px]"
+          class="fixed hidden hover:flex group-hover:flex bg-base-200 z-40 items-center justify-center gap-2 max-w-[1440px] mx-auto  top-[170px] shadow-md rounded"
           style={{
             // top: "0px",
             // left: "0px",

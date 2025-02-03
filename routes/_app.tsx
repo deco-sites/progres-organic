@@ -46,6 +46,7 @@ export default defineApp(async (_req, ctx) => {
           dangerouslySetInnerHTML={{
             __html: `
               .rating-badge-container {
+              display:none;
                 background-color: #fff;
                 border-top-left-radius: 4px;
                 box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) !important;
@@ -91,6 +92,7 @@ export default defineApp(async (_req, ctx) => {
                 ratingBadgeContainer.style.position = "fixed";
                 ratingBadgeContainer.style.bottom = "16px";
                 ratingBadgeContainer.style.right = "16px";
+                ratingBadgeContainer.style.display = "none";
                 document.body.appendChild(ratingBadgeContainer);
 
                 // Load the Google Badge
