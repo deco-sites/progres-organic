@@ -234,12 +234,6 @@
             }
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/indiqueGanhe.tsx"
-            }
-          },
-          {
             "__resolveType": "site/sections/Images/Carousel.tsx",
             "images": [
               {
@@ -349,9 +343,6 @@
               "cta": "/",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
-                "sort": "newest",
-                "tags": [],
-                "typeTags": [],
                 "ids": [
                   28,
                   33,
@@ -363,7 +354,10 @@
                   47,
                   48
                 ],
-                "count": 12
+                "count": 12,
+                "sort": "newest",
+                "tags": [],
+                "typeTags": []
               },
               "subtitle": "Aproveite As Promoções da Semana"
             }
@@ -390,6 +384,8 @@
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
             "section": {
               "__resolveType": "site/sections/Product/ProductShelf.tsx",
+              "title": "Promoções",
+              "cta": "/kits-promocionais",
               "products": {
                 "__resolveType": "vnda/loaders/productList.ts",
                 "sort": "newest",
@@ -407,9 +403,7 @@
                 ],
                 "count": 8
               },
-              "title": "Promoções",
-              "subtitle": "Combos Promocionais Progressiva Orgânica",
-              "cta": "/kits-promocionais"
+              "subtitle": "Combos Promocionais Progressiva Orgânica"
             }
           },
           {
@@ -452,6 +446,12 @@
             "section": {
               "__resolveType": "Footer"
             }
+          },
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/indiqueGanhe.tsx"
+            }
           }
         ],
         "rule": {
@@ -477,6 +477,6 @@
       "productTypes": [],
       "productVendors": [],
       "variantOptions": []
-    }
+    } 
   }
 }
