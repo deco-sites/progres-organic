@@ -212,13 +212,14 @@ function Header({
   const device = useDevice();
   return (
     <header
+      class="pt-4"
       style={{
         height: device === "desktop"
           ? HEADER_HEIGHT_DESKTOP
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="bg-base-100 fixed z-40">
+      <div class="bg-base-100 fixed z-40 top-0">
         {alerts.length > 0 && (
           <Alert alerts={alerts} icons={icons} interval={interval} />
         )}

@@ -129,7 +129,7 @@ function Footer({
                       {image && (
                         <Image
                           src={image}
-                          alt={title}
+                          alt={`Link para ${title}`}
                           loading="lazy"
                           width={18}
                           height={18}
@@ -275,6 +275,6 @@ function Footer({
   );
 }
 
-export const LoadingFallback = () => <Section.Placeholder height="1145px" />;
+export const LoadingFallback = () => <Section.Placeholder height="1287px" />;
 
 export default Footer;

@@ -19,17 +19,17 @@
             "preload": true,
             "images": [
               {
-                "desktop": "https://data.decoassets.com/progres-organic/105dba6d-63b1-428f-a857-214cdb96aa6b/ESCOVA-ORGANICA-E-UMA-PROGRESSIVA-SEM-FORMOL-ALISAMENTO-100-NATURAL-ALISA-TODOS-OS-TIPOS-DE-CABELOS.jpg",
+                "desktop": "https://data.decoassets.com/progres-organic/55d5d588-fb5f-45d1-9a34-ffd35dddfc82/ESCOVA-ORGANICA-E-UMA-PROGRESSIVA-SEM-FORMOL-ALISAMENTO-100-NATURAL-ALISA-TODOS-OS-TIPOS-DE-CABELOS.webp",
                 "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1",
                 "alt": "ESCOVAA ORGÂNICA - PROGRESSIVA ORGÂNICA - PROGRESSIVA SEM FORMOL"
               },
               {
-                "desktop": "https://data.decoassets.com/progres-organic/b9ecfdcf-3e6c-40cc-894e-c01a5ac65e77/escova-organica-progressiva-sem-formol-organica-v-egan-hair-vegana.jpg",
+                "desktop": "https://data.decoassets.com/progres-organic/d566999f-654c-4e8f-b38f-a821002501e1/escova-organica-progressiva-sem-formol-organica-v-egan-hair-vegana.webp",
                 "alt": "escova-organica-progressiva-sem-formol-organica-vegan-hair-vegana",
                 "href": "https://www.progressivaorganica.com.br/progressiva-organica/progressiva-vegan-hair?page=1"
               },
               {
-                "desktop": "https://data.decoassets.com/progres-organic/211e9263-6c1c-4f95-85e9-931ab668a282/ampolas-alisamento-sem-formol-progressiva-organica.png",
+                "desktop": "https://data.decoassets.com/progres-organic/6f5bff7c-f307-4172-b058-f30ee9f2b296/ampolas-alisamento-sem-formol-progressiva-organica_1.webp",
                 "alt": "Ampolas Alisamento Sem Formol Progressiva Organica",
                 "href": "https://www.progressivaorganica.com.br/produto/kit-amazon-therapy-cronograma-capilar-magic-organic-ampola-capilar-3x15ml-50?skuId=KIT-AMPOLAS-PAI"
               }
@@ -477,6 +477,6 @@
       "productTypes": [],
       "productVendors": [],
       "variantOptions": []
-    } 
+    }
   }
 }

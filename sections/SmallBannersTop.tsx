@@ -3,6 +3,7 @@ import Slider from "../components/ui/Slider.tsx";
 import { clx } from "../sdk/clx.ts";
 import { useId } from "../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
+import { useDevice } from "@deco/deco/hooks";
 
 /**
  * @titleBy alt
@@ -30,8 +31,9 @@ export interface Props {
   interval?: number;
 }
 
-function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
+function BannerItem({ image, lcp, priority=false }: { image: Banner; lcp?: boolean, priority:boolean }) {
   const { alt, desktop, href } = image;
+  
   // const params = { promotion_name: image.alt };
 
   // // const selectPromotionEvent = useSendEvent({
@@ -48,12 +50,13 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       // {...selectPromotionEvent}
       href={href ?? "#"}
       class="relative block overflow-y-hidden md:w-full mx-auto w-screen mt-8 lg:mt-0"
+      havePriority={priority}
     >
       <Image
         preload={lcp}
         // {...viewPromotionEvent}
-        loading="eager"
-        fetchPriority="high"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "low"}
         src={desktop}
         width={364}
         height={417}
@@ -66,16 +69,18 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
 function Carousel({ images = [], interval }: Props) {
   const id = useId();
-
+  const device = useDevice();
   return (
     <>
       {/* dispositivos mobile */}
-      <div id={id} class="w-screen mx-auto lg:hidden ">
-        <div class="">
+      {
+        device === "mobile" ?  (
+          <div id={id} class="w-screen mx-auto ">
+          <div class="">
           <Slider class="carousel carousel-center w-full ">
             {images.map((image, index) => (
               <Slider.Item index={index} class="carousel-item w-full ">
-                <BannerItem image={image} />
+                <BannerItem image={image} priority={index == 0 ? true : false}/>
               </Slider.Item>
             ))}
           </Slider>
@@ -87,7 +92,7 @@ function Carousel({ images = [], interval }: Props) {
               <Slider.Dot
                 index={index}
                 class={clx(
-                  "bg-primary h-2 w-2 no-animation rounded-full",
+                  "bg-primary h-3 w-3 no-animation rounded-full",
                   "disabled:w-8 disabled:bg-neutral disabled:opacity-100 transition-[width]",
                 )}
               >
@@ -98,11 +103,14 @@ function Carousel({ images = [], interval }: Props) {
 
         <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
       </div>
-
-      {/* desktop */}
-      <div class="hidden lg:flex lg:max-w-[1140px] lg:mx-auto lg:justify-between  lg:gap-2 ">
-        {images.map((item) => <BannerItem image={item} />)}
-      </div>
+        ) : (
+          <div class="hidden lg:flex lg:max-w-[1140px] lg:mx-auto lg:justify-between  lg:gap-2 ">
+            {images.map((item) => <BannerItem image={item} />)}
+          </div>
+        )
+      }
+      
+      
     </>
   );
 }

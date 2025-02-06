@@ -146,7 +146,7 @@ function ProductCardBuyTogether({
 
         <div class="flex gap-2 pt-2">
           {listPrice && (
-            <span class="line-through font-normal text-gray-400">
+            <span class="line-through font-normal text-gray-500">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
