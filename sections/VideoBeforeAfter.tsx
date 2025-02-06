@@ -77,6 +77,7 @@ export default function Section(
                   width={560}
                   height={315}
                   loading="lazy"
+                  alt="Youtube Video"
                 />
               </div>
             )}
@@ -85,7 +86,7 @@ export default function Section(
           <h2 class="text-2xl font-semibold text-secondary md:pb-5 md:pt-3 pt-10 pb-3 text-center">
             {title}
           </h2>
-          <h4 class="text-sm  text-secondary md:pb-10 pb-4 ">{subtile}</h4>
+          <h3 class="text-sm  text-secondary md:pb-10 pb-4 ">{subtile}</h3>
           <a
             href={href}
             class="text-base text-secondary font-semibold sm:max-h-[276px] hover:underline "
