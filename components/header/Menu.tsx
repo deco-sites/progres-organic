@@ -12,7 +12,7 @@ export interface Props {
 function MenuItem({ item }: { item: SiteNavigationElement }) {
   return (
     <div class="collapse collapse-plus">
-      <input type="checkbox" />
+      <input type="checkbox" aria-label={`menu-${item.name}`} />
       <div class="collapse-title">{item.name}</div>
       <div class="collapse-content">
         <ul>
@@ -50,7 +50,7 @@ function Menu({ navItems = [], topLinks, sales }: Props) {
             <Image
               class="object-contain w-4 h-4"
               src={sales.icon}
-              alt={sales.title}
+              alt={`Link para ${sales.title}`}
               width={16}
               height={16}
             />
@@ -62,19 +62,21 @@ function Menu({ navItems = [], topLinks, sales }: Props) {
         <ul class="flex flex-col py-2 px-8 items-start gap-6 mt-5">
           {topLinks.length > 0 &&
             topLinks.map((item) => (
-              <a
+              <li class="flex justify-center items-center p-0 m-0">
+                <a
                 href={item.href}
                 class="flex justify-center  gap-4 items-center"
               >
                 <Image
                   class="object-contain"
                   src={item.image}
-                  alt={item.text}
+                  alt={`Link para ${item.text}`}
                   width={37}
                   height={37}
                 />
                 <p class="text-[12px]">{item.text}</p>
               </a>
+              </li>
             ))}
         </ul>
       </div>

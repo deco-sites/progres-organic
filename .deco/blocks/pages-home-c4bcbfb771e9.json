@@ -19,53 +19,50 @@
             "preload": true,
             "images": [
               {
-                "desktop": "https://data.decoassets.com/progres-organic/105dba6d-63b1-428f-a857-214cdb96aa6b/ESCOVA-ORGANICA-E-UMA-PROGRESSIVA-SEM-FORMOL-ALISAMENTO-100-NATURAL-ALISA-TODOS-OS-TIPOS-DE-CABELOS.jpg",
+                "desktop": "https://data.decoassets.com/progres-organic/55d5d588-fb5f-45d1-9a34-ffd35dddfc82/ESCOVA-ORGANICA-E-UMA-PROGRESSIVA-SEM-FORMOL-ALISAMENTO-100-NATURAL-ALISA-TODOS-OS-TIPOS-DE-CABELOS.webp",
                 "href": "https://www.progressivaorganica.com.br/promocao-do-mes?page=1",
                 "alt": "ESCOVAA ORGÂNICA - PROGRESSIVA ORGÂNICA - PROGRESSIVA SEM FORMOL"
               },
               {
-                "desktop": "https://data.decoassets.com/progres-organic/b9ecfdcf-3e6c-40cc-894e-c01a5ac65e77/escova-organica-progressiva-sem-formol-organica-v-egan-hair-vegana.jpg",
+                "desktop": "https://data.decoassets.com/progres-organic/d566999f-654c-4e8f-b38f-a821002501e1/escova-organica-progressiva-sem-formol-organica-v-egan-hair-vegana.webp",
                 "alt": "escova-organica-progressiva-sem-formol-organica-vegan-hair-vegana",
                 "href": "https://www.progressivaorganica.com.br/progressiva-organica/progressiva-vegan-hair?page=1"
               },
               {
-                "desktop": "https://data.decoassets.com/progres-organic/211e9263-6c1c-4f95-85e9-931ab668a282/ampolas-alisamento-sem-formol-progressiva-organica.png",
+                "desktop": "https://data.decoassets.com/progres-organic/6f5bff7c-f307-4172-b058-f30ee9f2b296/ampolas-alisamento-sem-formol-progressiva-organica_1.webp",
                 "alt": "Ampolas Alisamento Sem Formol Progressiva Organica",
                 "href": "https://www.progressivaorganica.com.br/produto/kit-amazon-therapy-cronograma-capilar-magic-organic-ampola-capilar-3x15ml-50?skuId=KIT-AMPOLAS-PAI"
               }
             ]
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/HeroBar.tsx",
-              "content": [
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
-                  "title": "Frete Grátis",
-                  "subtitle": "Á partir de R$149,00",
-                  "href": "https://www.progressivaorganica.com.br/frete-e-prazos"
-                },
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
-                  "subtitle": "6x Sem Juros",
-                  "title": "Parcelamento",
-                  "href": "https://www.progressivaorganica.com.br/pagamento"
-                },
-                {
-                  "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
-                  "title": "Atendimento",
-                  "subtitle": "via Whatsapp",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
-                },
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
-                  "title": "Site 100%",
-                  "subtitle": "Seguro",
-                  "href": "https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.progressivaorganica.com.br%2F&hl=pt_BR"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/HeroBar.tsx",
+            "content": [
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
+                "title": "Frete Grátis",
+                "subtitle": "Á partir de R$149,00",
+                "href": "https://www.progressivaorganica.com.br/frete-e-prazos"
+              },
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
+                "subtitle": "6x Sem Juros",
+                "title": "Parcelamento",
+                "href": "https://www.progressivaorganica.com.br/pagamento"
+              },
+              {
+                "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
+                "title": "Atendimento",
+                "subtitle": "via Whatsapp",
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
+              },
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
+                "title": "Site 100%",
+                "subtitle": "Seguro",
+                "href": "https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.progressivaorganica.com.br%2F&hl=pt_BR"
+              }
+            ]
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -477,6 +474,6 @@
       "productTypes": [],
       "productVendors": [],
       "variantOptions": []
-    } 
+    }
   }
 }

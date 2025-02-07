@@ -43,6 +43,7 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Custom Styles */}
         <style
+        
           dangerouslySetInnerHTML={{
             __html: `
               .rating-badge-container {
@@ -84,6 +85,8 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Google Badge Script */}
         <script
+        async
+        defer
           dangerouslySetInnerHTML={{
             __html: `
               window.renderBadge = function() {
@@ -122,6 +125,8 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Google Survey Opt-In Script */}
         <script
+        async
+        defer
           dangerouslySetInnerHTML={{
             __html: `
               if (window._NEXT_DATA_) {
