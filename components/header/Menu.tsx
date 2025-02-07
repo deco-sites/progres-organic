@@ -50,7 +50,7 @@ function Menu({ navItems = [], topLinks, sales }: Props) {
             <Image
               class="object-contain w-4 h-4"
               src={sales.icon}
-              alt={sales.title}
+              alt={`Link para ${sales.title}`}
               width={16}
               height={16}
             />

@@ -63,7 +63,7 @@ function Placeholder({
   return (
     <div
       style={{
-        height,
+        height: height,
         containIntrinsicSize: height,
         contentVisibility: "auto",
       }}

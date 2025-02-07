@@ -36,36 +36,33 @@
             ]
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/HeroBar.tsx",
-              "content": [
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
-                  "title": "Frete Grátis",
-                  "subtitle": "Á partir de R$149,00",
-                  "href": "https://www.progressivaorganica.com.br/frete-e-prazos"
-                },
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
-                  "subtitle": "6x Sem Juros",
-                  "title": "Parcelamento",
-                  "href": "https://www.progressivaorganica.com.br/pagamento"
-                },
-                {
-                  "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
-                  "title": "Atendimento",
-                  "subtitle": "via Whatsapp",
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
-                },
-                {
-                  "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
-                  "title": "Site 100%",
-                  "subtitle": "Seguro",
-                  "href": "https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.progressivaorganica.com.br%2F&hl=pt_BR"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/HeroBar.tsx",
+            "content": [
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cf6c5a95-5cb1-42a7-8a6f-3583b3729cd7",
+                "title": "Frete Grátis",
+                "subtitle": "Á partir de R$149,00",
+                "href": "https://www.progressivaorganica.com.br/frete-e-prazos"
+              },
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5424fda2-0618-40f0-9dab-fe34b6b44663",
+                "subtitle": "6x Sem Juros",
+                "title": "Parcelamento",
+                "href": "https://www.progressivaorganica.com.br/pagamento"
+              },
+              {
+                "href": "https://api.whatsapp.com/send/?phone=5511942967682&text&type=phone_number&app_absent=0",
+                "title": "Atendimento",
+                "subtitle": "via Whatsapp",
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/11e637b9-de04-4f53-b290-2c9ab618ea89"
+              },
+              {
+                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/60d8d358-27c6-4d1e-9bdd-4cc4ab3d6b70",
+                "title": "Site 100%",
+                "subtitle": "Seguro",
+                "href": "https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.progressivaorganica.com.br%2F&hl=pt_BR"
+              }
+            ]
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",

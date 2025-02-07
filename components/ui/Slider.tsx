@@ -177,6 +177,7 @@ function JS({ rootId, scroll = "smooth", interval, infinite = false }: Props) {
   return (
     <script
       type="module"
+      defer
       dangerouslySetInnerHTML={{
         __html: useScript(onLoad, { rootId, scroll, interval, infinite }),
       }}

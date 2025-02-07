@@ -43,6 +43,7 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Custom Styles */}
         <style
+        
           dangerouslySetInnerHTML={{
             __html: `
               .rating-badge-container {

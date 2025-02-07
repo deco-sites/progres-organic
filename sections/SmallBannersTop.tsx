@@ -53,9 +53,10 @@ function BannerItem({ image, lcp, priority=false }: { image: Banner; lcp?: boole
       havePriority={priority}
     >
       <Image
-        preload={lcp}
+        preload={priority ? true : lcp} 
+        decoding="async"
         // {...viewPromotionEvent}
-        loading={priority ? "eager" : "lazy"}
+        loading={priority ? "eager" : "auto"}
         fetchPriority={priority ? "high" : "low"}
         src={desktop}
         width={364}
