@@ -13,10 +13,13 @@ declare global {
 
 // Service Worker Script
 const serviceWorkerScript = () =>
-  addEventListener("load", () =>
-    navigator &&
-    navigator.serviceWorker &&
-    navigator.serviceWorker.register("/sw.js"));
+  addEventListener(
+    "load",
+    () =>
+      navigator &&
+      navigator.serviceWorker &&
+      navigator.serviceWorker.register("/sw.js"),
+  );
 
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
@@ -43,7 +46,6 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Custom Styles */}
         <style
-        
           dangerouslySetInnerHTML={{
             __html: `
               .rating-badge-container {
@@ -56,12 +58,11 @@ export default defineApp(async (_req, ctx) => {
                 bottom: -6px !important;
                 right: -4px !important;
                 width: 170px !important;
+                display: flex !important;
               }
 
               .rating-badge-container iframe {
-                border-top-left-radius: 4px;
-                height: 100% !important;
-                width: 100% !important;
+                display: none !important;
               }
 
               .rating-badge-container a {
@@ -85,8 +86,8 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Google Badge Script */}
         <script
-        async
-        defer
+          async
+          defer
           dangerouslySetInnerHTML={{
             __html: `
               window.renderBadge = function() {
@@ -117,6 +118,12 @@ export default defineApp(async (_req, ctx) => {
                   newLink.setAttribute('aria-label', 'Avaliações do Google');
                   newLink.target = '_blank';
                   ratingBadgeContainer.appendChild(newLink);
+                  
+                  const newImage = document.createElement('img');
+                  newImage.src = 'https://cdn.vnda.dev/200x/progressivaorganica/2025/01/29/15_1_5_512_google_badge.png?v=1738175671';
+                  newImage.alt = 'google-badge';
+                  
+                  newLink.appendChild(newImage);
                 });
               };
             `,
@@ -125,8 +132,8 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Google Survey Opt-In Script */}
         <script
-        async
-        defer
+          async
+          defer
           dangerouslySetInnerHTML={{
             __html: `
               if (window._NEXT_DATA_) {
