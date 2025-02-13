@@ -6585,6 +6585,18 @@ details.collapse summary::-webkit-details-marker {
   }
 }
 
+.\[\&\>iframe\]\:\[aspect-ratio\:16\/9\]>iframe {
+  aspect-ratio: 16/9;
+}
+
+.\[\&\>iframe\]\:\[height\:auto\]>iframe {
+  height: auto;
+}
+
+.\[\&\>iframe\]\:\[width\:100\%\]>iframe {
+  width: 100%;
+}
+
 .\[\&_section\]\:contents section {
   display: contents;
 }

@@ -1,6 +1,7 @@
 import { type ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Section from "../../components/ui/Section.tsx";
+import { useDevice } from "@deco/deco/hooks";
 
 /** @titleBy title */
 interface Item {
@@ -125,7 +126,7 @@ function Footer({
                       class="text-[11px] flex gap-1"
                       href={href}
                       target={isBlank ? "blank" : ""}
-                    >
+                    > 
                       {image && (
                         <Image
                           src={image}
@@ -259,22 +260,20 @@ function Footer({
               src="https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d97b3bf5-d9b4-4b91-812e-40fc89687c69/deco.svg"
             />
           </a>
-          <a href="https://tec3commerce.com.br/" target="blank">
-            <p class="text-[10px]">desenvolvido por:</p>
-            <Image
-              loading="lazy"
-              alt="desenvolvido por tec3"
-              width={60}
-              height={20}
-              src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
-            />
-          </a>
         </div>
       </div>
     </footer>
   );
 }
 
-export const LoadingFallback = () => <Section.Placeholder height="1145px" />;
+export const LoadingFallback = () => {
+  const device = useDevice();
+
+  return (
+    <Section.Container>
+      <Section.Placeholder height={device == "mobile" ? "1281px" : "1100px"} />;
+    </Section.Container>
+  )
+}
 
 export default Footer;

@@ -4,6 +4,7 @@ import Section from "../../components/ui/Section.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { useComponent } from "../Component.tsx";
+import { useDevice } from "@deco/deco/hooks";
 import { type SectionProps } from "@deco/deco";
 interface NoticeProps {
   title?: string;
@@ -128,5 +129,15 @@ function Newsletter({
     </div>
   );
 }
-export const LoadingFallback = () => <Section.Placeholder height="412px" />;
+
+export const LoadingFallback = () => {
+  const device = useDevice();
+
+  return (
+    <Section.Container>
+      <Section.Placeholder height={device == "mobile" ? "520px" : "508px"} />;
+    </Section.Container>
+  )
+}
+
 export default Newsletter;

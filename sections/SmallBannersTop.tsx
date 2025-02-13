@@ -3,6 +3,8 @@ import Slider from "../components/ui/Slider.tsx";
 import { clx } from "../sdk/clx.ts";
 import { useId } from "../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
+import { useDevice } from "@deco/deco/hooks";
+import Section from "../components/ui/Section.tsx";
 
 /**
  * @titleBy alt
@@ -49,11 +51,11 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       href={href ?? "#"}
       class="relative block overflow-y-hidden md:w-full mx-auto w-screen mt-8 lg:mt-0"
     >
-      <Image
+      <Image  
         preload={lcp}
         // {...viewPromotionEvent}
-        loading="eager"
-        fetchPriority="high"
+        loading="lazy"
+        // fetchPriority="high"
         src={desktop}
         width={364}
         height={417}
@@ -105,6 +107,14 @@ function Carousel({ images = [], interval }: Props) {
       </div>
     </>
   );
+}
+
+export const LoadingFallback = () => {
+  const device = useDevice();
+
+  return (
+      <Section.Placeholder height={device == "mobile" ? "498px" : "508px"} />
+  )
 }
 
 export default Carousel;

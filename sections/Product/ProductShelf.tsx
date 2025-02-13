@@ -7,6 +7,7 @@ import Section, {
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { type LoadingFallbackProps } from "@deco/deco";
+import { useDevice } from "@deco/deco/hooks";
 export interface Props extends SectionHeaderProps {
   products: Product[] | null;
 }
@@ -46,9 +47,13 @@ export default function ProductShelf(
 }
 export const LoadingFallback = (
   { title, cta }: LoadingFallbackProps<Props>,
-) => (
-  <Section.Container>
-    <Section.Header title={title} cta={cta} />
-    <Section.Placeholder height="508px" />;
-  </Section.Container>
-);
+) => {
+  const device = useDevice();
+
+  return (
+    <Section.Container>
+      <Section.Header title={title} cta={cta} />
+      <Section.Placeholder height={device == "mobile" ? "791px" : "508px"} />
+    </Section.Container>
+  )
+}
