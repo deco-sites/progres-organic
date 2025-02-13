@@ -212,26 +212,30 @@ function Header({
   const device = useDevice();
   return (
     <header
-      class="pt-4"
+      class=""
       style={{
+        position: 'fixed', 
+        zIndex: '60',
+        top: '0px',
         height: device === "desktop"
           ? HEADER_HEIGHT_DESKTOP
           : HEADER_HEIGHT_MOBILE,
       }}
     >
-      <div class="bg-base-100 fixed z-40 top-0">
+      <div class="bg-base-100"
+      >
         {alerts.length > 0 && (
           <Alert alerts={alerts} icons={icons} interval={interval} />
         )}
-        {device === "desktop"
+        {device === "desktop" 
           ? <Desktop logo={logo} {...props} />
           : <Mobile logo={logo} {...props} />}
       </div>
     </header>
   );
 }
-export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
-  // deno-lint-ignore no-explicit-any
-  <Header {...(props as any)} loading="eager" />
-);
+// export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
+//   // deno-lint-ignore no-explicit-any
+//   <Header {...(props as any)} loading="eager" />
+// );
 export default Header;
