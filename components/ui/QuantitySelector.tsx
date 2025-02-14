@@ -40,6 +40,7 @@ function QuantitySelector(
             "input text-center flex-grow [appearance:textfield]",
             "invalid:input-error text-primary border border-primary min-h-0 h-[32px] w-[65px] font-semibold",
           )}
+          aria-label="Quantidade"
           disabled={disabled}
           inputMode="numeric"
           type="number"

@@ -101,7 +101,8 @@ export default function GallerySlider(props: Props) {
                       height={535}
                       // Preload LCP image for better web vitals
                       preload={index === 0}
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading={index === 0 ? "auto" : "lazy"}
+                      fetchpriority={index === 0 ? "high" : "auto"}
                     />
                   )}
                   {item.encodingFormat === "video" && (
@@ -171,6 +172,7 @@ export default function GallerySlider(props: Props) {
                         height={84}
                         src={item.url || ""}
                         alt={item.alternateName}
+                        loading={"lazy"}
                       />
                     </>
                   )}

@@ -177,7 +177,8 @@
               "video": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
               "href": "produto/kit-/progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-28?skuId=SUPREME-PAI",
               "videoyt": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
-              "imageYoutube": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/1468c840-9194-4959-8a9e-a3b882bcc6db/youtube.png"
+              "imageYoutube": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/1468c840-9194-4959-8a9e-a3b882bcc6db/youtube.png",
+              "embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/mDUIcqYdJKI?si=2EFqQ5qjIdSdZMQo' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
             }
           },
           {
@@ -435,7 +436,8 @@
               "href": "/produto/kit-progressiva-organica-amazon-therapy-supreme-sem-formol-protetor-termico-de-brinde-28",
               "videoyt": "https://www.youtube.com/watch?v=mDUIcqYdJKI",
               "imageYoutube": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/1468c840-9194-4959-8a9e-a3b882bcc6db/youtube.png",
-              "renderVideo": false
+              "renderVideo": false,
+              "embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/mDUIcqYdJKI?si=2EFqQ5qjIdSdZMQo' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
             }
           },
           {

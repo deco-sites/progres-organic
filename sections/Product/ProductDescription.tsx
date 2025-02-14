@@ -1,4 +1,5 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
+import Section from "../../components/ui/Section.tsx";
 // import Image from "apps/website/components/Image.tsx";
 // import IframeLoader from "../../islands/ytOtimization.tsx";
 
@@ -155,5 +156,16 @@ function ProductDescription({ page }: Props) {
     </div>
   );
 }
+
+export const LoadingFallback = () => (
+  <Section.Container
+    style={{
+      contentVisibility: "auto",
+      containIntrinsicSize: "500px",
+    }}
+  >
+    <Section.Placeholder height="508px" />;
+  </Section.Container>
+);
 
 export default ProductDescription;

@@ -31,9 +31,15 @@ export interface Props {
   interval?: number;
 }
 
-function BannerItem({ image, lcp, priority=false }: { image: Banner; lcp?: boolean, priority:boolean }) {
+function BannerItem(
+  { image, lcp, priority = false }: {
+    image: Banner;
+    lcp?: boolean;
+    priority: boolean;
+  },
+) {
   const { alt, desktop, href } = image;
-  
+
   // const params = { promotion_name: image.alt };
 
   // // const selectPromotionEvent = useSendEvent({
@@ -53,7 +59,7 @@ function BannerItem({ image, lcp, priority=false }: { image: Banner; lcp?: boole
       havePriority={priority}
     >
       <Image
-        preload={priority ? true : lcp} 
+        preload={priority ? true : lcp}
         decoding="async"
         // {...viewPromotionEvent}
         loading={priority ? "eager" : "auto"}
@@ -74,44 +80,49 @@ function Carousel({ images = [], interval }: Props) {
   return (
     <>
       {/* dispositivos mobile */}
-      {
-        device === "mobile" ?  (
+      {device === "mobile"
+        ? (
           <div id={id} class="w-screen mx-auto ">
-          <div class="">
-          <Slider class="carousel carousel-center w-full ">
-            {images.map((image, index) => (
-              <Slider.Item index={index} class="carousel-item w-full ">
-                <BannerItem image={image} priority={index == 0 ? true : false}/>
-              </Slider.Item>
-            ))}
-          </Slider>
-        </div>
+            <div class="">
+              <Slider class="carousel carousel-center w-full ">
+                {images.map((image, index) => (
+                  <Slider.Item index={index} class="carousel-item w-full ">
+                    <BannerItem
+                      image={image}
+                      priority={index == 0 ? true : false}
+                    />
+                  </Slider.Item>
+                ))}
+              </Slider>
+            </div>
 
-        <ul class={clx("z-10", "carousel flex justify-center gap-3")}>
-          {images.map((_, index) => (
-            <li class="carousel-item">
-              <Slider.Dot
-                index={index}
-                class={clx(
-                  "bg-primary h-3 w-3 no-animation rounded-full",
-                  "disabled:w-8 disabled:bg-neutral disabled:opacity-100 transition-[width]",
-                )}
-              >
-              </Slider.Dot>
-            </li>
-          ))}
-        </ul>
+            <ul class={clx("z-10", "carousel flex justify-center gap-3")}>
+              {images.map((_, index) => (
+                <li class="carousel-item">
+                  <Slider.Dot
+                    index={index}
+                    class={clx(
+                      "bg-primary h-3 w-3 no-animation rounded-full",
+                      "disabled:w-8 disabled:bg-neutral disabled:opacity-100 transition-[width]",
+                    )}
+                  >
+                  </Slider.Dot>
+                </li>
+              ))}
+            </ul>
 
-        <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
-      </div>
-        ) : (
+            <Slider.JS
+              rootId={id}
+              interval={interval && interval * 1e3}
+              infinite
+            />
+          </div>
+        )
+        : (
           <div class="hidden lg:flex lg:max-w-[1140px] lg:mx-auto lg:justify-between  lg:gap-2 ">
             {images.map((item) => <BannerItem image={item} />)}
           </div>
-        )
-      }
-      
-      
+        )}
     </>
   );
 }
