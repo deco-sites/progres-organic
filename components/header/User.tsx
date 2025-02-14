@@ -11,7 +11,7 @@ function UserIcon() {
           class="btn btn-square btn-sm btn-outline no-animation hover:bg-accent text-secondary border border-secondary hover:border-secondary"
         >
           <Image
-            src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/324a44b4-d32b-48de-a32c-c6e991271d94"
+            src="https://data.decoassets.com/progres-organic/7225a448-d572-4666-b3d7-508c77481dec/image-(2)-(1).svg"
             alt="icone de usuario"
             width={20}
             height={20}

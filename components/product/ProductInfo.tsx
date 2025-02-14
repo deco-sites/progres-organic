@@ -112,7 +112,7 @@ function ProductInfo({ page, icons, paymentIcons, sku }: Props) {
         <div>
           {/* Prices */}
           <div class="flex flex-col gap-2 pt-1">
-            <span class="line-through text-sm font-medium text-gray-400">
+            <span class="line-through text-sm font-medium text-gray-600">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
             <span class="text-3xl font-bold text-primary">
@@ -247,7 +247,7 @@ function ProductInfo({ page, icons, paymentIcons, sku }: Props) {
                         </strong>{" "}
                         pagando com Pix
                       </span>
-                      <span class="line-through text-[10px] md:text-sm font-medium text-gray-400">
+                      <span class="line-through text-[10px] md:text-sm font-medium text-gray-600">
                         {formatPrice(offers?.lowPrice, offers?.priceCurrency)}
                       </span>
                       <span class="font-bold text-[10px] md:text-sm">

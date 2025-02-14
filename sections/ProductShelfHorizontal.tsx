@@ -46,7 +46,12 @@ export default function ProductShelfHorizontal({ products, title }: Props) {
   );
 }
 export const LoadingFallback = ({ title }: LoadingFallbackProps<Props>) => (
-  <Section.Container>
+  <Section.Container
+    style={{
+      contentVisibility: "auto",
+      containIntrinsicSize: "500px",
+    }}
+  >
     {title && <p class="text-base font-semibold text-secondary">{title}</p>}
     <Section.Placeholder height="508px" />;
   </Section.Container>

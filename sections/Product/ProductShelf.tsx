@@ -52,7 +52,7 @@ export const LoadingFallback = (
   return (
     <Section.Container>
       <Section.Header title={title} cta={cta} />
-      <Section.Placeholder height={device == "mobile"? "791" : "508px"} />;
+      <Section.Placeholder height={device == "mobile" ? "791" : "508px"} />
     </Section.Container>
   );
-}
+};

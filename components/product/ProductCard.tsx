@@ -186,7 +186,7 @@ function ProductCard({
 
         <div class="flex gap-2 pt-2">
           {listPrice && (
-            <span class="line-through font-normal text-gray-500"> 
+            <span class="line-through font-normal text-gray-500">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
@@ -262,8 +262,10 @@ function ProductCard({
           Ver mais
         </a>
       </div>
-      {/* <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js" defer>
-      </script> */}
+      {
+        /* <script src="https://reviews.konfidency.com.br/progressivaorganica/loader.js" defer>
+      </script> */
+      }
     </div>
   );
 }

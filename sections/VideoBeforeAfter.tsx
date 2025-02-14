@@ -27,12 +27,21 @@ interface Props {
    */
   imageYoutube: ImageWidget;
   videoyt: string;
+  embed: string;
   /** @hide renderVideo*/
   renderVideo: boolean;
 }
 export default function Section(
-  { title, subtile, text, href, videoyt, imageYoutube, renderVideo = false }:
-    Props,
+  {
+    title,
+    subtile,
+    text,
+    href,
+    videoyt,
+    imageYoutube,
+    renderVideo = false,
+    embed = "",
+  }: Props,
 ) {
   // Extrair o ID do vídeo:
   const videoId = videoyt.split("v=")[1].split("&")[0];
@@ -49,7 +58,16 @@ export default function Section(
   return (
     <div class="w-screen pt-[30px] mb-8 px-4">
       <div class="lg:w-[1300px] md:mx-auto flex flex-col-reverse md:gap-10 items-center justify-center xl:flex-row md:flex-wrap ">
-        <div class="md:w-[667px] md:h-[474px] w-[350px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
+        {embed && (
+          <div
+            class="md:w-[667px] md:h-[474px] w-full h-[235px] mx-auto mt-5 md:mt-0 md:mx-0 flex items-center justify-center [&>iframe]:[aspect-ratio:16/9] [&>iframe]:[width:100%] [&>iframe]:[height:auto]"
+            dangerouslySetInnerHTML={{
+              __html: embed,
+            }}
+          />
+        )}
+        {
+          /* <div class="md:w-[667px] md:h-[474px] w-[350px] h-[235px] mx-auto mt-5 md:mt-0 md:mx-0">
           {renderVideo
             ? (
               <iframe
@@ -81,7 +99,8 @@ export default function Section(
                 />
               </div>
             )}
-        </div>
+        </div> */
+        }
         <div class="md:max-w-[425px] mx-auto md:mx-0 flex flex-col items-center md:items-start">
           <h2 class="text-2xl font-semibold text-secondary md:pb-5 md:pt-3 pt-10 pb-3 text-center">
             {title}

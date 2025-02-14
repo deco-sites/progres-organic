@@ -5210,10 +5210,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-text-opacity: 1;
   color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
 }
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -6573,6 +6569,18 @@ details.collapse summary::-webkit-details-marker {
   .\32xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
+
+.\[\&\>iframe\]\:\[aspect-ratio\:16\/9\]>iframe {
+  aspect-ratio: 16/9;
+}
+
+.\[\&\>iframe\]\:\[height\:auto\]>iframe {
+  height: auto;
+}
+
+.\[\&\>iframe\]\:\[width\:100\%\]>iframe {
+  width: 100%;
 }
 
 .\[\&_section\]\:contents section {

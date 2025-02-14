@@ -64,18 +64,18 @@ function Menu({ navItems = [], topLinks, sales }: Props) {
             topLinks.map((item) => (
               <li class="flex justify-center items-center p-0 m-0">
                 <a
-                href={item.href}
-                class="flex justify-center  gap-4 items-center"
-              >
-                <Image
-                  class="object-contain"
-                  src={item.image}
-                  alt={`Link para ${item.text}`}
-                  width={37}
-                  height={37}
-                />
-                <p class="text-[12px]">{item.text}</p>
-              </a>
+                  href={item.href}
+                  class="flex justify-center  gap-4 items-center"
+                >
+                  <Image
+                    class="object-contain"
+                    src={item.image}
+                    alt={`Link para ${item.text}`}
+                    width={37}
+                    height={37}
+                  />
+                  <p class="text-[12px]">{item.text}</p>
+                </a>
               </li>
             ))}
         </ul>
