@@ -259,7 +259,7 @@ function Footer({
               src="https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/d97b3bf5-d9b4-4b91-812e-40fc89687c69/deco.svg"
             />
           </a>
-          <a href="https://tec3commerce.com.br/" target="blank">
+          {/* <a href="https://tec3commerce.com.br/" target="blank">
             <p class="text-[10px]">desenvolvido por:</p>
             <Image
               loading="lazy"
@@ -268,7 +268,7 @@ function Footer({
               height={20}
               src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/cbee4272-989d-40d4-ae5a-ca5fa0afdaaa"
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>
