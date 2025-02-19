@@ -88,10 +88,12 @@ const onClick = async () => {
     if (methods.length > 0) {
       const address = data.address_details;
 
-      let result =
-        `<h4 class="px-4 py-2 text-sm font-normal text-gray-500 my-2 flex flex-col gap-2 border border-gray-300 rounded">
-        <span class="text-primary text-base">Enviando para</span> ${address.street_name}, ${address.neighborhood} - ${address.city}/${address.state}
-      </h4>`;
+      // let result =
+      //   `<h4 class="px-4 py-2 text-sm font-normal text-gray-500 my-2 flex flex-col gap-2 border border-gray-300 rounded">
+      //   <span class="text-primary text-base">Enviando para</span> ${address.street_name}, ${address.neighborhood} - ${address.city}/${address.state}
+      // </h4>`;
+
+      let result = '';
 
       result += '<ul class="shipping-list">';
 
@@ -101,11 +103,11 @@ const onClick = async () => {
 
         result += `
           <li class="py-2">
-            <div class="flex items-center justify-between font-medium text-base mb-1">
+            <div class="flex items-center justify-between font-medium text-sm/[14px] mb-1">
               <p class="type">${method.name}</p>
-              <p class="border border-gray-300 rounded-full px-4 py-1 bg-primary text-white text-sm">${price}</p>
+              <p class="border border-gray-300 rounded-full px-4 py-1 bg-primary text-white text-xs/[12px]">${price}</p>
             </div>
-            <span class="text-sm font-normal text-gray-500 mt-2 block">${method.description}</span>
+            <span class="text-xs/[12px] font-normal text-gray-500 block">${method.description}</span>
           </li>
         `;
       });
@@ -151,26 +153,31 @@ export function Shipping({ sku }: { sku?: string }) {
         <p class="text-sm font-medium text-gray-500">
           Cálculo de frete
         </p>
-        <input
-          type="text"
-          id="shippingCEP"
-          class="border border-gray-300 p-2 w-full mt-2"
-          placeholder="Digite seu CEP"
-          maxlength={10}
-          hx-on:change={useScript(onChange)}
-        />
+        <div class="flex gap-2">
+          <input
+            type="text"
+            id="shippingCEP"
+            class="border border-gray-300 p-2 w-full mt-2"
+            placeholder="Digite seu CEP"
+            maxlength={10}
+            hx-on:change={useScript(onChange)}
+          />
+          <button
+            class="flex w-[35%] md:w-[20%] h-[48px] bg-primary text-base-200 min-h-0 mt-2 btn btn-primary no-animation"
+            hx-on:click={useScript(onClick)}
+          >
+            <span class="text-base-200 font-medium text-[12px] text-center w-full">
+              Calcular Frete
+            </span>
+          </button>
+
+        </div>
       </div>
-      <div class="flex mt-4 flex-col">
-        <button
-          class="flex w-full h-[48px] bg-primary text-base-200 min-h-0 mt-2 btn btn-primary no-animation"
-          hx-on:click={useScript(onClick)}
-        >
-          <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm">
-            Calcular Frete
-          </span>
-        </button>
+      {/* <div class="flex mt-4 flex-col">
+        
         <span id="shippingError" class="text-red-600 text-sm mt-2"></span>
-      </div>
+        <span class="text-base-200 font-medium text-[12px] text-center w-full hover:text-sm">Selecione o frete ao finalizar a compra</span>
+      </div> */}
 
       <ul data-list-shipping class="mt-4"></ul>
     </div>

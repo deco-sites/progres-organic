@@ -85,7 +85,7 @@ export default defineApp(async (_req, ctx) => {
         </script>
 
         {/* Google Badge Script */}
-        <script
+        {/* <script
           async
           defer
           dangerouslySetInnerHTML={{
@@ -128,7 +128,7 @@ export default defineApp(async (_req, ctx) => {
               };
             `,
           }}
-        />
+        /> */}
 
         {/* Google Survey Opt-In Script */}
         <script
