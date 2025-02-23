@@ -9,7 +9,7 @@
     "title": "Pesquisar"
   },
   "alerts": [
-    "<p>Sua primeira Compra? Use o cupom <strong>PRIMEIRACOMPRA</strong></p>"
+    "<p style=\"text-align: center;\" data-mce-style=\"text-align: center;\">Sua primeira Compra? Use o cupom <strong>PRIMEIRACOMPRA</strong></p>"
   ],
   "logo": {
     "alt": "Deco Storefront",
