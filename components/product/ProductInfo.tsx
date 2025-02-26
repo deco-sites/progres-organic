@@ -23,11 +23,13 @@ export interface PaymentIcon {
 interface Props {
   page: ProductDetailsPage | null;
   icons: ProductIcon[];
-  paymentIcons?: PaymentIcon;
+  iconsShipping: ProductIcon[];
+  paymentIcons?: PaymentIcon[];
   sku?: string;
+  showShipping?: boolean;
 }
 
-function ProductInfo({ page, icons, paymentIcons, sku }: Props) {
+function ProductInfo({ page, icons, paymentIcons, sku, showShipping, iconsShipping }: Props) {
   const id = useId();
 
   if (page === null) {
@@ -295,7 +297,31 @@ function ProductInfo({ page, icons, paymentIcons, sku }: Props) {
           : <OutOfStock productID={productID} />}
       </div>
 
-      <Shipping sku={sku} />
+    {showShipping && <Shipping sku={sku}/>}
+      
+
+      <div class="flex w-full flex-wrap gap-10 mx-auto md:mx-0">
+          {iconsShipping &&
+            iconsShipping.map((item) => (
+              <div class="flex items-center gap-2 w-full">
+                <div class="border border-primary rounded-full w-11 h-11 flex items-center justify-center aspect-square">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={28}
+                    height={23}
+                    class="w-[28px] h-[23px] object-contain"
+                  />
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">{item.title}</p>
+                  <p class="text-sm">{item.subtitle}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+
+
     </div>
   );
 }

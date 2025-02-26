@@ -1,4 +1,4 @@
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Alert from "../../components/header/Alert.tsx";
@@ -38,9 +38,15 @@ export interface Logo {
   width?: number;
   height?: number;
 }
+export interface AlertItemProps {
+  banner?: ImageWidget;
+  html?: HTMLWidget;
+}
 export interface SectionProps {
-  alerts?: HTMLWidget[];
+  alerts?: AlertItemProps[];
   icons?: SocialMedia[];
+  showIcons?: boolean;
+  fullWidth?: boolean;
   interval?: number;
   /**
    * @title Navigation items
@@ -200,6 +206,8 @@ function Header({
   alerts = [],
   icons = [],
   interval,
+  showIcons = true,
+  fullWidth = false,
   logo = {
     src:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
@@ -221,7 +229,7 @@ function Header({
     >
       <div class="bg-base-100 fixed z-40 top-0">
         {alerts.length > 0 && (
-          <Alert alerts={alerts} icons={icons} interval={interval} />
+          <Alert alerts={alerts} icons={icons} interval={interval} showIcons={showIcons} fullWidth={fullWidth} />
         )}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />

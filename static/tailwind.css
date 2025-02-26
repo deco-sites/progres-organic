@@ -3884,6 +3884,9 @@ details.collapse summary::-webkit-details-marker {
 .aspect-\[156\/87\] {
   aspect-ratio: 156/87;
 }
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
 .h-11 {
   height: 2.75rem;
 }
@@ -4121,9 +4124,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .w-\[200px\] {
   width: 200px;
-}
-.w-\[250px\] {
-  width: 250px;
 }
 .w-\[25px\] {
   width: 25px;
@@ -4426,9 +4426,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .flex-wrap {
   flex-wrap: wrap;
-}
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 .place-items-center {
   place-items: center;

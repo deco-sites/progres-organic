@@ -16,9 +16,12 @@ export interface Props {
   sections?: Section[];
   icons: ProductIcon[];
   paymentIcons?: PaymentIcon;
+  showShipping: boolean;
+  showIconsShipping: boolean;
+  iconsShipping: ProductIcon[];
 }
 export default function ProductDetails(
-  { page, sections, icons, paymentIcons }: Props,
+  { page, sections, icons, paymentIcons, iconsShipping, showIconsShipping, showShipping }: Props,
 ) {
   const device = useDevice();
   const items = sections?.map(({ Component, props }) => (
@@ -52,7 +55,9 @@ export default function ProductDetails(
             <ProductInfo
               page={page}
               icons={icons}
+              iconsShipping={showIconsShipping ? iconsShipping : []}
               paymentIcons={paymentIcons}
+              showShipping={showShipping}
               sku={page?.product.sku}
             />
 
@@ -72,7 +77,9 @@ export default function ProductDetails(
             <ProductInfo
               page={page}
               icons={icons}
+              iconsShipping={showIconsShipping ? iconsShipping : []}
               paymentIcons={paymentIcons}
+              showShipping={showShipping}
               sku={page?.product.sku}
             />
             {items}

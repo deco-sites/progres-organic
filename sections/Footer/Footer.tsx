@@ -163,12 +163,12 @@ function Footer({
           </ul>
 
           {mobileApp && (
-            <div class="flex flex-nowrap  gap-6 pt-7">
+            <div class="flex flex-col  gap-6 pt-7">
               <a href={mobileAppLink.apple} target="blank">
                 <Image
                   alt="apple"
-                  width={72}
-                  height={22}
+                  width={144}
+                  height={44}
                   loading="lazy"
                   src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/5c0dade1-22e2-468c-bbc9-6c1545e3ed8a"
                 />
@@ -176,8 +176,8 @@ function Footer({
               <a href={mobileAppLink.android} target="blank">
                 <Image
                   alt="android"
-                  width={72}
-                  height={22}
+                  width={144}
+                  height={44}
                   loading="lazy"
                   src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/ca8bbc9d-72b0-44ae-8d63-d6ee5a9c2b70"
                 />

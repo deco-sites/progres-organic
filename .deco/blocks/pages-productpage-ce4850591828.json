@@ -206,6 +206,23 @@
                 "subtitle": "garantida"
               }
             ],
+            "iconsShipping": [
+              {
+                "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/35f91c93-2042-4319-9cf8-9336d883a64d/truck.svg",
+                "title": "Pronta Entrega + Frete Grátis",
+                "subtitle": "Produto a pronta entrega, com despacho em até 24h após a aprovação do pagamento. Enviamos para todo Brasil, com frete grátis nas compras a partir de R$ 150!"
+              },
+              {
+                "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/2e59d61a-74b9-4706-9be2-a8134991520a/compra.svg",
+                "title": "Devolução gratuita",
+                "subtitle": "Se você se arrependeu e não usou o produto, pode devolver em até 7 dias."
+              },
+              {
+                "title": "Garantia de Entrega",
+                "subtitle": "Todos os nossos produtos possuem garantia total de entrega ou seu dinheiro de volta.",
+                "icon": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/eb8b0b1d-7727-4e57-ba92-30c55fea4575/loja.svg"
+              }
+            ],
             "paymentIcons": {
               "pix": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/49e21b79-057d-4ef4-b897-4eb60a30bf31",
               "boleto": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/progres-organic/2566a300-4d45-4cef-a9a5-0dfdcfea4b84/boleto-logo.png",
@@ -217,7 +234,9 @@
                 "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/a15ec7a0-dc3c-4ade-a0a7-b30a47685852",
                 "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/12156/7716a5ed-5b60-46e7-8c45-b2a6d8973215"
               ]
-            }
+            },
+            "showIconsShipping": false,
+            "showShipping": true
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",

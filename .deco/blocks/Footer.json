@@ -257,11 +257,11 @@
   "description": "Site Oficial PROGRESSIVA ORGÂNICA\nCOSMÉTICOS há mais de 10 anos no mercado\nde cosméticos, temos como principal objetivo\najudar as mulheres a ter mais praticidade no seu\ndia a dia. Aqui você encontra as melhores\nprogressivas orgânicas e os melhores\ntratamentos capilares com resultados efetivos e\nduradouros. Liso Perfeito com brilho você\nencontra aqui!",
   "socialTitle": "Permaneça conectado",
   "mobileAppLink": {
-    "apple": "/",
-    "android": "/"
+    "apple": "https://apps.apple.com/br/app/progressiva-org%C3%A2nica/id1605784673",
+    "android": "https://play.google.com/store/apps/details?id=com.converta.progressivaorganica&utm_medium=social&utm_source=linktree&utm_campaign=baixe+nosso+app+android&pli=1"
   },
   "Badges": [],
-  "mobileApp": false,
+  "mobileApp": true,
   "badges": [
     {
       "title": "Google Verify",
