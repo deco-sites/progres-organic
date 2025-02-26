@@ -68,6 +68,7 @@ function ImageLinks({ links, sales }: Props) {
             alt={sales.alt}
             width={16}
             height={16}
+            fetchpriority={'low'}
           />
           <p class="text-base-200 text-[10px] font-bold text-center">
             {sales.title}

@@ -31,7 +31,7 @@ const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 function ProductCardHorizontal({
   product,
-  preload,
+  preload= false,
   itemListName,
   index,
   class: _class,

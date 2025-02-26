@@ -25,17 +25,14 @@
             "__resolveType": "Header"
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "PO-whatsapp"
+            "__resolveType": "site/sections/Product/ProductDetails.tsx",
+            "page": {
+              "__resolveType": "PDP Loader"
             }
           },
           {
             "section": {
-              "__resolveType": "site/sections/Product/ProductDetails.tsx",
-              "page": {
-                "__resolveType": "PDP Loader"
-              }
+              "__resolveType": "PO-whatsapp"
             },
             "__resolveType": "website/sections/Rendering/Lazy.tsx"
           },

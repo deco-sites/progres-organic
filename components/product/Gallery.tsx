@@ -1,6 +1,8 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
+import { Head } from "$fresh/runtime.ts";
 import Image from "apps/website/components/Image.tsx";
 import ProductImageZoom from "./ProductImageZoom.tsx";
+import { useDevice } from "@deco/deco/hooks";
 import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
@@ -23,8 +25,10 @@ const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
  * we rearrange each cell with col-start- directives
  */
 export default function GallerySlider(props: Props) {
+  const device = useDevice();
   const id = useId();
   const zoomId = `${id}-zoom`;
+  const aspectRatio = device == "desktop" ? ASPECT_RATIO : '1/1'
 
   if (!props.page) {
     throw new Error("Missing Product Details Page Info");
@@ -67,6 +71,15 @@ export default function GallerySlider(props: Props) {
     }
   }
 
+  const serviceWorkerScript = () =>
+    addEventListener(
+      "load",
+      () =>
+        navigator &&
+        navigator.serviceWorker &&
+        navigator.serviceWorker.register("/sw.js"),
+    );
+
   return (
     <>
       <div
@@ -94,20 +107,22 @@ export default function GallerySlider(props: Props) {
                     <Image
                       class="object-contain w-full"
                       sizes="(max-width: 640px) 100vw, 40vw"
-                      style={{ aspectRatio: ASPECT_RATIO }}
+                      style={{ aspectRatio: aspectRatio }}
                       src={item.url || ""}
                       alt={item.alternateName}
-                      width={535}
-                      height={535}
+                      width={device == "desktop" ? 535 : 290}
+                      height={device == "desktop" ? 535 : 290}
                       // Preload LCP image for better web vitals
                       preload={index === 0}
-                      loading={index === 0 ? "auto" : "lazy"}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      index={index === 0}
                       fetchpriority={index === 0 ? "high" : "auto"}
                     />
                   )}
                   {item.encodingFormat === "video" && (
-                    <div class="flex items-center justify-center w-full lg:h-[535px]">
+                    <div  class="flex items-center justify-center w-full lg:h-[535px]">
                       <iframe
+                      style={{contentVisibility: 'auto'}}
                         class="w-full"
                         width="560"
                         height="315"
@@ -177,8 +192,31 @@ export default function GallerySlider(props: Props) {
                     </>
                   )}
                   {item.encodingFormat === "video" && (
-                    <div class="flex items-center justify-center">
-                      <iframe
+                    <div class="flex items-center justify-center relative">
+                      <div class="absolute w-full h-full left-0 top-0 flex items-center justify-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="54"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          fill="none"
+                        >
+                          <path
+                            fill="#FF0000"
+                            d="M44 14.5s-.5-3.5-2-5c-1.9-2-4.1-2.1-5.1-2.2C31.5 7 24 7 24 7s-7.5 0-12.9.3c-1 .1-3.2.2-5.1 2.2-1.5 1.5-2 5-2 5S3 18.8 3 23v2c0 4.2.5 8.5.5 8.5s.5 3.5 2 5c1.9 2 4.5 1.9 5.6 2.1C16.5 41 24 41 24 41s7.5 0 12.9-.3c1-.1 3.7-.1 5.6-2.1 1.5-1.5 2-5 2-5S45 27.2 45 23v-2c0-4.2-1-6.5-1-6.5ZM19 29V17l11 6-11 6Z"
+                          />
+                        </svg>
+                      </div>
+                      <Image
+                        style={{ aspectRatio: "1 / 1" }}
+                        class="group-disabled:border-secondary object-cover w-full h-full"
+                        width={84}
+                        height={84}
+                        src={groupImages?.[0]?.url || ""}
+                        alt={groupImages?.[0]?.url .alternateName}
+                        loading={"lazy"}
+                      />
+                      {/* <iframe
                         class="w-full"
                         width="84"
                         height="57"
@@ -187,7 +225,7 @@ export default function GallerySlider(props: Props) {
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       >
-                      </iframe>
+                      </iframe> */}
                     </div>
                   )}
                 </Slider.Dot>
