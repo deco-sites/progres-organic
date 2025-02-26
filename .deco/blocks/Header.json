@@ -9,7 +9,9 @@
     "title": "Pesquisar"
   },
   "alerts": [
-    "<p style=\"text-align: center;\" data-mce-style=\"text-align: center;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Frete Grátis Para Todo Brasil</p>"
+    {
+      "html": "<p style='text-align: center;' data-mce-style='text-align: center;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Frete Grátis Para Todo Brasil</p>"
+    }
   ],
   "logo": {
     "alt": "Deco Storefront",
